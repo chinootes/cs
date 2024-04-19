@@ -1,0 +1,33 @@
+version: 1
+imports: []
+schemas:
+  - id: lang
+    parent: root
+    namespace: true
+    children:
+      - syntax
+      - typing
+      - compile-time
+      - runtime
+      - paradigms
+      - lib
+      - ds
+      - exceptions
+      - concurrency
+      - db access
+      - patterns
+      - tool
+  - id: syntax
+    template: zzz-template.lang.syntax
+  - id: typing
+  - id: paradigms
+  - id: lib
+  - id: ds
+  - id: exceptions
+    template: zzz-template.lang.exceptions
+  - id: concurrency
+  - id: db access
+  - id: runtime
+  - id: compile-time
+  - id: patterns
+  - id: tool

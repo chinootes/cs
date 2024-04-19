@@ -1,0 +1,38 @@
+version: 1
+imports: []
+schemas:
+  - id: data
+    title: data
+    parent: root
+    children:
+      - structure
+  - id: structure
+    children:
+      - primary
+      - secondary
+  - id: primary
+    namespace: true
+    children:
+      - insertion
+      - retrieval
+      - traversal
+      - searching
+      - sorting
+  - id: secondary
+    namespace: true
+    children:
+      - implementation
+      - representation
+      - insertion
+      - retrieval
+      - traversal
+      - searching
+      - sorting
+  - id: insertion
+  - id: retrieval
+  - id: traversal
+  - id: searching
+  - id: sorting
+  - id: implementation
+  - id: representation  
+
