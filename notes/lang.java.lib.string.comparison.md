@@ -2,11 +2,11 @@
 id: 9pb2kqfks3q23sdqidit953
 title: String Comparison
 desc: ''
-updated: 1712937954427
+updated: 1713644157556
 created: 1711644046817
 ---
 
-Strings class implements Comparable [[lang.java.lib.interfaces.marker]].
+Strings class implements [[lang.java.lib.interfaces.marker.comparable]].
 
 ### 1. `equals()` method (**authentication**)
 

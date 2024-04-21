@@ -2,7 +2,7 @@
 id: c4uuhel2q5rxra533rveq1z
 title: Arrays
 desc: ''
-updated: 1712949673989
+updated: 1713644093667
 created: 1712949538100
 ---
 
@@ -34,7 +34,7 @@ boolean[]                        [Z
 >[ for single dimension
 [[ for two-dimensional
 
-- Every array type implements Serializable  and Cloneable [[lang.java.lib.interfaces.marker]]s. 
+- Every array type implements [[lang.java.lib.interfaces.marker.serializable]]  and [[lang.java.lib.interfaces.marker.cloneable]]. 
 - Arrays can be assigned to variables of type Object — [[type theory.casting.object.upcasting]].
 - All methods of Object class can be invoked on an array
 

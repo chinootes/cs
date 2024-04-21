@@ -17,7 +17,7 @@ classDiagram
 
 You should rather prefer [[arch.design.oo.principles.composition over inheritance]].
 
-Just turn your abstract class into a concrete implementation and inject the "behaviour" which you are trying to change from outside using [[arch.design.oo.patterns.gof.behavioural.strategy]].
+Just turn your abstract class into a concrete implementation and inject the "behaviour" which you are trying to change from outside using [[arch.design.oo.concepts.patterns.gof.behavioural.strategy]].
 
 ```mermaid
 classDiagram

@@ -24,7 +24,7 @@ Provide Testability
         Interfaces are the heart of testability.
         The users of your code will be grateful.
 
-## Provide an [[arch.design.oo.patterns.gof.creational.dependency injection]] mechanism
+## Provide an [[arch.design.oo.concepts.patterns.gof.creational.concepts.dependency injection]] mechanism
 
 Implement the interface of the depended-on component
 - Interface provided → you are all set
@@ -40,7 +40,7 @@ Inherit from the depended-on component
       - The risk to execute unwanted code in tests is higher e.g. when methods are added later in the code under test and are forgotten to be REDEFINEd in the subclass
 - Implement the test double
 
-## Dependency lookup using [[arch.design.oo.patterns.gof.creational.factory]]
+## Dependency lookup using [[arch.design.oo.concepts.patterns.gof.creational.factory]]
 
 - During tests, the object factory shall return test doubles to the code under test
 
@@ -113,4 +113,4 @@ CLASS cl_injector IMPLEMENTATION.
 …
 ```
 
-> Consider a [[arch.design.oo.patterns.gof.creational.factory]] for integration tests that manages your application / component indirections and collects all factory methods.
+> Consider a [[arch.design.oo.concepts.patterns.gof.creational.factory]] for integration tests that manages your application / component indirections and collects all factory methods.

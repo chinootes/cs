@@ -1,0 +1,22 @@
+---
+id: f5k4efskjeoju217y47ifq1
+title: Set
+desc: ''
+updated: 1713641616879
+created: 1713635487365
+---
+
+implements [[lang.java.lib.collection.interface]]
+
+- [[lang.java.lib.collection.tags.duplicates.not allowed]]
+- [[lang.java.lib.collection.tags.insertion order.not preserved]]
+- [[lang.java.lib.collection.tags.null insertion.allowed.one]]
+
+    If multiple null values inserted - shows as one, when printed
+
+- No new Methods - [[lang.java.lib.collection.interface]] methods only
+
+Child classes/interfaces:
+
+- [[lang.java.lib.collection.interface.set.hash]]
+- [[lang.java.lib.collection.interface.set.sorted]] (I)

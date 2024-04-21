@@ -2,20 +2,15 @@
 id: sna2umv15ruskiu91590dgn
 title: Thread Safety
 desc: ''
-updated: 1713125553172
+updated: 1713648544553
 created: 1713125526427
 ---
 
 How to make a block of code thread safe?
 
-1. Stateless Implementation
-    - Source of error in most cases (multithreaded apps)
-        - Incorrectly sharing state between several threads
-        - Don't make your methods rely on external state, nor maintain any state at all
-2. Immutable Implementation
-    - Need to share states between threads → make them immutable
-    - Immutable classes = Thread safe
-3. Thread local fields
+In addition to the usual ways to ensure [[execution.concurrency.multithreading.thread safety]], Java provides some additional [[execution.concurrency.synchronization]] mechanisms:
+
+1. Thread local fields
 
     Defining private fields in Thread classes
 
@@ -23,20 +18,20 @@ How to make a block of code thread safe?
 
         Like normal class fields but each thread accesses them via a setter-getter and gets independently initialized copy of the field so that each thread has its own state
 
-4. Synchronized Collections
-5. Concurrent Collections
+2. Synchronized Collections
+3. Concurrent Collections
 
     Concurrent collections achieve thread safety by dividing their data into segments and acquiring locks on different segments.
 
     Better performance
 
-6. Atomic objects
-7. Synchronized Methods
-8. Synchronized statements
-9. Other objects as lock
-10. Volatile fields
-11. Reentrant locks
-12. Read/write locks
+4. Atomic objects
+5. Synchronized Methods
+6. Synchronized statements
+7. Other objects as lock
+8. Volatile fields
+9. Reentrant locks
+10. Read/write locks
 
 ### Volatile and Atomic 
 
