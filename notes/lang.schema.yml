@@ -9,25 +9,29 @@ schemas:
       - typing
       - compile-time
       - runtime
+      - design
       - paradigms
       - lib
       - ds
       - exceptions
       - concurrency
-      - db access
+      - db
       - patterns
       - tool
+      - v
   - id: syntax
     template: zzz-template.lang.syntax
   - id: typing
   - id: paradigms
+  - id: design
   - id: lib
   - id: ds
   - id: exceptions
     template: zzz-template.lang.exceptions
   - id: concurrency
-  - id: db access
+  - id: db
   - id: runtime
   - id: compile-time
   - id: patterns
   - id: tool
+  - id: v

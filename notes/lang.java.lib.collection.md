@@ -2,7 +2,7 @@
 id: lgg2j2c98p9sw23dmxx25pa
 title: Collection Framework
 desc: ''
-updated: 1713676456098
+updated: 1713682043380
 created: 1713633121566
 ---
 
@@ -22,4 +22,4 @@ Although, referred to as a framework, it functions more like a library with a co
 
         When sent from one place to another, the receiver makes a copy of it and operates on it → **clonable**
 
-- [[lang.java.lib.collection.tags.heterogeneous objects.allowed]] for all collections except [[lang.java.lib.collection.interface.set.sorted.navigable.tree]] and [[lang.java.lib.collection.map.sorted.navigable.tree]].
+ 

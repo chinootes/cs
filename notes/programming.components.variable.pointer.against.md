@@ -1,8 +1,8 @@
 ---
 id: 9veap8xngwqxjt6vdqywshq
-title: Disadvantages of Pointers
+title: Case against Pointers
 desc: ''
-updated: 1708613345877
+updated: 1713722037027
 created: 1708613243326
 ---
 
