@@ -2,7 +2,7 @@
 id: 5t5ka4s5kq8fy6pqdioqxdd
 title: Static members' lifecycle in memory
 desc: ''
-updated: 1713720500052
+updated: 1713803859132
 created: 1713720230003
 ---
 

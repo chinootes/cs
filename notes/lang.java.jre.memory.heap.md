@@ -2,9 +2,11 @@
 id: 1i4nordr5xywjsvn09rg1lx
 title: Heap Space
 desc: ''
-updated: 1713683790322
+updated: 1713807661339
 created: 1713683778613
 ---
+
+Java's [[os.memory.ram.user.heap]] implementation.
 
 Used to allocate memory to objects at run time
 

@@ -2,10 +2,11 @@
 id: 6vomqvn8fs9b7c56dev8bcj
 title: Class Names
 desc: ''
-updated: 1708621560069
+updated: 1713801171667
 created: 1708621541912
 ---
 
+#Cheatsheet
 
 > Don't get naming paralysis. Yes, names are very important but they're not important enough to waste huge amounts of time on. If you can't think up a good name in 10 minutes, move on.
 

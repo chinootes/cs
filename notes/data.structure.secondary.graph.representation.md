@@ -1,10 +1,12 @@
 ---
 id: 31v0sasm45sr0g8ff2df7ty
-title: Representating Graphs
+title: Representing Graphs
 desc: ''
-updated: 1713799805061
+updated: 1713799919423
 created: 1708969946105
 ---
+
+Graphs can be represented in the following forms in memory. 
 
 ```mermaid
 graph LR

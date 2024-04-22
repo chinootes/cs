@@ -6,14 +6,14 @@ updated: 1712942610502
 created: 1712941019772
 ---
 
-If a language supports [[programming.exception.declaration]], this is how it likely works with method overriding.
+If a language supports [[programming.issues.exception.declaration]], this is how it likely works with method overriding.
 
 ## Case 1: Super class doesn't declare an exception
 
 Sub class overridden method:
 
-- cannot declare a [[programming.exception.types.checked]] but
-- can declare an [[programming.exception.types.unchecked]].
+- cannot declare a [[programming.issues.exception.types.checked]] but
+- can declare an [[programming.issues.exception.types.unchecked]].
 
 ## Case 2: Super class declares an exception
 

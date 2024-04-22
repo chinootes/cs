@@ -12,5 +12,5 @@ created: 1708610709555
 
 ## Types
 
-- [[programming.exception.types.checked]]
-- [[programming.exception.types.unchecked]]
+- [[programming.issues.exception.types.checked]]
+- [[programming.issues.exception.types.unchecked]]
