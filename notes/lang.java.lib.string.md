@@ -2,11 +2,11 @@
 id: tla9lmgojyihaq18m4gxgqe
 title: String
 desc: ''
-updated: 1712859993775
+updated: 1713902828857
 created: 1711643845722
 ---
 
-- **String literal**: A string literal in Java is basically a sequence of characters from the source character set.
+- **String literal**: A string [[programming.components.literal]] in Java is basically a sequence of characters from the source character set. 
 - String in Java is an [[arch.design.oo.concepts.patterns.immutable class]]
 - String literals initialised are an object of this String class.
 
