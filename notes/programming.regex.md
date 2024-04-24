@@ -2,11 +2,15 @@
 id: a7dyttdu6xtjr6zv3q205we
 title: Regex
 desc: 'Regular Expressions'
-updated: 1713975845568
+updated: 1713977048592
 created: 1713974732773
 ---
 
 Used for pattern matching in string. Common use cases include text validation and text search.
+
+Regexes are enclosed within `/ /` (this document doesn't use these enclosings in most regexes to keep it clean).
+
+## Some common ones 
 
 - `[abc]` - a, b or c
 - `[^abc]` -  any character except a, b, c
@@ -14,6 +18,13 @@ Used for pattern matching in string. Common use cases include text validation an
 - `[A-Z]` - A to Z
 - `[a-zA-Z]` - a to z, A to Z
 - `[0-9]` - 0 to 9
+
+## Flags
+
+- `g`
+
+    `/a/` will only match the first occurence of a.
+    `/a/g` will match all occurences of a throughout the string.
 
 ## Quantifiers
 
