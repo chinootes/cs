@@ -2,7 +2,7 @@
 id: 5otxxe7k45gtoaz2v5x5qse
 title: Syntax
 desc: ''
-updated: 1713896754909
+updated: 1714073646294
 created: 1713886095577
 ---
 
@@ -231,6 +231,37 @@ interface Point {
 ### Conditionals
 
 ### Loops
+
+#### Traditional 
+
+```ts
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+```
+
+#### for...of
+
+Loops on elements.
+```ts
+for (let index of fruits) {
+    console.log(fruits[index]);
+}
+```
+
+#### for...in
+
+Loops on indexes/keys.
+```ts
+for (let index in fruits) {
+    console.log(fruits[index]);
+}
+```
+
+💡 You'd think that `index` will be a `number`, but no, index here is a `string`. What's more? You can access elements using this index (as showm above), because its converted by [[type theory.casting.implicit]]. But if you use it to initialize another variable, like `j=i+1`, you can't use `j` as a `number`, `j` will also be a `string`. Weird stuff.
+
+So prefer for..of or traditional for loop for arrays. Use for..in for things like Maps.
+
 
 ## Functions/Methods
 

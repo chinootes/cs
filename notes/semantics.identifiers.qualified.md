@@ -6,7 +6,7 @@ updated: 1712955278632
 created: 1712953075224
 ---
 
-Qualified Identifiers are used in case where there an ambiguity as to which entity an identifier can refer to. In such cases, the identifier is paired with a [[lexicography.identifiers.qualifier]].
+Qualified Identifiers are used in case where there an ambiguity as to which entity an identifier can refer to. In such cases, the identifier is paired with a [[semantics.identifiers.qualifier]].
 
 An identifier can be "fully qualified" by combining all possible qualifiers. For example, a complete file path. 
 

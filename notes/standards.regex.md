@@ -1,7 +1,7 @@
 ---
 id: a7dyttdu6xtjr6zv3q205we
 title: Regex
-desc: 'Regular Expressions'
+desc: Regular Expressions
 updated: 1713977048592
 created: 1713974732773
 ---

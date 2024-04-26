@@ -10,6 +10,6 @@ You'll find this term being used at some places in these notes. The term "Object
 
 ## Reasons why it makes sense
 
-1. [[lexicography.identifiers.qualifier]]s does refer to a lexical token which is used to remove ambiguity while identifying entities. So that's where this comes from.
+1. [[semantics.identifiers.qualifier]]s does refer to a lexical token which is used to remove ambiguity while identifying entities. So that's where this comes from.
 2. Another reason is Java's [[lang.java.paradigms.oo.inner class.member.qualified this]].
 3. These keywords are used in object contexts, not static ones.

@@ -25,7 +25,19 @@ schemas:
   - id: paradigms
   - id: design
   - id: lib
+    children:
+      - string
+      - array
   - id: ds
+    children: 
+      - stack
+      - queue
+      - hashmap
+  - id: array
+  - id: string
+  - id: stack
+  - id: queue
+  - id: hashmap
   - id: exceptions
     template: zzz-template.lang.exceptions
   - id: concurrency
