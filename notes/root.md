@@ -2,7 +2,7 @@
 id: 7ncn3al6mmutkhgoesulce9
 title: Computer Science
 desc: ''
-updated: 1713589705431
+updated: 1714217204249
 created: 1713296516553
 ---
 
@@ -13,7 +13,7 @@ These notes are arranged into the below topics:
 - Data
 - Execution
 - Languages
-- Lexicography
+- Semantics
 - [[paradigm]]
 - Philosophy
 - Programming
