@@ -1,5 +1,5 @@
 ---
-id: s5hnpiomzyahn4qfxslva4t
+id: 2yxoag7cy6pobzuxg2ef56b
 title: Serial Garbage Collector
 desc: ''
 updated: 1713688373239

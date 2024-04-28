@@ -1,5 +1,5 @@
 ---
-id: p0kqaea5ptumx341np8d20x
+id: qwlx9b919ijpuf6eihyvulw
 title: Checked Exceptions
 desc: ''
 updated: 1708610848816

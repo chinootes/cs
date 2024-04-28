@@ -1,5 +1,5 @@
 ---
-id: nrfw5cgfmejk2no94kayglu
+id: pyf900t53d9jsnty47lfjma
 title: Garbage collector
 desc: ''
 updated: 1713721391552

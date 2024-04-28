@@ -1,10 +1,11 @@
 ---
-id: kxymvbuel2h0atox4429vvl
+id: ejs8lnn6txy9zzk51cot50f
 title: Enums
 desc: ''
 updated: 1712885350265
 created: 1712885042093
 ---
+
 
 [[type theory.data types.enum]] in Java.
 

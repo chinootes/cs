@@ -1,10 +1,11 @@
 ---
-id: xohiigiyetel0n5pgw0ekva
+id: llgikv02pdx166fjica5a5h
 title: Class Cast Exception
 desc: ''
 updated: 1708402491304
 created: 1708402477928
 ---
+
 
 An exception occurs when a class which is not the superclass or which was not originally the superclass is casted.
 

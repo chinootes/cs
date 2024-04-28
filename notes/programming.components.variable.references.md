@@ -1,10 +1,11 @@
 ---
-id: gz94pgtztppo7a4z12wdwv6
+id: 00uy9tztc2mie9q53gdag6t
 title: Reference Variables
 desc: ''
 updated: 1708612968351
 created: 1708611231195
 ---
+
 
 - References are strongly typed
 

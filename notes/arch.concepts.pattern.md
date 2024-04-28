@@ -1,5 +1,5 @@
 ---
-id: 2g9c4wetjysax2c284fmz0g
+id: oznzjbnsj7x1b35vi4knruc
 title: Architecture Pattern
 desc: ''
 updated: 1708751170588

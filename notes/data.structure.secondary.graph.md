@@ -1,10 +1,11 @@
 ---
-id: wml03xge059s3rvs04tvjdc
+id: 8i5ct24t4eehl3vyjisdolm
 title: Graphs
 desc: ''
 updated: 1709140303021
 created: 1708963099301
 ---
+
 
 Network that help define and visualise relationships between various components.
 

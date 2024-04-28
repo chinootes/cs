@@ -1,10 +1,11 @@
 ---
-id: uqhl94rexh6xhzkz18gq1ua
+id: fu6r0cqy258dijdqtc7qq6u
 title: Topological Sort
 desc: ''
 updated: 1709139717142
 created: 1709139614567
 ---
+
 
 It is a way of sorting a Directed Acyclic Graph in an order where for any edge $u \to v$, u always comes before v in the sort.
 

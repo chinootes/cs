@@ -1,10 +1,11 @@
 ---
-id: sh13igabnewfsrev4o9oyy6
+id: m7y9m63zohfoi6j7v35dvp3
 title: Shadowing/Hiding
 desc: ''
 updated: 1708362646910
 created: 1708356366427
 ---
+
 
 - **Overriding** => In case of non-static methods
 

@@ -1,10 +1,11 @@
 ---
-id: kk4ef4ijlzu7zs3k6hel27o
+id: mgpimhmapx12phspf75r1lt
 title: Blank Final Member
 desc: ''
 updated: 1712930209997
 created: 1712929803904
 ---
+
 
 ## or Blank final variable
 

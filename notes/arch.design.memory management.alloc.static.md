@@ -1,5 +1,5 @@
 ---
-id: y0d9qba71drg24u6h6pd3t0
+id: o20qy7y1yieivdgkfs1jmnm
 title: Static Memory Allocation
 desc: ''
 updated: 1713803956578

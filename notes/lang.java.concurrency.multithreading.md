@@ -1,10 +1,11 @@
 ---
-id: jykhz7pwchhdipdk9bluyqp
+id: jik03wh5g5jxxfz2aklbmub
 title: Multithreading
 desc: ''
 updated: 1713125620725
 created: 1713121358159
 ---
+
 
 ## Creating a thread
 

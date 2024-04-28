@@ -1,10 +1,11 @@
 ---
-id: algcpxdi0s90k74eafn4rbk
+id: 0rp9orrk10zql5bb7py54yj
 title: Serialization
 desc: ''
 updated: 1713644114467
 created: 1712946929354
 ---
+
 
 - 
 - An object can be made Serializable by implementing the [[lang.java.lib.interfaces.marker.serializable]].

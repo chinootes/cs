@@ -1,10 +1,11 @@
 ---
-id: d8z9roddg1xumfq26iyfupw
+id: wh8ac6w55ypywm0f7key13a
 title: Design
 desc: ''
 updated: 1708448665973
 created: 1708448596209
 ---
+
 
 - Pictures the implementation of some specific concerned domain.
 - Comparatively easier to change at a later stage according to changing requirements.

@@ -1,5 +1,5 @@
 ---
-id: p1ty1b2ir8g56shkio6srld
+id: vcsi5m3dhjr3dsc0cnlbarl
 title: Constructor Injection
 desc: ''
 updated: 1708452314793

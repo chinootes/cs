@@ -1,10 +1,11 @@
 ---
-id: n7u2e2qciuveu0n4obbblqd
+id: 3y962961axl79uijuaseom8
 title: Object Cloning
 desc: ''
 updated: 1708401406810
 created: 1708401391429
 ---
+
 
 ## Shallow Cloning
 

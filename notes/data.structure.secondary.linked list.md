@@ -1,5 +1,5 @@
 ---
-id: g5b5sid21soz1gxsh50x71g
+id: 6k0a11nnguc48vxbulu9mw8
 title: Linked List
 desc: ''
 updated: 1713639791692

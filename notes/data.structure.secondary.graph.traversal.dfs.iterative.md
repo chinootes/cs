@@ -1,10 +1,11 @@
 ---
-id: hmmx09b05y6dh6p06zp9qxw
+id: k17i0p02zclyauljqyd2b9b
 title: Iterative Implementation of DFS
 desc: ''
 updated: 1709139913239
 created: 1709138223075
 ---
+
 
 ```python
 marked = [False] * G.size()

@@ -1,5 +1,5 @@
 ---
-id: aaky2ofxaq6kxqkpcdmhoc3
+id: v0qiwwnyak1v608xe3u7dm9
 title: Exception declaration with Method overriding
 desc: ''
 updated: 1712942610502

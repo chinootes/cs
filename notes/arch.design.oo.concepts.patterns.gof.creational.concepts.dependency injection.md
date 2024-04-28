@@ -1,5 +1,5 @@
 ---
-id: po0d9t61b62cl35val73svm
+id: tag4ci15orv7zzfhpppsh1t
 title: Dependency Injection
 desc: ''
 updated: 1708452396182

@@ -1,10 +1,11 @@
 ---
-id: vyx58ro2hbq206ttprvsmie
+id: 8c00omb6sa7uu9w3lhmxbgj
 title: String Conversion
 desc: ''
 updated: 1712863891091
 created: 1712863873567
 ---
+
 
 - Conversion from primitive type to String
   - Done through [[lang.java.lib.classes.wrappers]] which override the toString() method

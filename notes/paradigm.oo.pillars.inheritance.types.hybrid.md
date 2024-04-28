@@ -1,10 +1,11 @@
 ---
-id: oftw1bgd1pk3232divzoosb
+id: kjroan1hf650k71w5qkjub2
 title: Hybrid Inheritance
 desc: ''
 updated: 1708240294146
 created: 1708240267057
 ---
+
 
 
 ```mermaid

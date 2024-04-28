@@ -1,10 +1,11 @@
 ---
-id: h6s41pw735syv1ql0awc3rh
+id: tz7zcxetfq1vhcgh95l1ote
 title: Static Method
 desc: ''
 updated: 1708363064536
 created: 1708362791731
 ---
+
 
 A [[paradigm.oo.components.types.static]] method
 

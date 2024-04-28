@@ -1,10 +1,11 @@
 ---
-id: 06tjdmcl59o1m2ujiq7vb4n
+id: iqd6dnpsrdzue4l614zf7go
 title: Open Recursion
 desc: ''
 updated: 1708364614947
 created: 1708266838163
 ---
+
 
 When a method within an object invokes another method of the same object via [[paradigm.oo.context.object.self-reference]], it is considered open recursion.
 

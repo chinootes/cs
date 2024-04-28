@@ -1,5 +1,5 @@
 ---
-id: 9veap8xngwqxjt6vdqywshq
+id: ncaht3cft7462bkhiph2kak
 title: Disadvantages of Pointers
 desc: ''
 updated: 1708613345877

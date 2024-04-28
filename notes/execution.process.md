@@ -1,10 +1,11 @@
 ---
-id: cu9w67v0of0slzupuhkw6qa
+id: agm31jfpf7u95trbbk82clt
 title: Process
 desc: ''
 updated: 1713124789505
 created: 1713124712403
 ---
+
 
 Process is a set of instructions.
 

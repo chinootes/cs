@@ -1,5 +1,5 @@
 ---
-id: n52rfrns6pz7bqr1kf45dde
+id: 23b3055463doyiezfy1ri3r
 title: Marker Interface
 desc: ''
 updated: 1708452742802

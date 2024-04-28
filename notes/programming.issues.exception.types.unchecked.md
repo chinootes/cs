@@ -1,5 +1,5 @@
 ---
-id: m4iuqa4euwvz7bssotax5mq
+id: jrmuv52xrppabjxij7k6glk
 title: Unchecked Exceptions
 desc: ''
 updated: 1708610835830

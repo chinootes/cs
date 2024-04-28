@@ -1,10 +1,11 @@
 ---
-id: 29e99omt00k6qwrgd4pbil2
+id: 60bq8mkkvu16sacffrxsn3k
 title: Event Driven
 desc: ''
 updated: 1709733487834
 created: 1708622154964
 ---
+
 
 
 - Programming paradigm in which the flow of the program is determined by events such as user actions (mouse clicks, key presses), sensor outputs, or message passing from other programs or threads.

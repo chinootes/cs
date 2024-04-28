@@ -1,10 +1,11 @@
 ---
-id: xenxrglvv85wq04m5h29mdt
+id: h5kvwhuyrf6vt5mf0nly4bo
 title: Serialization of Objects
 desc: ''
 updated: 1712948918860
 created: 1708452881015
 ---
+
 
 - Mechanism of writing the state of an object into a byte stream.
 - Converting state of an object into a form that can be persisted or transported.

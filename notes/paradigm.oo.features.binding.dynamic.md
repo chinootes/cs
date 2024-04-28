@@ -1,10 +1,11 @@
 ---
-id: 7o19qqnvgixqmt9g4bp4h6e
+id: sw1s764cvfhj2ywa3xv682f
 title: Dynamic Binding
 desc: ''
 updated: 1708446217496
 created: 1708355056856
 ---
+
 
 
 When the type of object is determined at runtime.

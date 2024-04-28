@@ -1,5 +1,5 @@
 ---
-id: vy07bshn7tutwwnd5nwmsk8
+id: p6d2xm7cpsxw0xriyydiamf
 title: Manual Memory Management
 desc: ''
 updated: 1708613180112

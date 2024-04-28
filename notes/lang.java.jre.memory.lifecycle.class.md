@@ -1,5 +1,5 @@
 ---
-id: rrmlfpyk3js70858mfb6gee
+id: 4jwr83pp35qmtwnxuvlv85k
 title: Class lifecycle in memory
 desc: ''
 updated: 1713803758600

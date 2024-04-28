@@ -1,10 +1,11 @@
 ---
-id: pomnv6g69gvwkkw5lbvtcd9
+id: vnqup49endqju6k389uc0br
 title: Inversion of Control
 desc: ''
 updated: 1708272212706
 created: 1708272168945
 ---
+
 
 
 - IoC inverts the flow of control as compared to traditional control flow.

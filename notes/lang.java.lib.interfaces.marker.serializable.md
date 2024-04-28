@@ -1,5 +1,5 @@
 ---
-id: 2crm1y7unjq0jd2tmwyob3d
+id: mbwwjk3x17fjagziw7d0ky6
 title: Serializable
 desc: ''
 updated: 1713643935564

@@ -1,10 +1,11 @@
 ---
-id: wqsgc80l7irrfru0yd60rgv
+id: o4x75g3xj5hvnhxn08evzyz
 title: Order of Invokation of initializer blocks and constructor
 desc: ''
 updated: 1712940599009
 created: 1712940555485
 ---
+
 
 1. Parent static block
 2. Child static block

@@ -1,10 +1,11 @@
 ---
-id: x3o9601w94tnkmzjeoc1f60
+id: yxv2rq5avd4keujvcsf8u6n
 title: System
 desc: ''
 updated: 1713121976754
 created: 1712994244922
 ---
+
 
 ```java
 class Java.lang.System extends Object

@@ -1,10 +1,11 @@
 ---
-id: djk7lga01w2ltbikyvq1mtf
+id: 4dnt7ngjp0op4p5w4uf0g58
 title: Bad Code Can Lead to Good Code
 desc: ''
 updated: 1708265401567
 created: 1708263896599
 ---
+
 
 Bad code can sometime be used in certain scenarios. You can avoid principles just because [[philosophy.a principle in principle]].
 

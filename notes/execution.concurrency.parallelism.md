@@ -1,10 +1,11 @@
 ---
-id: 7h8xdrmrab4mqo59fm4vruq
+id: 2pwg91eyqyptfoupw57xurw
 title: Parallel
 desc: ''
 updated: 1713124461412
 created: 1713123865130
 ---
+
 
 Parallelism is when multiple computations are *executed* at a time. Therefore at any instant, multiple executions are ongoing simultaneously. 
 

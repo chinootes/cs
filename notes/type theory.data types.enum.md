@@ -1,5 +1,5 @@
 ---
-id: eriko0qvndg5mlp8gr9umek
+id: r1t0gj9h9qzcsp1bd3v5ksj
 title: Enum (Enumerated Types)
 desc: ''
 updated: 1713902292806

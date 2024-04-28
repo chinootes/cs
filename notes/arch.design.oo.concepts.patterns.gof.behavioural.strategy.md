@@ -1,5 +1,5 @@
 ---
-id: ida3xlx32edbl4h1p1srw86
+id: zmxmlv5zqj4taagk248pi3o
 title: Strategy Pattern
 desc: ''
 updated: 1708262576515

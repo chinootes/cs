@@ -1,10 +1,11 @@
 ---
-id: w71erhkqhzr5ja5mnn2z7tm
+id: ymh0ogbchjj4zi6nl5k6vn9
 title: System Environment
 desc: ''
 updated: 1713114264919
 created: 1713113432692
 ---
+
 
 This environment is a system-dependent mapping from names to values which is passed from parent to child processes. Primarily the set of variables that define or control certain aspects of process execution.
 

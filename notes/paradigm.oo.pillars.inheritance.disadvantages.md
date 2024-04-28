@@ -1,10 +1,11 @@
 ---
-id: bj9z8hgq5gn0g9o74cac4j3
+id: 6qzili1xlxjcqtvx9fopjij
 title: Disadvantages of Inheritance
 desc: ''
 updated: 1708265883853
 created: 1708261186308
 ---
+
 
 1. You can't change the implementation provided by superclass at runtime. Inheritance is defined at compile time.
 2. Inheritance is said to "break encapsulation" by exposing a subclass to protected members of parent class

@@ -1,10 +1,11 @@
 ---
-id: ew1eg1feey36d60prwjz96y
+id: 8h60y5yvyhfe2ts2gm228ub
 title: Downcasting
 desc: ''
 updated: 1708402501586
 created: 1708402083794
 ---
+
 
 Casting from superclass to subclass
 

@@ -1,10 +1,11 @@
 ---
-id: vhzls27llc4j8tsa8sonuum
+id: bqrul0cyjmdv0plhgeg8exa
 title: Overriding
 desc: ''
 updated: 1708239468111
 created: 1708180735169
 ---
+
 
 When a child class has same method as that of a parent class, that method is said to override the parent's method.
 

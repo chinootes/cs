@@ -1,10 +1,11 @@
 ---
-id: wbyp4yeee8qpo2jmlvobjvy
+id: 65lawp88m7d592c0lvrgfvu
 title: Static Methods can't access instance(non-static) variables
 desc: ''
 updated: 1708363052450
 created: 1708362974418
 ---
+
 
 ```java
 class A{

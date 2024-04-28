@@ -1,5 +1,5 @@
 ---
-id: x4u6vsolrjcgx3ckv3t5085
+id: a7crvbexqg9euwget6u990s
 title: Messaging Pattern
 desc: ''
 updated: 1708751217299

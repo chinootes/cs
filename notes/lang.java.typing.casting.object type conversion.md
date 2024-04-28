@@ -1,10 +1,11 @@
 ---
-id: mpyjpsvm6uuozacuhrr78yf
+id: ollv9jqhq9ai9508dpxinvg
 title: Object Type Conversion
 desc: ''
 updated: 1712884475326
 created: 1712883976229
 ---
+
 
 - Similarity with primitive conversion
 

@@ -1,5 +1,5 @@
 ---
-id: xbbmh059cyr58w5l55kihjo
+id: 4it54b4d0ycxe3j8tsw70xh
 title: Abstract Class for Providing Flexible Behavior for Related Classes
 desc: ''
 updated: 1708262876997

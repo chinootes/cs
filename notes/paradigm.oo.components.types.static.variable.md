@@ -1,10 +1,11 @@
 ---
-id: bdevxgknbc20dqj03u7kjpg
+id: ervkc2axbp61b1ht9kssica
 title: Static Variable
 desc: ''
 updated: 1708363080012
 created: 1708362605705
 ---
+
 
 ## Use case
 

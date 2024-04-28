@@ -1,5 +1,5 @@
 ---
-id: rncr11aflhfcq2i6xx7qgmc
+id: cfsk5vr2cq47ajeq1g0l0eb
 title: Singleton
 desc: ''
 updated: 1708449165922

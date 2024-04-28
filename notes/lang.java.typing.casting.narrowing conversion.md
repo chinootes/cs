@@ -1,10 +1,11 @@
 ---
-id: 808e4wl52kfqknje65r0phf
+id: y3jw0ns6sq9drziydn57ycy
 title: Narrowing Conversion in Java
 desc: ''
 updated: 1712863708602
 created: 1712863441863
 ---
+
 
 [[lang.java.typing.casting.narrowing conversion]]
 [[type theory.casting.explicit]]

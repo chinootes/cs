@@ -1,10 +1,11 @@
 ---
-id: g4jlmqak41nfmjmxzrfznex
+id: bs8w80e6t3q58oxuhum2tyd
 title: Inheritance
 desc: ''
 updated: 1708240303417
 created: 1708233137622
 ---
+
 Mechanism through which an object acquires all the properties and methods of its parent
 
 ## What kind of relationship?

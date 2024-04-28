@@ -1,10 +1,11 @@
 ---
-id: u0zr5crns1nqpfb1uuisw6i
+id: nah4ul0tx2ot3cnd0yekm5c
 title: Abstract Class
 desc: ''
 updated: 1708265520458
 created: 1708252825421
 ---
+
 
 [[paradigm.oo.components.types.abstract.class]]es are mostly used in one of two ways - 
 

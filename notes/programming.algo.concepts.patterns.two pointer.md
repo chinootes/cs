@@ -1,5 +1,5 @@
 ---
-id: x1w0j38fp6rvbw8vui3ka9k
+id: 6gqhx4se2ipxki6lzxzl9ke
 title: Two Pointer
 desc: ''
 updated: 1712501879033

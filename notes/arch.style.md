@@ -1,10 +1,11 @@
 ---
-id: 1i9ud7ul9ptszkdq6yfdw7n
+id: oh69hw0l736w4dkht9ryh0j
 title: Architecture Style
 desc: ''
 updated: 1708751041032
 created: 1708751012807
 ---
+
 
 At a very high-level, architecture style tells us how to organize our code. It’s the highest level of granularity and it specifies layers, high-level modules of the application and how those modules and layers interact with each other, the relations between them.
 

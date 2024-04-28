@@ -1,5 +1,5 @@
 ---
-id: veceshdiegyh32e0l7nsyu0
+id: f18j89rc7do1xicd96byaep
 title: GoF Design Pattern
 desc: ''
 updated: 1708452512866

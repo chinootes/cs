@@ -1,5 +1,5 @@
 ---
-id: lgg2j2c98p9sw23dmxx25pa
+id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
 updated: 1713682043380

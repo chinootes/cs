@@ -1,5 +1,5 @@
 ---
-id: pvoymulz9vhif0jofkiypnt
+id: pyq2adfhs0qrpnl22h7g973
 title: Throughput Collector
 desc: ''
 updated: 1713688444856

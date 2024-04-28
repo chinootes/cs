@@ -1,10 +1,11 @@
 ---
-id: b64sk34fy5xp18ok43p5x7x
+id: 9tn4qoat4ksb1kha3p77zhe
 title: ExecutorService
 desc: ''
 updated: 1713125234893
 created: 1713125223294
 ---
+
 
 ExecutorService is an interface which allows us to execute tasks on thread asynchronously
 

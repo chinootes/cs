@@ -1,10 +1,11 @@
 ---
-id: adxa5blk0pfrnm49q17716a
+id: d7x4j6tfxzuyokw2cwqmjcj
 title: Aggregation
 desc: ''
 updated: 1708265766960
 created: 1708261345190
 ---
+
 
 - Special case of [[paradigm.oo.pillars.association]]
 - When a class has another class' object as a data member.

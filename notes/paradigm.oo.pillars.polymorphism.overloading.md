@@ -1,10 +1,11 @@
 ---
-id: imniw6kffozfo0mp37lhgq3
+id: wtlei2k4xr88wegjltw5bv3
 title: Overloading
 desc: ''
 updated: 1708180637121
 created: 1708180459082
 ---
+
 
 When a token can be used for multiple purposes. Typically used in context of  methods i.e. **method overloading**.
 

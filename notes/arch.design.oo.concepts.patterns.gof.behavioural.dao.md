@@ -1,5 +1,5 @@
 ---
-id: ckytr8qz9uyrfyzrtmmf2c6
+id: b96qn4h8w1ldhtwgilnszjm
 title: Data Access Object
 desc: ''
 updated: 1708452486060

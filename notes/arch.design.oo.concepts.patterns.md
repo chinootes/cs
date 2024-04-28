@@ -1,5 +1,5 @@
 ---
-id: towp0hrtzdzk14co3dub4tv
+id: g2xyppezmzmbtru51ncc3zo
 title: Design Pattern
 desc: ''
 updated: 1708452495843

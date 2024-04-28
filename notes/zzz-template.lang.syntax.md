@@ -1,10 +1,11 @@
 ---
-id: rre28shun1wx5ldrxs7dsk2
+id: a6jrwxzoqblf00mkuw4mj1k
 title: Syntax
 desc: ''
 updated: 1712884786723
 created: 1709446248295
 ---
+
 
 ## Hello World
 

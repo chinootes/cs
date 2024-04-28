@@ -1,10 +1,11 @@
 ---
-id: dxbk44s2pzqg6930vplecfa
+id: fxxtzg00e2flrfoyfedf7a8
 title: Life Cycle
 desc: ''
 updated: 1713717554838
 created: 1708456057866
 ---
+
 
 Stages in life of a program/execution.
 

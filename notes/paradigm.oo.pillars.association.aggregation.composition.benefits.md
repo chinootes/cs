@@ -1,5 +1,5 @@
 ---
-id: olh9smp6jy4s0bb6xarkyoe
+id: y9mjny2bohq7a3cheumfkce
 title: Benefits of Composition
 desc: ''
 updated: 1708276833795

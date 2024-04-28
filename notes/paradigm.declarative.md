@@ -1,10 +1,11 @@
 ---
-id: ms9cb3ub85evam47k1867eb
-title: Declarative 
+id: 63rgy8qmhxp9sjxvy63xr5q
+title: Declarative
 desc: ''
 updated: 1709733494145
 created: 1708622084318
 ---
+
 
 | [[paradigm.imperative]]                         | Declarative                  |
 |------------------------------------|------------------------------|

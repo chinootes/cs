@@ -1,5 +1,5 @@
 ---
-id: 4g2vkqsbn2j8k536cgc1xdv
+id: vsish7jx5cjbmjxbvakafoq
 title: Advantages of Pointers
 desc: ''
 updated: 1708613266891

@@ -1,10 +1,11 @@
 ---
-id: q2i75wgashetljgskifx30f
+id: cycr9ljbnb0i5tsmcw73ops
 title: Runtime Polymorphism
 desc: Dynamic Method Dispatch
 updated: 1708356059186
 created: 1708355544702
 ---
+
 
 Method [[paradigm.oo.pillars.polymorphism.overriding]] + [[paradigm.oo.features.binding.dynamic]] = **Runtime Polymorphism**
 

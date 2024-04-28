@@ -1,5 +1,5 @@
 ---
-id: fl33cgyb0rl5jff4v4zsa3g
+id: uzbmvkjib5rw18knkwxfdvv
 title: Setter Injection
 desc: ''
 updated: 1708452306858

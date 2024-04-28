@@ -1,10 +1,11 @@
 ---
-id: j8ia7hmunnn41deiodneeg2
+id: kkzt3iloch20y1g3p3e7drc
 title: Abstract Class as Stepping Stone
 desc: ''
 updated: 1708265430316
 created: 1708263551868
 ---
+
 
 ## From my own experience
 

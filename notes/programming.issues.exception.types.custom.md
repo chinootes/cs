@@ -1,5 +1,5 @@
 ---
-id: g6ge1xuv2ula1ezi1fu58l4
+id: ptkubnp6al0iatpt67j7ikz
 title: Custom Exceptions
 desc: ''
 updated: 1708610974778

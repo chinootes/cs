@@ -1,10 +1,11 @@
 ---
-id: 0le5ah1d4sf9zby7hrfgbst
+id: zs5h321jp53uqty95x9km7z
 title: Self Reference
 desc: ''
 updated: 1712955655862
 created: 1708364148642
 ---
+
 
 Used to access members of current class.
 

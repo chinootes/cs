@@ -1,10 +1,11 @@
 ---
-id: 31v0sasm45sr0g8ff2df7ty
+id: wjdk75h74447gt9vkm58l11
 title: Representing Graphs
 desc: ''
 updated: 1713799919423
 created: 1708969946105
 ---
+
 
 Graphs can be represented in the following forms in memory. 
 

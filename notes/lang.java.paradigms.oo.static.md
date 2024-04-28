@@ -1,10 +1,11 @@
 ---
-id: 2z8xdm9vq3jixhezvm672rd
+id: kdkwz7hb4rdakegyn8wnfa7
 title: Static in Java
 desc: ''
 updated: 1712933182605
 created: 1712932950172
 ---
+
 
 ## Example of class containing static members
 

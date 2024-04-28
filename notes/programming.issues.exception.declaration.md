@@ -1,5 +1,5 @@
 ---
-id: 8itdkl37u4k5miyi6trjqpo
+id: atxefy1po3ak9im0rgitjbu
 title: Exception Declaration
 desc: ''
 updated: 1712942310579

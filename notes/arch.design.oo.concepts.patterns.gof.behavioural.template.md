@@ -1,5 +1,5 @@
 ---
-id: 3vkrzzyai2q6d13i1cu8g6s
+id: 5teyl97k8vga3khlcmr9kws
 title: Template Method
 desc: ''
 updated: 1708452794899

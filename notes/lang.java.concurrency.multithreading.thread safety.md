@@ -1,10 +1,11 @@
 ---
-id: sna2umv15ruskiu91590dgn
+id: 3uaj7ngwih7npv8vlfs7k6d
 title: Thread Safety
 desc: ''
 updated: 1713648544553
 created: 1713125526427
 ---
+
 
 How to make a block of code thread safe?
 

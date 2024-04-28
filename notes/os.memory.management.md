@@ -1,5 +1,5 @@
 ---
-id: ijfryhtekkngvig2hbmk5hy
+id: x7nmks70ns14mh5k96w9aov
 title: Memory Management
 desc: ''
 updated: 1713819658986

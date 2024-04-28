@@ -1,5 +1,5 @@
 ---
-id: yvavygx7r5i5yioj6avcqip
+id: pakdzkludowl4h6pf8xuiap
 title: Creational Design Pattern
 desc: ''
 updated: 1708448909113

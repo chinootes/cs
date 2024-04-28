@@ -1,5 +1,5 @@
 ---
-id: alslkrkckyhe5cjua1srjvw
+id: fi3xznhjsf8ezkolih7torp
 title: Collection Frameworks Cheatsheet
 desc: ''
 updated: 1713680858177

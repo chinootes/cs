@@ -1,5 +1,5 @@
 ---
-id: 3ej2o7rfvqdajk7glfoy974
+id: 9fx2k1xmp6jbhq9dr8oheij
 title: Passing Arguments
 desc: ''
 updated: 1713720742498

@@ -1,10 +1,11 @@
 ---
-id: o389kh1jix8i3o7b8b0cq9x
+id: k4nl867fpm4pfydcj852798
 title: Composition over Inheritance
 desc: ''
 updated: 1708262444784
 created: 1708260356796
 ---
+
 
 aka **Composite reuse Principle**.
 

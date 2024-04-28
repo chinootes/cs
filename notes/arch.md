@@ -1,10 +1,11 @@
 ---
-id: d7appkudgoi8it3ofkh0x2o
+id: 0xgibr34qhbv1edksyoxakk
 title: Architecture
 desc: ''
 updated: 1708447523825
 created: 1708428859384
 ---
+
 
 - Abstract view of whole system.
 - Architecture represents scaffolding, the frameworks that everything else sits upon.

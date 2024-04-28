@@ -1,5 +1,5 @@
 ---
-id: yu2wmaelva6j2ym1b676ytt
+id: ucsx3rlvpei4lbrhek37vc9
 title: Structural Design Pattern
 desc: ''
 updated: 1708448958283

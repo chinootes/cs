@@ -1,10 +1,11 @@
 ---
-id: 7y06se6mdlgmuptqgjdn5kq
+id: spgve0qid82ofaajgb320o3
 title: Disadvantages of Composition
 desc: ''
 updated: 1708265844048
 created: 1708261398271
 ---
+
 
 1. You can't change the implementation provided by superclass at runtime. Inheritance is defined at compile time.
 2. Inheritance is said to "break encapsulation" by exposing a subclass to protected members of parent class

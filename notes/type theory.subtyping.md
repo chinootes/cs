@@ -1,10 +1,11 @@
 ---
-id: u0zchlnwra9vtamp9n5xwq2
+id: opkn0z4g79yp7j5e2mklyfv
 title: Subtyping
 desc: ''
 updated: 1708266679903
 created: 1708266675362
 ---
+
 
 
 A set of classes confirming to a certain interface signature which can override certain parts of the signature with their own implementations.

@@ -1,5 +1,5 @@
 ---
-id: e535ovqhdp5ek9224sje9t0
+id: uai5no7zojovfalfpx7cem9
 title: SOLID
 desc: ''
 updated: 1714217246753

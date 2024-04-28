@@ -1,10 +1,11 @@
 ---
-id: 2pntl6uimqytzppw1ymfm6y
+id: xgehdwmc34ycwb0emvyvrl9
 title: Composition
 desc: ''
 updated: 1708265802036
 created: 1708261345197
 ---
+
 
 - Special Case of [[paradigm.oo.pillars.association.aggregation]].
 - When one class is highly dependent on the other. For example, Library and books.

@@ -1,5 +1,5 @@
 ---
-id: hjdlslj4m4j6jb4l37qvnel
+id: 50g8rcmy0ufbguex5drq98m
 title: Literal Type
 desc: ''
 updated: 1713902749070

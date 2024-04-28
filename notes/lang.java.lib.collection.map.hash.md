@@ -1,5 +1,5 @@
 ---
-id: wkd10knym4zof3fc6jvgd0q
+id: 2flikwueaimsj1naahg6gn2
 title: HashMap
 desc: ''
 updated: 1713648663312

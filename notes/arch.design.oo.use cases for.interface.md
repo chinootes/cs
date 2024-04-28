@@ -1,10 +1,11 @@
 ---
-id: sf5sp0qvjua0xd95pcwu36w
+id: gxkes7w8872xgn4dm5m8tt9
 title: Interface
 desc: ''
 updated: 1708407631623
 created: 1708407587968
 ---
+
 
 ### Unrelated Classes
 

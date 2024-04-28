@@ -1,7 +1,7 @@
 ---
-id: vfrp9v1mq12m1c2jfnx2p3y
+id: 1fj0amo9zl17emd85fvbuph
 title: JDBC
-desc: 'Java Database Connectivity'
+desc: Java Database Connectivity
 updated: 1713723831982
 created: 1713723733992
 ---

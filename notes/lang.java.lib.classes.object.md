@@ -1,10 +1,11 @@
 ---
-id: 1b17wyzzn4hc4viaeybi3ra
+id: g0n2qy0stbfaw0ufqztcmji
 title: Object
-desc: 'Object Class'
+desc: Object Class
 updated: 1713121959500
 created: 1712985840849
 ---
+
 
 God class in Java - every class inherits this class implicitly
 

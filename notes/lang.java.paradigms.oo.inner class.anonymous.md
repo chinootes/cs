@@ -1,10 +1,11 @@
 ---
-id: i3hw5ksyabjb19n4zawipqu
+id: eftgp14mvvi6qvntpqbzjaf
 title: Anonymous Inner Class
 desc: ''
 updated: 1712937141120
 created: 1712937118927
 ---
+
 
 ```java
 main()

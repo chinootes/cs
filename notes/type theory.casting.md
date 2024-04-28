@@ -1,10 +1,11 @@
 ---
-id: ppg7qkqlebhx88reaijvrxk
+id: rn3m3a5d2ub5qeze8261o3h
 title: Casting
 desc: ''
 updated: 1708610289721
 created: 1708532454316
 ---
+
 
 Casting is the conversion of variable/object from one data type to another.
 

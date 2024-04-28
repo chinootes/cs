@@ -1,5 +1,5 @@
 ---
-id: musgroi45p5rx5912in6ojb
+id: f6lwf3ytkd2f80adq6eluvv
 title: Objects lifecycle in memory
 desc: ''
 updated: 1713807836105

@@ -1,10 +1,11 @@
 ---
-id: s18oxzysma1kke4ryoy7y8t
+id: 77x8dai3uv1j88cev140js1
 title: Class
 desc: ''
 updated: 1708179067252
 created: 1708178961718
 ---
+
 
 
 - A class is a set of objects that have the same structure and exhibit the same behavior.

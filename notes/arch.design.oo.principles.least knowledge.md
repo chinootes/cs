@@ -1,10 +1,11 @@
 ---
-id: 5p2u2l4kks65dp3kuf526zy
+id: gp0ssaaz2j2b60tnjoomztr
 title: Law of Demeter or Principle of Least Knowledge
 desc: ''
 updated: 1708779350045
 created: 1708779284512
 ---
+
 
 > Don't talk to strangers.
 

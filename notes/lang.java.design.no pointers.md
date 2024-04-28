@@ -1,5 +1,5 @@
 ---
-id: qcv0fje2p70zgxtboj0563l
+id: 02fn6fs88mdjr1r02gikfuo
 title: No pointers
 desc: ''
 updated: 1713723425342

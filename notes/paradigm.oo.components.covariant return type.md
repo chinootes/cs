@@ -1,10 +1,11 @@
 ---
-id: 86y76iubiyrpvkrgh5neg49
+id: 4gybc2jwtoeox3ki500srhd
 title: Covariant Return Type
 desc: ''
 updated: 1708239448883
 created: 1708239382370
 ---
+
 
 When [[type theory.variance]] of return types if covariant.
 

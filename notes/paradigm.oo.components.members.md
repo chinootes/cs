@@ -1,10 +1,11 @@
 ---
-id: o570qgvv6bxq30qdjl8x0mn
+id: le1v6tba4z3nykh4cfhzodi
 title: Members of a class
 desc: ''
 updated: 1708179891332
 created: 1708179756720
 ---
+
 
 Members of class are entities which are part of the class. These can be categorised on basis of ownership and on basis of their type.
 

@@ -1,10 +1,11 @@
 ---
-id: 2417fhwdcstfomven5lddt9
+id: 6yfy66pd40yrpmh4au5z1sf
 title: Variance
 desc: ''
 updated: 1708358297412
 created: 1708237966152
 ---
+
 
 Variance defines how the type relations of complex types will vary or hold in their components( entities and components in programming languages like enumerables (enums), functions, arrays, lists etc).
 

@@ -1,5 +1,5 @@
 ---
-id: 7e3zz54dgkqjh9sew5nbqla
+id: q1epee590dzpf5zvcwfd82c
 title: Java Native Interfaces (JNI)
 desc: ''
 updated: 1713689980968

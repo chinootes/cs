@@ -1,5 +1,5 @@
 ---
-id: n7thvfcdolejajmzs4p8ev4
+id: rktm870v3vwxupjeiphdsyj
 title: LIFO
 desc: ''
 updated: 1713637349665

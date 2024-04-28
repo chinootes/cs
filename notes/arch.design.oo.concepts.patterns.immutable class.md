@@ -1,5 +1,5 @@
 ---
-id: 540jfcc34ppk8rv2ti58uhl
+id: c5elrg6xfbs9jqfrh4kqo2e
 title: Immutable Class
 desc: ''
 updated: 1712859749758

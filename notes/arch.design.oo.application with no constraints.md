@@ -1,10 +1,11 @@
 ---
-id: 44htsikkj5eek54erdet52y
+id: dqenalaejn9limg23jb4v1y
 title: Application with No Constraints
 desc: ''
 updated: 1708447229538
 created: 1708447133119
 ---
+
 
 #interview-question
 

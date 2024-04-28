@@ -1,10 +1,11 @@
 ---
-id: 9pb2kqfks3q23sdqidit953
+id: lltawdg3ubxo5lujxld7kff
 title: String Comparison
 desc: ''
 updated: 1713644157556
 created: 1711644046817
 ---
+
 
 Strings class implements [[lang.java.lib.interfaces.marker.comparable]].
 

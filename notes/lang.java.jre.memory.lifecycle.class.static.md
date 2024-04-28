@@ -1,5 +1,5 @@
 ---
-id: 5t5ka4s5kq8fy6pqdioqxdd
+id: v3bj7bjreqqwo2npxbiz7c6
 title: Static members' lifecycle in memory
 desc: ''
 updated: 1713803859132

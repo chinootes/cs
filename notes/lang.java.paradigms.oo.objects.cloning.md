@@ -1,10 +1,11 @@
 ---
-id: c1ss03qpecs4uh8mdqeqv7v
+id: lxfnzfx9x4xdx3pxjcvt5lq
 title: Object Cloning in Java
 desc: ''
 updated: 1713644137262
 created: 1712939265697
 ---
+
 
 
 The usual [[paradigm.oo.components.object.cloning]] ways work just as well in Java. However, clone() method is much easier and can be used to overcome the limitations of those methods.

@@ -1,10 +1,11 @@
 ---
-id: lowbrvvwi2771on5p057lhi
+id: gnqzf0k4jeg5f1a0o88l7iw
 title: Syntax
-desc: 'Java Syntax'
+desc: Java Syntax
 updated: 1712884868717
 created: 1709449585041
 ---
+
 
 ## Hello World
 

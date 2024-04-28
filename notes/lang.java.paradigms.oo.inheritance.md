@@ -1,10 +1,11 @@
 ---
-id: bch7o33cdf951wavbv1ob6p
+id: nvdgarhjfd5p8h8sjr24jh5
 title: Inheritance
 desc: ''
 updated: 1712932627101
 created: 1712930362832
 ---
+
 
 - Implemented by
 

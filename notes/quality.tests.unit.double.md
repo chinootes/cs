@@ -1,10 +1,11 @@
 ---
-id: 4xlimo3qcr6q90b3gk85tqc
+id: rf6lc7g80koa6arqqy46pxk
 title: Test Double
 desc: ''
 updated: 1708453800352
 created: 1708453622761
 ---
+
 
 - Like stunt double, but for testing.
 - For testing purposes, test double does the job of the code on which your code under test depends.

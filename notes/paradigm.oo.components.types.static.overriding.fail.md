@@ -1,10 +1,11 @@
 ---
-id: yn96wb28yho23ro3g3o9wkx
+id: 7jxqzwkqk645anv4qhlfei0
 title: Why compiler sometimes talks about overriding static methods?
 desc: ''
 updated: 1708357537745
 created: 1708357503158
 ---
+
 
 It means hiding.
 

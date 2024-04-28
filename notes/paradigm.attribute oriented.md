@@ -1,10 +1,11 @@
 ---
-id: t3p8fhbit9smwei78lji642
+id: twd0uu2ve17ad8o91smg2pm
 title: Attribute Oriented Programming (@OP)
 desc: ''
 updated: 1708622224063
 created: 1708622204865
 ---
+
 
 
 @OP or Attribute Oriented Programming allows a programmer to embed metadata(attributes) in the code using annotations, directives etc.

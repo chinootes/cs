@@ -1,10 +1,11 @@
 ---
-id: x2aqdotlv13oogpckapkxuu
+id: 7azetbc1vf0zr2w38es3xj8
 title: Accessing Static Members using Objects
 desc: ''
 updated: 1708362534050
 created: 1708362481571
 ---
+
 
 Its possible to write f.classMethod(). It is legal but a bad idea, since it causes confusion. The instance is not important in case of class methods. Only the declared type of 'f' matters.
 

@@ -1,10 +1,11 @@
 ---
-id: k20g1bpp5x7ol75d8eafwp5
+id: 7poa9hivsu7sllcllsenfai
 title: Numeric Promotion in Inter-type operations
 desc: ''
 updated: 1712883921435
 created: 1712883885609
 ---
+
 
 It is necessary both numeric operands are compatible in size in an operation. If not, they're converted.
 

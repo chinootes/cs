@@ -1,10 +1,11 @@
 ---
-id: 9i38g7fwrhxxbcafajh9ngz
+id: 4s0ipg8desh6fubsxc4m2gj
 title: Concurrent
 desc: ''
 updated: 1713124456062
 created: 1713123828910
 ---
+
 
 Concurrency is when multiple computations are *in progress* at a time. Although only one computation is being executed at an instant. 
 

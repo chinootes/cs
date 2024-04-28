@@ -1,10 +1,11 @@
 ---
-id: 8hcbbe6jvekm2ossfl77mf7
+id: 6xknjh9judn7gv1u5enjnye
 title: Multiple Inheritance not allowed
 desc: ''
 updated: 1712931078397
 created: 1712930551526
 ---
+
 
 - [[paradigm.oo.pillars.inheritance.types.multiple]] is not allowed in some languages
 - However, multiple interfaces can be implemented

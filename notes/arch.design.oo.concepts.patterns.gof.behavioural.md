@@ -1,5 +1,5 @@
 ---
-id: ogc8gkq9djbxutfuko8xjln
+id: lfbge412aqqemoxw6xhqqpk
 title: Behavioural Design Patterns
 desc: ''
 updated: 1708449005669

@@ -1,10 +1,11 @@
 ---
-id: 322kyyesffzssad1jqfqxp2
+id: ct60bbrwtvpngnot1hgmk4h
 title: Instance Initializer Block
 desc: ''
 updated: 1712940696274
 created: 1712930060562
 ---
+
 
 Instance initialisation block can be included in a class. Its simply a block with no name and is called whenever an instance is initialised.
 

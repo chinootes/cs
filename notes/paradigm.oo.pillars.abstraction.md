@@ -1,10 +1,11 @@
 ---
-id: a9b5rqkkhbtp7zg13oqr3m5
+id: zyni05gm55qvp3gsh03j0tw
 title: Abstraction
 desc: ''
 updated: 1708252439875
 created: 1708240727279
 ---
+
 
 Process of hiding implementation details and showing only functionality to user.
 

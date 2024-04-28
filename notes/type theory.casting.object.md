@@ -1,10 +1,11 @@
 ---
-id: wifv8ai3xq9lje6z48wlbni
+id: 4wjv9ybt93skcx2sc20e7ke
 title: Object Type Casting
 desc: ''
 updated: 1708401788332
 created: 1708401775088
 ---
+
 
 
 - Similarity with primitive conversion

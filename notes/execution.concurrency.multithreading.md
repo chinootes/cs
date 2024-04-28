@@ -1,10 +1,11 @@
 ---
-id: vlkt278jtluzw4y1k48kai8
+id: f557qwtkau5dfzasxfgnziu
 title: Multithreading
 desc: ''
 updated: 1713124909465
 created: 1713124210877
 ---
+
 
 - [[execution.process.thread]]-based multitasking - Process of executing multiple Threads simultaneously.
 - Only one thread can run at an instant in a process i.e. multithreading is [[execution.concurrency]].

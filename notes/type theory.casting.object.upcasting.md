@@ -1,10 +1,11 @@
 ---
-id: 37vk22vov000ufbp16up54v
+id: 0wsnptopg4m3w3wp2qtjngv
 title: Upcasting
 desc: ''
 updated: 1708402034893
 created: 1708401847240
 ---
+
 Casting from subclass to superclass
 
 ## Syntax

@@ -1,10 +1,11 @@
 ---
-id: 2jlvcoew0vso9qa86jl975p
+id: oshegwc6r1khfdh0gmkzt7f
 title: Access Specifiers
 desc: ''
 updated: 1708240662169
 created: 1708240637936
 ---
+
 
 ## Public
 

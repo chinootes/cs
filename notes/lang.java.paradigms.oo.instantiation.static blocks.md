@@ -1,10 +1,11 @@
 ---
-id: 904duzihing276rokw37g12
+id: 5vvm4jxk1k1crp1n9hyfa31
 title: Static Blocks
 desc: ''
 updated: 1712940731580
 created: 1712933087823
 ---
+
 
 - An unnamed block in a class prefixed by the static keyword.
 - Invokation

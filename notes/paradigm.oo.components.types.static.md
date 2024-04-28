@@ -1,10 +1,11 @@
 ---
-id: m36jmsgxgjvv4yh8t4vglnx
+id: vklzkbrsrz6jzd5swlmq8yn
 title: Static
 desc: ''
 updated: 1708363072541
 created: 1708357118105
 ---
+
 
 ## Ownership
 

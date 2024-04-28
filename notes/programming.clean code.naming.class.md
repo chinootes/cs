@@ -1,10 +1,11 @@
 ---
-id: 6vomqvn8fs9b7c56dev8bcj
+id: mtdpfiy61xvbe52l165ooyi
 title: Class Names
 desc: ''
 updated: 1713801171667
 created: 1708621541912
 ---
+
 
 #Cheatsheet
 

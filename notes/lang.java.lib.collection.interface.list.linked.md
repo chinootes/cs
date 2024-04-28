@@ -1,5 +1,5 @@
 ---
-id: zzfi2bv83qycdt1insthb3z
+id: lrm76nt33omgtngqrcv1kz2
 title: LinkedList
 desc: ''
 updated: 1713636260230

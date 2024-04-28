@@ -1,10 +1,11 @@
 ---
-id: n9rynktzsyif5sskvdctphr
+id: 47wwhyf6nb2leaw1jqr5opd
 title: Depth-first Search
 desc: ''
 updated: 1709137918093
 created: 1709137855133
 ---
+
 
 - Start at root node.
 - Explore each branch as far as possible (till its depth).

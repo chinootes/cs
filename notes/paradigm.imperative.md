@@ -1,10 +1,11 @@
 ---
-id: rxnpk3j7odz9k9srpmquvz5
-title: Imperative 
+id: sm5xirmlx8xbwly5s4gjovp
+title: Imperative
 desc: ''
 updated: 1709733499247
 created: 1708622041376
 ---
+
 
 | Imperative                         | [[paradigm.declarative]]                  |
 |------------------------------------|------------------------------|

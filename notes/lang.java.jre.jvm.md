@@ -1,10 +1,11 @@
 ---
-id: 3p1nxfktvypbwmnwwidkvr1
+id: y92rxfv7150ppi7fgius6g3
 title: JVM
 desc: ''
 updated: 1712855530696
 created: 1712855509823
 ---
+
 
 # Java Virtual Machine
 

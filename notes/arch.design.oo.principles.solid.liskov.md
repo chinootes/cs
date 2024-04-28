@@ -1,10 +1,11 @@
 ---
-id: s2xt1e699yr3xkjtcybok86
+id: qrstlbi0nj33325jeyjbnqt
 title: Liskov Substitution Principle
 desc: ''
 updated: 1708266519440
 created: 1708266505393
 ---
+
 
 > If B is a subtype of A, then objects of type A may be replaced with objects of type B (i.e., an object of type A may be substituted with any object of a subtype B) without altering any of the desirable properties of the program (correctness, task performed, etc.)
 
