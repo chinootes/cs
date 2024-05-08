@@ -11,5 +11,5 @@ created: 1713805253604
 - Not [[execution.process.thread]]-specific. All threads can access it => Not as safe as [[os.memory.ram.spaces.stack]]
 - Heap memory can lead to memory leaks.
 - Bigger than [[os.memory.ram.spaces.stack]]
-- Can have [[programming.memory management.manual]] or [[programming.memory management.implicit]] depending upon the implementation. But even an implicit memory management strategy needs to have an entity ([[programming.memory management.implicit.gc]]) cleaning up the data.
-- Prone to [[programming.memory management.leaks]]
+- Can have [[dev.memory management.manual]] or [[dev.memory management.implicit]] depending upon the implementation. But even an implicit memory management strategy needs to have an entity ([[dev.memory management.implicit.gc]]) cleaning up the data.
+- Prone to [[dev.memory management.leaks]]

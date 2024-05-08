@@ -2,7 +2,7 @@
 id: gnqzf0k4jeg5f1a0o88l7iw
 title: Syntax
 desc: Java Syntax
-updated: 1712884868717
+updated: 1714721082175
 created: 1709449585041
 ---
 
@@ -54,6 +54,33 @@ public class HelloWorld{
 ## Constants
 
 Prefixing `final` keyword to the  declaration+ initialization.
+
+### Blank final variable
+
+Final variable not initialised during declaration
+
+All final variables must be initialised, or else => Compile time error
+
+=> These have to be initialized later, in constructor or somewhere.
+
+> It might not sound correct to call it variable since by definition, `final` means constant, so by behaviour, it doesn't vary.
+> But these variables can vary once.
+
+#### Ways to initialise
+  
+- Can be initialised within an [[lang.java.paradigms.oo.instantiation.iib]]
+- Can be initialised within a constructor
+- If there are multiple constructors
+- Initialise in all of them, or else => Compile time error
+
+
+#### Blank static final member/_variable_
+
+Blank final _variable_ which is [[paradigm.oo.components.types.static]].
+
+##### Initialisation
+
+Only within static block.
 
 
 ## Data types
@@ -112,7 +139,7 @@ Prefixing `final` keyword to the  declaration+ initialization.
  
 #### Array
 
-##### Defining
+##### Declaration
 ```java
 int[] arr;
 ```
@@ -123,7 +150,7 @@ int a[];
 
 Array can be defined in java in the above two ways. However, unlike C++ defining an array actually means that we are defining a pointer, which will point to an array.
 
-##### Declaring
+##### Initialization
 
 ```java
 int arr[] = new int(3)
@@ -131,9 +158,48 @@ int arr[] = new int(3)
 
 #### Strings
 
+##### Declaration
 
+```java
+String s;
+```
 
+##### Initialization
 
+```java
+s = new String();
+```
+
+```java
+s = new String("string");
+```
+```java
+s = "string";
+```
+
+##### Both at once
+
+```java
+String s = new String();
+```
+```java
+String s = new String("string");
+```
+```java
+String s = "string";
+```
+
+##### Length 
+
+```java
+s.length();
+```
+
+##### Looping/character at index
+
+```java
+s.charAt(i);
+```
 #### Structures
 #### Interfaces
 

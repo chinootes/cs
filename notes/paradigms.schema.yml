@@ -1,0 +1,15 @@
+version: 1
+imports: []
+schemas:
+  - id: paradigm
+    parent: root
+    namespace: true
+    children:
+      - components
+      - principles
+      - features
+      - tags 
+  - id: components
+  - id: principles
+  - id: features 
+  - id: tags 

@@ -6,4 +6,4 @@ updated: 1713721391552
 created: 1713688096036
 ---
 
-[[lang.java.jre.jvm]] component responsible for [[programming.memory management.implicit.gc]] of objects.
+[[lang.java.jre.jvm]] component responsible for [[dev.memory management.implicit.gc]] of objects.

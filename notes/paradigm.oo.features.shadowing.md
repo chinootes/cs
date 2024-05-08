@@ -42,7 +42,7 @@ created: 1708356366427
     //'a' from its own class
     ```
 
-## Major Difference between Method [[paradigm.oo.pillars.polymorphism.overriding]] and Hiding
+## Major Difference between Method [[paradigm.oo.principles.polymorphism.overriding]] and Hiding
 
 This
 
@@ -82,7 +82,7 @@ But the second one isn't an example of one static method *z* another static meth
 
 What's the difference?
 
-### [[paradigm.oo.pillars.polymorphism.runtime]] - When you override, you get it. When you hide, you don't.
+### [[paradigm.oo.principles.polymorphism.runtime]] - When you override, you get it. When you hide, you don't.
 
 ```java
 class Foo {

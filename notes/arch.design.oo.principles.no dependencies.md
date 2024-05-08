@@ -8,4 +8,4 @@ created: 1708752883570
 
 
 - Do no work in a constructor
-- Do not create significant dependencies directly but via [[arch.design.oo.concepts.patterns.gof.creational.factory]] or lazy initialization.
+- Do not create significant dependencies directly but via [[arch.design.oo.patterns.gof.creational.factory]] or lazy initialization.

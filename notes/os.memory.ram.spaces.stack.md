@@ -8,7 +8,7 @@ created: 1713805011532
 
 > Har thread ka ek stack. Har method ka ek stack frame.
 
-- Used for [[programming.memory management.alloc.static]].
+- Used for [[dev.memory management.alloc.static]].
 - Used for local variables, function call frames, static thangs, with short lifespan.
 - Limited size, more predictable.
 - Automatically managed by OS
@@ -36,4 +36,4 @@ This is controlled by the OS. One stack is allocated to the program for each run
 
 While the OS provides a default stack size, some applications or languages allow customization. Developers can adjust the stack size based on their specific requirements.
 
-Be careful of [[programming.issues.error.stack overflow]] though.
+Be careful of [[dev.issues.error.stack overflow]] though.

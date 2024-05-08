@@ -2,9 +2,10 @@
 id: qo4mtkjc1mpo8xcrhbhqrnr
 title: Syntax
 desc: ''
-updated: 1714073646294
+updated: 1714550559507
 created: 1713886095577
 ---
+
 
 
 ## Hello World
@@ -310,3 +311,6 @@ names.forEach((s) => {
 
 
 
+## References
+
+- [TypeScript Docs](https://www.typescriptlang.org/docs/)

@@ -11,12 +11,12 @@ created: 1713805253604
 - Not [[execution.process.thread]]-specific. All threads can access it => Not as safe as [[os.memory.ram.user.stack]]
 - Heap memory can lead to memory leaks.
 - Bigger than [[os.memory.ram.user.stack]]
-- Needs [[programming.memory management.manual]]. 
+- Needs [[dev.memory management.manual]]. 
 
-    💡 Some virtual machines can provide [[programming.memory management.implicit]]. But even an implicit memory management strategy needs to have an entity ([[programming.memory management.implicit.gc]]) cleaning up the data.
+    💡 Some virtual machines can provide [[dev.memory management.implicit]]. But even an implicit memory management strategy needs to have an entity ([[dev.memory management.implicit.gc]]) cleaning up the data.
 
 - Heap grow upwards to higher addresses.
-- Prone to [[programming.memory management.leaks]]
+- Prone to [[dev.memory management.leaks]]
 
 
 ## Why choose heap data structure for this memory space?

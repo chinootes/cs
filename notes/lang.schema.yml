@@ -36,6 +36,7 @@ schemas:
   - id: array
   - id: string
   - id: stack
+    template: zzz-template.lang.ds.stack
   - id: queue
   - id: hashmap
   - id: exceptions

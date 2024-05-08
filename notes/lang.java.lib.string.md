@@ -6,8 +6,8 @@ updated: 1713902828857
 created: 1711643845722
 ---
 
-- **String literal**: A string [[programming.components.literal]] in Java is basically a sequence of characters from the source character set. 
-- String in Java is an [[arch.design.oo.concepts.patterns.immutable class]]
+- **String literal**: A string [[dev.components.literal]] in Java is basically a sequence of characters from the source character set. 
+- String in Java is an [[arch.design.oo.patterns.immutable class]]
 - String literals initialised are an object of this String class.
 
 💡 While printing an object, Java compiler implicitly calls toString() method.

@@ -6,11 +6,11 @@ updated: 1713121019042
 created: 1713117416265
 ---
 
-## [[programming.issues.exception.types.checked]]
+## [[dev.issues.exception.types.checked]]
 
 Classes which directly inherit Throwable except RuntimeExceptions and Errors.
 
-## [[programming.issues.exception.types.unchecked]]
+## [[dev.issues.exception.types.unchecked]]
 
 Classes which inherit RuntimeExceptions
 

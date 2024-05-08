@@ -6,7 +6,7 @@ updated: 1708262876997
 created: 1708254610218
 ---
 
-If there is a common interface for all concrete implmentations of your abstract class, it means you are just using [[paradigm.oo.pillars.inheritance]] to define/change certain behaviour of the class.
+If there is a common interface for all concrete implmentations of your abstract class, it means you are just using [[paradigm.oo.principles.inheritance]] to define/change certain behaviour of the class.
 
 ```mermaid
 classDiagram
@@ -17,7 +17,7 @@ classDiagram
 
 You should rather prefer [[arch.design.oo.principles.composition over inheritance]].
 
-Just turn your abstract class into a concrete implementation and inject the "behaviour" which you are trying to change from outside using [[arch.design.oo.concepts.patterns.gof.behavioural.strategy]].
+Just turn your abstract class into a concrete implementation and inject the "behaviour" which you are trying to change from outside using [[arch.design.oo.patterns.gof.behavioural.strategy]].
 
 ```mermaid
 classDiagram

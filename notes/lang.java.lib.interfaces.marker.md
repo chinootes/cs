@@ -7,4 +7,4 @@ created: 1711644152742
 ---
 
 
-[[arch.design.oo.concepts.patterns.gof.structural.marker]]s in Java.
+[[arch.design.oo.patterns.gof.structural.marker]]s in Java.

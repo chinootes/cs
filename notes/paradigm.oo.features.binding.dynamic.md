@@ -73,4 +73,4 @@ Compiler doesn't know at compile time that 'h' is an object of Student type.
 - ⇒ COMPILE TIME Error.
 
 
-Even though we can't call Student-exclusive  methods from this reference without casting, the type of object or the version of method to be called is still determined at runtime. Which still makes it a case of dynamic binding and [[paradigm.oo.pillars.polymorphism.runtime]]. 
+Even though we can't call Student-exclusive  methods from this reference without casting, the type of object or the version of method to be called is still determined at runtime. Which still makes it a case of dynamic binding and [[paradigm.oo.principles.polymorphism.runtime]]. 

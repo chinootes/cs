@@ -20,7 +20,7 @@ created: 1712856355058
 - Why?
   - Java — primitive data types ⇒ Not objects ⇒ Wrapper classes
   - Also, to make methods available to operate on primitive data types.
-- All wrapper classes are [[arch.design.oo.concepts.patterns.immutable class]]es
+- All wrapper classes are [[arch.design.oo.patterns.immutable class]]es
 - All wrapper classes implement [[lang.java.lib.interfaces.marker.comparable]].
 
 ## Useful Methods

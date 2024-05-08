@@ -6,10 +6,10 @@ updated: 1713120934478
 created: 1713120316941
 ---
 
-## [[programming.issues.exception.types.checked]]
+## [[dev.issues.exception.types.checked]]
 
 
-## [[programming.issues.exception.types.unchecked]]
+## [[dev.issues.exception.types.unchecked]]
 
 
 ## Handling

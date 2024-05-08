@@ -19,8 +19,8 @@ Hence, this can be reframed better as -
 
 ## Trade-offs
 
-- [[paradigm.oo.pillars.inheritance.purpose]] vs [[paradigm.oo.pillars.inheritance.disadvantages]]
-- [[paradigm.oo.pillars.association.aggregation.composition.benefits]] vs [[paradigm.oo.pillars.association.aggregation.composition.disadvantages]]
+- [[paradigm.oo.principles.inheritance.purpose]] vs [[paradigm.oo.principles.inheritance.disadvantages]]
+- [[paradigm.oo.principles.association.aggregation.composition.benefits]] vs [[paradigm.oo.principles.association.aggregation.composition.disadvantages]]
 
 ## References
 

@@ -2,9 +2,10 @@
 id: 7ncn3al6mmutkhgoesulce9
 title: Computer Science
 desc: ''
-updated: 1714217204249
+updated: 1715103618849
 created: 1713296516553
 ---
+
 
 These notes are arranged into the below topics:
 
@@ -16,7 +17,10 @@ These notes are arranged into the below topics:
 - Semantics
 - [[paradigm]]
 - Philosophy
-- Programming
-- Quality
+- Dev
 - Tools
 - Type Theory
+
+## References
+
+- Hierarchy inpiration - [Map of Computer Science](https://www.flickr.com/photos/95869671@N08/36231833334/in/photostream/lightbox/)

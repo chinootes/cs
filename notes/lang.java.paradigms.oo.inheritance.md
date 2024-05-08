@@ -13,12 +13,12 @@ created: 1712930362832
 
 ## Types of Inheritance in Java
 
-- [[paradigm.oo.pillars.inheritance.types.single]]
-- [[paradigm.oo.pillars.inheritance.types.multilevel]]
-- [[paradigm.oo.pillars.inheritance.types.hierarchical]]
-- [[paradigm.oo.pillars.inheritance.types.hybrid]]
+- [[paradigm.oo.principles.inheritance.types.single]]
+- [[paradigm.oo.principles.inheritance.types.multilevel]]
+- [[paradigm.oo.principles.inheritance.types.hierarchical]]
+- [[paradigm.oo.principles.inheritance.types.hybrid]]
 
-[[paradigm.oo.pillars.inheritance.types.multiple.not allowed]]
+[[paradigm.oo.principles.inheritance.types.multiple.not allowed]]
 
 
 ## Inheritance in case of [[lang.java.paradigms.oo.encapsulation.access.default]]
