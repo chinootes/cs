@@ -2,7 +2,7 @@
 id: n09tgd1sdytesn5ihisuxz4
 title: JSON Schema
 desc: ''
-updated: 1715152905560
+updated: 1715796847370
 created: 1715151752296
 ---
 
@@ -12,6 +12,11 @@ Schema language for defining JSON structure and constraints.
 
 - JSON Type Def
 - [Similar technologies - JSON Schema Org](https://json-schema.org/overview/similar-technologies)
+
+## 
+
+[How to define enum with description for each constant](https://stackoverflow.com/questions/64233370/in-json-schema-how-to-define-an-enum-with-description-of-each-elements-in-the-e)
+
 ## References
 
 - [What is JSON Schema? - Postman Blog](https://blog.postman.com/what-is-json-schema/)
