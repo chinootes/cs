@@ -1,0 +1,214 @@
+<h1 id="syntax">Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a></h1>
+<h2 id="hello-world">Hello World<a aria-hidden="true" class="anchor-heading icon-link" href="#hello-world"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span><span class="token punctuation">{</span>
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="rules">Rules<a aria-hidden="true" class="anchor-heading icon-link" href="#rules"></a></h2>
+<ol>
+<li>Outer Class - Always public or default</li>
+<li>There can be only one public class in a java file.</li>
+<li>File name = (public,if any) class name</li>
+<li>Every function has to be a member function of a class. Even main function.</li>
+<li>Main function’s prototype is fixed <code>public static void main(String[] args)</code></li>
+<li>No semicolon after class definition.</li>
+<li>Semicolon after every statement.</li>
+</ol>
+<h2 id="naming-conventions">Naming Conventions<a aria-hidden="true" class="anchor-heading icon-link" href="#naming-conventions"></a></h2>
+<ul>
+<li>PascalCase for class names.</li>
+<li>camelCase for methods, objects and variable names.</li>
+<li>UPPERCASE for constants</li>
+</ul>
+<h2 id="comments">Comments<a aria-hidden="true" class="anchor-heading icon-link" href="#comments"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token comment">/*Multiple Line*/</span>
+<span class="token comment">//Single Line</span>
+<span class="token doc-comment comment">/** Documentation Style*/</span>
+</code></pre>
+<h2 id="variables">Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#variables"></a></h2>
+<h3 id="declaration">Declaration<a aria-hidden="true" class="anchor-heading icon-link" href="#declaration"></a></h3>
+<h3 id="initialization">Initialization<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization"></a></h3>
+<h3 id="both-at-once">Both at once<a aria-hidden="true" class="anchor-heading icon-link" href="#both-at-once"></a></h3>
+<h2 id="constants">Constants<a aria-hidden="true" class="anchor-heading icon-link" href="#constants"></a></h2>
+<p>Prefixing <code>final</code> keyword to the  declaration+ initialization.</p>
+<h3 id="blank-final-variable">Blank final variable<a aria-hidden="true" class="anchor-heading icon-link" href="#blank-final-variable"></a></h3>
+<p>Final variable not initialised during declaration</p>
+<p>All final variables must be initialised, or else => Compile time error</p>
+<p>=> These have to be initialized later, in constructor or somewhere.</p>
+<blockquote>
+<p>It might not sound correct to call it variable since by definition, <code>final</code> means constant, so by behaviour, it doesn't vary.
+But these variables can vary once.</p>
+</blockquote>
+<h4 id="ways-to-initialise">Ways to initialise<a aria-hidden="true" class="anchor-heading icon-link" href="#ways-to-initialise"></a></h4>
+<ul>
+<li>Can be initialised within an <a href="/cs/notes/ct60bbrwtvpngnot1hgmk4h">Instance Initializer Block</a></li>
+<li>Can be initialised within a constructor</li>
+<li>If there are multiple constructors</li>
+<li>Initialise in all of them, or else => Compile time error</li>
+</ul>
+<h4 id="blank-static-final-membervariable">Blank static final member/<em>variable</em><a aria-hidden="true" class="anchor-heading icon-link" href="#blank-static-final-membervariable"></a></h4>
+<p>Blank final <em>variable</em> which is <a href="/cs/notes/vklzkbrsrz6jzd5swlmq8yn">Static</a>.</p>
+<h5 id="initialisation">Initialisation<a aria-hidden="true" class="anchor-heading icon-link" href="#initialisation"></a></h5>
+<p>Only within static block.</p>
+<h2 id="data-types">Data types<a aria-hidden="true" class="anchor-heading icon-link" href="#data-types"></a></h2>
+<h3 id="primitives">Primitives<a aria-hidden="true" class="anchor-heading icon-link" href="#primitives"></a></h3>
+<ul>
+<li><code>byte</code>
+<ul>
+<li>8 bits and signed</li>
+</ul>
+</li>
+<li><code>short</code>
+<ul>
+<li>16 bits and signed</li>
+</ul>
+</li>
+<li><code>char</code>
+<ul>
+<li>16 bits and unsigned, so that it may represent Unicode characters</li>
+</ul>
+</li>
+<li><code>int</code>
+<ul>
+<li>32 bits and signed</li>
+</ul>
+</li>
+<li><code>long</code>
+<ul>
+<li>64 bits and signed</li>
+</ul>
+</li>
+<li><code>float</code>
+<ul>
+<li>32 bits and signed</li>
+</ul>
+</li>
+<li><code>double</code>
+<ul>
+<li>64 bits and signed</li>
+</ul>
+</li>
+<li><code>boolean</code>
+<ul>
+<li>it's not numeric, may only have true or false values</li>
+</ul>
+</li>
+</ul>
+<h4 id="suffixing-for-non-default-primitive-data-types">Suffixing for Non-default Primitive Data Types<a aria-hidden="true" class="anchor-heading icon-link" href="#suffixing-for-non-default-primitive-data-types"></a></h4>
+<ul>
+<li>
+<p><code>int</code> and <code>long</code></p>
+<p>  Default type for integer literals is <code>int</code>. That is, unless specified otherwise, 35 is an <code>int</code>. So if we assign an integer directly to a <code>long</code> variable, it will result in compilation error.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">//Compilation error</span>
+<span class="token keyword">long</span> x <span class="token operator">=</span> <span class="token number">232342</span><span class="token punctuation">;</span>
+</code></pre>
+<p>  Thus, we have to specify explicitly that the value 232342 is a <code>long</code>.</p>
+<p>  This can be done by suffixing <code>l</code> or <code>L</code> to the value. For example. <code>232342L</code>.</p>
+</li>
+<li>
+<p><code>float</code> and <code>double</code></p>
+<p>  Similarly, double is the default value for floating point literals. Unless explicitly stated, 9.5 is a <code>double</code> not a <code>float</code>.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">3.7</span> <span class="token comment">// 3.7 is a double, ‘a’ is float => Error</span>
+<span class="token keyword">float</span> a <span class="token operator">=</span> <span class="token number">3.7f</span> <span class="token comment">// a is a float</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="prefixing-for-different-bases">Prefixing for Different Bases<a aria-hidden="true" class="anchor-heading icon-link" href="#prefixing-for-different-bases"></a></h4>
+<ul>
+<li><strong>Decimal</strong>: <code>127</code></li>
+<li><strong>Hexadecimal</strong>: <code>0x7f</code> (Prefix - <code>0x</code>)</li>
+<li><strong>Octal</strong>: <code>0177</code> (Prefix - <code>0</code>)</li>
+<li><strong>Binary</strong>: <code>0b10011001</code> (Prefix - <code>0b</code>)</li>
+</ul>
+<h3 id="compound">Compound<a aria-hidden="true" class="anchor-heading icon-link" href="#compound"></a></h3>
+<h4 id="array">Array<a aria-hidden="true" class="anchor-heading icon-link" href="#array"></a></h4>
+<h5 id="declaration-1">Declaration<a aria-hidden="true" class="anchor-heading icon-link" href="#declaration-1"></a></h5>
+<pre class="language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-java"><code class="language-java"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Array can be defined in java in the above two ways. However, unlike C++ defining an array actually means that we are defining a pointer, which will point to an array.</p>
+<h5 id="initialization-1">Initialization<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization-1"></a></h5>
+<pre class="language-java"><code class="language-java"><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="strings">Strings<a aria-hidden="true" class="anchor-heading icon-link" href="#strings"></a></h4>
+<h5 id="declaration-2">Declaration<a aria-hidden="true" class="anchor-heading icon-link" href="#declaration-2"></a></h5>
+<pre class="language-java"><code class="language-java"><span class="token class-name">String</span> s<span class="token punctuation">;</span>
+</code></pre>
+<h5 id="initialization-2">Initialization<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization-2"></a></h5>
+<pre class="language-java"><code class="language-java">s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-java"><code class="language-java">s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-java"><code class="language-java">s <span class="token operator">=</span> <span class="token string">"string"</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="both-at-once-1">Both at once<a aria-hidden="true" class="anchor-heading icon-link" href="#both-at-once-1"></a></h5>
+<pre class="language-java"><code class="language-java"><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-java"><code class="language-java"><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"string"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class="language-java"><code class="language-java"><span class="token class-name">String</span> s <span class="token operator">=</span> <span class="token string">"string"</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="length">Length<a aria-hidden="true" class="anchor-heading icon-link" href="#length"></a></h5>
+<pre class="language-java"><code class="language-java">s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="loopingcharacter-at-index">Looping/character at index<a aria-hidden="true" class="anchor-heading icon-link" href="#loopingcharacter-at-index"></a></h5>
+<pre class="language-java"><code class="language-java">s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="structures">Structures<a aria-hidden="true" class="anchor-heading icon-link" href="#structures"></a></h4>
+<h4 id="interfaces">Interfaces<a aria-hidden="true" class="anchor-heading icon-link" href="#interfaces"></a></h4>
+<h4 id="classes">Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a></h4>
+<h5 id="creating-objects">Creating objects<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-objects"></a></h5>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token punctuation">;</span>
+</code></pre>
+<p>Unlike C++, the above statement won’t create an object. It will just create a reference variable. The reference variable has to be given an object.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now <code>smallBox</code> contains address of an object of Box class. That is, it points to the object. However, the object itself has no name.</p>
+<h5 id="using-objects">Using objects<a aria-hidden="true" class="anchor-heading icon-link" href="#using-objects"></a></h5>
+<p>Through its reference.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Example</span> 
+ <span class="token punctuation">{</span>
+ <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+   <span class="token class-name">Box</span> smallBox<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   smallBox<span class="token punctuation">.</span><span class="token function">setDimension</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+   smallBox<span class="token punctuation">.</span>showDimension<span class="token punctuation">;</span> 
+  <span class="token comment">/*From the perspective of C++, 
+  it looks like smallBox is the name of an object. 
+  Though its not.*/</span>
+   
+   smallBox<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">/*smallBox will now refer to a new object 
+  and the older object will become ‘Garbage Block’, 
+  which will get destroyed 
+  when Garbage collector will run.*/</span>
+
+  smallBox<span class="token punctuation">.</span><span class="token function">showDimension</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">/*Will print 0,0,0 since no value is assigned. 
+  The default value is 0.*/</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="operators">Operators<a aria-hidden="true" class="anchor-heading icon-link" href="#operators"></a></h2>
+<h2 id="flow">Flow<a aria-hidden="true" class="anchor-heading icon-link" href="#flow"></a></h2>
+<h3 id="conditionals">Conditionals<a aria-hidden="true" class="anchor-heading icon-link" href="#conditionals"></a></h3>
+<h3 id="loops">Loops<a aria-hidden="true" class="anchor-heading icon-link" href="#loops"></a></h3>
+<h2 id="functionsmethods">Functions/Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#functionsmethods"></a></h2>
+<h3 id="public-static-void-mainstring-args"><code>public static void main(String[] args)</code><a aria-hidden="true" class="anchor-heading icon-link" href="#public-static-void-mainstring-args"></a></h3>
+<ul>
+<li>
+<p><strong><code>public</code></strong>: So that JVM can call main function from outside of the class body.</p>
+</li>
+<li>
+<p><strong><code>static</code></strong>: Static member functions can be called without an object.</p>
+</li>
+<li>
+<p><strong><code>void</code></strong>: Always — no return type</p>
+</li>
+<li>
+<p><strong>Argument</strong>: <code>String[] args</code>. Array of strings</p>
+</li>
+</ul>

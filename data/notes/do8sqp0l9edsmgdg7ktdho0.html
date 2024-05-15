@@ -1,0 +1,10 @@
+<h1 id="heap-space">Heap Space<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-space"></a></h1>
+<ul>
+<li>For objects and data structures with longer lifespan.</li>
+<li>It is a <strong>dynamic memory pool</strong> provided by the OS which can be allocated and deallocated by the programs. Therefore, the applications have control of the heap memory. It is not managed by OS.</li>
+<li>Not <a href="/cs/notes/gr9wokxsplgrzhdlevuprx6">Thread</a>-specific. All threads can access it => Not as safe as <a href="/cs/notes/amz8fg5miovqzorc23auu2c">Stack Space</a></li>
+<li>Heap memory can lead to memory leaks.</li>
+<li>Bigger than <a href="/cs/notes/amz8fg5miovqzorc23auu2c">Stack Space</a></li>
+<li>Can have <a href="/cs/notes/vy07bshn7tutwwnd5nwmsk8">Manual Memory Management</a> or <a href="/cs/notes/n71gtdk9hp3zntd3wdl7cxm">Implicit Memory Management</a> depending upon the implementation. But even an implicit memory management strategy needs to have an entity (<a href="/cs/notes/ebrkz8wg3nundlii209591y">Garbage collection</a>) cleaning up the data.</li>
+<li>Prone to <a href="/cs/notes/xbsbrx2h85b0xsk7dossiol">Memory Leaks</a></li>
+</ul>

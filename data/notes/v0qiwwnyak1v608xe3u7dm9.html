@@ -1,0 +1,21 @@
+<h1 id="exception-declaration-with-method-overriding">Exception declaration with Method overriding<a aria-hidden="true" class="anchor-heading icon-link" href="#exception-declaration-with-method-overriding"></a></h1>
+<p>If a language supports <a href="/cs/notes/atxefy1po3ak9im0rgitjbu">Exception Declaration</a>, this is how it likely works with method overriding.</p>
+<h2 id="case-1-super-class-doesnt-declare-an-exception">Case 1: Super class doesn't declare an exception<a aria-hidden="true" class="anchor-heading icon-link" href="#case-1-super-class-doesnt-declare-an-exception"></a></h2>
+<p>Sub class overridden method:</p>
+<ul>
+<li>cannot declare a <a href="/cs/notes/qwlx9b919ijpuf6eihyvulw">Checked Exceptions</a> but</li>
+<li>can declare an <a href="/cs/notes/jrmuv52xrppabjxij7k6glk">Unchecked Exceptions</a>.</li>
+</ul>
+<h2 id="case-2-super-class-declares-an-exception">Case 2: Super class declares an exception<a aria-hidden="true" class="anchor-heading icon-link" href="#case-2-super-class-declares-an-exception"></a></h2>
+<p>Sub class overridden method</p>
+<ul>
+<li>can declare
+<ul>
+<li>same exception</li>
+<li>subclass exception (<a href="/cs/notes/6yfy66pd40yrpmh4au5z1sf">Variance</a> = covariant)</li>
+<li>or no exception
+but</li>
+</ul>
+</li>
+<li>cannot declare parent exception</li>
+</ul>

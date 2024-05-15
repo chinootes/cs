@@ -1,0 +1,16 @@
+<h1 id="sealed-classes">Sealed Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#sealed-classes"></a></h1>
+<p>Sealed classes restrict which classes can inherit them, enhancing encapsulation and giving more control.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">sealed</span> <span class="token keyword">class</span> <span class="token class-name">Shape</span> <span class="token keyword">permits</span> <span class="token class-name">Circle</span><span class="token punctuation">,</span> <span class="token class-name">Rectangle</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Common methods and fields</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Circle</span> <span class="token keyword">extends</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Circle-specific implementation</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Rectangle</span> <span class="token keyword">extends</span> <span class="token class-name">Shape</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Rectangle-specific implementation</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>Introduced in <a href="/cs/notes/gbpooa2so62kvzm3ubmz01c">Java 17</a>.</p>

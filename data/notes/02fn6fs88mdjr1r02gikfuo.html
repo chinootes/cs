@@ -1,0 +1,48 @@
+<h1 id="no-pointers">No pointers<a aria-hidden="true" class="anchor-heading icon-link" href="#no-pointers"></a></h1>
+<h2 id="why-java-doesnt-have-pointers">Why Java doesn't have pointers?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-java-doesnt-have-pointers"></a></h2>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Case against Pointers</span></div>
+<a href="/cs/notes/9veap8xngwqxjt6vdqywshq" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><ul>
+<li>Memory access via <a href="/cs/notes/oay82cjzrpdd6ocyq9qrubi">Pointer Arithmetic</a> — fundamentally unsafe</li>
+<li><a href="/cs/notes/vy07bshn7tutwwnd5nwmsk8">Manual Memory Management</a> — not worth the effort for general purpose OOP programming</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://stackoverflow.com/questions/9595636/why-java-doesnt-support-pointers">Why Java doesn't support pointers? — Stack overflow</a></p>
+</div></div><p></p><p></p>
+<p>Considering the above points:</p>
+<ul>
+<li>
+<p>Java has a robust security model and disallows pointer arithmetic for this reason. It would be impossible for the JVM to ensure that code containing pointer arithmetic is safe without expensive runtime checks.</p>
+</li>
+<li>
+<p>Java instead provides very good automatic garbage collection which takes care of memory management for you.</p>
+<p>  For many people who had previously been forced to deal with <a href="/cs/notes/vy07bshn7tutwwnd5nwmsk8">Manual Memory Management</a> in Pascal/C/C++ this was one of the biggest advantages of Java when it launched.</p>
+</li>
+<li>
+<p>Complexity</p>
+<ul>
+<li><strong>Array access via pointer offsets</strong>
+Java does this via indexed array access so you don't need pointers. A big advantage of Java's indexed array access is that it detects and disallows out of bounds array access, which can be a major source of bugs. This is generally worth paying the price of a tiny bit of runtime overhead.</li>
+<li><strong>References to objects</strong>
+Java has this, it just doesn't call them pointers. Any normal object reference works as one of these. When you do <code>String s="Hello";</code> you get what is effectively a pointer to a string object.</li>
+<li><strong>Passing argument by reference</strong>
+i.e. passing a reference which allows you to change the value of a variable in the caller's scope - Java doesn't have this, but it's a pretty rare use case and can easily be done in other ways. This is in general equivalent to changing a field in an object scope that both the caller and callee can see.</li>
+</ul>
+</li>
+</ul>
+<p>From the sun white paper <a href="http://java.sun.com/docs/white/langenv/Simple.doc2.html">The Java Language Environment</a>:</p>
+<blockquote>
+<p>Most studies agree that pointers are one of the primary features that enable programmers to inject bugs into their code. Given that structures are gone, and arrays and strings are objects, the need for pointers to these constructs goes away. Thus, Java has no pointer data types. Any task that would require arrays, structures, and pointers in C can be more easily and reliably performed by declaring objects and arrays of objects. Instead of complex pointer manipulation on array pointers, you access arrays by their arithmetic indices. The Java run-time system checks all array indexing to ensure indices are within the bounds of the array.You no longer have dangling pointers and trashing of memory because of incorrect pointers, because there are no pointers in Java.</p>
+</blockquote>
+<h2 id="references-1">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references-1"></a></h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/9595636/why-java-doesnt-support-pointers">Why Java doesn't support pointers? — Stack overflow</a></li>
+<li><a href="http://java.sun.com/docs/white/langenv/Simple.doc2.html">The Java Language Environment - Sun White Paper</a></li>
+</ul>

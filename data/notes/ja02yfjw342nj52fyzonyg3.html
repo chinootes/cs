@@ -1,0 +1,29 @@
+<h1 id="backdoor-injection">Backdoor Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#backdoor-injection"></a></h1>
+<p>Injection done using <a href="/cs/notes/kdtysqgxcjkxyidt9slcakk">Friend Class</a>.</p>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> … <span class="token keyword">DEFINITION</span> … <span class="token punctuation">.</span>
+  <span class="token keyword">PRIVATE</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_cash_provider <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_cash_provider<span class="token punctuation">.</span>
+    …
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+</code></pre>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> ltc_get_amount_in_coins <span class="token keyword">DEFINITION</span> <span class="token keyword">DEFERRED</span><span class="token punctuation">.</span>
+<span class="token keyword">CLASS</span> cl_money_machine <span class="token keyword">DEFINITION</span>
+    <span class="token keyword">LOCAL</span> <span class="token keyword">FRIENDS</span> ltc_get_amount_in_coins<span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> ltc_get_amount_in_coins <span class="token keyword">DEFINITION</span> <span class="token keyword">FOR</span> <span class="token keyword">TESTING</span> … <span class="token punctuation">.</span>
+…
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> ltc_get_amount_in_coins <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+  <span class="token keyword">METHOD</span> setup<span class="token punctuation">.</span>
+    <span class="token eol-comment comment">"given</span>
+    m_cut <span class="token operator">=</span> <span class="token keyword">NEW</span> #<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+    m_cut<span class="token token-operator punctuation">-></span>m_cash_provider <span class="token operator">=</span> <span class="token keyword">NEW</span> ltd_cash_provider<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection (cs)</a></li>
+</ul>

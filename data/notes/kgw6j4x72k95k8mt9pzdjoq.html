@@ -1,0 +1,26 @@
+<h1 id="abstract-class-as-a-helper-class">Abstract Class as a Helper Class<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract-class-as-a-helper-class"></a></h1>
+<p>If you have different interfaces for the child classes, but you are using the abstract class to factor out duplication within objects, then your abstract class is working as a base class.</p>
+<div class="mermaid">
+  classDiagram
+    AbstractBaseThingWithMotor &#x3C;-- LawnMower
+    AbstractBaseThingWithMotor &#x3C;-- Car    
+</div>
+<p>See if this functionality can be moved to a concrete helper class instead.</p>
+<div class="mermaid">
+  classDiagram
+    class LawnMower{
+        + iMotorHelper motorHelper
+    }
+    class Car{
+        + iMotorHelper motorHelper
+    }    
+    iMotorHelper &#x3C;-- MotorHelper
+</div>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://stackoverflow.com/a/2947823/14318926">Nigel Thorne's answer to How to Unit Test Abstract Classes?</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/nah4ul0tx2ot3cnd0yekm5c">Abstract Class (cs)</a></li>
+<li><a href="/cs/notes/kkzt3iloch20y1g3p3e7drc">Abstract Class as Stepping Stone (cs)</a></li>
+</ul>

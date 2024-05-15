@@ -1,0 +1,54 @@
+<h1 id="jdbc">JDBC<a aria-hidden="true" class="anchor-heading icon-link" href="#jdbc"></a></h1>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>1. Import the package</td><td>import java.sql.*</td></tr><tr><td>2a. Load driver</td><td>Steps to load and add connector jar</td></tr><tr><td>2b. Register driver</td><td>Class.forName("com.mysql.jdbc.Driver");</td></tr><tr><td>3. Establish the connection</td><td>Connection con= DriverManager.getConnection("URL","Username","Password");</td></tr><tr><td>4. Create the statement</td><td>Statement st = con.createStatement();</td></tr><tr><td>5. Execute the Query</td><td>ResultSet rs = st.executeQuery(query); / int count = st.executeUpdate(query);</td></tr><tr><td>6. Process Result</td><td>rs.next(); String s = rs.getString(column number);</td></tr><tr><td>7. Close</td><td>st.close();</td></tr><tr><td></td><td>con.close();</td></tr></tbody></table></div>
+<h2 id="use-preparedstatement-for-user-input">Use PreparedStatement for user input<a aria-hidden="true" class="anchor-heading icon-link" href="#use-preparedstatement-for-user-input"></a></h2>
+<p>Use PreparedStatement instead of Statement to give user input in queries</p>
+<p>query - (?,?) // question marks for parameters you want to take as user input in the query</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Prepared</span> <span class="token class-name">Statement</span> st <span class="token operator">=</span> con<span class="token punctuation">.</span><span class="token function">prepareStatement</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+st<span class="token punctuation">.</span><span class="token function">setInt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> input1<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+st<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> input2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>

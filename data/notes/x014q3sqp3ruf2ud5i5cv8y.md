@@ -1,0 +1,6 @@
+
+
+```mermaid
+classDiagram
+    A <|-- B
+```

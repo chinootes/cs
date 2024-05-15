@@ -1,0 +1,32 @@
+<h1 id="executorservice">ExecutorService<a aria-hidden="true" class="anchor-heading icon-link" href="#executorservice"></a></h1>
+<p>ExecutorService is an interface which allows us to execute tasks on thread asynchronously</p>
+<h2 id="instantiating">Instantiating<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiating"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">ExecutorService</span> executorService1 <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">//Creates a ExecutorService object having a single thread.  </span>
+    
+<span class="token class-name">ExecutorService</span> executorService2 <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">// Creates a //ExecutorService object having a pool of 10 threads.  </span>
+    
+<span class="token class-name">ExecutorService</span> executorService3 <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">//Creates a scheduled thread pool executor with 10 threads. </span>
+<span class="token comment">//In scheduled thread pool, we can schedule tasks of the threads.</span>
+</code></pre>
+<h2 id="assigning-tasks">Assigning Tasks<a aria-hidden="true" class="anchor-heading icon-link" href="#assigning-tasks"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token comment">//We can use the following methods</span>
+<span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span>
+<span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> task<span class="token punctuation">)</span>
+<span class="token function">invokeAny</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span><span class="token punctuation">></span></span> tasks<span class="token punctuation">)</span>
+<span class="token function">invokeAll</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span><span class="token punctuation">></span></span> tasks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="shutting-down">Shutting down<a aria-hidden="true" class="anchor-heading icon-link" href="#shutting-down"></a></h2>
+<p>We can use the following methods after we're done. If we don't, the threads will keep running and JVM won't shut down.</p>
+<ul>
+<li>shutdown() method</li>
+<li>shutdownNow() method</li>
+<li>awaitTermination() method</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/jik03wh5g5jxxfz2aklbmub">Multithreading (cs)</a></li>
+</ul>

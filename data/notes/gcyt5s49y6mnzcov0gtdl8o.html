@@ -1,0 +1,66 @@
+<h1 id="vector">Vector<a aria-hidden="true" class="anchor-heading icon-link" href="#vector"></a></h1>
+<p>implements <a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List</a> and <a href="/cs/notes/ovg9du1v373av7mahmf6xd3">RandomAccess</a></p>
+<ul>
+<li>Underlying Data Structure: Resizable <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">data.structure.primary.array (Private)</a></li>
+<li><a href="/cs/notes/esvk57cujir0xgnugroobcg">Duplicates - Allowed</a></li>
+<li><a href="/cs/notes/c8sos8r4mdfod3yi0hrbxxs">Insertion Order - Preserved</a></li>
+<li><a href="/cs/notes/ub2twkupmr0kns22xaxz8tj">null insetion - Allowed</a></li>
+<li>Best choice for: Frequent retrievel</li>
+<li>Worst choice for: Frequent insertion/deletion in middle</li>
+<li>Constructors:
+<ol>
+<li><code>Vector v = new Vector();</code></li>
+<li><code>Vector v = new Vector(int initialCapacity);</code></li>
+<li><code>Vector v = new Vector(int initialCapacity, int incrementalCapacity);</code></li>
+<li><code>Vector v = new Vector(Collection C);</code></li>
+</ol>
+</li>
+<li>Default initial capacity: 10</li>
+<li>Load factor/fill ratio:</li>
+<li>New Capacity: 2C</li>
+</ul>
+<h2 id="vector-is-legacy-class--longer-method-names">Vector is legacy class ⇒ Longer method names<a aria-hidden="true" class="anchor-heading icon-link" href="#vector-is-legacy-class--longer-method-names"></a></h2>
+<ul>
+<li>
+<p>Adding </p>
+<ul>
+<li><a href="/cs/notes/rpb0p7ld8g30mdscf1r32re">Collection Interface</a> - <code>add(Object O)</code></li>
+<li><a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List</a> - <code>add(int index, Object O)</code></li>
+<li>In vector, <code>addElement(Object O)</code></li>
+</ul>
+</li>
+<li>
+<p>Removing</p>
+<ul>
+<li><a href="/cs/notes/rpb0p7ld8g30mdscf1r32re">Collection Interface</a> - <code>remove(Object O)</code></li>
+<li><a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List</a> 
+<ul>
+<li><code>remove(int index)</code></li>
+<li><code>clear()</code></li>
+</ul>
+</li>
+<li>In vector,
+<ul>
+<li><code>removeElement(Object O)</code></li>
+<li><code>removeElementAt(int index)</code></li>
+<li><code>removeAllElements()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="child-classesinterfaces">Child classes/interfaces<a aria-hidden="true" class="anchor-heading icon-link" href="#child-classesinterfaces"></a></h2>
+<p><a href="/cs/notes/ovqyygo1fe3tpwf200ymr1e">Stack</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/ovqyygo1fe3tpwf200ymr1e">Stack</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/fi3xznhjsf8ezkolih7torp">Collection Frameworks Cheatsheet (cs)</a></li>
+<li><a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List (cs)</a></li>
+<li><a href="/cs/notes/4x38t5zqngoe33sug8ec87p">Enumeration (cs)</a></li>
+<li><a href="/cs/notes/ovqyygo1fe3tpwf200ymr1e">Stack (cs)</a></li>
+</ul>

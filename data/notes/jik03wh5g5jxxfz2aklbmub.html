@@ -1,0 +1,36 @@
+<h1 id="multithreading">Multithreading<a aria-hidden="true" class="anchor-heading icon-link" href="#multithreading"></a></h1>
+<h2 id="creating-a-thread">Creating a thread<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-a-thread"></a></h2>
+<p>Two ways-</p>
+<ol>
+<li>extend <a href="/cs/notes/mg03s0pff7h5ot8rl438gdr">Thread</a> class</li>
+<li>implement <a href="/cs/notes/hp20nwapkvz478u3jq2ok1a">Runnable</a> interface</li>
+</ol>
+<p>Implement the <code>run()</code> method.</p>
+<h2 id="executing-threads">Executing Threads<a aria-hidden="true" class="anchor-heading icon-link" href="#executing-threads"></a></h2>
+<ul>
+<li>Use <code>start()</code> method</li>
+<li>Use <a href="/cs/notes/9tn4qoat4ksb1kha3p77zhe">ExecutorService</a></li>
+</ul>
+<h2 id="java-thread-life-cycle">Java Thread Life Cycle<a aria-hidden="true" class="anchor-heading icon-link" href="#java-thread-life-cycle"></a></h2>
+<div class="mermaid">
+  flowchart LR
+    subgraph Thread
+        New--start called--> Runnable
+        Runnable-->Running
+        Running  --run method exits or stop method called-->Terminated
+    end
+    subgraph Blocked Code
+        Non-runnable --sleep done, I/O complete, lock available, resume, notify, notifyAll--> Runnable
+        Running --sleep, block on I/O, wait for lock, suspend, wait--> Non-runnable
+    end
+</div>
+<h2 id="thread-scheduler">Thread Scheduler<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-scheduler"></a></h2>
+<p>Task executes for a predefined slice of time and then re-enters pool of ready tasks.</p>
+<p>Next task decided based on priority and other factors.</p>
+<p>Uses <a href="/cs/notes/s0ti7wyyxprb9hwd2x80nv5">Pre Emptive Scheduling</a> and <a href="/cs/notes/auea1u426q9q291f1tl6kui">Time Slicing</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/b17hq2sylq3mv2kmoh8dzuk">Deadlocks</a></li>
+<li><a href="/cs/notes/3uaj7ngwih7npv8vlfs7k6d">Thread Safety</a></li>
+</ol>

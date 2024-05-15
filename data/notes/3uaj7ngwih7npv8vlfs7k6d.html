@@ -1,0 +1,47 @@
+<h1 id="thread-safety">Thread Safety<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-safety"></a></h1>
+<p>How to make a block of code thread safe?</p>
+<p>In addition to the usual ways to ensure <a href="/cs/notes/5mqyhqbl70k784qyd7mrkav">Thread Safety</a>, Java provides some additional <a href="/cs/notes/3fnxobrsrcrbd4j3v6fz4wz">Synchronization</a> mechanisms:</p>
+<ol>
+<li>
+<p>Thread local fields</p>
+<p>Defining private fields in Thread classes</p>
+<ul>
+<li>
+<p>Assigning ThreadLocal instances to a field</p>
+<p>  Like normal class fields but each thread accesses them via a setter-getter and gets independently initialized copy of the field so that each thread has its own state</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Synchronized Collections</p>
+</li>
+<li>
+<p>Concurrent Collections</p>
+<p>Concurrent collections achieve thread safety by dividing their data into segments and acquiring locks on different segments.</p>
+<p>Better performance</p>
+</li>
+<li>
+<p>Atomic objects</p>
+</li>
+<li>
+<p>Synchronized Methods</p>
+</li>
+<li>
+<p>Synchronized statements</p>
+</li>
+<li>
+<p>Other objects as lock</p>
+</li>
+<li>
+<p>Volatile fields</p>
+</li>
+<li>
+<p>Reentrant locks</p>
+</li>
+<li>
+<p>Read/write locks</p>
+</li>
+</ol>
+<h3 id="volatile-and-atomic">Volatile and Atomic<a aria-hidden="true" class="anchor-heading icon-link" href="#volatile-and-atomic"></a></h3>
+<p><code>volatile</code> is used when there are two threads store and perform operations on same variable. In such case, both threads store the variable in different caches. This results in inaccuracy and inconsistency. Thus, the <code>volatile</code> keyword lets <a href="/cs/notes/y92rxfv7150ppi7fgius6g3">JVM</a> know that this is variable is going to be changed and it is then stored in the common cache.</p>
+<p><code>AtomicInteger</code>, <code>AtomicLong</code> and other such classes are used in a similar situation to above, where the threads are accessing and performing some operation on a variable. If we don't define the variable as Atomic, it might happen that the second thread accesses the variable before the first thread is done performing operation on it. This causes inconsistency in the data. The <code>AtomicInteger</code> makes the integer thread safe by not letting any other thread access until one thread is done.</p>

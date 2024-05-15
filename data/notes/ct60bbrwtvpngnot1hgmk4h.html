@@ -1,0 +1,13 @@
+<h1 id="instance-initializer-block">Instance Initializer Block<a aria-hidden="true" class="anchor-heading icon-link" href="#instance-initializer-block"></a></h1>
+<p>Instance initialisation block can be included in a class. Its simply a block with no name and is called whenever an instance is initialised.</p>
+<h2 id="order-of-invokation">Order of invokation<a aria-hidden="true" class="anchor-heading icon-link" href="#order-of-invokation"></a></h2>
+<p>Here is the order in which it is invoked with respect to constructors.
+<strong>Constructor of parent class → Constructor → Instance initialisation block</strong></p>
+<p>On surface, it looks like the initialisation block is executed first. But what happens is that the compiler copies the block in the constructor at the top. So the constructor is called within which the instance initialiser block runs.</p>
+<p>For more details, <a href="/cs/notes/o4x75g3xj5hvnhxn08evzyz">Order of Invokation of initializer blocks and constructor</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/gnqzf0k4jeg5f1a0o88l7iw">Syntax (cs)</a></li>
+<li><a href="/cs/notes/mgpimhmapx12phspf75r1lt">Blank Final Member (cs)</a></li>
+</ul>

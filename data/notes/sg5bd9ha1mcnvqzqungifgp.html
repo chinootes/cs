@@ -1,0 +1,32 @@
+<h1 id="listiterator">ListIterator<a aria-hidden="true" class="anchor-heading icon-link" href="#listiterator"></a></h1>
+<ul>
+<li>Child interface of <a href="/cs/notes/35b9rz7t9tkhu0sganracma">Iterator</a></li>
+<li>Most powerful cursor</li>
+<li>Bidirectional</li>
+<li>Has methods to replace and add new objects.</li>
+</ul>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<p>Forward</p>
+<ul>
+<li><code>public boolean hasNext()</code></li>
+<li><code>public Object next()</code></li>
+<li><code>public int nextIndex()</code></li>
+</ul>
+<p>Extra capabilities</p>
+<ul>
+<li><code>public void remove()</code></li>
+<li><code>public void set(Object new)</code> → replace</li>
+<li><code>public void add(Object new)</code></li>
+</ul>
+<p>Backward</p>
+<ul>
+<li><code>public boolean hasPrevious()</code></li>
+<li><code>public Object previous()</code></li>
+<li><code>public int previousIndex()</code></li>
+</ul>
+<p>The <code>set()</code> method of <code>ListIterator</code> interface is used to replace the last element which is returned by the <code>next()</code> or <code>previous()</code> along with the given element. The call can be added only if neither <code>remove()</code> nor <code>add(E)</code> method have been called.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/d1vra7afjmo8exofz33gg5r">Initialization of iterators (cs)</a></li>
+</ul>

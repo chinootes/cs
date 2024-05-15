@@ -1,0 +1,18 @@
+<h1 id="anonymous-inner-class">Anonymous Inner Class<a aria-hidden="true" class="anchor-heading icon-link" href="#anonymous-inner-class"></a></h1>
+<pre class="language-java"><code class="language-java"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+<span class="token class-name">A</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">{</span>
+ <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token class-name">Syso</span><span class="token punctuation">(</span><span class="token string">"This is an anonymous class"</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>OR (post Java 8)</p>
+<pre class="language-java"><code class="language-java"><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+<span class="token class-name">A</span> obj <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token class-name">Syso</span><span class="token punctuation">(</span><span class="token string">"anonymous class"</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
