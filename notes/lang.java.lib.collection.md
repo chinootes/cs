@@ -2,7 +2,7 @@
 id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
-updated: 1713682043380
+updated: 1717342998926
 created: 1713633121566
 ---
 
@@ -23,3 +23,6 @@ Although, referred to as a framework, it functions more like a library with a co
         When sent from one place to another, the receiver makes a copy of it and operates on it → **clonable**
 
  
+ ## References
+
+ - [Collections Framework Overview - Java - Oracle Documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html#:~:text=Not%2C%20strictly%20speaking%2C%20a%20part%20of%20the%20collections,and%20relies%20on%20some%20of%20the%20same%20infrastructure.)

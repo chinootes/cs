@@ -2,7 +2,7 @@
 id: 0a38gd2sr10k64im41wgy3l
 title: Algorithms
 desc: ''
-updated: 1712077750760
+updated: 1722108290929
 created: 1708793203322
 ---
 
@@ -16,3 +16,9 @@ created: 1708793203322
 - Set of facts: Domain-specific knowledge - Database
 - Set of rules: Rules engine which makes up the knowledge base
 - Inference engine; Capable of deriving conclusions.
+
+
+## References
+
+
+- [LeetCode's Interview Crash Course - Data Structures and Algorithms](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/) #course

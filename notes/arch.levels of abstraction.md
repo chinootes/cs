@@ -8,7 +8,7 @@ created: 1708751384936
 
 
 - [[arch.style]] is application design at highest-level of abstraction.
-- [[arch.concepts.pattern]] is the way to implement it and hence is a step below.
+- [[arch.pattern]] is the way to implement it and hence is a step below.
 - [[arch.design.oo.patterns]] is a way to solve localised problem.
 
 ## References

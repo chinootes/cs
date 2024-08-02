@@ -7,8 +7,9 @@ schemas:
     children:
       - syntax
       - typing
-      - compile-time
+      - build
       - runtime
+      - dist
       - design
       - paradigms
       - lib
@@ -18,12 +19,22 @@ schemas:
       - db
       - patterns
       - tool
+      - org
       - v
   - id: syntax
     template: zzz-template.lang.syntax
   - id: typing
   - id: paradigms
   - id: design
+  - id: manifest
+  - id: org
+    children:
+      - modules
+      - packages
+      - libraries
+      - manifest
+  - id: build
+  - id: dist
   - id: lib
     children:
       - string
@@ -44,7 +55,9 @@ schemas:
   - id: concurrency
   - id: db
   - id: runtime
-  - id: compile-time
   - id: patterns
   - id: tool
   - id: v
+  - id: modules
+  - id: packages
+  - id: libraries

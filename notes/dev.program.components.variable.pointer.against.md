@@ -1,13 +1,13 @@
 ---
-id: ncaht3cft7462bkhiph2kak
-title: Disadvantages of Pointers
+id: 9veap8xngwqxjt6vdqywshq
+title: Case against Pointers
 desc: ''
-updated: 1708613345877
+updated: 1713722037027
 created: 1708613243326
 ---
 
 
-- Memory access via [[dev.components.variable.pointer.arithmetic]] — fundamentally unsafe
+- Memory access via [[dev.program.components.variable.pointer.arithmetic]] — fundamentally unsafe
 - [[dev.memory management.manual]] — not worth the effort for general purpose OOP programming
 
 ## References

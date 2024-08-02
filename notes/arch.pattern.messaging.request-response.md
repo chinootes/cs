@@ -6,7 +6,7 @@ updated: 1708751295131
 created: 1708751256620
 ---
 
-It is a [[arch.concepts.pattern.messaging]].
+It is a [[arch.pattern.messaging]].
 
 ## Model
 

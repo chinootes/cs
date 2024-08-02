@@ -8,7 +8,7 @@ created: 1713723223035
 
 ## Why Java doesn't have pointers?
 
-![[dev.components.variable.pointer.against]]
+![[dev.program.components.variable.pointer.against]]
 
 Considering the above points:
 - Java has a robust security model and disallows pointer arithmetic for this reason. It would be impossible for the JVM to ensure that code containing pointer arithmetic is safe without expensive runtime checks.

@@ -6,4 +6,4 @@ updated: 1708613180112
 created: 1708613154739
 ---
 
-You can use [[dev.components.variable.pointer]]s to manually control and allocate blocks of memory.
+You can use [[dev.program.components.variable.pointer]]s to manually control and allocate blocks of memory.

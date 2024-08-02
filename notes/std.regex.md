@@ -2,7 +2,7 @@
 id: 9xlj1zndv8njpj81c4fspv1
 title: Regex
 desc: Regular Expressions
-updated: 1713977048592
+updated: 1719812622278
 created: 1713974732773
 ---
 
@@ -41,6 +41,7 @@ Regexes are enclosed within `/ /` (this document doesn't use these enclosings in
 - `\w` - all "word" (alphanumeric) characters ≍  `[a-zA-Z0-9]`
 - `\D` - everything except digits ≍ `[^0-9]`
 - `\W` - everything except alphanumeric characters ≍ `[^a-z]`
+- `.` - any character except a newline
 
 ## Escaping
 
@@ -52,6 +53,18 @@ Use `\` to replace any special character.
 - `^` - Negation
 - `|` - Logical OR
 - `()` - to group your logic
+
+
+## Standards
+
+Regular expressions (regex) are not defined by a single, universally accepted standard like an RFC. However, there are efforts to establish some level of consistency across different regex implementations. 
+
+Some regex standards are:
+
+- POSIX Basic Regular Expressions (BRE)
+- Extended Regular Expressions (ERE)
+- PCRE (Perl Compatible Regular Expressions)
+- I-Regexp (RFC 9485) 
 
 
 ## References

@@ -2,7 +2,7 @@
 id: ko5vkc0lm91smqedbykoxka
 title: Qualifier
 desc: ''
-updated: 1712954701125
+updated: 1722105565665
 created: 1712953147624
 ---
 

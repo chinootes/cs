@@ -1,8 +1,8 @@
 ---
 id: qrw97vn9y1kh2vunbuqa2md
-title: Exceptions
+title: Exception
 desc: ''
-updated: 1713121019042
+updated: 1719678189200
 created: 1713117416265
 ---
 

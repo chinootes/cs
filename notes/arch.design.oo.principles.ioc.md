@@ -2,11 +2,9 @@
 id: vnqup49endqju6k389uc0br
 title: Inversion of Control
 desc: ''
-updated: 1708272212706
+updated: 1719650697433
 created: 1708272168945
 ---
-
-
 
 - IoC inverts the flow of control as compared to traditional control flow.
 - A software architecture with this design inverts control as compared to traditional procedural programming

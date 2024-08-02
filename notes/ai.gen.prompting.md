@@ -2,7 +2,7 @@
 id: lxbqb7q5efw3s1jyxrg4afi
 title: Prompting
 desc: ''
-updated: 1715796980605
+updated: 1716733770021
 created: 1715792819688
 ---
 
@@ -66,3 +66,5 @@ Thi
 ## References
 
 [LLM Intent Classification Feature Launch - Understanding Prompt Wrapper](https://youtu.be/47HgM-TmFBc?si=KY-iAgdsfRZ3tWZo&t=146)
+- [Google’s NEW Prompting Guide is Incredible! - YouTube - Jeff Su](https://youtu.be/o64Mv-ArFDI?si=FNLomn_oZtD2mMV1)
+- [Gemini for Google Workspace - Prompting Guide 101 - A quick start handbook for effective prompts](https://inthecloud.withgoogle.com/gemini-for-google-workspace-prompt-guide/dl-cd.html)
