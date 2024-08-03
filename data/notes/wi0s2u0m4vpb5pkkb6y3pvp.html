@@ -1,0 +1,114 @@
+<h1 id="test-isolation">Test Isolation<a aria-hidden="true" class="anchor-heading icon-link" href="#test-isolation"></a></h1>
+<blockquote>
+<p>Test should only fail because of the system under test.</p>
+</blockquote>
+<p>Consider two cases. In the first case, you are testing your code under test which is independent. Now, if an error occurs in your test, you'd know it was because there is something wrong with your code.</p>
+<p>Second case - your code depends on some other class or code. Now, if you get error in your unit test, you wouldn't know where the error is coming from. This makes the whole exercise of creating a unit test pointless. You'll still have to investigate which part is causing the error in your machinery despite the test.</p>
+<h2 id="how-to-ensure-test-isolation">How to ensure test isolation<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-ensure-test-isolation"></a></h2>
+<h3 id="find-a-seam">Find a <a href="/cs/notes/i6d9qw0k88sklzglgu514ut">Seam</a><a aria-hidden="true" class="anchor-heading icon-link" href="#find-a-seam"></a></h3>
+<p>Seams depend on the use case</p>
+<ul>
+<li><a href="/cs/notes/dxpzum9arrbthsj6ma6diaf">Unit Test</a>s want no dependencies</li>
+<li>Integration/system tests might only isolate a few dependencies</li>
+<li>If you have a small component where three classes that interact very closely, you might not need isolation there because they belong to the same logical problem.</li>
+<li>Anything that depends on time or duration</li>
+<li>You can't wait till February 29th to execute your test</li>
+</ul>
+<p>Provide Testability
+Always create classes with interface. That way, if your class is a dependency for another code, the developer can create a test double by simply implementing that interface.</p>
+<pre><code>> Create interfaces for all your classes. Always.
+    Interfaces are the heart of testability.
+    The users of your code will be grateful.
+</code></pre>
+<h3 id="provide-an-dependency-injection-mechanism">Provide an <a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection</a> mechanism<a aria-hidden="true" class="anchor-heading icon-link" href="#provide-an-dependency-injection-mechanism"></a></h3>
+<p>Implement the interface of the depended-on component</p>
+<ul>
+<li>Interface provided → you are all set</li>
+<li>No interface provided
+<ul>
+<li>→ Convince your colleague to provide an interface</li>
+<li>→ Implement your own interface
+<ul>
+<li>Only implement the interface methods you need for the test using the keyword <code>PARTIALLY IMPLEMENTED</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Inherit from the depended-on component</p>
+<ul>
+<li>Redefine the methods where you need to have a test double for</li>
+<li>Drawbacks
+<pre><code>- Not always possible due to [[programming.oo.components.types.final]] definition of the class
+- The risk to execute unwanted code in tests is higher e.g. when methods are added later in the code under test and are forgotten to be REDEFINEd in the subclass
+</code></pre>
+</li>
+<li>Implement the test double</li>
+</ul>
+<h3 id="dependency-lookup-using-factory">Dependency lookup using <a href="/cs/notes/cvg20laazosxudo0dz0nm8d">Factory</a><a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-lookup-using-factory"></a></h3>
+<ul>
+<li>During tests, the object factory shall return test doubles to the code under test</li>
+</ul>
+<h4 id="secure-injection">Secure injection<a aria-hidden="true" class="anchor-heading icon-link" href="#secure-injection"></a></h4>
+<p>As a test developer, you need a secure technique to inject test doubles into the object factory class</p>
+<h5 id="solution---injector-class">Solution - Injector class<a aria-hidden="true" class="anchor-heading icon-link" href="#solution---injector-class"></a></h5>
+<ul>
+<li>Must only be available for tests. It is therefore declared as test class</li>
+<li>Must be global friend of the factory class to modify object factory class internal</li>
+</ul>
+<h4 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h4>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> cl_managed <span class="token keyword">DEFINITION</span>
+    <span class="token keyword">PUBLIC</span>
+    <span class="token keyword">FINAL</span>
+    <span class="token keyword">CREATE</span> <span class="token keyword">PRIVATE</span>
+    <span class="token keyword">GLOBAL</span> <span class="token keyword">FRIENDS</span> cl_factory<span class="token punctuation">.</span>
+    
+    <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">INTERFACES</span> if_managed<span class="token punctuation">.</span>
+…
+</code></pre>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> cl_factory <span class="token keyword">DEFINITION</span>
+    <span class="token keyword">PUBLIC</span>
+    <span class="token keyword">FINAL</span>
+    <span class="token keyword">CREATE</span> <span class="token keyword">PRIVATE</span>
+    <span class="token keyword">GLOBAL</span> <span class="token keyword">FRIENDS</span> cl_injector<span class="token punctuation">.</span>
+
+    <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">CLASS-METHODS</span> get_managed
+    <span class="token keyword">RETURNING</span> <span class="token keyword">VALUE</span><span class="token punctuation">(</span>r_instance<span class="token punctuation">)</span>
+    <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_managed<span class="token punctuation">.</span>
+    <span class="token keyword">PRIVATE</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">CLASS-DATA</span> g_managed
+    <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_managed<span class="token punctuation">.</span>
+…
+
+<span class="token keyword">CLASS</span> cl_factory <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHOD</span> get_managed<span class="token punctuation">.</span>
+    <span class="token keyword">IF</span> g_managed <span class="token keyword">IS</span> <span class="token keyword">NOT</span> <span class="token keyword">BOUND</span><span class="token punctuation">.</span>
+    g_managed <span class="token operator">=</span> <span class="token keyword">NEW</span> cl_managed<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+    <span class="token keyword">ENDIF</span><span class="token punctuation">.</span>
+    r_instance <span class="token operator">=</span> g_managed<span class="token punctuation">.</span>
+    <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> cl_injector <span class="token keyword">DEFINITION</span>
+    <span class="token keyword">PUBLIC</span>
+    <span class="token keyword">FOR</span> <span class="token keyword">TESTING</span>
+    <span class="token keyword">FINAL</span>
+    <span class="token keyword">CREATE</span> <span class="token keyword">PRIVATE</span><span class="token punctuation">.</span>
+
+    <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">CLASS-METHODS</span> inject_managed
+    <span class="token keyword">IMPORTING</span> i_test_double
+    <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_managed<span class="token punctuation">.</span>
+…
+
+<span class="token keyword">CLASS</span> cl_injector <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHOD</span> inject_managed<span class="token punctuation">.</span>
+    cl_factory<span class="token token-operator punctuation">=></span>g_managed <span class="token operator">=</span> i_test_double<span class="token punctuation">.</span>
+    <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+…
+</code></pre>
+<blockquote>
+<p>Consider a <a href="/cs/notes/cvg20laazosxudo0dz0nm8d">Factory</a> for integration tests that manages your application / component indirections and collects all factory methods.</p>
+</blockquote>

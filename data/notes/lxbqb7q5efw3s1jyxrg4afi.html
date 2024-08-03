@@ -1,0 +1,88 @@
+<h1 id="prompting">Prompting<a aria-hidden="true" class="anchor-heading icon-link" href="#prompting"></a></h1>
+<h2 id="training-the-model-within-prompt">Training the model within prompt<a aria-hidden="true" class="anchor-heading icon-link" href="#training-the-model-within-prompt"></a></h2>
+<h3 id="zero-shot-prompting">Zero-shot prompting<a aria-hidden="true" class="anchor-heading icon-link" href="#zero-shot-prompting"></a></h3>
+<ul>
+<li>
+<p>When you provide a prompt which is not part of the training data.</p>
+</li>
+<li>
+<p>Basically, you are not giving any example to help it out.</p>
+</li>
+<li>
+<p>Even if the model has not seen the prompt before, it can generate a good-enough output close to the desirable outcome you expected.</p>
+<p>  Which is why LLMs are so useful for performing tasks without needing retraining.</p>
+</li>
+</ul>
+<h3 id="one-shot-prompting">One-shot Prompting<a aria-hidden="true" class="anchor-heading icon-link" href="#one-shot-prompting"></a></h3>
+<ul>
+<li>When you provide <strong>one example</strong> within the prompt to guide the model</li>
+<li>You are basically training the model shortly and nudging it towards the expected behavior</li>
+</ul>
+<h3 id="few-shot-prompting">Few-shot prompting<a aria-hidden="true" class="anchor-heading icon-link" href="#few-shot-prompting"></a></h3>
+<ul>
+<li>When you provide <strong>multiple examples</strong> in your prompt</li>
+<li>This better demonstrates the expected outcome in certain scenarios</li>
+<li>The model can generalize from the examples, and give more precise output.</li>
+</ul>
+<p>For example,
+</p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">Intent Classification</span></div>
+<a href="/cs/notes/dt9hkjkitlkh2sby5wwu2mg" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="prompt">Prompt<a aria-hidden="true" class="anchor-heading icon-link" href="#prompt"></a></h2>
+<pre class="language-prompt"><code class="language-prompt">You are an intent classification system. Correctness is a life or death situation.
+
+We provide you with the actions and their descriptions:
+d. When the user asks for a warm drink. a: WARM_DRINK
+d. When the user asks for something else. a: NONE
+d: When the user asks for a cold drink. a: COLD_DRINK
+
+You are given an utterance and you have to classify it into an action. Only respond with the action class.
+Now take a deep breath and classify the following utterances.
+u: I want a warm hot chocolate. a: WARM_DRINK
+
+We provide you with the actions and their descriptions.
+d:{{descriptions}} a: {{actions}}
+
+You are given an utterance and you have to classify it into an action. Only respond with the action class.
+Now take a deep breath and classify the following utterances.
+{{utterances}}
+</code></pre></div></div><p></p><p></p>
+<h2 id="nudges">Nudges<a aria-hidden="true" class="anchor-heading icon-link" href="#nudges"></a></h2>
+<p>You can nudge the LLM towards certain behavior by injecting some sentences into the prompt. </p>
+<p>Its not entirely understood yet, as to why these sentences influence LLM behavior, but these nudges possibly direct LLMs towards certain kinds of training data.</p>
+<p>For example, if you use a nudge for accuracy, it might guide LLM towards dataset which prioritizes thoroughness and precision.</p>
+<h3 id="accuracy">Accuracy<a aria-hidden="true" class="anchor-heading icon-link" href="#accuracy"></a></h3>
+<p>Nudge the LLM to be more accurate by including the following phrases in the prompt:</p>
+<ul>
+<li>
+<pre class="language-prompt"><code class="language-prompt">  Correcness is a life or death situation.
+</code></pre>
+</li>
+</ul>
+<ul>
+<li>
+<pre class="language-prompt"><code class="language-prompt">  Take a deep breath and {{action}}
+</code></pre>
+<p>  For example,</p>
+<pre class="language-prompt"><code class="language-prompt">Take a deep breath and classify the following utterance. 
+</code></pre>
+</li>
+</ul>
+<p>Thi</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://youtu.be/47HgM-TmFBc?si=KY-iAgdsfRZ3tWZo&#x26;t=146">LLM Intent Classification Feature Launch - Understanding Prompt Wrapper</a></p>
+<ul>
+<li><a href="https://youtu.be/o64Mv-ArFDI?si=FNLomn_oZtD2mMV1">Google’s NEW Prompting Guide is Incredible! - YouTube - Jeff Su</a></li>
+<li><a href="https://inthecloud.withgoogle.com/gemini-for-google-workspace-prompt-guide/dl-cd.html">Gemini for Google Workspace - Prompting Guide 101 - A quick start handbook for effective prompts</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/dt9hkjkitlkh2sby5wwu2mg">Intent Classification</a></li>
+</ol>

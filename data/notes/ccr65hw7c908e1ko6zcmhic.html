@@ -1,0 +1,78 @@
+<h1 id="react-component-lifecycle">React Component Lifecycle<a aria-hidden="true" class="anchor-heading icon-link" href="#react-component-lifecycle"></a></h1>
+<p><img src="/cs/lang.js.react.components.lifecycle.png" alt="react lifecycle stages"></p>
+<ol>
+<li><strong>Mounting</strong>: When an instance of a <a href="/cs/notes/4kr8qnqvd9azf1jf4gz7hfn">React Component</a> is created and inserted into the DOM</li>
+<li><strong>Updating</strong>: When component is re-rendered due to changes to props or state</li>
+<li><strong>Unmounting</strong>: When component is being removed from DOM</li>
+<li><strong>Error Handling</strong>: </li>
+</ol>
+<h2 id="lifecycle-methods">Lifecycle methods<a aria-hidden="true" class="anchor-heading icon-link" href="#lifecycle-methods"></a></h2>
+<p>React offers several methods which are automatically called in different stages of lifecycle of a component.</p>
+<h3 id="mounting">Mounting<a aria-hidden="true" class="anchor-heading icon-link" href="#mounting"></a></h3>
+<ul>
+<li><code>constructor(props)</code>: 
+<ul>
+<li>Called: before component is mounted</li>
+<li>Used for: initializing state, binding event handlers</li>
+</ul>
+</li>
+<li><code>static getDerivedStateFromProps(props, state)</code>: 
+<ul>
+<li>Called: right before rendering, both on the initial mount and on subsequent updates.</li>
+<li>Used for: updating state based on props -> returned object is used to update state - <code>null</code> to update nothing. </li>
+</ul>
+</li>
+<li><code>render()</code>: <strong>Required</strong>. Returns JSX to render.</li>
+<li><code>componentDidMount()</code>: 
+<ul>
+<li>Called immediately after component is mounted.</li>
+<li>Used for: making network requests, setting up subscriptions, interacting with DOM</li>
+</ul>
+</li>
+</ul>
+<h3 id="updating">Updating<a aria-hidden="true" class="anchor-heading icon-link" href="#updating"></a></h3>
+<ul>
+<li><code>static getDerivedStateFromProps(props, state)</code>: 
+<ul>
+<li>Called: again before rendering.</li>
+</ul>
+</li>
+<li><code>shouldComponentUpdate(nextProps, nextState)</code>: Determines whether component should re-render
+<ul>
+<li>Called: before render</li>
+<li>Used for: <a class="color-tag" style="--tag-color: #ffffe4;" href="/cs/notes/cnnovjexy4xmoc3282vojva">#optimization.performance</a> - returning false skips update (true by default)</li>
+</ul>
+</li>
+<li><code>render()</code>: Re-renders the component</li>
+<li><code>getSnapshotBeforeUpdate(prevProps, prevState)</code>: 
+<ul>
+<li>Called: right before DOM is updated. </li>
+<li>Used for: passing something to <code>componentDidUpdate()</code> - you can return it from this method.</li>
+</ul>
+</li>
+<li><code>componentDidUpdate(prevProps, prevState, snapshot)</code>: 
+<ul>
+<li>Called: immediately after component updates </li>
+<li>Used for: working with DOM or sending network requests after updates.</li>
+</ul>
+</li>
+</ul>
+<h3 id="unmounting">Unmounting<a aria-hidden="true" class="anchor-heading icon-link" href="#unmounting"></a></h3>
+<p><code>componentWillUnmount()</code>:</p>
+<pre><code>- Called: right before component is unmounted/destroyed
+- Used for: cleanup(e.g. cleaning timers, cancelling network requests, removing event listeners)
+</code></pre>
+<h3 id="error-handling">Error Handling<a aria-hidden="true" class="anchor-heading icon-link" href="#error-handling"></a></h3>
+<ul>
+<li><code>static getDerivedStateFromError(error)</code>
+<ul>
+<li>Used for: updating state based on the error so that error is not propagated to next render -> returned object is used to update state - <code>null</code> to update nothing.</li>
+</ul>
+</li>
+<li><code>componentDidCatch(error)</code>: 
+<ul>
+<li>Called: when error has been thrown by descendant component</li>
+<li>Used for: logging error info</li>
+</ul>
+</li>
+</ul>

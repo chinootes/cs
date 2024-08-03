@@ -1,0 +1,44 @@
+<h1 id="spring-mvc">Spring MVC<a aria-hidden="true" class="anchor-heading icon-link" href="#spring-mvc"></a></h1>
+<p>Submodule within Spring <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">lang.java.spring.web (Private)</a>, which provides specific capabilities for implementing <a href="/cs/notes/36v26wefaloiwy5x2ydaciv">MVC</a> architecture.</p>
+<p>Provides out-of-the-box <a href="/cs/notes/sr1lucramst86wvaqwssout">REST</a> service capabilities.</p>
+<h2 id="defining-web-service-using-annotations">Defining web service using annotations<a aria-hidden="true" class="anchor-heading icon-link" href="#defining-web-service-using-annotations"></a></h2>
+<h3 id="stereotypes">Stereotypes<a aria-hidden="true" class="anchor-heading icon-link" href="#stereotypes"></a></h3>
+<h4 id="controller"><code>@Controller</code><a aria-hidden="true" class="anchor-heading icon-link" href="#controller"></a></h4>
+<p>Makes <a href="/cs/notes/ld57ynexk5ucd3q13g7t01b">Controller</a>s capable of handling HTTP requests.</p>
+<p>Works along with <code>@RequestMapping</code> annotation to map HTTP handler methods.</p>
+<h4 id="restcontroller"><code>@RestController</code><a aria-hidden="true" class="anchor-heading icon-link" href="#restcontroller"></a></h4>
+<p><code>@Controller</code> + <code>@ResponseBody</code></p>
+<p>Special type of <a href="/cs/notes/ld57ynexk5ucd3q13g7t01b">Controller</a>, which combines <code>@Controller</code> and <code>@RequestBody</code>.</p>
+<p>=> Return values of handler methods are automatically serialized into JSON or XML and returned as response.</p>
+<blockquote>
+<p>NOTE: For the below annotations to work, it is important that the class is annotated with <code>@Controller</code> or <code>@RESTController</code>. Otherwise, it won't work, there won't be any errors, it simply wouldn't work. </p>
+</blockquote>
+<h3 id="endpoints-and-http-methods">Endpoints and <a href="/cs/notes/s608kr39r85t6bsl1e0ig1z">HTTP</a> methods<a aria-hidden="true" class="anchor-heading icon-link" href="#endpoints-and-http-methods"></a></h3>
+<ul>
+<li><code>@RequestMapping</code> </li>
+<li><code>@GetMapping</code> </li>
+<li><code>@PostMapping</code></li>
+<li><code>@PutMapping</code></li>
+<li><code>@PatchMapping</code></li>
+<li><code>@DeleteMapping</code></li>
+</ul>
+<h3 id="request-response-and-parameters">Request, response and parameters<a aria-hidden="true" class="anchor-heading icon-link" href="#request-response-and-parameters"></a></h3>
+<h4 id="payload-and-response">Payload and response<a aria-hidden="true" class="anchor-heading icon-link" href="#payload-and-response"></a></h4>
+<p>Can be specified by <code>@RequestBody</code> and <code>@ResponseBody</code> (not required if you're using REST Controller) annotation.</p>
+<h4 id="uri-path-params-and-query-request-params">URI (Path) Params and Query (Request) Params<a aria-hidden="true" class="anchor-heading icon-link" href="#uri-path-params-and-query-request-params"></a></h4>
+<p><code>/users/{userId}/orders/{status}?search=keyword&#x26;page=1</code></p>
+<pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/users/{userId}/orders/{status}"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getItemUser</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span> <span class="token class-name">String</span> userId<span class="token punctuation">,</span> <span class="token annotation punctuation">@PathVariable</span> <span class="token class-name">String</span> status<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"search"</span><span class="token punctuation">)</span> <span class="token class-name">String</span> searchString<span class="token punctuation">,</span> <span class="token annotation punctuation">@RequestParam</span> <span class="token keyword">int</span> page<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="consuming-web-service">Consuming Web Service<a aria-hidden="true" class="anchor-heading icon-link" href="#consuming-web-service"></a></h3>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.baeldung.com/spring-requestparam-vs-pathvariable">Sprign @RequestParam vs @PathVariable</a>  <a class="color-tag" style="--tag-color: #680018;" href="/cs/notes/pwhjjycgfxefyyhu0rfav5w">#read-later</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/vtssw70mxi17onoif07cght">Spring (cs)</a></li>
+</ul>

@@ -1,0 +1,79 @@
+<h1 id="arraylist">ArrayList<a aria-hidden="true" class="anchor-heading icon-link" href="#arraylist"></a></h1>
+<p>implements <a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List</a> and <a href="/cs/notes/ovg9du1v373av7mahmf6xd3">RandomAccess</a></p>
+<ul>
+<li>Underlying Data Structure: Resizable Array</li>
+<li><a href="/cs/notes/esvk57cujir0xgnugroobcg">Duplicates - Allowed</a></li>
+<li><a href="/cs/notes/c8sos8r4mdfod3yi0hrbxxs">Insertion Order - Preserved</a></li>
+<li><a href="/cs/notes/ub2twkupmr0kns22xaxz8tj">null insetion - Allowed</a></li>
+<li>Best choice for: Frequent Retrieval (Random Access)</li>
+<li>Worst choice for: Frequent Insertion/deletion in middle -> Several shift operations are required</li>
+<li>Constructors:
+<ol>
+<li><code>ArrayList l = new ArrayList();</code></li>
+<li><code>ArrayList l = new ArrayList(int initialCapacity);</code></li>
+<li><code>ArrayList l = new ArrayList(Collection C);</code></li>
+</ol>
+</li>
+<li>Default initial capacity: 10</li>
+<li>Load factor/fill ratio:</li>
+<li>New Capacity: 1.5C + 1</li>
+</ul>
+<p>References are stored contiguously (not the objects).</p>
+<h2 id="comparison-with-arrays">Comparison with Arrays<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison-with-arrays"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">data.structure.primary.array (Private)</a></th><th>ArrayList</th></tr></thead><tbody><tr><td>Definition</td><td>An array is a dynamically-created object. It serves as a container that holds the constant number of values of the same type. It has a contiguous memory location.</td><td>The ArrayList is a class of Java Collections framework.</td></tr><tr><td>Size</td><td>Static - fixed-length data structure</td><td>Dynamic - variable length data structure - can resize itself when needed</td></tr><tr><td>Size specification</td><td>Mandatory to provide size while initializing</td><td>Size can be left unspecified - default initial capacity will be used</td></tr><tr><td>Performance</td><td>Fixed size => Faster</td><td>Internally backed by array. Resize operation slows down the performance</td></tr><tr><td>Primitive/generic type</td><td>Can store both primitives and objects</td><td>Can't store primitives - automatically converts them to objects. For example, int is converted to Integer.</td></tr><tr><td>Getting the length</td><td>arr.length</td><td>arr.size()</td></tr><tr><td>Adding elements</td><td>Can add elements using assignment operator</td><td>add() function</td></tr><tr><td>Multiple dimensions</td><td>Can be multi-dimensional</td><td>CAN'T be multi-dimensional</td></tr></tbody></table></div>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/fi3xznhjsf8ezkolih7torp">Collection Frameworks Cheatsheet (cs)</a></li>
+<li><a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List (cs)</a></li>
+</ul>

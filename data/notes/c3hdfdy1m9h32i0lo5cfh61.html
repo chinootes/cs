@@ -1,0 +1,87 @@
+<h1 id="exceptions">Exceptions<a aria-hidden="true" class="anchor-heading icon-link" href="#exceptions"></a></h1>
+<h2 id="checked-exceptions"><a href="/cs/notes/qwlx9b919ijpuf6eihyvulw">Checked Exceptions</a><a aria-hidden="true" class="anchor-heading icon-link" href="#checked-exceptions"></a></h2>
+<h2 id="unchecked-exceptions"><a href="/cs/notes/jrmuv52xrppabjxij7k6glk">Unchecked Exceptions</a><a aria-hidden="true" class="anchor-heading icon-link" href="#unchecked-exceptions"></a></h2>
+<h2 id="handling">Handling<a aria-hidden="true" class="anchor-heading icon-link" href="#handling"></a></h2>
+<h3 id="catching">Catching<a aria-hidden="true" class="anchor-heading icon-link" href="#catching"></a></h3>
+<ul>
+<li>
+<p>``</p>
+<ul>
+<li>Used to specify a block of code which can throw an exception.</li>
+<li>Must be followed by a ``.</li>
+<li>Can't be used alone</li>
+</ul>
+</li>
+<li>
+<p>``</p>
+<ul>
+<li>Block used to handle the error.</li>
+<li>Must be preceded by ``</li>
+<li>Can't be used alone</li>
+</ul>
+</li>
+</ul>
+<h3 id="always-execute">Always execute<a aria-hidden="true" class="anchor-heading icon-link" href="#always-execute"></a></h3>
+<ul>
+<li>``</li>
+</ul>
+<p>Contains the code which must be executed irrespective of whether an exception is handled or not</p>
+<h3 id="throwing">Throwing<a aria-hidden="true" class="anchor-heading icon-link" href="#throwing"></a></h3>
+<ul>
+<li>``</li>
+</ul>
+<p>Used to throw an exception</p>
+<h3 id="declaring">Declaring<a aria-hidden="true" class="anchor-heading icon-link" href="#declaring"></a></h3>
+<ul>
+<li>``
+<ul>
+<li>Used to declare exceptions</li>
+<li>Doesn't throw error</li>
+<li>Specifies that an exception may occur in a method</li>
+<li>Used with method signature</li>
+</ul>
+</li>
+</ul>
+<h3 id="creating-custom-exceptions">Creating Custom Exceptions<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-custom-exceptions"></a></h3>
+<ul>
+<li>
+<p>How to create?</p>
+</li>
+<li>
+<p>How to return your custom message while throwing exception?</p>
+</li>
+<li>
+<p>Are custom exceptions checked or unchecked?</p>
+</li>
+</ul>
+<h2 id="propagation">Propagation<a aria-hidden="true" class="anchor-heading icon-link" href="#propagation"></a></h2>
+<h2 id="exceptions-in-main-method">Exceptions in main() method<a aria-hidden="true" class="anchor-heading icon-link" href="#exceptions-in-main-method"></a></h2>
+<ul>
+<li>What happens when main() throws an error?</li>
+</ul>
+<ul>
+<li>Can <em>throws</em> keyword be used with main()?</li>
+</ul>
+<h2 id="exceptions-raised-in-common-scenarios">Exceptions raised in common scenarios<a aria-hidden="true" class="anchor-heading icon-link" href="#exceptions-raised-in-common-scenarios"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario</th><th>Exception</th></tr></thead><tbody><tr><td>Divide by zero</td><td>``</td></tr><tr><td>Operation on Null Pointer</td><td>``</td></tr><tr><td>Operating on incorrect/non-existant index</td><td>``</td></tr></tbody></table></div>

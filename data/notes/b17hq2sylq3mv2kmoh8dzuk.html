@@ -1,0 +1,27 @@
+<h1 id="deadlocks">Deadlocks<a aria-hidden="true" class="anchor-heading icon-link" href="#deadlocks"></a></h1>
+<h2 id="detection">Detection<a aria-hidden="true" class="anchor-heading icon-link" href="#detection"></a></h2>
+<p>Deadlocks are diffcult to detect as there are multiple locks and threads in Java which run even without us specifying.</p>
+<h3 id="detection-using-thread-dumps">Detection using thread dumps<a aria-hidden="true" class="anchor-heading icon-link" href="#detection-using-thread-dumps"></a></h3>
+<p>Use either of the following commands to ask the JVM to print info of all the threads running in the application.</p>
+<p>Take the process ID of your application and run the following -</p>
+<ul>
+<li><code>kill -3 12704</code> (where 12704 is the process ID)</li>
+<li><code>jstack 11475 > ./out.txt</code> (will put that log in the specified file)</li>
+</ul>
+<p>JVM will detect the deadlock itself and mention it.</p>
+<h3 id="detection-using-java-mxbean">Detection using Java MXBean<a aria-hidden="true" class="anchor-heading icon-link" href="#detection-using-java-mxbean"></a></h3>
+<p>MXBean is an API which you can run constantly in the background which can detect and tell you when the application goes into a deadlock state.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">detectDeadlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">ThreadMXBean</span> threadBean <span class="token operator">=</span> <span class="token class-name">ManagementFactory</span><span class="token punctuation">.</span><span class="token function">getThreadMXBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">long</span><span class="token punctuation">[</span><span class="token punctuation">]</span> threadIds <span class="token operator">=</span> threadBean<span class="token punctuation">.</span><span class="token function">findDeadlockedThreads</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">boolean</span> deadLock <span class="token operator">=</span> threadIds <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&#x26;&#x26;</span> threadIds<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Deadlocks found: "</span> <span class="token operator">+</span> deadLock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="prevention">Prevention<a aria-hidden="true" class="anchor-heading icon-link" href="#prevention"></a></h2>
+<ul>
+<li>Include timeout for your locks.</li>
+<li>Have a global order for locks</li>
+<li>Avoiding unnecessary and nested locks altogether</li>
+<li>Joining the threads</li>
+</ul>

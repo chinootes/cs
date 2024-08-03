@@ -1,0 +1,20 @@
+<h1 id="reference-variables">Reference Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#reference-variables"></a></h1>
+<ul>
+<li>
+<p>References are strongly typed</p>
+<p>  Type of a reference is much more strictly controlled in Java than the type of a <a href="/cs/notes/0of1ngd11oerxbr0ug24ku3">Pointer</a> is in C. In C you can have an <code>int*</code> and cast it to a <code>char*</code> and just re-interpret the memory at that location. That re-interpretation doesn’t work in Java: you can only interpret the object at the other end of the reference as something that it already is (i.e. you can cast a Object reference to String reference only if the object pointed to is actually a String).</p>
+</li>
+<li>
+<p>References are not memory addresses per se. They are more like object handles.</p>
+<ul>
+<li>The object's memory address will change when it's moved. But the object handle will stay the same.</li>
+<li>For example, JVM is allowed to use moving garbage collectors, which means objects can be relocated by the GC. (In fact, generational GCs frequently relocate objects, when migrating them between generations.)</li>
+<li><a href="/cs/notes/oay82cjzrpdd6ocyq9qrubi">Pointer Arithmetic</a> nlot allowed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/is-there-any-concept-of-pointers-in-java/">C/C++ Pointers vs Java References</a> — Geeks for geeks</li>
+<li><a href="https://www.quora.com/If-Java-uses-references-and-references-are-just-memory-addresses-can-I-perform-arithmetic-operations-on-the-addresses-they-point-to">If Java uses references and references are just memory addresses, can I perform arithmetic operations on the addresses they point to? — Quora</a></li>
+</ul>

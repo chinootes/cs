@@ -1,0 +1,105 @@
+<h1 id="exception">Exception<a aria-hidden="true" class="anchor-heading icon-link" href="#exception"></a></h1>
+<h2 id="checked-exceptions"><a href="/cs/notes/qwlx9b919ijpuf6eihyvulw">Checked Exceptions</a><a aria-hidden="true" class="anchor-heading icon-link" href="#checked-exceptions"></a></h2>
+<p>Classes which directly inherit Throwable except RuntimeExceptions and Errors.</p>
+<h2 id="unchecked-exceptions"><a href="/cs/notes/jrmuv52xrppabjxij7k6glk">Unchecked Exceptions</a><a aria-hidden="true" class="anchor-heading icon-link" href="#unchecked-exceptions"></a></h2>
+<p>Classes which inherit RuntimeExceptions</p>
+<h2 id="handling">Handling<a aria-hidden="true" class="anchor-heading icon-link" href="#handling"></a></h2>
+<h3 id="catching">Catching<a aria-hidden="true" class="anchor-heading icon-link" href="#catching"></a></h3>
+<ul>
+<li>
+<p><code>try</code></p>
+<ul>
+<li>Used to specify a block of code which can throw an exception.</li>
+<li>Must be followed by a catch or finally.</li>
+<li>Can't be used alone</li>
+</ul>
+</li>
+<li>
+<p><code>catch</code></p>
+<ul>
+<li>Block used to handle the error.</li>
+<li>Must be preceded by try</li>
+<li>Can't be used alone</li>
+</ul>
+</li>
+</ul>
+<h3 id="always-execute">Always execute<a aria-hidden="true" class="anchor-heading icon-link" href="#always-execute"></a></h3>
+<ul>
+<li><code>finally</code></li>
+</ul>
+<p>Contains the code which must be executed irrespective of whether an exception is handled or not</p>
+<h3 id="throwing">Throwing<a aria-hidden="true" class="anchor-heading icon-link" href="#throwing"></a></h3>
+<ul>
+<li><code>throw</code></li>
+</ul>
+<p>Used to throw an exception</p>
+<ul>
+<li><code>throws</code>
+<ul>
+<li>Used to declare exceptions</li>
+<li>Doesn't throw error</li>
+<li>Specifies that an exception may occur in a method</li>
+<li>Used with method signature</li>
+</ul>
+</li>
+</ul>
+<h2 id="creating-custom-exceptions">Creating Custom Exceptions<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-custom-exceptions"></a></h2>
+<ul>
+<li>
+<p>How to create?</p>
+<p>  Create a class WhateverException which extends Exception</p>
+</li>
+<li>
+<p>How to return your custom message while throwing exception?</p>
+<p>  Pass the message you want to show as a String to the Exception (or super).</p>
+</li>
+<li>
+<p>Are custom exceptions checked or unchecked?</p>
+<p>  If you want it to be checked, extend Exception. If you want it to be unchecked, extend RuntimeException.</p>
+</li>
+</ul>
+<h2 id="propagation">Propagation<a aria-hidden="true" class="anchor-heading icon-link" href="#propagation"></a></h2>
+<h3 id="exceptions-in-main-method">Exceptions in main() method<a aria-hidden="true" class="anchor-heading icon-link" href="#exceptions-in-main-method"></a></h3>
+<ul>
+<li>
+<p>What happens when main() throws an error?</p>
+<p>  Java Runtime terminates the program and print the exception message and stack trace in system console.</p>
+</li>
+<li>
+<p>Can <em>throws</em> keyword be used with main()?</p>
+<p>  Yes, it can be used. Although, there's no reason for a <code>main</code> method to <code>throw</code> anything. Since, any error will handled by JVM in the same way.</p>
+</li>
+</ul>
+<h2 id="exceptions-raised-in-common-scenarios">Exceptions raised in common scenarios<a aria-hidden="true" class="anchor-heading icon-link" href="#exceptions-raised-in-common-scenarios"></a></h2>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario</th><th>Exception</th></tr></thead><tbody><tr><td>Divide by zero</td><td><code>ArithmeticException</code></td></tr><tr><td>Operation on Null Pointer</td><td><code>NullPointerException</code></td></tr><tr><td>Operating on incorrect/non-existant index</td><td><code>ArrayIndexOutOfBoundsException</code></td></tr><tr><td>Wrong formatting of any value. For example, converting a String variable with characters into digit.</td><td><code>NumberFormatException</code></td></tr></tbody></table></div>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/bq69a0tblzodq3mekjz89j9">Dependency Injection (cs)</a></li>
+<li><a href="/cs/notes/2iwb37apw4g02znw8yrmp2n">Throwable (cs)</a></li>
+</ul>

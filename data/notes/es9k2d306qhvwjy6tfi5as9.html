@@ -1,0 +1,64 @@
+<h1 id="hashset">HashSet<a aria-hidden="true" class="anchor-heading icon-link" href="#hashset"></a></h1>
+<p>implements <a href="/cs/notes/tnanvy1qtu9v1k85x3pkm86">Set</a></p>
+<ul>
+<li>
+<p>Underlying Data Structure: <a href="/cs/notes/vrzvyghe8utpnbzfyjqqzh5">Hashtable</a></p>
+</li>
+<li>
+<p><a href="/cs/notes/erabl4efwn49ad1hyh9q9xo">Duplicates - NOT Allowed</a></p>
+</li>
+<li>
+<p><a href="/cs/notes/1xylmkva10qrxgwrvlqj49b">Insertion Order - NOT Preserved</a> (in order of hashcode)</p>
+</li>
+<li>
+<p><a href="/cs/notes/z05or3vlqc8nz9la96io3wy">null insertion - NOT Allowed</a></p>
+</li>
+<li>
+<p>Best choice for: Search Operations</p>
+</li>
+<li>
+<p>Worst choice for:</p>
+</li>
+<li>
+<p>Constructors:</p>
+<ol>
+<li><code>HashSet h = new HashSet();</code></li>
+<li><code>HashSet h = new HashSet(int initialCapacity)</code></li>
+<li><code>HashSet h = new HashSet(int initialCapacity, float loadFactor)</code></li>
+<li><code>HashSet h = new HashSet(Collection C)</code></li>
+</ol>
+</li>
+<li>
+<p>Default initial capacity: 16</p>
+</li>
+<li>
+<p>Load factor/fill ratio: 0.75</p>
+</li>
+<li>
+<p>New Capacity:</p>
+</li>
+<li>
+<p>What will happen if we try to enter duplicate value for set?
+add() method will return false.
+👆🏽 return type is boolean</p>
+</li>
+<li>
+<p>Insertion order
+Object stored in order of hashcode()
+👆🏽 Makes it best choice for search operations</p>
+</li>
+</ul>
+<p>Child classes/interfaces:</p>
+<p><a href="/cs/notes/j97yg0rjep0x2azu3uthy36">Linked HashSet</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/j97yg0rjep0x2azu3uthy36">Linked HashSet</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/fi3xznhjsf8ezkolih7torp">Collection Frameworks Cheatsheet (cs)</a></li>
+<li><a href="/cs/notes/tnanvy1qtu9v1k85x3pkm86">Set (cs)</a></li>
+<li><a href="/cs/notes/j97yg0rjep0x2azu3uthy36">Linked HashSet (cs)</a></li>
+</ul>

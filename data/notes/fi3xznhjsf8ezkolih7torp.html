@@ -1,0 +1,181 @@
+<h1 id="collection-frameworks-cheatsheet">Collection Frameworks Cheatsheet<a aria-hidden="true" class="anchor-heading icon-link" href="#collection-frameworks-cheatsheet"></a></h1>
+<p><a class="color-tag" style="--tag-color: #0c1793;" href="/cs/notes/bdqycq1yem2mts8egg27x76">#Cheatsheet</a></p>
+<ul>
+<li>All Collection Classes implement <a href="/cs/notes/mbwwjk3x17fjagziw7d0ky6">Serializable</a> and <a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable</a></li>
+<li><a href="/cs/notes/vwdf8z0d3pvb4ho48a34bqf">Heterogeneous Objects - allowed</a> for all collections except <a href="/cs/notes/4nl0e84925hrxb1sa72xp32">TreeSet</a> and <a href="/cs/notes/my7bqsx7qsgok7htvjrw5u3">TreeMap</a>.</li>
+</ul>
+<h2 id="interface-and-class-hierarchy">Interface and Class Hierarchy<a aria-hidden="true" class="anchor-heading icon-link" href="#interface-and-class-hierarchy"></a></h2>
+<p><em>I = Interface</em>
+<em>AC = Abstract Class</em>
+Underlying Data Structure mentioned beside the classes.</p>
+<p>💡 Every Collection class is based on some standard data structure.</p>
+<p>In order of hierarchy:</p>
+<ul>
+<li><a href="/cs/notes/rpb0p7ld8g30mdscf1r32re">Collection Interface</a> (I)</li>
+<li><a href="/cs/notes/uzes06s5i7rok1c91ok4ici">List</a> (I)
+<ul>
+<li><a href="/cs/notes/eo18wj1qkvnrnnyp86ggakx">ArrayList</a> - Resizable Array</li>
+<li><a href="/cs/notes/lrm76nt33omgtngqrcv1kz2">LinkedList</a> - Doubly Linked List</li>
+<li><a href="/cs/notes/gcyt5s49y6mnzcov0gtdl8o">Vector</a> - Resizable Array
+<ul>
+<li><a href="/cs/notes/ovqyygo1fe3tpwf200ymr1e">Stack</a> - Stack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/cs/notes/tnanvy1qtu9v1k85x3pkm86">Set</a> (I)
+<ul>
+<li><a href="/cs/notes/es9k2d306qhvwjy6tfi5as9">HashSet</a> - Hash table
+<ul>
+<li><a href="/cs/notes/j97yg0rjep0x2azu3uthy36">Linked HashSet</a> - Hash table</li>
+</ul>
+</li>
+<li><a href="/cs/notes/ax3jxg34poem17rw5lt7rph">SortedSet</a> (I)
+<ul>
+<li><a href="/cs/notes/0y56oy381qsfyzonzjl0ln8">NavigableSet</a> (I)
+<ul>
+<li><a href="/cs/notes/4nl0e84925hrxb1sa72xp32">TreeSet</a> -  Balanced Tree</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/cs/notes/lkjm0zyjkpkt1ptkaafuwmm">Queue</a> (I)
+<ul>
+<li><a href="/cs/notes/usqgif6i77gatvthku3kln9">PriorityQueue</a></li>
+<li><a href="/cs/notes/auhvytb4fzhjgt2pfnmp9v7">BlockingQueue</a>
+<ul>
+<li><a href="/cs/notes/0xlzadm1zj5rmlhuw48yw8k">PriorityBlockingQueue</a></li>
+<li><a href="/cs/notes/3k5hxtwo19sj7w84m137x9f">LinkedBlockingQueue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/cs/notes/bsk6mro2a2qy52s1c3jkvqu">Map</a> (I)
+<ul>
+<li><a href="/cs/notes/2flikwueaimsj1naahg6gn2">HashMap</a></li>
+<li><a href="/cs/notes/b63mj2mkjzvz4ridttd0ge9">WeakHashMap</a></li>
+<li><a href="/cs/notes/wlftnmp7thzpvca4ocbbxsf">IdentityHashMap</a></li>
+<li><a href="/cs/notes/4cyorq5w2fbmxmys9kowugd">SortedMap</a> (I)
+<ul>
+<li><a href="/cs/notes/yl9e3i20e0niyj5sjeppq1l">NavigableMap</a> (I)
+<ul>
+<li><a href="/cs/notes/my7bqsx7qsgok7htvjrw5u3">TreeMap</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/cs/notes/gu1ozy25u42r56u3nsuucww">Hashtable</a>
+<ul>
+<li><a href="/cs/notes/es9d2bgoxu3f4okku02vf0d">Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="important-differences">Important Differences<a aria-hidden="true" class="anchor-heading icon-link" href="#important-differences"></a></h2>
+<h3 id="collections-class-vs-collection-interface"><a href="/cs/notes/e3yh106bjbj4yim4rsaulv6">Collections Class</a> vs <a href="/cs/notes/rpb0p7ld8g30mdscf1r32re">Collection Interface</a><a aria-hidden="true" class="anchor-heading icon-link" href="#collections-class-vs-collection-interface"></a></h3>
+<p></p><p></p><div class="portal-container">
+<div class="portal-head">
+<div class="portal-backlink">
+<div class="portal-title">From <span class="portal-text-title">ArrayList</span></div>
+<a href="/cs/notes/eo18wj1qkvnrnnyp86ggakx" class="portal-arrow">Go to text <span class="right-arrow">→</span></a>
+</div>
+</div>
+<div id="portal-parent-anchor" class="portal-parent" markdown="1">
+<div class="portal-parent-fader-top"></div>
+<div class="portal-parent-fader-bottom"></div><h2 id="comparison-with-arrays">Comparison with Arrays<a aria-hidden="true" class="anchor-heading icon-link" href="#comparison-with-arrays"></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">data.structure.primary.array (Private)</a></th><th>ArrayList</th></tr></thead><tbody><tr><td>Definition</td><td>An array is a dynamically-created object. It serves as a container that holds the constant number of values of the same type. It has a contiguous memory location.</td><td>The ArrayList is a class of Java Collections framework.</td></tr><tr><td>Size</td><td>Static - fixed-length data structure</td><td>Dynamic - variable length data structure - can resize itself when needed</td></tr><tr><td>Size specification</td><td>Mandatory to provide size while initializing</td><td>Size can be left unspecified - default initial capacity will be used</td></tr><tr><td>Performance</td><td>Fixed size => Faster</td><td>Internally backed by array. Resize operation slows down the performance</td></tr><tr><td>Primitive/generic type</td><td>Can store both primitives and objects</td><td>Can't store primitives - automatically converts them to objects. For example, int is converted to Integer.</td></tr><tr><td>Getting the length</td><td>arr.length</td><td>arr.size()</td></tr><tr><td>Adding elements</td><td>Can add elements using assignment operator</td><td>add() function</td></tr><tr><td>Multiple dimensions</td><td>Can be multi-dimensional</td><td>CAN'T be multi-dimensional</td></tr></tbody></table>
+</div></div><p></p><p></p>
+<h3 id="hashmap-vs-hashtable">HashMap vs Hashtable<a aria-hidden="true" class="anchor-heading icon-link" href="#hashmap-vs-hashtable"></a></h3>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>HashMap</th><th>Hashtable</th></tr></thead><tbody><tr><td>Introduced in</td><td>1.2</td><td>1.0</td></tr><tr><td>Thread Safety</td><td>Not thread safe (not synchronized) => works with single thread</td><td>Thread safe (synchronized) => works with multiple threads</td></tr><tr><td>Speed</td><td>Faster</td><td>Slower</td></tr><tr><td>Null key</td><td>One null key allowed</td><td>Null key not allowed</td></tr></tbody></table></div>
+<h3 id="arraylist-and-vectors-only-difference">ArrayList and Vector's only Difference<a aria-hidden="true" class="anchor-heading icon-link" href="#arraylist-and-vectors-only-difference"></a></h3>
+<p>Vector is thread-safe (most methods are synchronised)
+ArrayList is not.</p>
+<p>💡 If something is thread-safe, it will inevitably have a lower performance in comparison to a corresponding non-synchronised something.</p>
+<h3 id="size-vs-capacity"><code>size()</code> vs <code>capacity()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#size-vs-capacity"></a></h3>
+<ul>
+<li>size = number of objects currently</li>
+<li>capacity = number of objects which can be accommodated</li>
+</ul>

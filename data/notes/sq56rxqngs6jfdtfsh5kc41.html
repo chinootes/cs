@@ -1,0 +1,37 @@
+<h1 id="foreach">forEach<a aria-hidden="true" class="anchor-heading icon-link" href="#foreach"></a></h1>
+<p>Used to execute a <code>callback</code> function for all elements in ascending order.</p>
+<h2 id="parameters">Parameters<a aria-hidden="true" class="anchor-heading icon-link" href="#parameters"></a></h2>
+<h3 id="callback-function"><code>callback</code> function<a aria-hidden="true" class="anchor-heading icon-link" href="#callback-function"></a></h3>
+<h4 id="arguments-of-the-callback-function">Arguments of the <code>callback</code> function<a aria-hidden="true" class="anchor-heading icon-link" href="#arguments-of-the-callback-function"></a></h4>
+<p>All three are <em>optional</em>.</p>
+<ul>
+<li><code>element value</code>: The current value of the item.</li>
+<li><code>element index</code>: The index of the current element being processed in the array.</li>
+<li><code>array</code>: The array being iterated.</li>
+</ul>
+<p>Note: These three arguments are optional.</p>
+<h3 id="thisobject"><code>thisObject</code><a aria-hidden="true" class="anchor-heading icon-link" href="#thisobject"></a></h3>
+<p>An object to use as this when executing the callback.</p>
+<h2 id="example">Example<a aria-hidden="true" class="anchor-heading icon-link" href="#example"></a></h2>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">const</span> fruits<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Apple'</span><span class="token punctuation">,</span> <span class="token string">'Orange'</span><span class="token punctuation">,</span> <span class="token string">'Banana'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example 1: Using all parameters</span>
+fruits<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>currentValue<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> index<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> arr<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Fruit at index </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>currentValue<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Example 2: Using a custom 'this' value</span>
+<span class="token keyword">const</span> myObject <span class="token operator">=</span> <span class="token punctuation">{</span>
+    greeting<span class="token operator">:</span> <span class="token string">'Hello'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">displayFruit</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>fruit<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">greeting</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fruit<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+fruits<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span>myObject<span class="token punctuation">.</span><span class="token property-access">displayFruit</span><span class="token punctuation">,</span> myObject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/8i3kxplbrkx5wfmnsmm6g0f">Arrays (cs)</a></li>
+</ul>

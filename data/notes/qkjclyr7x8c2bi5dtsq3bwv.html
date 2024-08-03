@@ -1,0 +1,37 @@
+<h1 id="generational">Generational<a aria-hidden="true" class="anchor-heading icon-link" href="#generational"></a></h1>
+<p>Garbage collection is performed on objects on basis of their age in the program.</p>
+<h3 id="heap-memory-division">Heap Memory Division<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-memory-division"></a></h3>
+<p>Generational garbage collector divides the heap memory into different generations based on the lifespan of objects.</p>
+<p>Heap is divided into:</p>
+<ul>
+<li>Young Generation (Eden Space)</li>
+<li>Old Generation</li>
+<li>Survivor space 
+<ul>
+<li>1</li>
+<li>2</li>
+</ul>
+</li>
+</ul>
+<h4 id="garbage-collection-life-cycle">Garbage collection life cycle<a aria-hidden="true" class="anchor-heading icon-link" href="#garbage-collection-life-cycle"></a></h4>
+<ul>
+<li>Objects are stored in Eden space, when they are created at first.</li>
+<li>1st cycle - When Eden Space gets full
+<ul>
+<li>Minor GC runs</li>
+<li>Objects moved to survivor space 1</li>
+</ul>
+</li>
+<li>Susequent cycles - Eden space gets full again
+<ul>
+<li>Objects moved to survivor space 2
+from both Eden space and survivor 1</li>
+</ul>
+</li>
+</ul>
+<p>💡 Objects keep moving between both survivor spaces in cycles</p>
+<p>Objects older than Max tenure threshold (a certain threshold for number of cycles) are moved to old generation space.</p>
+<ul>
+<li>When old generation space is about to be full</li>
+<li>major GC runs → <em>time consuming and might pause the application</em></li>
+</ul>

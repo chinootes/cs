@@ -1,0 +1,38 @@
+<h1 id="thread-pool">Thread Pool<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-pool"></a></h1>
+<p>aka <strong>Replicated Workers</strong> or <strong>Worker-crew</strong> model.</p>
+<h2 id="problem">Problem<a aria-hidden="true" class="anchor-heading icon-link" href="#problem"></a></h2>
+<ul>
+<li>Frequent creation and destruction of threads for short-lived tasks can be expensive.</li>
+</ul>
+<h2 id="solution">Solution<a aria-hidden="true" class="anchor-heading icon-link" href="#solution"></a></h2>
+<ul>
+<li>Maintain multiple threads waiting for a task to be assigned.</li>
+<li>Queue the tasks and assign them to worker threads</li>
+<li>Add tasks to completed tasks queue.</li>
+</ul>
+<div class="mermaid">
+  flowchart LR
+  TasksQueue &#x26; CompletedTasksQueue &#x3C;--> ThreadPool
+</div>
+<h2 id="benefits">Benefits<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a></h2>
+<ul>
+<li>Thread creation-destruction overhead is contained to initial creation of the pool => may result in better performance and stability</li>
+</ul>
+<h2 id="optimal-pool-size">Optimal Pool Size<a aria-hidden="true" class="anchor-heading icon-link" href="#optimal-pool-size"></a></h2>
+<ul>
+<li>Threads consume memory</li>
+<li>Context-switching also takes time</li>
+</ul>
+<p>=> If the number of threads are excess, the above two will lead to memory wastage and performance penalties.</p>
+<ul>
+<li>Thread creation + more threads = cost of creating unused threads</li>
+<li>Thread creation + less threads = longer waiting time</li>
+<li>Thread destruction + more threads = cost of creating them again later</li>
+<li>Thread destruction + less threads = May starve other processes of resources (more unused threads in memory)</li>
+</ul>
+<p>Thus, the pool size has to be very carefully tuned to a sweet-spot. This can be dynamically determined during the application's lifecycle based on the number of waiting tasks. </p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/k6j3lplu090syykverllklm">NodeJS (cs)</a></li>
+</ul>

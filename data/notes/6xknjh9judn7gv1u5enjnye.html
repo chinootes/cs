@@ -1,0 +1,33 @@
+<h1 id="multiple-inheritance-not-allowed">Multiple Inheritance not allowed<a aria-hidden="true" class="anchor-heading icon-link" href="#multiple-inheritance-not-allowed"></a></h1>
+<ul>
+<li><a href="/cs/notes/b5klztyyggn8xna896zyxnx">Multiple Inheritance</a> is not allowed in some languages</li>
+<li>However, multiple interfaces can be implemented</li>
+</ul>
+<h2 id="why-is-multiple-inheritance-not-allowed">Why is Multiple inheritance not allowed?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-is-multiple-inheritance-not-allowed"></a></h2>
+<ul>
+<li>To reduce complexity and simplify the language</li>
+<li><strong>Diamond problem</strong>: Results in ambiguity
+<div class="mermaid">
+  classDiagram
+    A &#x3C;|-- B
+    A &#x3C;|-- C
+    B &#x3C;|-- D
+    C &#x3C;|-- D
+    class A{ foo() }
+    class B{ foo() }
+    class C{ foo() }
+    class D{ which foo() } 
+</div>
+</li>
+<li>Creates problem during various operations like casting, constructor chaining</li>
+<li>Very few scenarios in which multiple inheritance is required</li>
+</ul>
+<h2 id="why-is-multiple-inheritance-allowed-in-interfaces">Why is multiple inheritance allowed in interfaces?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-is-multiple-inheritance-allowed-in-interfaces"></a></h2>
+<p>No ambiguity - implementation is not given by interfaces</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://stackoverflow.com/questions/2064880/diamond-problem">Diamond Problem - StackOverflow</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/nvdgarhjfd5p8h8sjr24jh5">Inheritance (cs)</a></li>
+</ul>

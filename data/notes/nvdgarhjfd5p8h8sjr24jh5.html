@@ -1,0 +1,36 @@
+<h1 id="inheritance">Inheritance<a aria-hidden="true" class="anchor-heading icon-link" href="#inheritance"></a></h1>
+<ul>
+<li>
+<p>Implemented by</p>
+<p>  extends keyword</p>
+</li>
+</ul>
+<h2 id="types-of-inheritance-in-java">Types of Inheritance in Java<a aria-hidden="true" class="anchor-heading icon-link" href="#types-of-inheritance-in-java"></a></h2>
+<ul>
+<li><a href="/cs/notes/x014q3sqp3ruf2ud5i5cv8y">Single Inheritance</a></li>
+<li><a href="/cs/notes/o0qn3an6k8giylkfpzv4dgk">Multilevel Inheritance</a></li>
+<li><a href="/cs/notes/nqo6c5ab4tlkrmm06ikikre">Hierarchical Inheritance</a></li>
+<li><a href="/cs/notes/kjroan1hf650k71w5qkjub2">Hybrid Inheritance</a></li>
+</ul>
+<p><a href="/cs/notes/6xknjh9judn7gv1u5enjnye">Multiple Inheritance not allowed</a></p>
+<h2 id="inheritance-in-case-of-default">Inheritance in case of <a href="/cs/notes/uda681pw6uymjsntqaqmcca">default</a><a aria-hidden="true" class="anchor-heading icon-link" href="#inheritance-in-case-of-default"></a></h2>
+<ul>
+<li>
+<p>Are fields and methods with <code>default</code> access inherited?</p>
+<p>  Only if the subclass is located in the same package as the superclass.</p>
+</li>
+<li>
+<p>How is multiple inheritance handled in case of methods with <code>default</code> access?</p>
+<p>  In case both parent interfaces have a default method with same method signature, the implementing class should explicitly tell which one its trying to use or it should override the default method.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">//If I1 and I2 both have a fun() as default method</span>
+<span class="token keyword">class</span> <span class="token class-name">C</span> <span class="token keyword">implements</span> I1<span class="token punctuation">,</span> I2<span class="token punctuation">{</span>
+I1<span class="token punctuation">.</span><span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//Use I1's fun() method</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/34etj9g941dcqsx34x7dyby">Principles (cs)</a></li>
+</ul>

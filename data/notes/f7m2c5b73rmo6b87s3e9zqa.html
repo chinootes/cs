@@ -1,0 +1,28 @@
+<h1 id="heap-space">Heap Space<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-space"></a></h1>
+<p>Java's <a href="/cs/notes/rcyl8thq38qrnmhzb4oheq6">Heap Space</a> implementation.</p>
+<p>Used to allocate memory to objects at run time</p>
+<h2 id="how-is-object-stored-in-memory">How is object stored in memory?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-is-object-stored-in-memory"></a></h2>
+<ul>
+<li>The actual data/structure that is stored on the heap starts with what's commonly called <em>object header</em>.</li>
+<li>Header contains — a (compressed) class pointer</li>
+<li>Class pointer —> an internal data structure</li>
+<li>Internal data structure — defines layout of the class</li>
+<li>Layout of class — stored in a separate memory area called Metaspace (or Compressed Class space if Compressed OOPs are used).</li>
+<li>The pointer can be 4 or 8 bytes, depending on the architecture - even on 64-bit systems, it's usually 4 bytes due to the Compressed OOPs optimization.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/61654407/how-references-are-stored-in-java">How references are stored in Java</a></li>
+<li>More about layout of java objects — <a href="https://shipilev.net/jvm/objects-inside-out/">Java Objects Inside Out</a></li>
+<li><a href="https://wiki.openjdk.java.net/display/HotSpot/CompressedOops">Compressed OOPs</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/u4exyxajoic7un1b1l4n317">Program Counter Register</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/f6lwf3ytkd2f80adq6eluvv">Objects lifecycle in memory (cs)</a></li>
+</ul>

@@ -1,0 +1,135 @@
+<h1 id="system">System<a aria-hidden="true" class="anchor-heading icon-link" href="#system"></a></h1>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Java</span><span class="token punctuation">.</span>lang<span class="token punctuation">.</span>System <span class="token keyword">extends</span> <span class="token class-name">Object</span>
+</code></pre>
+<p>System class provides means and interfaces to interact with the <a href="/cs/notes/0ru6kcz5oabw4407rcnzgva">JRE</a>,<a href="/cs/notes/y92rxfv7150ppi7fgius6g3">JVM</a> and <a href="/cs/notes/ymh0ogbchjj4zi6nl5k6vn9">System Environment</a>.</p>
+<h2 id="facilities-provided-by-system-class">Facilities provided by System Class<a aria-hidden="true" class="anchor-heading icon-link" href="#facilities-provided-by-system-class"></a></h2>
+<ol>
+<li>Standard input stream</li>
+<li>Standard output stream</li>
+<li>Error output stream</li>
+<li>Access to externally defined properties and environment variables</li>
+<li>Means of loading files and libraries</li>
+<li>Some utility methods for quickly copying a portion of an array and getting hashcode.</li>
+</ol>
+<h2 id="fields">Fields<a aria-hidden="true" class="anchor-heading icon-link" href="#fields"></a></h2>
+<p>Following are the standard streams within the System class. All streams are open and ready to supply data.</p>
+<ul>
+<li>
+<p><strong><code>public static final InputStream in</code>:</strong></p>
+<p>  Typically this stream corresponds to keyboard input or another input source specified by the host environment or user.</p>
+</li>
+<li>
+<p><strong><code>public static final PrintStream out</code>:</strong></p>
+<p>  Typically this stream corresponds to display output or another output destination specified by the host environment or user.</p>
+<p>  💡<code>println()</code> is a method of the <code>PrintStream</code> class. We can access it from the <code>out</code> static member of <code>System</code> class. Thus, <code>System.out.println()</code>.</p>
+</li>
+<li>
+<p><strong><code>public static final PrintStream err</code>:</strong></p>
+<p>  Typically this stream corresponds to display output or another output destination specified by the host environment or user.</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Why are there two separate streams for output and error when error can be displayed on the output screen itself?</p>
+<p>  By convention, this output stream is used to display error messages or other information that should come to the immediate attention of a user even if the principal output stream, the value of the variable out, has been redirected to a file or other destination that is typically not continuously monitored.</p>
+</li>
+</ul>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<p>All methods in System class are <a href="/cs/notes/vklzkbrsrz6jzd5swlmq8yn">Static</a>.</p>
+<h3 id="to-interact-with-jre-and-system-environment">To interact with <a href="/cs/notes/0ru6kcz5oabw4407rcnzgva">JRE</a> and <a href="/cs/notes/ymh0ogbchjj4zi6nl5k6vn9">System Environment</a><a aria-hidden="true" class="anchor-heading icon-link" href="#to-interact-with-jre-and-system-environment"></a></h3>
+<ul>
+<li><code>String clearProperty(String key)</code></li>
+<li><code>String getProperty(String key)</code></li>
+<li><code>String getProperty(String key, String def)</code></li>
+<li><code>String setProperty(String key, String def)</code></li>
+<li><code>Properties getProperties()</code>
+Determines the current Java System Properties</li>
+<li><code>Map getenv()</code>
+Returns an unmodifiable String Map view of the current system environment</li>
+<li><code>String getenv(String name)</code>
+Gets the value of the specified environment variable.</li>
+<li><code>SecurityManager getSecurityManager()</code>
+Get the system security interface</li>
+<li><code>void setSecurityManager(SecurityManager s)</code>
+Sets the system security</li>
+<li><code>String lineSeperator()</code>
+Returns the system-dependent line separator String    </li>
+</ul>
+<h3 id="to-interact-with-jvm">To interact with <a href="/cs/notes/y92rxfv7150ppi7fgius6g3">JVM</a><a aria-hidden="true" class="anchor-heading icon-link" href="#to-interact-with-jvm"></a></h3>
+<ul>
+<li>
+<p><code>Console console()</code>
+Returns the unique Console object associated with the current Java virtual machine, if any.</p>
+</li>
+<li>
+<p><code>long currentTimeMillis</code>
+Returns current time in milliseconds</p>
+</li>
+<li>
+<p><code>long nanoTime()</code>
+Returns the current value of the running Java Virtual Machine’s high-resolution time source, in nanoseconds.</p>
+</li>
+<li>
+<p><code>void exit()</code></p>
+<p>  Terminates the currently running JVM</p>
+<pre class="language-java"><code class="language-java">    <span class="token keyword">class</span> <span class="token class-name">Runtime</span><span class="token punctuation">{</span>
+        <span class="token keyword">void</span> <span class="token function">exit</span><span class="token punctuation">(</span><span class="token keyword">int</span> status<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>The argument serves as a status code; by convention, a nonzero status code indicates abnormal termination.</li>
+<li>This method calls the exit method in class Runtime. This method never returns normally.</li>
+<li>The call <code>System.exit(n)</code> is effectively equivalent to the call: <code>Runtime.getRuntime().exit(n)</code></li>
+</ul>
+</li>
+<li>
+<p><code>void gc()</code></p>
+<p>  Calling the gc method suggests that the Java Virtual Machine expend effort toward recycling unused objects in order to make the memory they currently occupy available for quick reuse. When control returns from the method call, the Java Virtual Machine has made a best effort to reclaim space from all discarded objects.</p>
+</li>
+<li>
+<p><code>void runFinalization()</code>
+Request to JVM to run finalization for discarded objects.</p>
+</li>
+<li>
+<p><code>Channel inheritedChannel</code>
+Return the channel inherited from the entity that created this JVM</p>
+</li>
+</ul>
+<h3 id="io-methods">I/O Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#io-methods"></a></h3>
+<ul>
+<li><code>void setErr(PrintStream err)</code>
+Reassigns the "standard" error output stream</li>
+<li><code>void setIn(InputStream in)</code>
+Reassigns the "standard" input stream</li>
+<li><code>void setOut(PrintStream out)</code>
+Reassigns the "standard" output stream               </li>
+</ul>
+<h3 id="methods-for-loading-fileslibraries">Methods for loading files/libraries<a aria-hidden="true" class="anchor-heading icon-link" href="#methods-for-loading-fileslibraries"></a></h3>
+<ul>
+<li>
+<p><code>void load(String filename)</code></p>
+<p>  Loads a code file with the specified filename from the local file system as a dynamic library.</p>
+<p>  filename = complete path + name</p>
+</li>
+<li>
+<p><code>void loadLibrary(String libname)</code></p>
+<p>  Loads the system library specified by the libname argument (The manner in which a library name is mapped to the actual system library is system dependent)</p>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>String mapLibraryName(String libname)</code></p>
+<p>  Maps a library name into a platform-specific string representing a native library</p>
+</li>
+</ul>
+<h2 id="utility-methods">Utility Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#utility-methods"></a></h2>
+<ul>
+<li>
+<p><code>void arrayCopy(Object source, int sourceStart, Object Target, int targetStart, int Size)</code></p>
+</li>
+<li>
+<p><code>int identityHashCode(Object x)</code></p>
+<p>  Returns the same hash code for the given object as would be returned by the default method hashCode().</p>
+</li>
+</ul>

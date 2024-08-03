@@ -1,0 +1,27 @@
+<h1 id="abstract-class-for-providing-flexible-behavior-for-related-classes">Abstract Class for Providing Flexible Behavior for Related Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract-class-for-providing-flexible-behavior-for-related-classes"></a></h1>
+<p>If there is a common interface for all concrete implmentations of your abstract class, it means you are just using <a href="/cs/notes/bs8w80e6t3q58oxuhum2tyd">Inheritance</a> to define/change certain behaviour of the class.</p>
+<div class="mermaid">
+  classDiagram
+  iCar &#x3C;|-- AbstractCar
+  AbstractCar &#x3C;|-- GoCart
+  AbstractCar &#x3C;|-- FastCar  
+</div>
+<p>You should rather prefer <a href="/cs/notes/k4nl867fpm4pfydcj852798">Composition over Inheritance</a>.</p>
+<p>Just turn your abstract class into a concrete implementation and inject the "behaviour" which you are trying to change from outside using <a href="/cs/notes/zmxmlv5zqj4taagk248pi3o">Strategy Pattern</a>.</p>
+<div class="mermaid">
+  classDiagram
+  iCar &#x3C;-- Car
+  class Car{
+    + iMotor motor
+  }
+  iMotor &#x3C;-- FastMotor
+  iMotor &#x3C;-- GoCartMotor  
+</div>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://stackoverflow.com/a/2947823/14318926">Nigel Thorne's answer to How to Unit Test Abstract Classes?</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/nah4ul0tx2ot3cnd0yekm5c">Abstract Class (cs)</a></li>
+<li><a href="/cs/notes/kkzt3iloch20y1g3p3e7drc">Abstract Class as Stepping Stone (cs)</a></li>
+</ul>

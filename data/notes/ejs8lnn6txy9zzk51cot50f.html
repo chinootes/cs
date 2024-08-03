@@ -1,0 +1,147 @@
+<h1 id="enums">Enums<a aria-hidden="true" class="anchor-heading icon-link" href="#enums"></a></h1>
+<p><a href="/cs/notes/r1t0gj9h9qzcsp1bd3v5ksj">Enum (Enumerated Types)</a> in Java.</p>
+<h2 id="syntax">Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token comment">//Syntax</span>
+<span class="token keyword">enum</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span>
+APPLE<span class="token punctuation">,</span> DELL<span class="token punctuation">,</span> HTC<span class="token punctuation">;</span> <span class="token comment">//Semicolon not mandatory</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="values-of-an-enum-and-constructor-of-enums">Values of an Enum and Constructor of Enums<a aria-hidden="true" class="anchor-heading icon-link" href="#values-of-an-enum-and-constructor-of-enums"></a></h2>
+<p>Compiler adds a constructor to the enum. We can enter custom values for enums too.  We need to create a parameterized constructor for that.</p>
+<ul>
+<li>
+<p>Example</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">enum</span>  <span class="token class-name">Fruits</span>
+<span class="token punctuation">{</span>
+    <span class="token function">APPLE</span><span class="token punctuation">(</span>“RED”<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">BANANA</span><span class="token punctuation">(</span>“YELLOW”<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">GRAPES</span><span class="token punctuation">(</span>“GREEN”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>  Thus, the value of enum APPLE is not "APPLE". It is "RED" instead.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">//Example</span>
+<span class="token keyword">enum</span> <span class="token class-name">Mobile</span> <span class="token punctuation">{</span> 
+<span class="token keyword">int</span> price<span class="token punctuation">;</span>
+<span class="token function">APPLE</span><span class="token punctuation">(</span><span class="token number">1200</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">SAMSUNG</span><span class="token punctuation">(</span><span class="token number">700</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">HTC</span><span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Mobile</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span><span class="token punctuation">{</span> price <span class="token operator">=</span> p<span class="token punctuation">}</span> <span class="token comment">//Constructor</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p>Although, the constructor is private and hence, enums can't be initialised by new().</p>
+</li>
+</ul>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<ul>
+<li>Functions values(), valueOf() and ordinal() are added by compiler/JVM to the enum</li>
+</ul>
+<h3 id="values"><code>values()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#values"></a></h3>
+<ul>
+<li>Returns all values in the enum in form of an array.</li>
+<li>Usage</li>
+</ul>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Laptop</span><span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token comment">//Output - APPLE,HTC,SAMSUNG</span>
+
+</code></pre>
+<h3 id="valueof"><code>valueOf()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#valueof"></a></h3>
+<ul>
+<li>
+<p>Returns value of given constant enum</p>
+</li>
+<li>
+<p>Usage</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Laptops</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token string">"APPLE"</span><span class="token punctuation">)</span> 
+<span class="token comment">//APPLE</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="ordinal"><code>ordinal()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#ordinal"></a></h3>
+<ul>
+<li>
+<p>Returns index of an enum constant.</p>
+</li>
+<li>
+<p>Usage</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Laptops</span><span class="token punctuation">.</span>HTC<span class="token punctuation">.</span><span class="token function">ordinal</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//2</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="internal-code-generated-by-compiler-for-enums">Internal Code Generated by Compiler for enums<a aria-hidden="true" class="anchor-heading icon-link" href="#internal-code-generated-by-compiler-for-enums"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token keyword">enum</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span> APPLE<span class="token punctuation">,</span> DELL<span class="token punctuation">,</span> HTC <span class="token punctuation">}</span>
+</code></pre>
+<p><strong>All enums get converted to class</strong>. This 👆🏽 is same as writing 👇🏽</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> APPLE <span class="token operator">=</span> <span class="token string">"Apple"</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> SAMSUNG <span class="token operator">=</span> <span class="token string">"Samsung"</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> HTC <span class="token operator">=</span> <span class="token string">"HTC"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="detailed-version-of-the-above-enum-code">Detailed version of the above enum code<a aria-hidden="true" class="anchor-heading icon-link" href="#detailed-version-of-the-above-enum-code"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token keyword">final</span> <span class="token keyword">class</span> <span class="token class-name">Laptop</span> <span class="token keyword">extends</span> <span class="token class-name">Enum</span><span class="token punctuation">{</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Laptop</span><span class="token punctuation">[</span><span class="token punctuation">]</span> values<span class="token punctuation">{</span>                         <span class="token comment">//values()</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">Laptop</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>$VALUES<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Laptop</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>                <span class="token comment">//valueOf()</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token class-name">Laptop</span><span class="token punctuation">)</span><span class="token class-name">Enum<span class="token punctuation">.</span>ValueOf</span><span class="token punctuation">(</span><span class="token class-name">Laptop</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token class-name">Laptop</span><span class="token punctuation">(</span><span class="token class-name">String</span> s<span class="token punctuation">,</span> <span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span><span class="token punctuation">{</span>             <span class="token comment">//Constructor - is private</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    value <span class="token operator">=</span> j<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Laptop</span> APPLE<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Laptop</span> SAMSUNG<span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Laptop</span> HTC<span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token keyword">int</span> value<span class="token punctuation">;</span>
+<span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> $VALUES<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">static</span><span class="token punctuation">{</span>
+    APPLE <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laptop</span><span class="token punctuation">(</span><span class="token string">"APPLE"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    SAMSUNG <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laptop</span><span class="token punctuation">(</span><span class="token string">"SAMSUNG"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">700</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    HTC <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Laptop</span><span class="token punctuation">(</span><span class="token string">"HTC"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    $VALUES <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Laptop</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span>
+    APPLE<span class="token punctuation">,</span> SAMSUNG<span class="token punctuation">,</span> HTC
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="enums-in-switch-statement">Enums in Switch statement<a aria-hidden="true" class="anchor-heading icon-link" href="#enums-in-switch-statement"></a></h2>
+<p>Switch statement cases can only include values which are in enum.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">enum</span> <span class="token class-name">Laptop</span><span class="token punctuation">{</span> APPLE<span class="token punctuation">,</span> DELL<span class="token punctuation">,</span> SAMSUNG <span class="token punctuation">}</span>
+<span class="token punctuation">.</span>
+<span class="token punctuation">.</span>
+<span class="token punctuation">.</span>
+<span class="token class-name">Laptop</span> l <span class="token operator">=</span> <span class="token class-name">Laptop</span><span class="token punctuation">.</span>SAMSUNG<span class="token punctuation">;</span> <span class="token comment">//Creating object of enum</span>
+<span class="token keyword">switch</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">case</span> APPLE<span class="token operator">:</span>
+    <span class="token keyword">case</span> SAMSUNG<span class="token operator">:</span>
+    <span class="token keyword">case</span> LUDO<span class="token operator">:</span> <span class="token comment">//Will give error.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="enums-and-classes">Enums and Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#enums-and-classes"></a></h1>
+<ul>
+<li>"Inner" Enum
+<ul>
+<li>In Java, enums can be created inside a class as well.</li>
+</ul>
+</li>
+<li>Class extended by all enums
+<ul>
+<li>All enums extends a class called <strong>Enum</strong> which in turn extends Object class.</li>
+</ul>
+</li>
+<li>Inheritance in enums
+<ul>
+<li>Enums can't extend classes but can implement interfaces.</li>
+</ul>
+</li>
+<li>Difference between C++ and Java enums
+Data members and methods can be created inside Java enum</li>
+</ul>
+<h2 id="difference-between-enums-and-class">Difference between enums and class<a aria-hidden="true" class="anchor-heading icon-link" href="#difference-between-enums-and-class"></a></h2>
+<ul>
+<li>Enum constants are public, static, final</li>
+<li>Enums can't extend other classes</li>
+</ul>

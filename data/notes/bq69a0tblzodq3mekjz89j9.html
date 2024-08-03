@@ -1,0 +1,46 @@
+<h1 id="dependency-injection">Dependency Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-injection"></a></h1>
+<p><a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection</a> </p>
+<h3 id="spring-container">Spring Container<a aria-hidden="true" class="anchor-heading icon-link" href="#spring-container"></a></h3>
+<p>Core component of Spring which is responsible for managing bean lifecycle.</p>
+<h3 id="injection">Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#injection"></a></h3>
+<h3 id="annotations">Annotations<a aria-hidden="true" class="anchor-heading icon-link" href="#annotations"></a></h3>
+<h4 id="lazy"><code>@Lazy</code><a aria-hidden="true" class="anchor-heading icon-link" href="#lazy"></a></h4>
+<p>Instantiates bean only when required.</p>
+<pre class="language-java"><code class="language-java"> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+ <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">public</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token annotation punctuation">@Lazy</span> <span class="token class-name">B</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>b <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<h4 id="dependson"><code>@DependsOn</code><a aria-hidden="true" class="anchor-heading icon-link" href="#dependson"></a></h4>
+<p>Specified dependency explicitly to control order of instantiation.</p>
+<pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@DependsOn</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token class-name">B</span> b<span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="cyclic-dependency"><a href="/cs/notes/5tg50ubwuva8axhq0s8fk4c">Cyclic Dependency</a><a aria-hidden="true" class="anchor-heading icon-link" href="#cyclic-dependency"></a></h3>
+<h4 id="what-does-spring-do">What does Spring do?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-does-spring-do"></a></h4>
+<p>When a cyclic dependency is detected, Spring automatically uses <a href="/cs/notes/ui4rbmav58x6qjqh54b1ehn">Early Reference Resolution</a> to partially initialize beans by injecting a proxy, and injecting the actual dependency later.</p>
+<h4 id="what-can-you-do-using-spring-features">What can you do using Spring features?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-can-you-do-using-spring-features"></a></h4>
+<p>In case of circular dependencies, the behavior depends on the kind of <a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection</a> mechanism you use.</p>
+<h5 id="use-setter-injection">Use <a href="/cs/notes/uzbmvkjib5rw18knkwxfdvv">Setter Injection</a><a aria-hidden="true" class="anchor-heading icon-link" href="#use-setter-injection"></a></h5>
+<p>In such cases, <a href="/cs/notes/vcsi5m3dhjr3dsc0cnlbarl">Constructor Injection</a> will causes <code>BeanCurrentlyInCreation</code><a href="/cs/notes/qrw97vn9y1kh2vunbuqa2md">Exception</a> - should be avoided.</p>
+<p><a href="/cs/notes/uzbmvkjib5rw18knkwxfdvv">Setter Injection</a> or <a href="/cs/notes/gc93cenknebckr6wmp9wuuh">Field Injection</a> allow Spring to break down the injection into a two-step process to resolve the dependencies:</p>
+<ol>
+<li><strong>Instatiation</strong>: Spring instantiates the beans without the dependencies.</li>
+<li><strong>Injection</strong>: Spring injected the (already initialized) dependencies.</li>
+</ol>
+<p><a href="/cs/notes/gc93cenknebckr6wmp9wuuh">Field Injection</a> is anyway discouraged, so use <a href="/cs/notes/uzbmvkjib5rw18knkwxfdvv">Setter Injection</a> as a best practice.</p>
+<h5 id="lazy-annotation"><code>@Lazy</code> annotation<a aria-hidden="true" class="anchor-heading icon-link" href="#lazy-annotation"></a></h5>
+<p>Can help manage dependencies by delaying the initialization until the bean is actually needed.</p>
+<h5 id="dependson-annotation"><code>@DependsOn</code> annotation<a aria-hidden="true" class="anchor-heading icon-link" href="#dependson-annotation"></a></h5>
+<p>Doesn't necessarily resolve circular dependency but can help in specifying order of instatiation.</p>
+<h4 id="handling-it-yourself-recommended">Handling it yourself (recommended)<a aria-hidden="true" class="anchor-heading icon-link" href="#handling-it-yourself-recommended"></a></h4>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/j7h53hv8tv65neeaa7uwogm">Bean</a></li>
+</ol>

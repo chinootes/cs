@@ -1,0 +1,16 @@
+<h1 id="objects-lifecycle-in-memory">Objects lifecycle in memory<a aria-hidden="true" class="anchor-heading icon-link" href="#objects-lifecycle-in-memory"></a></h1>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token punctuation">;</span>
+</code></pre>
+<p>Unlike C++, the above statement won’t create an object. It will just create a reference variable. The reference variable has to be given an object.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now <code>smallBox</code> contains address of an object of Box class. That is, it points to the object. However, the object itself has no name.</p>
+<ul>
+<li>Memory is allocated on the <a href="/cs/notes/f7m2c5b73rmo6b87s3e9zqa">Heap Space</a> and a reference for that object is returned which is stored in <a href="/cs/notes/g1mrhzpjy5cyod1io4faf8k">Stack</a>.</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/0o92h4fvq9qnmz2ujdcj534">Reachable</a></li>
+<li><a href="/cs/notes/dy15wqx49hkiq04x4mmf8q0">Root</a></li>
+</ol>

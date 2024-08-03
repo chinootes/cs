@@ -1,0 +1,14 @@
+<h1 id="covariant-return-type">Covariant Return Type<a aria-hidden="true" class="anchor-heading icon-link" href="#covariant-return-type"></a></h1>
+<p>When <a href="/cs/notes/6yfy66pd40yrpmh4au5z1sf">Variance</a> of return types if covariant.</p>
+<p>Two examples where this can work -</p>
+<ul>
+<li>Suppose there are two classes A and B. A has a function with return type A and B has the function with the same name and arguments but with return type B. The function in B can override the one in A in this situation.</li>
+<li>Suppose there are four classes A, B, C and D. A is inherited by C and B is inherited by D. Now C has a function with return type A and D has a method with same name and arguments with return type B. Method overriding works here.</li>
+</ul>
+<p>Basically, the parent return type is being replaced by child return type in the overriding method.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/bqrul0cyjmdv0plhgeg8exa">Overriding (cs)</a></li>
+<li><a href="/cs/notes/0xbzw3074viq2meaf9wpkiu">Overriding by Return Types (cs)</a></li>
+</ul>

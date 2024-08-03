@@ -1,0 +1,63 @@
+<h1 id="hashmap">HashMap<a aria-hidden="true" class="anchor-heading icon-link" href="#hashmap"></a></h1>
+<p>implements <a href="/cs/notes/bsk6mro2a2qy52s1c3jkvqu">Map</a></p>
+<p><a href="/cs/notes/t0ciw781n1840e7fm3o2ux4">Not Thread Safe</a></p>
+<h2 id="initialization">Initialization<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Map</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>or</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">String</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<ul>
+<li><code>map.put("key", "value");</code></li>
+<li><code>map.get("key");</code> → value</li>
+<li><code>keySet()</code> → Set of keys</li>
+</ul>
+<p>What happens when Repeating/duplicate keys ⇒ value gets replaced</p>
+<ul>
+<li>Fixed Order insertion → Linked HashMap</li>
+<li>Sorting Order → Tree HashMap</li>
+</ul>
+<h2 id="implementation">Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">HashMap</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span>
+<span class="token punctuation">{</span>
+<span class="token class-name">Entry</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">//Inner class</span>
+<span class="token class-name">Entry</span> next<span class="token punctuation">;</span> <span class="token comment">//reference to another entry to store entries like linked lists</span>
+
+<span class="token keyword">int</span> hash<span class="token punctuation">;</span> <span class="token comment">//Hashvalue of key to avoid calculating everytime its  needed</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>
+<p>Initial Capacity</p>
+<p>  16 (Array of 0-15)</p>
+</li>
+<li>
+<p>Load factor - After the load factor (percentage) is reached, the capacity automatically increases</p>
+<p>  0.75</p>
+<ul>
+<li>So when the array is filled more than 75%, the table size doubles to 32.</li>
+<li>The hashtable is rehashed (Internal data structures are rebuit)</li>
+</ul>
+</li>
+<li>
+<p>Java 8 improvement</p>
+<p>  When the number of nodes in a HashMap reaches the TREEIFY_THRESHOLD, the nodes are converted to TreeNode. Basically, from linked list to a balanced tree. This improves the worst case performance from O(n) to O(log n). After the HashMap becomes small due to removal or resizing, TreeNodes are converted back to nodes.</p>
+</li>
+<li>
+<p>HashMap Bucket Resizing Overhead</p>
+<p>  You should create HashMap with initial capacity close to your expected volume. If its too small, and the load is in millions, whenever the bucket will reach its load factor it will resize and rehash → which is a very costly operation. Also, make sure to use full capacity else a lot of memory of unused blocks will go wasted.
+</p>
+</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=c3RVW3KGIIE">How HashMap works in Java? With Animation!! whats new in java8 tutorial</a></li>
+<li><a href="https://dzone.com/articles/java8-hashmap-implementation-and-performance">Java 8 HashMap Implementation and Performance - DZone Java</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/fi3xznhjsf8ezkolih7torp">Collection Frameworks Cheatsheet (cs)</a></li>
+<li><a href="/cs/notes/bsk6mro2a2qy52s1c3jkvqu">Map (cs)</a></li>
+</ul>

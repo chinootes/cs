@@ -1,0 +1,34 @@
+<h1 id="dependency-injection">Dependency Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#dependency-injection"></a></h1>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> … <span class="token keyword">DEFINITION</span> … <span class="token punctuation">.</span>
+ <span class="token keyword">DATA</span><span class="token punctuation">(</span>lo_cash_provider<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">NEW</span> cl_cash_provider<span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span>
+</code></pre>
+<p>👆🏽 This here is a <a href="/cs/notes/tqpvt7033talxd52lmib38s">Dependency</a></p>
+<ul>
+<li>Dependency injection is a design pattern in which, instead of creating the object ourselves in our code, we let some other entity create the object and "inject" into our class.</li>
+<li>⇒ Dependency injection implements <a href="/cs/notes/vnqup49endqju6k389uc0br">Inversion of Control</a></li>
+</ul>
+<p>The dependency can be injected via:</p>
+<ul>
+<li>constructor -- <a href="/cs/notes/vcsi5m3dhjr3dsc0cnlbarl">Constructor Injection</a></li>
+<li>setter method -- <a href="/cs/notes/uzbmvkjib5rw18knkwxfdvv">Setter Injection</a></li>
+<li>parameter - <a href="/cs/notes/si10tdnz2n9tnlwu5os1z74">Parameter Injection</a></li>
+<li>backdoor - <a href="/cs/notes/ja02yfjw342nj52fyzonyg3">Backdoor Injection</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/ja02yfjw342nj52fyzonyg3">Backdoor Injection</a></li>
+<li><a href="/cs/notes/vcsi5m3dhjr3dsc0cnlbarl">Constructor Injection</a></li>
+<li><a href="/cs/notes/gc93cenknebckr6wmp9wuuh">Field Injection</a></li>
+<li><a href="/cs/notes/si10tdnz2n9tnlwu5os1z74">Parameter Injection</a></li>
+<li><a href="/cs/notes/uzbmvkjib5rw18knkwxfdvv">Setter Injection</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/wi0s2u0m4vpb5pkkb6y3pvp">Test Isolation (cs)</a></li>
+<li><a href="/cs/notes/vtssw70mxi17onoif07cght">Spring (cs)</a></li>
+<li><a href="/cs/notes/bq69a0tblzodq3mekjz89j9">Dependency Injection (cs)</a></li>
+<li><a href="/cs/notes/y9mjny2bohq7a3cheumfkce">Benefits of Composition (cs)</a></li>
+</ul>

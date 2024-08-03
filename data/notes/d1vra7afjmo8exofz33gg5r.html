@@ -1,0 +1,15 @@
+<h1 id="initialization-of-iterators">Initialization of iterators<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization-of-iterators"></a></h1>
+<p><a href="/cs/notes/4x38t5zqngoe33sug8ec87p">Enumeration</a>, <a href="/cs/notes/35b9rz7t9tkhu0sganracma">Iterator</a>, <a href="/cs/notes/sg5bd9ha1mcnvqzqungifgp">ListIterator</a> are all interfaces</p>
+<p>How can we create objects for interfaces then?
+⇒ <strong>We don't</strong>.</p>
+<p>What happens actually, is that the elements() method has a class within it which implements Enumeration interface. elements() returns the object of that class. This is how it works for other two cursor interfaces as well.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//c is an object of a iterator</span>
+</code></pre>
+<p>Output - </p>
+<pre class="language-java"><code class="language-java">vector$<span class="token number">1</span>              <span class="token comment">// if c is an Enumeration Object</span>
+vector$<span class="token class-name">Itr</span>            <span class="token comment">// if c is an Iterator Object</span>
+vector$<span class="token class-name">ListItr</span>        <span class="token comment">// if c is a List Iterator Object</span>
+</code></pre>
+<p><code>vector$</code> means inner class of vector ( or whichever Collection class we're getting the object for)</p>
+<p>1 means it is an anonymous inner class</p>
+<p><code>Itr</code> and <code>ListItr</code> are names of <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">lang.java.paradigms.oo.inner class (Private)</a>es implementing Iterator and ListIterator respectively.</p>

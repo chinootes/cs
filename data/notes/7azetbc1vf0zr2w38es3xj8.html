@@ -1,0 +1,10 @@
+<h1 id="accessing-static-members-using-objects">Accessing Static Members using Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#accessing-static-members-using-objects"></a></h1>
+<p>Its possible to write f.classMethod(). It is legal but a bad idea, since it causes confusion. The instance is not important in case of class methods. Only the declared type of 'f' matters.</p>
+<p>Its better to write Foo.classMethod() or Bar.classMethod(). This not only makes it clear which class method you would like to call. But also, that it is indeed a class method which you're calling.</p>
+<p>Of course, all this could be avoided by simply trying to not overide your static methods. You know, because <a href="/cs/notes/8qc6cuvuwpxqw73ck5r5jjy">Static Method Can't be overridden</a>.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/m7y9m63zohfoi6j7v35dvp3">Shadowing/Hiding (cs)</a></li>
+<li><a href="/cs/notes/vklzkbrsrz6jzd5swlmq8yn">Static (cs)</a></li>
+</ul>
