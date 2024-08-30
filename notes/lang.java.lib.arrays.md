@@ -2,7 +2,7 @@
 id: l6kravc26pl7ixjyg5o3nlk
 title: Arrays
 desc: ''
-updated: 1713644093667
+updated: 1724572241535
 created: 1712949538100
 ---
 
@@ -38,6 +38,11 @@ boolean[]                        [Z
 - Every array type implements [[lang.java.lib.interfaces.marker.serializable]]  and [[lang.java.lib.interfaces.marker.cloneable]]. 
 - Arrays can be assigned to variables of type Object — [[type theory.casting.object.upcasting]].
 - All methods of Object class can be invoked on an array
+
+## `Arrays` Methods 
+
+- `Arrays.sort(arr)`
+- `Arrays.fill(arr,0)`: Fills all elements of an array with the passed value.
 
 ## References
 

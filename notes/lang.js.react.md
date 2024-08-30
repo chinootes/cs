@@ -2,7 +2,7 @@
 id: 4rkuw9qy1nwibo6s8fksivk
 title: React
 desc: ''
-updated: 1722624328337
+updated: 1722666764682
 created: 1722616181642
 ---
 
@@ -25,3 +25,6 @@ created: 1722616181642
 - Read only 
 
 
+## References
+
+- [Higher-Order Functions (HOC)](https://medium.com/segmentify-tech/higher-order-component-hoc-2b671559e576)

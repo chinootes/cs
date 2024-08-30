@@ -10,7 +10,7 @@ created: 1712955062240
 
 If the outer class is A and inner class is B, you can refer to this instance of A from B as `A.this`.
 
-Since we are using a [[semantics.identifiers.qualifier]] along with `this` [[lang.java.paradigms.oo.objects.context qualifiers]], to form a fully [[semantics.identifiers.qualified]], it is called "Qualified" `this`.
+Since we are using a [[dev.lingo.identifiers.qualifier]] along with `this` [[lang.java.paradigms.oo.objects.context qualifiers]], to form a fully [[dev.lingo.identifiers.qualified]], it is called "Qualified" `this`.
 
 
 ## Reference

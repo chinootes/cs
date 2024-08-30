@@ -6,7 +6,7 @@ updated: 1713902828857
 created: 1711643845722
 ---
 
-- **String literal**: A string [[dev.program.components.literal]] in Java is basically a sequence of characters from the source character set. 
+- **String literal**: A string [[dev.lingo.literal]] in Java is basically a sequence of characters from the source character set. 
 - String in Java is an [[arch.design.oo.patterns.immutable class]]
 - String literals initialised are an object of this String class.
 
