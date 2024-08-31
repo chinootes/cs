@@ -17,7 +17,7 @@ Static members and methods are owned by the class itself, not any object.
 
     You can access them through class.
 
-- [[paradigm.oo.components.types.static.access using objects]]
+- [[paradigm.oo.components.modifiers.static.access using objects]]
 
 
 ## Initialization in program memory
@@ -26,5 +26,5 @@ Static members are loaded into program memory along with the class. Even before 
 
 ## Static stuff
 
-- [[paradigm.oo.components.types.static.variable]]
-- [[paradigm.oo.components.types.static.method]]
+- [[paradigm.oo.components.modifiers.static.variable]]
+- [[paradigm.oo.components.modifiers.static.method]]

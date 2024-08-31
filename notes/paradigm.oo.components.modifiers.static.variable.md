@@ -18,4 +18,4 @@ Class variables/static variables declared in a class but outside any method, con
 
 ## Serialization
 
-[[paradigm.oo.components.types.static.variable.serialization]]
+[[paradigm.oo.components.modifiers.static.variable.serialization]]

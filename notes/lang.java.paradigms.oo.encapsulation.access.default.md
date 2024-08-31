@@ -2,15 +2,14 @@
 id: uda681pw6uymjsntqaqmcca
 title: default
 desc: ''
-updated: 1712931805601
+updated: 1725011259819
 created: 1712931677652
 ---
 
 
 ## Access Modifier
 
-If no access modifier is used with a member, it becomes default.
+If no [[paradigm.oo.components.modifiers.access]] are used with a member, it becomes default.
 
-## Keyword (post Java 8)
 
-It can be used with a method within interface to define that method in the interface itself.
+Also a Keyword (post Java 8) for [[paradigm.oo.components.modifiers.default]] methods.

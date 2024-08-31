@@ -100,3 +100,5 @@ LIMIT 1 OFFSET 2;
 - `FULL JOIN` (or `FULL OUTER JOIN`): Returns all records when there is a match in either left or right table.
 - `CROSS JOIN`: Returns all records where each row from the first table is combined with each row from the second table.
 SELF JOIN: A regular join, but the table is joined with itself.
+
+

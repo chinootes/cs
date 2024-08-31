@@ -23,7 +23,7 @@ static class Test //Static inner class
 }
 ```
 
-## [[paradigm.oo.components.types.static.variable]]s
+## [[paradigm.oo.components.modifiers.static.variable]]s
 
 - Initialization
 
@@ -39,7 +39,7 @@ static class Test //Static inner class
 
 ## [[lang.java.paradigms.oo.instantiation.static blocks]]
 
-## [[paradigm.oo.components.types.static.method]]s
+## [[paradigm.oo.components.modifiers.static.method]]s
 
 ## Static class
 

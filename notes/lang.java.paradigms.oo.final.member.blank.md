@@ -28,7 +28,7 @@ All final variables must be initialised, or else => Compile time error
 
 ## Blank static final member/_variable_
 
-Blank final _variable_ which is [[paradigm.oo.components.types.static]].
+Blank final _variable_ which is [[paradigm.oo.components.modifiers.static]].
 
 ## Initialisation
 

@@ -7,7 +7,7 @@ created: 1708252825421
 ---
 
 
-[[paradigm.oo.components.types.abstract.class]]es are mostly used in one of two ways - 
+[[paradigm.oo.components.modifiers.abstract.class]]es are mostly used in one of two ways - 
 
 - [[arch.design.oo.use cases for.abstract class.providing flexible behavior for related classes]]: If classes you extend have many common methods and fields, we tend.
 - [[arch.design.oo.use cases for.abstract class.helper]]: You want to share code among several closely related classes

@@ -9,7 +9,7 @@ created: 1708452881015
 
 - Mechanism of writing the state of an object into a byte stream.
 - Converting state of an object into a form that can be persisted or transported.
-- [[paradigm.oo.components.types.static.variable.serialization]]
+- [[paradigm.oo.components.modifiers.static.variable.serialization]]
 - Serialization with [[paradigm.oo.principles.inheritance]]
 
     If parent is serializable, so is child.

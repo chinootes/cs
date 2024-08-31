@@ -7,7 +7,7 @@ created: 1708357118086
 ---
 
 
-You can't override a [[paradigm.oo.components.types.static.method]].
+You can't override a [[paradigm.oo.components.modifiers.static.method]].
 
 ```java
 //Can't do this -> Compile time error
@@ -24,4 +24,4 @@ class Bar extends Foo {
 }
 ```
 
-Then [[paradigm.oo.components.types.static.overriding.fail]]
+Then [[paradigm.oo.components.modifiers.static.overriding.fail]]

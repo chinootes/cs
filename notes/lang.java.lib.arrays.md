@@ -7,6 +7,7 @@ created: 1712949538100
 ---
 
 
+
 ## Arrays in Java are Objects
 
 - This is why arrays are initialized using `new` keyword
@@ -17,7 +18,7 @@ created: 1712949538100
 
     ```java
     // Here x is the name of the array.
-    System.out.println(x.getClass().getName());
+    Sys
     ```
 
 ### Corresponding class names for some array types

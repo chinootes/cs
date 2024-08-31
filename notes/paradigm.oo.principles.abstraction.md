@@ -11,8 +11,8 @@ Process of hiding implementation details and showing only functionality to user.
 
 ## Implemented by
 
-[[paradigm.oo.components.types.abstract]] components like
-[[paradigm.oo.components.interface]]s and [[paradigm.oo.components.types.abstract.class]]es.
+[[paradigm.oo.components.modifiers.abstract]] components like
+[[paradigm.oo.components.interface]]s and [[paradigm.oo.components.modifiers.abstract.class]]es.
 
 ### How do interface and Abstract class achieve abstraction?
 

@@ -49,7 +49,7 @@ Following are the standard streams within the System class. All streams are open
 
 ## Methods
 
-All methods in System class are [[paradigm.oo.components.types.static]].
+All methods in System class are [[paradigm.oo.components.modifiers.static]].
 
 
 
