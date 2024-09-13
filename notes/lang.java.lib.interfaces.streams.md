@@ -2,7 +2,7 @@
 id: baxu095ehryiz9aqa17tpvt
 title: Streams
 desc: ''
-updated: 1725015136958
+updated: 1725466274887
 created: 1725014887363
 ---
 
@@ -16,8 +16,8 @@ Basically, you can specify an operation and perform it for all items in the coll
 ### Intermediate Operations
 
 - `filter(Predicate)`: 
-- `map(Function)`:
-- `flatMap(Function)`:
+- `map(Function)`: 
+- `flatMap(Function)`: 
 - `distinct()`:
 - `sorted()`:
 - `sorted(Comparator)`:
@@ -28,3 +28,15 @@ Basically, you can specify an operation and perform it for all items in the coll
 
 ### Terminal Operations
 
+- `forEach(Consumer)`
+- `collect(Collector)`
+- `reduce(BinaryOperator)`
+- `toArray()`
+- `min(Comparator)`
+- `max(Comparator)`
+- `count()` 
+- `anyMatch(Predicate)`
+- `allMatch(Predicate)`
+- `noneMatch(Predicate)`
+- `findFirst()`
+- `findAny()` 

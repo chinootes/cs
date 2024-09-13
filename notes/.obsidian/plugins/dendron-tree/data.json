@@ -1,0 +1,11 @@
+{
+  "vaultList": [
+    {
+      "path": "/",
+      "name": "cs"
+    }
+  ],
+  "autoGenerateFrontmatter": true,
+  "autoReveal": true,
+  "customResolver": false
+}
