@@ -2,11 +2,11 @@
 id: lubjpq6xfglfx03cmfbdfoc
 title: Stack
 desc: ''
-updated: 1714652261144
+updated: 1726956897224
 created: 1714651062267
 ---
 
-[[lang.java.lib.collection.interface.list.vector.stack]] class can be used.
+`Stack` class from [[lang.java.lib.collection]] class can be used.
 
 ## Creating
 

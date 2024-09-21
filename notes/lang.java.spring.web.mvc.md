@@ -8,7 +8,7 @@ created: 1719248735136
 
 Submodule within Spring [[lang.java.spring.web]], which provides specific capabilities for implementing [[arch.pattern.mvc]] architecture.
 
-Provides out-of-the-box [[std.web.http.rest]] service capabilities.
+Provides out-of-the-box [[dist.comm.api.rest]] service capabilities.
 
 ## Defining web service using annotations
 

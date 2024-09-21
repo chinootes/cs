@@ -2,28 +2,40 @@
 id: 9tn4qoat4ksb1kha3p77zhe
 title: ExecutorService
 desc: ''
-updated: 1713125234893
+updated: 1726652034561
 created: 1713125223294
 ---
 
 
-ExecutorService is an interface which allows us to execute tasks on thread asynchronously
+`ExecutorService` is an interface which allows us to execute tasks on thread asynchronously
 
-## Instantiating
+
+## **Instantiation** using `Executors` Factory class
+
+Instance can be retrieved from `Executors` factory class using different factory methods based on the number and types of threads needed. 
+
+### For single thread
 
 ```java
-ExecutorService executorService1 = Executors.newSingleThreadExecutor(); 
-//Creates a ExecutorService object having a single thread.  
-    
-ExecutorService executorService2 = Executors.newFixedThreadPool(10); 
-// Creates a //ExecutorService object having a pool of 10 threads.  
-    
-ExecutorService executorService3 = Executors.newScheduledThreadPool(10); 
-//Creates a scheduled thread pool executor with 10 threads. 
-//In scheduled thread pool, we can schedule tasks of the threads.
+ExecutorService es = Executors.newSingleThreadExecutor();  
 ```
 
-## Assigning Tasks
+### For thread pool
+    
+```java
+ExecutorService es = Executors.newFixedThreadPool(10); 
+```    
+
+### For scheduled thread pool
+In scheduled thread pool, we can schedule tasks of the threads.
+
+```java
+ExecutorService es = Executors.newScheduledThreadPool(10); 
+```
+
+## Methods
+
+### Executing Threads
 
 ```java
 //We can use the following methods
@@ -33,7 +45,7 @@ invokeAny(Collection<? extends Callable<T>> tasks)
 invokeAll(Collection<? extends Callable<T>> tasks);
 ```
 
-## Shutting down
+### Shutting down
 
 We can use the following methods after we're done. If we don't, the threads will keep running and JVM won't shut down.
 

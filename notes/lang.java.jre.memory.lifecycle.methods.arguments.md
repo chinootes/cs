@@ -2,7 +2,7 @@
 id: 9fx2k1xmp6jbhq9dr8oheij
 title: Passing Arguments
 desc: ''
-updated: 1713720742498
+updated: 1726943525813
 created: 1713718191717
 ---
 
@@ -26,7 +26,7 @@ created: 1713718191717
     
     ![Wrapper/string args](/assets/images/2024-04-21-22-29-04.png)
 
-- Passing [[lang.java.lib.collection.interface]]/Object Arguments
+- Passing [[Collection|lang.java.lib.collection]]/[[lang.java.lib.classes.object]] Arguments
     
     When defining any collection or object in java, a reference is created inside the stack that points to multiple objects inside the heap memory. when calling a function, a copy of the reference is created and passed to the method. the actual object data is referenced by two references, and any change done by one reference is reflected in the other.
     
