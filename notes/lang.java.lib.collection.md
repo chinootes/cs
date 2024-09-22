@@ -2,7 +2,7 @@
 id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
-updated: 1726981701861
+updated: 1726982126314
 created: 1713633121566
 ---
 
@@ -262,7 +262,7 @@ int hash; //Hashvalue of key to avoid calculating everytime its  needed
 
 - null values are treated as any other values in collections which allow it. For example, `Set`s allow null values but they don't allow duplicates, so even if you add `null` twice, it will be treated as one. Similarly, `Map`s only allow one `null` value in key and multiple `null` value as values.
 
-### Size of Collection Objects
+### Capacity
 
 - **Default Initial Capacity**: The initial capacity assigned to a Collection class object by default, if not specified while initializing the object. 
 - **Fill Ratio/Load Factor**: The percentage or ratio of capacity which when reached will result in increasing of the capacity. 
