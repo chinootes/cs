@@ -2,7 +2,7 @@
 id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
-updated: 1726957255847
+updated: 1726981701861
 created: 1713633121566
 ---
 
@@ -73,6 +73,10 @@ Although, referred to as a framework, it functions more like a library with a co
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+```
+
+```mermaid
+   classDiagram
         class Map
         <<interface>> Map
             class HashMap
