@@ -2,7 +2,7 @@
 id: lxfnzfx9x4xdx3pxjcvt5lq
 title: Object Cloning in Java
 desc: ''
-updated: 1713644137262
+updated: 1727113091994
 created: 1712939265697
 ---
 
@@ -15,7 +15,7 @@ A obj1 = (A) obj.clone();
 ```
 
 
-`clone` is a member function of [[Object]] which throws an exception when used. Why?
+`clone` is a member function of [[lang.java.lib.classes.object]] which throws an exception when used. Why?
 
 Cloning a class is [[tags.not allowed by default]] for security reasons. But if the class itself allows you i.e. the class implements [[lang.java.lib.interfaces.marker.cloneable]], then you can use `clone()` method.
 

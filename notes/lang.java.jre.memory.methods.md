@@ -1,10 +1,17 @@
 ---
-id: 9fx2k1xmp6jbhq9dr8oheij
-title: Passing Arguments
+id: s6akrhxt1lut8w1ua5n50ci
+title: Methods
 desc: ''
-updated: 1726943525813
-created: 1713718191717
+updated: 1727121503349
+created: 1713719707742
 ---
+
+- Private JVM Stack in [[stack|lang.java.jre.memory#stack]] memory is created
+- New frame is created and stored in the stack
+- [[lang.java.jre.memory.methods.arguments]]
+- Frame destroyed when method invocation completes
+
+    A new one will be created again when the method is invoked.
 
 ## How are arguments passed in Java?
 

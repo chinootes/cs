@@ -2,7 +2,7 @@
 id: ollv9jqhq9ai9508dpxinvg
 title: Object Type Conversion
 desc: ''
-updated: 1712884475326
+updated: 1727010246296
 created: 1712883976229
 ---
 
@@ -49,7 +49,7 @@ created: 1712883976229
     Cat cat = Cat.class.cast(animal);
     ```
 
-## [[Class Cast Exception]] — ClassCastException
+## [[ClassCastException|dev.issues.exception.types.unchecked.class cast exception]]
 
 That is why it is advised to use *instanceOf* check before downcasting.
 

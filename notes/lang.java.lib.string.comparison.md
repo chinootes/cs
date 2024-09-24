@@ -7,7 +7,7 @@ created: 1711644046817
 ---
 
 
-Strings class implements [[lang.java.lib.interfaces.marker.comparable]].
+Strings class implements [[lang.java.lib.collection.comparable]].
 
 ### 1. `equals()` method (**authentication**)
 

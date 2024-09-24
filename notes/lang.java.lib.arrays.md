@@ -2,11 +2,9 @@
 id: l6kravc26pl7ixjyg5o3nlk
 title: Arrays
 desc: ''
-updated: 1724572241535
+updated: 1727112461831
 created: 1712949538100
 ---
-
-
 
 ## Arrays in Java are Objects
 

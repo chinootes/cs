@@ -2,7 +2,7 @@
 id: va87cklvt4f8fl4jm6s1xs8
 title: Java 8
 desc: ''
-updated: 1725005986496
+updated: 1727028137965
 created: 1713688429398
 ---
 
@@ -10,9 +10,9 @@ Features introduced in Java 8
 
 - [[lang.java.paradigms.func.lambda]] expressions
 - [[lang.java.paradigms.func.interface]]
-- Stream API
+- [[lang.java.lib.interfaces.streams]] API
 - [[paradigm.oo.components.modifiers.default]] methods
-- Optional Class
+- [[lang.java.lib.classes.optional]] Class
 - New Date and Time API (java.time package)
 - Nashorn JavaScript Engine
 - Concurrent Accumulators
@@ -21,7 +21,7 @@ Features introduced in Java 8
 - JDBC 4.2
 - Base64 Encoding and Decoding
 - StampedLock
-- Collectors API
+- [[lang.java.lib.classes.collectors]] API
 - Repeatable Annotations
 - Method References
 - CompletableFuture

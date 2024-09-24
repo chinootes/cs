@@ -2,7 +2,7 @@
 id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
-updated: 1726982126314
+updated: 1727010720806
 created: 1713633121566
 ---
 
@@ -187,6 +187,9 @@ It is recommended to use the modern methods and the legacy methods are only kept
 | `subSet(a,b)` | elements between *a* and *b* including *a* |
 | `comparator()` | Comparator object which defines underlying sorting technique  |
 |                   |   (If we're using default natural sorting order, then it simply returns null) |
+
+Sorted collections use [[lang.java.lib.collection.comparable]] or [[lang.java.lib.interfaces.func.comparator]] to determine the natural ordering of the objects. If the class doesn't implement `Comparable` and no `Comparator` is passed, adding elements to the collection will result in a [[NullPointerException|dev.issues.exception.types.unchecked.null pointer]].
+
 Same methods are also applicable for Map.
 
 #### Navigable
@@ -228,7 +231,7 @@ int hash; //Hashvalue of key to avoid calculating everytime its  needed
 
 #### Enum
 
-### Fixed size collections
+#### Fixed size collections
 
 `ArrayBlockingQueue` , `LinkedBlockingQueue`
 
@@ -309,7 +312,7 @@ But ordering of elements is based more on the behavior/data structure the collec
     ```java
         Collection<T> c = new CollectionImplementation<T>();
     ```
-    Exceptions: Fixed size eollections and some concurrent collections
+    Exceptions: Fixed size collections and some concurrent collections
 
 - Most mainstream `Collection` implementations provide an overloaded constructor that accepts object of any `Collection` implementation. 
     ```java
@@ -368,6 +371,16 @@ For more details about different types of iterators. See [[lang.java.lib.collect
 ### `Collections` Class
 
 Utility class (`java.util.package`) which defines several methods for collection objects.
+Most of these methods are static.
+
+#### Methods
+
+##### `static sort()` and `static sort(Comparator c)`
+
+Sorts the collection objects (if [[lang.java.lib.collection.comparable]]) either based on their natural ordering, or based on the [[lang.java.lib.interfaces.func.comparator]] if passed.
+
+⚠️ If the class doens't implement `Comparable` and `sort` is called without a `Comparator`, it will throw a [[ClassCastException|dev.issues.exception.types.unchecked.class cast exception]].
+
 
 ## Important Distinctions 
 
@@ -402,4 +415,5 @@ Legacy collections are thread-safe. Their modern counterparts aren't.
 ### Hashmaps
 - [How HashMap works in Java? With Animation!! whats new in java8 tutorial](https://www.youtube.com/watch?v=c3RVW3KGIIE)
 - [Java 8 HashMap Implementation and Performance - DZone Java](https://dzone.com/articles/java8-hashmap-implementation-and-performance)
-
+- [Java Hashed Collections](https://www.developer.com/design/java-hashed-collections/)
+- [What are the differences between hashtable and hashmap? (Not specific to Java)](https://stackoverflow.com/questions/36313817/what-are-the-differences-between-hashtable-and-hashmap-not-specific-to-java)

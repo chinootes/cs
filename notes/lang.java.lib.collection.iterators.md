@@ -2,7 +2,7 @@
 id: k16ee23xfsfsittiqteajoa
 title: Iterators
 desc: ''
-updated: 1726943130939
+updated: 1727110108622
 created: 1726650383152
 ---
 
@@ -12,7 +12,7 @@ Collection framework provides iterator interfaces like `Enumeration`, `Iterator`
 
 ## Use cases and Trade Offs
 
-- `Enumeration` can only be used for legacy collections like [[lang.java.lib.collection.vector]] and [[lang.java.lib.collection.hashtable]]. Also, it supports only **read operations**.
+- `Enumeration` can only be used for [[legacy collections|lang.java.lib.collection#legacy-collections]] like `Vector` and `Hashtable`. Also, it supports only **read operations**.
 - `Iterator` is the most commonly used since it can be used for any Collection. It can be used to remove but not for replacing or adding new object.
 - Both `Enumeration` and `Iterator` are only forward direction cursor
 - `ListIterator` is the most powerful cursor which is bidirectional and has methods to remove, replace and add new objects. But it can only be used for `List` collections.

@@ -1,8 +1,8 @@
 ---
 id: 4jwr83pp35qmtwnxuvlv85k
-title: Class lifecycle in memory
+title: Class
 desc: ''
-updated: 1713803758600
+updated: 1727121273776
 created: 1713720954447
 ---
 
