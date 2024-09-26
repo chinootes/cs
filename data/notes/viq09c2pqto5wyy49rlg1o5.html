@@ -1,0 +1,39 @@
+<h1 id="comparable">Comparable<a aria-hidden="true" class="anchor-heading icon-link" href="#comparable"></a></h1>
+<p>Comparable is used to define natural ordering for user-defined types. </p>
+<p>To do that, the class should implement the <code>Comparable</code> interface and define its <code>compareTo()</code> method.</p>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Comparable</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">T</span> o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="implementation">Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation"></a></h2>
+<p><code>compareTo()</code> has context of two objects. One, which is being used to invoke it and the other, which it takes as an input. It then compares these two objects (the part which is to be implemented) and returns and integer indicating the order.</p>
+<ul>
+<li><strong>Negative</strong>: current object is less than the other object. </li>
+<li><strong>Zero</strong>: current object is equal to the other object. </li>
+<li><strong>Positive</strong>: current object is greater than the other object.</li>
+</ul>
+<pre class="language-java"><code class="language-java"><span class="token function">compareTo</span><span class="token punctuation">(</span><span class="token class-name">T</span> o<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">&#x3C;</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+ 
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+ <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">></span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="usage">Usage<a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a></h2>
+<p>If a class implements this, you can use the <code>compareTo()</code> method to compare its two objects.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">switch</span><span class="token punctuation">(</span>obj1<span class="token punctuation">.</span><span class="token function">compareTo</span><span class="token punctuation">(</span>obj2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token operator">-</span><span class="token number">1</span><span class="token operator">:</span> <span class="token comment">// obj1 &#x3C;  obj2</span>
+    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">:</span>  <span class="token comment">// obj1 == obj2</span>
+    <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span>  <span class="token comment">// obj1 >  obj2</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43">Collection Framework (cs)</a></li>
+<li><a href="/cs/notes/rhm2ueynmzepd2gxd9tj0sx">Wrapper Classes (cs)</a></li>
+<li><a href="/cs/notes/lltawdg3ubxo5lujxld7kff">String Comparison (cs)</a></li>
+<li><a href="/cs/notes/ip5orztybk9shcn0qhjo7ms">Comparator (cs)</a></li>
+</ul>

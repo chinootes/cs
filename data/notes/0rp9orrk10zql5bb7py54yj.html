@@ -1,0 +1,13 @@
+<h1 id="serialization">Serialization<a aria-hidden="true" class="anchor-heading icon-link" href="#serialization"></a></h1>
+<ul>
+<li></li>
+<li>An object can be made Serializable by implementing the <a href="/cs/notes/mbwwjk3x17fjagziw7d0ky6">Serializable</a>.</li>
+</ul>
+<h2 id="serialversionuid">SerialVersionUID<a aria-hidden="true" class="anchor-heading icon-link" href="#serialversionuid"></a></h2>
+<ul>
+<li>Serialization process associates an ID with each serializable class on runtime → SerialVersionID</li>
+<li>Used to verify that sender and reciever of the serialized object are the same. Throws InvalidClassException otherwise.</li>
+<li>We can generate our own SerialVersionUID by creating a static final long serialVersionUID field in the class. Suggested to have it private and declare it in the class itself.</li>
+</ul>
+<h2 id="transient-keyword"><code>transient</code> keyword<a aria-hidden="true" class="anchor-heading icon-link" href="#transient-keyword"></a></h2>
+<p>If you don't want to serialize any data member of the class - that is, you don't want it to be stored - mark it (prefix it) with transient.</p>

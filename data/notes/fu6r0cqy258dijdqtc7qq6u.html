@@ -1,0 +1,11 @@
+<h1 id="topological-sort">Topological Sort<a aria-hidden="true" class="anchor-heading icon-link" href="#topological-sort"></a></h1>
+<p>It is a way of sorting a Directed Acyclic Graph in an order where for any edge <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>→</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">u \to v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">u</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></span>, u always comes before v in the sort.</p>
+<p>For a Topological Sort, the nodes should be executed in order of their direction.</p>
+<ul>
+<li>The nodes with no prerequisites (no arrows pointing towards them) are the leaf nodes.</li>
+<li>The leaf nodes come first in a postorder search and we trace back our steps from their.</li>
+<li>For a Topological Sort, the nodes with no prerequisites should be executed last.</li>
+<li>Since, the last node of topological sort is the first node of the postorder DFS traversal, and this order is maintained throughout the traversal => reversing postorder DFS automatically gives a topological sort for a Graph.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://youtu.be/PMMc4VsIacU?si=07x2kNfOdPjKJqoN">Depth First Search (DFS) Explained: Algorithm, Examples, and Code</a></p>

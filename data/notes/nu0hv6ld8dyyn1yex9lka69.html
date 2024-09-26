@@ -1,0 +1,33 @@
+<h1 id="bug-lifecycle">Bug Lifecycle<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-lifecycle"></a></h1>
+<h2 id="bug-workflow">Bug Workflow<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-workflow"></a></h2>
+<div class="mermaid">
+  flowchart TD
+    1[1. Execute tests] --> 2[2. Record and submit a bug] 
+    2 --> 3[3. Review and assign the bug]
+    3 --> 4[4. Investigate and reproduce the bug]
+    4 --> reproduced([Bug reproduced?])
+    
+    reproduced --Yes--> 5[5. Fix the bug]
+    reproduced --No--> 6[6. Elaborate the bug]
+    6 --> 4    
+
+    5 --> 7[7. Verify the fix]
+    7 --> fixed([Bug fixed])
+
+    fixed --Yes--> 8[8. Close the bug]
+    fixed --No--> 5
+</div>
+<h2 id="bug-life-cycle-stages">Bug Life Cycle Stages<a aria-hidden="true" class="anchor-heading icon-link" href="#bug-life-cycle-stages"></a></h2>
+<ol>
+<li>New/Open</li>
+<li>Deferred/Postponed</li>
+<li>Assigned</li>
+<li>In Progress</li>
+<li>Fixed</li>
+<li>Pending Retest</li>
+<li>Verified/Closed</li>
+<li>Reopened</li>
+</ol>
+<p>These stages can vary according to the organization and team.</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://katalon.com/resources-center/blog/bug-defect-life-cycle">What is Bug Life Cycle In Software Testing? Best Tools For Bug Management</a></p>

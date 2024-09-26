@@ -1,0 +1,20 @@
+<h1 id="default">Default<a aria-hidden="true" class="anchor-heading icon-link" href="#default"></a></h1>
+<p>Default modifer, used for <strong>methods</strong>, helps define default implementations to certain methods within the interface itself.</p>
+<p>The primary purpose for this feature is to allow adding certain default behaviour to future versions of an interface without breaking the existing functionality and supporting backward compatibility.</p>
+<p>This is not present in all OO languages though.</p>
+<pre class="language-java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MyInterface</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">existingMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Abstract method</span>
+
+    <span class="token comment">// Default method with implementation</span>
+    <span class="token keyword">default</span> <span class="token keyword">void</span> <span class="token function">newDefaultMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"This is a default method."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/va87cklvt4f8fl4jm6s1xs8">Java 8 (cs)</a></li>
+<li><a href="/cs/notes/uda681pw6uymjsntqaqmcca">default (cs)</a></li>
+</ul>

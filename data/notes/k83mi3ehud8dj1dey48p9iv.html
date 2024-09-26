@@ -1,0 +1,68 @@
+<h1 id="memory">Memory<a aria-hidden="true" class="anchor-heading icon-link" href="#memory"></a></h1>
+<p>JRE's memory is segregated into the below parts:</p>
+<h2 id="class-method-area">Class (Method) Area<a aria-hidden="true" class="anchor-heading icon-link" href="#class-method-area"></a></h2>
+<p>Stores class level data of every class such as the runtime constant pool, field and method data, the code for methods.</p>
+<h2 id="heap-space">Heap Space<a aria-hidden="true" class="anchor-heading icon-link" href="#heap-space"></a></h2>
+<p>Java's <a href="/cs/notes/rcyl8thq38qrnmhzb4oheq6">Heap Space</a> implementation.</p>
+<p>Used to allocate memory to objects at run time</p>
+<h3 id="program-counter-register">Program Counter Register<a aria-hidden="true" class="anchor-heading icon-link" href="#program-counter-register"></a></h3>
+<ul>
+<li>
+<p>Stores address of currently executing instruction.</p>
+<p>  Example: Points to the first line at the start of the program execution</p>
+</li>
+<li>
+<p>Also stores address of threads reponsible for executing current instruction</p>
+</li>
+<li>
+<p>Size very small</p>
+</li>
+<li>
+<p>No effect of Java apps on PC register memory or its content</p>
+</li>
+</ul>
+<h2 id="stack">Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#stack"></a></h2>
+<p>Java's implementation of <a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space</a>.</p>
+<ul>
+<li>Each thread has a private JVM stack created at same time as thread
+<ul>
+<li>Used to store data and partial results which will be needed while returning value for method and performing dynamic linking</li>
+</ul>
+</li>
+<li>Stores <a href="/cs/notes/heb70holb8xuqqi3mymo70u">Stack Frame</a>s</li>
+<li>References to objects stored here</li>
+</ul>
+<h3 id="stack-frame">Stack Frame<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-frame"></a></h3>
+<ul>
+<li>A new frame is created each time at every invocation of the method.</li>
+<li>Contains all the data for one function call - parameters, return address and its local address</li>
+<li>Stack frame destroyed when method execution completes</li>
+</ul>
+<h2 id="native-method-stack">Native Method Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#native-method-stack"></a></h2>
+<ul>
+<li>Implemented using languages other than Java</li>
+<li>New thread created → Memory allocated in this area</li>
+<li>Size can be fixed or dynamic</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/61654407/how-references-are-stored-in-java">How references are stored in Java</a></li>
+<li>More about layout of java objects — <a href="https://shipilev.net/jvm/objects-inside-out/">Java Objects Inside Out</a></li>
+<li><a href="https://wiki.openjdk.java.net/display/HotSpot/CompressedOops">Compressed OOPs</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/h91gy11na7f4hpzje4cqmzd">Array</a></li>
+<li><a href="/cs/notes/4jwr83pp35qmtwnxuvlv85k">Class</a></li>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods</a></li>
+<li><a href="/cs/notes/f6lwf3ytkd2f80adq6eluvv">Objects</a></li>
+<li><a href="/cs/notes/5t5ka4s5kq8fy6pqdioqxdd">Static members</a></li>
+<li><a href="/cs/notes/c376iyczea2rtetyc1dgolt">String</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods (cs)</a></li>
+<li><a href="/cs/notes/f6lwf3ytkd2f80adq6eluvv">Objects (cs)</a></li>
+</ul>

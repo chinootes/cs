@@ -1,0 +1,26 @@
+<h1 id="anonymous-functions">Anonymous Functions<a aria-hidden="true" class="anchor-heading icon-link" href="#anonymous-functions"></a></h1>
+<p>Functions without a name. </p>
+<p>There are different ways of creating anonymous functions:</p>
+<pre class="language-js"><code class="language-js"><span class="token comment">// An anonymous function assigned to a variable</span>
+<span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Output: 5</span>
+
+<span class="token comment">// An anonymous function used as a callback</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">"Hello, World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre>
+<p>Can be created using <a href="/cs/notes/fa4rownvgtxunljkh46ls19">Lambda</a> expressions. Such functions are called lambda functions.</p>
+<pre class="language-python"><code class="language-python"><span class="token comment"># Anonymous (lambda) function passed to map</span>
+squared <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">map</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> x <span class="token operator">**</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>squared<span class="token punctuation">)</span>  <span class="token comment"># Output: [1, 4, 9, 16]</span>
+
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/fa4rownvgtxunljkh46ls19">Lambda (cs)</a></li>
+</ul>

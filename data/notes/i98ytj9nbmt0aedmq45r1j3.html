@@ -1,0 +1,34 @@
+<h1 id="recursive-implementation-of-dfs">Recursive Implementation of DFS<a aria-hidden="true" class="anchor-heading icon-link" href="#recursive-implementation-of-dfs"></a></h1>
+<pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    visit<span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> w <span class="token keyword">in</span> G<span class="token punctuation">.</span>neighbours<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        dfs<span class="token punctuation">(</span>G<span class="token punctuation">,</span>w<span class="token punctuation">)</span>
+</code></pre>
+<p>The only issue in the above algorithm is that we'll end up visiting nodes we have already visited. Thus, we need to mark the already visited nodes.</p>
+<pre class="language-python"><code class="language-python">marked <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">]</span> <span class="token operator">*</span> G<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    visit<span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+    marked<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> w <span class="token keyword">in</span> G<span class="token punctuation">.</span>neighbours<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> marked<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>G<span class="token punctuation">,</span>w<span class="token punctuation">)</span>
+</code></pre>
+<p>Time complexity: <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>V</mi><mo>+</mo><mi>E</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(V+E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span></span>;
+<span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span></span> = no. of vertices
+<span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span></span> = no. of edges</p>
+<p>Cleaner and more readable than <a href="/cs/notes/k17i0p02zclyauljqyd2b9b">Iterative Implementation of DFS</a>.</p>
+<h2 id="implementation-for-postorder-dfs">Implementation for Postorder DFS<a aria-hidden="true" class="anchor-heading icon-link" href="#implementation-for-postorder-dfs"></a></h2>
+<p>Just move the visit() call to the end.</p>
+<pre class="language-python"><code class="language-python">marked <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">]</span> <span class="token operator">*</span> G<span class="token punctuation">.</span>size<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">dfs</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    marked<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">for</span> w <span class="token keyword">in</span> G<span class="token punctuation">.</span>neighbours<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> marked<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            dfs<span class="token punctuation">(</span>G<span class="token punctuation">,</span>w<span class="token punctuation">)</span>
+    visit<span class="token punctuation">(</span>v<span class="token punctuation">)</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/k17i0p02zclyauljqyd2b9b">Iterative Implementation of DFS (cs)</a></li>
+</ul>

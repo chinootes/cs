@@ -1,0 +1,35 @@
+<h1 id="imperative">Imperative<a aria-hidden="true" class="anchor-heading icon-link" href="#imperative"></a></h1>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Imperative</th><th><a href="/cs/notes/63rgy8qmhxp9sjxvy63xr5q">Declarative</a></th></tr></thead><tbody><tr><td>You say <em>how</em> to get what you want</td><td>You just say <em>what</em> you want</td></tr></tbody></table></div>
+<h2 id="imperative-1">Imperative<a aria-hidden="true" class="anchor-heading icon-link" href="#imperative-1"></a></h2>
+<pre class="language-csharp"><code class="language-csharp"><span class="token class-name">List<span class="token punctuation">&#x3C;</span><span class="token keyword">int</span><span class="token punctuation">></span></span> results <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token constructor-invocation class-name">List<span class="token punctuation">&#x3C;</span><span class="token keyword">int</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token class-name"><span class="token keyword">var</span></span> num <span class="token keyword">in</span> collection<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>num <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+          results<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Here, we're saying:</p>
+<ol>
+<li>Create a result collection</li>
+<li>Step through each number in collection</li>
+<li>Check the number. If its odd, add it to the results</li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/63rgy8qmhxp9sjxvy63xr5q">Declarative (cs)</a></li>
+<li><a href="/cs/notes/7omyctmyxe2f6ponjvfevkf">OOP (cs)</a></li>
+</ul>

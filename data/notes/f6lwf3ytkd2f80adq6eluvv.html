@@ -1,0 +1,37 @@
+<h1 id="objects">Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#objects"></a></h1>
+<h2 id="how-is-object-stored-in-memory">How is object stored in memory?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-is-object-stored-in-memory"></a></h2>
+<ul>
+<li>The actual data/structure that is stored on the heap starts with what's commonly called object header.</li>
+<li>Header contains — a (compressed) class pointer</li>
+<li>Class pointer —> an internal data structure</li>
+<li>Internal data structure — defines layout of the class</li>
+<li>Layout of class — stored in a separate memory area called Metaspace (or Compressed Class space if Compressed OOPs are used).</li>
+<li>The pointer can be 4 or 8 bytes, depending on the architecture - even on 64-bit systems, it's usually 4 bytes due to the Compressed OOPs optimization.</li>
+</ul>
+<h2 id="reachable-objects">Reachable Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#reachable-objects"></a></h2>
+<p>An object is called reachable if it is reachable from a <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">lang.java.jre.memory.objects.root (Private)</a>.</p>
+<p>Objects which are directly or indirectly reachable from some other objects.</p>
+<p>For example,</p>
+<ul>
+<li>P -> O</li>
+<li>P -> Q -> O</li>
+</ul>
+<p>O is reachable from P in both cases.</p>
+<h2 id="root-objects">Root Objects<a aria-hidden="true" class="anchor-heading icon-link" href="#root-objects"></a></h2>
+<p>An object is a root object if it is referenced by:</p>
+<ul>
+<li>A parameter on a call <a href="/cs/notes/k83mi3ehud8dj1dey48p9iv#stack-frame">stack frame</a></li>
+<li>A local variable on the call <a href="/cs/notes/k83mi3ehud8dj1dey48p9iv#stack-frame">stack frame</a></li>
+<li>A <a href="/cs/notes/ervkc2axbp61b1ht9kssica">Static Variable</a> in class</li>
+<li>Others like <a href="/cs/notes/ewucabn1tnwx8effo9sqni6">Class Loader</a> or <a href="/cs/notes/q1epee590dzpf5zvcwfd82c">Java Native Interfaces (JNI)</a> references.</li>
+</ul>
+<h2 id="lifecycle">Lifecycle<a aria-hidden="true" class="anchor-heading icon-link" href="#lifecycle"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token punctuation">;</span>
+</code></pre>
+<p>Unlike C++, the above statement won’t create an object. It will just create a reference variable. The reference variable has to be given an object.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Box</span> smallBox<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Box</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Now <code>smallBox</code> contains address of an object of Box class. That is, it points to the object. However, the object itself has no name.</p>
+<ul>
+<li>Memory is allocated on the <a href="/cs/notes/k83mi3ehud8dj1dey48p9iv#heap-space">heap</a> and a reference for that object is returned which is stored in <a href="/cs/notes/k83mi3ehud8dj1dey48p9iv#stack">stack</a>.</li>
+</ul>

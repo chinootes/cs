@@ -1,0 +1,30 @@
+<h1 id="memory-management">Memory Management<a aria-hidden="true" class="anchor-heading icon-link" href="#memory-management"></a></h1>
+<h2 id="components-used-by-os-for-managing-memory">Components used by OS for managing memory<a aria-hidden="true" class="anchor-heading icon-link" href="#components-used-by-os-for-managing-memory"></a></h2>
+<h3 id="physical-memory-ram">Physical Memory (<a href="/cs/notes/sy4xkem469s2tehzh81rmhe">RAM</a>)<a aria-hidden="true" class="anchor-heading icon-link" href="#physical-memory-ram"></a></h3>
+<p>Physical memory is the actual hardware component installed in the system. </p>
+<h3 id="virtual-memory">Virtual Memory<a aria-hidden="true" class="anchor-heading icon-link" href="#virtual-memory"></a></h3>
+<p>Memory management technique that allows the system to run larger applications or execute more programs than the available physical RAM would allow.</p>
+<p>It is a conceptual layer on top of physical memory.</p>
+<p>It is typically larger than the available physical <a href="/cs/notes/sy4xkem469s2tehzh81rmhe">RAM</a>. The illusion of a larger address space is what makes it “virtual.” How is this possible? Read on to find. </p>
+<h4 id="virtual-address-space">Virtual Address Space<a aria-hidden="true" class="anchor-heading icon-link" href="#virtual-address-space"></a></h4>
+<p>Addresses of virtual memory locations -> also bigger than the physical address space.</p>
+<h3 id="page-table">Page table<a aria-hidden="true" class="anchor-heading icon-link" href="#page-table"></a></h3>
+<p>Page tables store mappings between virtual addresses and physical addresses. These are also stored in <a href="/cs/notes/sy4xkem469s2tehzh81rmhe">RAM</a>, more specifically in <a href="/cs/notes/8w4kjwk1jgd7rtnno5as9d3">Kernel Space</a>.</p>
+<h3 id="pagefile-swap-space">Pagefile (Swap space)<a aria-hidden="true" class="anchor-heading icon-link" href="#pagefile-swap-space"></a></h3>
+<p>Space or file on disk (not RAM).</p>
+<h2 id="processes-involved-in-managing-memory">Processes involved in managing memory<a aria-hidden="true" class="anchor-heading icon-link" href="#processes-involved-in-managing-memory"></a></h2>
+<h3 id="swapping">Swapping<a aria-hidden="true" class="anchor-heading icon-link" href="#swapping"></a></h3>
+<p>Swapping involves moving parts of a process’s memory between RAM (physical memory) and disk (usually a swap file or partition) at <a href="/cs/notes/eah0wrph9gnljaf0xaflov8">Runtime</a>.</p>
+<h2 id="managing-memory---lifecycle-of-an-address-space">Managing memory - Lifecycle of an address space<a aria-hidden="true" class="anchor-heading icon-link" href="#managing-memory---lifecycle-of-an-address-space"></a></h2>
+<ul>
+<li>The OS assigns virtual memory for the <a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space</a> when a <a href="/cs/notes/gr9wokxsplgrzhdlevuprx6">Thread</a> is created.</li>
+<li>Physical memory is assigned to that virtual memory on demand using the <a href="/cs/notes/x7nmks70ns14mh5k96w9aov#page-table">Memory Management</a>.</li>
+<li>The OS identifies “swappable” pages (memory chunks) based on their usage patterns. Basically, any memory chunk not being used that frequently or actively.</li>
+<li>These pages are swapped in and out as needed.</li>
+</ul>
+<p>Swapping allows the OS to free up RAM for other processes but doing it frequently can degrade system performance - so there is a sweet spot to reach for the OS.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/x7nmks70ns14mh5k96w9aov">Memory Management (cs)</a></li>
+</ul>

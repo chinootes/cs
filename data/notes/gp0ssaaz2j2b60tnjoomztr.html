@@ -1,0 +1,21 @@
+<h1 id="law-of-demeter-or-principle-of-least-knowledge">Law of Demeter or Principle of Least Knowledge<a aria-hidden="true" class="anchor-heading icon-link" href="#law-of-demeter-or-principle-of-least-knowledge"></a></h1>
+<blockquote>
+<p>Don't talk to strangers.</p>
+</blockquote>
+<h2 id="statement">Statement<a aria-hidden="true" class="anchor-heading icon-link" href="#statement"></a></h2>
+<p><strong>For all classes C, and for all methods M attached to C, all objects to which M sends a message must be:</strong></p>
+<ul>
+<li><strong>M’s argument objects, including the self object or</strong></li>
+<li><strong>The instance variable objects of C</strong></li>
+</ul>
+<p><strong>(Object created by M, or by functions or methods which M calls, and objects in global variables are considered as arguments of M).</strong></p>
+<p><em>In the early days of Object-Orientation, objects were supposed to “send messages” to each other. That is how they communicated. So the term “objects to which M sends a message” roughly translates to “objects used by M,” or in a more practical definition “objects on which M calls a method on”.</em></p>
+<h2 id="the-genius-of-law-of-demeter">The Genius of Law of Demeter<a aria-hidden="true" class="anchor-heading icon-link" href="#the-genius-of-law-of-demeter"></a></h2>
+<ul>
+<li>Concepts like encapsulation, cohesion, single-responsibility principle or open/closed principle are not pragmatic enough and require interpretation, which makes them subjective and dependent of people's experience and knowledge.</li>
+</ul>
+<blockquote>
+<p>The genius of the Law of Demeter comes from the succinct and exact definition, which allows for a direct application when writing code, while at the same time almost automatically guaranteeing proper encapsulation, cohesion, and loose coupling. The authors of the Law managed to take these abstract concepts and distil the essence of them into a clear set of rules that are universally applicable to Object-Oriented code. [<a href="https://dzone.com/articles/the-genius-of-the-law-of-demeter#:~:text=The%20genius%20of%20the%20Law%20of%20Demeter%20comes,that%20are%20universally%20applicable%20to%20Object%2DOriented%20code.">Source</a>]</p>
+</blockquote>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://dzone.com/articles/the-genius-of-the-law-of-demeter">The Genius of Law of Demeter - dZone</a></p>

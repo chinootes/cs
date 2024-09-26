@@ -1,0 +1,25 @@
+<h1 id="object-cloning">Object Cloning<a aria-hidden="true" class="anchor-heading icon-link" href="#object-cloning"></a></h1>
+<h2 id="shallow-cloning">Shallow Cloning<a aria-hidden="true" class="anchor-heading icon-link" href="#shallow-cloning"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">A</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>i <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>j <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+
+<span class="token class-name">A</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">;</span> <span class="token comment">//Shallow cloning</span>
+</code></pre>
+<p>The object is only one. We have just created two references to the same object.</p>
+<h2 id="deep-cloning">Deep Cloning<a aria-hidden="true" class="anchor-heading icon-link" href="#deep-cloning"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">A</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+obj1<span class="token punctuation">.</span>i <span class="token operator">=</span> obj<span class="token punctuation">.</span>i<span class="token punctuation">;</span>  <span class="token comment">//Deep</span>
+obj1<span class="token punctuation">.</span>j <span class="token operator">=</span> obj<span class="token punctuation">.</span>j<span class="token punctuation">;</span>  <span class="token comment">//Cloning</span>
+</code></pre>
+<ul>
+<li>We create a new object and manually copy all members one by one.</li>
+<li>Not very efficient if there are too many data members.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/c5elrg6xfbs9jqfrh4kqo2e">Immutable Class (cs)</a></li>
+<li><a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable (cs)</a></li>
+<li><a href="/cs/notes/lxfnzfx9x4xdx3pxjcvt5lq">Object Cloning in Java (cs)</a></li>
+</ul>

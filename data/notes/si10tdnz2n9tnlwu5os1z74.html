@@ -1,0 +1,29 @@
+<h1 id="parameter-injection">Parameter Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#parameter-injection"></a></h1>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> … <span class="token keyword">DEFINITION</span> … <span class="token punctuation">.</span>
+  <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHODS</span> get_amount_in_coins 
+      <span class="token keyword">IMPORTING</span>
+        i_amount <span class="token keyword">TYPE</span> <span class="token keyword">i</span>
+        i_cash_provider <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_cash_provider <span class="token keyword">OPTIONAL</span>
+      <span class="token keyword">RETURNING</span> <span class="token keyword">VALUE</span><span class="token punctuation">(</span>r_value<span class="token punctuation">)</span> <span class="token keyword">TYPE</span> <span class="token keyword">i</span><span class="token punctuation">.</span>
+  <span class="token keyword">PRIVATE</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+  <span class="token keyword">DATA</span> m_cash_provider <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_cash_provider<span class="token punctuation">.</span>
+…
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> … <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+  <span class="token keyword">METHOD</span> get_amount_in_coins<span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span><span class="token punctuation">(</span>cash_provider<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">CAST</span> if_cash_provider<span class="token punctuation">(</span>
+                  <span class="token keyword">COND</span> #<span class="token punctuation">(</span> <span class="token keyword">WHEN</span> i_cash_provider <span class="token keyword">IS</span> <span class="token keyword">BOUND</span>
+                      <span class="token keyword">THEN</span> i_cash_provider
+                      <span class="token keyword">ELSE</span> <span class="token keyword">NEW</span> cl_cash_provider<span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+  …
+  <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+…
+<span class="token keyword">ENDCLASS</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection (cs)</a></li>
+</ul>

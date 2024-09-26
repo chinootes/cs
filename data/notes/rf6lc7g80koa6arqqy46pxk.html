@@ -1,0 +1,78 @@
+<h1 id="test-double">Test Double<a aria-hidden="true" class="anchor-heading icon-link" href="#test-double"></a></h1>
+<ul>
+<li>Like stunt double, but for testing.</li>
+<li>For testing purposes, test double does the job of the code on which your code under test depends.</li>
+</ul>
+<h2 id="types-of-test-doubles">Types of Test doubles<a aria-hidden="true" class="anchor-heading icon-link" href="#types-of-test-doubles"></a></h2>
+<h3 id="stub">Stub<a aria-hidden="true" class="anchor-heading icon-link" href="#stub"></a></h3>
+<p>Provides “indirect input”</p>
+<ol>
+<li>Test places desired return value in stub</li>
+<li>Stub returns the desired value to the code under test</li>
+</ol>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> ltd_stub <span class="token keyword">DEFINITION</span> <span class="token keyword">FOR</span> <span class="token keyword">TESTING</span><span class="token punctuation">.</span>
+  <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">INTERFACES</span> if_cash_provider <span class="token keyword">PARTIALLY</span> <span class="token keyword">IMPLEMENTED</span><span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_notes <span class="token keyword">TYPE</span> if_cash_provider<span class="token token-operator punctuation">=></span>tt_change<span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+        
+<span class="token keyword">CLASS</span> ltd_stub <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+  <span class="token keyword">METHOD</span> if_cash_provider<span class="token token-operator punctuation">~</span>get_notes<span class="token punctuation">.</span>
+    r_notes <span class="token operator">=</span> m_notes<span class="token punctuation">.</span>
+  <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+</code></pre>
+<h3 id="spy">Spy<a aria-hidden="true" class="anchor-heading icon-link" href="#spy"></a></h3>
+<p>Logs the “indirect output”</p>
+<ol>
+<li>Spy logs the value passed by the code under test</li>
+<li>Test verifies the recorded value</li>
+</ol>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> ltd_spy <span class="token keyword">DEFINITION</span> <span class="token keyword">FOR</span> <span class="token keyword">TESTING</span><span class="token punctuation">.</span>
+    <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">INTERFACES</span> if_cash_provider <span class="token keyword">PARTIALLY</span> <span class="token keyword">IMPLEMENTED</span><span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_currency <span class="token keyword">TYPE</span> string<span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> ltd_spy <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHOD</span> if_cash_provider<span class="token token-operator punctuation">~</span>get_notes<span class="token punctuation">.</span>
+    m_currency <span class="token operator">=</span> i_currency<span class="token punctuation">.</span>
+    <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span>
+</code></pre>
+<h3 id="fake">Fake<a aria-hidden="true" class="anchor-heading icon-link" href="#fake"></a></h3>
+<p>Simple implementation of depended-on component</p>
+<h3 id="mock">Mock<a aria-hidden="true" class="anchor-heading icon-link" href="#mock"></a></h3>
+<p>Extension of stub, spy, and fake; verifies the “indirect input” and/or “indirect output” according to given expectations</p>
+<ol>
+<li>Test places desired value in mock</li>
+<li>Spy logs the value passed by the code
+under test</li>
+<li>Stub returns the desired value to the code
+under test</li>
+<li>Test verifies the recorded value</li>
+</ol>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> ltd_mock <span class="token keyword">DEFINITION</span> <span class="token keyword">FOR</span> <span class="token keyword">TESTING</span><span class="token punctuation">.</span>
+    <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+    <span class="token keyword">INTERFACES</span> if_cash_provider <span class="token keyword">PARTIALLY</span> <span class="token keyword">IMPLEMENTED</span><span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_currency <span class="token keyword">TYPE</span> string<span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_currency_exp <span class="token keyword">TYPE</span> string<span class="token punctuation">.</span>
+    <span class="token keyword">DATA</span> m_notes <span class="token keyword">TYPE</span> if_cash_provider<span class="token token-operator punctuation">=></span>tt_change<span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> ltd_mock <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHOD</span> if_cash_provider<span class="token token-operator punctuation">~</span>get_notes<span class="token punctuation">.</span>
+    m_currency <span class="token operator">=</span> i_currency<span class="token punctuation">.</span>
+    r_notes <span class="token operator">=</span> m_notes<span class="token punctuation">.</span>
+    <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+    <span class="token keyword">METHOD</span> assert_expectations<span class="token punctuation">.</span>
+    cl_abap_unit_assert<span class="token token-operator punctuation">=></span>assert_equals<span class="token punctuation">(</span>
+    act <span class="token operator">=</span> m_currency
+    <span class="token keyword">exp</span> <span class="token operator">=</span> m_currency_exp <span class="token punctuation">)</span><span class="token punctuation">.</span>
+    <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+</code></pre>
+<h3 id="dummy">Dummy<a aria-hidden="true" class="anchor-heading icon-link" href="#dummy"></a></h3>
+<p>Satisfies syntax requirements; does nothing</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p>Terminology from the book <em>xUnit Test Patterns, Gerard Meszaros</em></p>

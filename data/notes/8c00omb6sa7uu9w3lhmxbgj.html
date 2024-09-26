@@ -1,0 +1,46 @@
+<h1 id="string-conversion">String Conversion<a aria-hidden="true" class="anchor-heading icon-link" href="#string-conversion"></a></h1>
+<ul>
+<li>
+<p>Conversion from primitive type to String</p>
+<ul>
+<li>
+<p>Done through <a href="/cs/notes/rhm2ueynmzepd2gxd9tj0sx">Wrapper Classes</a> which override the toString() method</p>
+</li>
+<li>
+<p>Syntax</p>
+<pre><code>```java
+Integer a = 130;
+String s = a.toString();
+```
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Conversion from String to primitive type</p>
+<ul>
+<li>
+<p>Each wrapper class has a <em>parse</em> method → parseXXX()</p>
+</li>
+<li>
+<p>Syntax</p>
+<pre><code>```java
+int a = Integer.parseInt(s);
+byte b = Byte.parseByte(s);
+
+//Exception
+//Since String is made of chars anyway 
+//considering the String is made of a single character
+char c = s.charAt(0)
+
+```
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/rhm2ueynmzepd2gxd9tj0sx">Wrapper Classes (cs)</a></li>
+</ul>

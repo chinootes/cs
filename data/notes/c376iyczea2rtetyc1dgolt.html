@@ -1,0 +1,19 @@
+<h1 id="string">String<a aria-hidden="true" class="anchor-heading icon-link" href="#string"></a></h1>
+<h2 id="string-constant-pool">String Constant Pool<a aria-hidden="true" class="anchor-heading icon-link" href="#string-constant-pool"></a></h2>
+<p>Special memory area in which string literals are stored</p>
+<h2 id="string-initialization-using-literals">String Initialization using literals<a aria-hidden="true" class="anchor-heading icon-link" href="#string-initialization-using-literals"></a></h2>
+<p>Creating a String literal → <a href="/cs/notes/y92rxfv7150ppi7fgius6g3">JVM</a> checks the String Constant Pool.</p>
+<ul>
+<li>Exists => Points to the same 'literal'</li>
+<li>Doesn't Exist => New instance created</li>
+</ul>
+<h2 id="string-initialization-using-new">String Initialization using new<a aria-hidden="true" class="anchor-heading icon-link" href="#string-initialization-using-new"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//null</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"Kya challa?"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>New object created irrespective of whether the literal already exists or not</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/vqbisdumti23oeq2xk6oml5">String (cs)</a></li>
+</ul>

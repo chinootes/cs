@@ -1,0 +1,67 @@
+<h1 id="regex">Regex<a aria-hidden="true" class="anchor-heading icon-link" href="#regex"></a></h1>
+<p>Used for pattern matching in string. Common use cases include text validation and text search.</p>
+<p>Regexes are enclosed within <code>/ /</code> (this document doesn't use these enclosings in most regexes to keep it clean).</p>
+<h2 id="some-common-ones">Some common ones<a aria-hidden="true" class="anchor-heading icon-link" href="#some-common-ones"></a></h2>
+<ul>
+<li><code>[abc]</code> - a, b or c</li>
+<li><code>[^abc]</code> -  any character except a, b, c</li>
+<li><code>[a-z]</code> - a to z</li>
+<li><code>[A-Z]</code> - A to Z</li>
+<li><code>[a-zA-Z]</code> - a to z, A to Z</li>
+<li><code>[0-9]</code> - 0 to 9</li>
+</ul>
+<h2 id="flags">Flags<a aria-hidden="true" class="anchor-heading icon-link" href="#flags"></a></h2>
+<ul>
+<li>
+<p><code>g</code></p>
+<p>  <code>/a/</code> will only match the first occurence of a.
+<code>/a/g</code> will match all occurences of a throughout the string.</p>
+</li>
+</ul>
+<h2 id="quantifiers">Quantifiers<a aria-hidden="true" class="anchor-heading icon-link" href="#quantifiers"></a></h2>
+<ul>
+<li><code>[ ]?</code> - occurs 0 or 1 times</li>
+<li><code>[ ]+</code> - occurs 1 or more times</li>
+<li><code>[ ]*</code> - occurs 0 or more times</li>
+<li><code>[ ]{n}</code> - occurs n times</li>
+<li><code>[ ]{n,}</code> - occurs n or more times</li>
+<li><code>[ ]{y,z}</code> - occurs at least y times but less than z times</li>
+</ul>
+<h2 id="metacharacters">Metacharacters<a aria-hidden="true" class="anchor-heading icon-link" href="#metacharacters"></a></h2>
+<ul>
+<li><code>\d</code> - all digits ≍ <code>[0-9]</code></li>
+<li><code>\w</code> - all "word" (alphanumeric) characters ≍  <code>[a-zA-Z0-9]</code></li>
+<li><code>\D</code> - everything except digits ≍ <code>[^0-9]</code></li>
+<li><code>\W</code> - everything except alphanumeric characters ≍ <code>[^a-z]</code></li>
+<li><code>.</code> - any character except a newline</li>
+</ul>
+<h2 id="escaping">Escaping<a aria-hidden="true" class="anchor-heading icon-link" href="#escaping"></a></h2>
+<p>Use <code>\</code> to replace any special character.</p>
+<h2 id="logical-operators">Logical Operators<a aria-hidden="true" class="anchor-heading icon-link" href="#logical-operators"></a></h2>
+<ul>
+<li><code>^</code> - Negation</li>
+<li><code>|</code> - Logical OR</li>
+<li><code>()</code> - to group your logic</li>
+</ul>
+<h2 id="standards">Standards<a aria-hidden="true" class="anchor-heading icon-link" href="#standards"></a></h2>
+<p>Regular expressions (regex) are not defined by a single, universally accepted standard like an RFC. However, there are efforts to establish some level of consistency across different regex implementations. </p>
+<p>Some regex standards are:</p>
+<ul>
+<li>POSIX Basic Regular Expressions (BRE)</li>
+<li>Extended Regular Expressions (ERE)</li>
+<li>PCRE (Perl Compatible Regular Expressions)</li>
+<li>I-Regexp (RFC 9485) </li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet">Regular expression syntax cheat sheet</a></p>
+</li>
+<li>
+<p>Good concise videos</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=9RksQ5YT7FM&#x26;ab_channel=CrackConcepts">REGEX (REGULAR EXPRESSIONS) WITH EXAMPLES IN DETAIL | Regex Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=sXQxhojSdZM&#x26;ab_channel=Fireship">Regular Expressions (RegEx) in 100 Seconds - Fireship - YouTube</a></li>
+</ul>
+</li>
+</ul>

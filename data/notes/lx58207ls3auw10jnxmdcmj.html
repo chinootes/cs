@@ -1,0 +1,22 @@
+<h1 id="predicate">Predicate<a aria-hidden="true" class="anchor-heading icon-link" href="#predicate"></a></h1>
+<ul>
+<li><a href="/cs/notes/3vvj3ddn7wm832v8ij1xs1i">Functional Interface</a> which represents a boolean-values function that takes <strong>one</strong> argument.</li>
+<li>Provides a convenient way to define and pass around functions that return a true or false value based on their input.</li>
+</ul>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">boolean</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token class-name">T</span> t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>It is also <a href="/cs/notes/hvxpw3bn5gil1aogfdkx8y8">Generic</a>.</p>
+<h2 id="usage">Usage<a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> isEvenLength <span class="token operator">=</span> s <span class="token operator">-></span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> result <span class="token operator">=</span> isEvenLength<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">"Hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/baxu095ehryiz9aqa17tpvt">Streams (cs)</a></li>
+<li><a href="/cs/notes/xay99m1dos63x5ea2iv38fa">andThen (cs)</a></li>
+</ul>

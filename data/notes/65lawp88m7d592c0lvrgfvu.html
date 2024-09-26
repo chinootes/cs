@@ -1,0 +1,23 @@
+<h1 id="static-methods-cant-access-instancenon-static-variables">Static Methods can't access instance(non-static) variables<a aria-hidden="true" class="anchor-heading icon-link" href="#static-methods-cant-access-instancenon-static-variables"></a></h1>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        x<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//Error</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>When you right this, the method doesn't know which 'x' to call. In case of a non-static method, it is understood that its this.x - it is implicit. But in static context, there is no 'this'.</p>
+<p>However, if you tell it the object, it can work. But again, this object will be static.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">static</span> <span class="token class-name">A</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//static object</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    a<span class="token punctuation">.</span>x<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//Works fine</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/tz7zcxetfq1vhcgh95l1ote">Static Method (cs)</a></li>
+</ul>

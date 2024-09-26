@@ -1,0 +1,26 @@
+<h1 id="stack-overflow">Stack Overflow<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-overflow"></a></h1>
+<p>Occurs when <a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space</a> overflows. </p>
+<h2 id="common-causes">Common Causes<a aria-hidden="true" class="anchor-heading icon-link" href="#common-causes"></a></h2>
+<h3 id="infinite-recursion">Infinite Recursion<a aria-hidden="true" class="anchor-heading icon-link" href="#infinite-recursion"></a></h3>
+<p>If a function calls itself without a proper termination condition, it can lead to an endless loop of function calls, eventually causing a stack overflow.</p>
+<h3 id="deep-call-stack">Deep Call Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#deep-call-stack"></a></h3>
+<p>A function calling many other functions, or a series of functions calling each other in a long chain, can also exhaust the stack space.</p>
+<h3 id="large-local-variables">Large Local Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#large-local-variables"></a></h3>
+<p>Allocating large data structures as local variables in functions can consume significant stack space.</p>
+<h3 id="excessive-function-arguments">Excessive Function Arguments<a aria-hidden="true" class="anchor-heading icon-link" href="#excessive-function-arguments"></a></h3>
+<p>Functions with a large number of arguments can increase the stack usage for each call.</p>
+<h2 id="prevention">Prevention<a aria-hidden="true" class="anchor-heading icon-link" href="#prevention"></a></h2>
+<h3 id="proper-termination-conditions">Proper Termination Conditions<a aria-hidden="true" class="anchor-heading icon-link" href="#proper-termination-conditions"></a></h3>
+<p>Ensure recursive functions have conditions that will eventually stop the recursion.</p>
+<h3 id="limit-recursion-depth">Limit Recursion Depth<a aria-hidden="true" class="anchor-heading icon-link" href="#limit-recursion-depth"></a></h3>
+<p>If recursion is necessary, limit the depth to avoid excessive stack use.</p>
+<h3 id="optimize-local-variables">Optimize Local Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#optimize-local-variables"></a></h3>
+<p>Use variables judiciously within functions and consider storing large data structures on the heap instead.</p>
+<h3 id="review-function-calls">Review Function Calls<a aria-hidden="true" class="anchor-heading icon-link" href="#review-function-calls"></a></h3>
+<p>Analyze the call graph of your program to identify potential deep call stacks or unintended recursion.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/amz8fg5miovqzorc23auu2c">Stack Space (cs)</a></li>
+<li><a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space (cs)</a></li>
+</ul>

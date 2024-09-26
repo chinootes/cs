@@ -1,0 +1,33 @@
+<h1 id="members-of-a-class">Members of a class<a aria-hidden="true" class="anchor-heading icon-link" href="#members-of-a-class"></a></h1>
+<p>Members of class are entities which are part of the class. These can be categorised on basis of ownership and on basis of their type.</p>
+<h2 id="categorisation-1-based-on-ownership">Categorisation 1: Based on ownership<a aria-hidden="true" class="anchor-heading icon-link" href="#categorisation-1-based-on-ownership"></a></h2>
+<ul>
+<li><strong>instance</strong>: instance members belong to the object</li>
+<li><strong>static</strong>: static members belong to the class</li>
+</ul>
+<h2 id="categorisation-2-based-on-type">Categorisation 2: Based on type<a aria-hidden="true" class="anchor-heading icon-link" href="#categorisation-2-based-on-type"></a></h2>
+<ul>
+<li><strong>data</strong>: data members are -
+<ul>
+<li>variables</li>
+<li>constants
+in a class</li>
+</ul>
+</li>
+<li><strong>method</strong>: member methods are methods specified in a class</li>
+</ul>
+<p>You can pair any of the categories in categorisation 1 with any of the categories in categorisation 2 to refer to a member of a class more specifically. For example, instance data member, static method, instance member variable etc.  </p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Box</span>
+ <span class="token punctuation">{</span>
+   <span class="token keyword">private</span> <span class="token keyword">int</span> length<span class="token punctuation">,</span> breadth<span class="token punctuation">,</span> height<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setDimension</span><span class="token punctuation">(</span><span class="token keyword">int</span> l<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">,</span> <span class="token keyword">int</span> h<span class="token punctuation">)</span>
+   <span class="token punctuation">{</span> length<span class="token operator">=</span>l<span class="token punctuation">;</span> breadth<span class="token operator">=</span>b<span class="token punctuation">;</span> height<span class="token operator">=</span>h<span class="token punctuation">;</span><span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">showDimension</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“<span class="token class-name">L</span> <span class="token operator">=</span> ”<span class="token operator">+</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“<span class="token class-name">B</span> <span class="token operator">=</span> ”<span class="token operator">+</span>breadth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>“<span class="token class-name">H</span> <span class="token operator">=</span> ”<span class="token operator">+</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Length, breadth, height will be called instance member variables as they will be created only when an instance(object) of a class is created. Similarly, setDimension() and showDimension() are called instance member functions.</p>

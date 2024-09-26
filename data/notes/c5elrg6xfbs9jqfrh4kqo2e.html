@@ -1,0 +1,85 @@
+<h1 id="immutable-class">Immutable Class<a aria-hidden="true" class="anchor-heading icon-link" href="#immutable-class"></a></h1>
+<p>Cannot be changed (mutated)</p>
+<p>Whenever changed - a new instance is created</p>
+<h2 id="what-makes-a-class-immutable">What makes a class immutable?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-makes-a-class-immutable"></a></h2>
+<ul>
+<li>Instance variable is final (value can't be changed)</li>
+<li>class = final - So subclass can't be created</li>
+<li>No setters</li>
+</ul>
+<h2 id="how-to-create-an-immutable-class">How to create an immutable class<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-create-an-immutable-class"></a></h2>
+<ul>
+<li>Create <strong>final</strong> class with all <strong>final data members</strong>.</li>
+<li>Whichever way you decide to initialize the object and add value to these fields make sure to perform a <a href="/cs/notes/3y962961axl79uijuaseom8#deep-cloning">deep cloning</a> for any reference fields.</li>
+<li>You have to be careful when there's a reference in the members as well. For example, arrays in Java are mutable objects. </li>
+</ul>
+<p>💡 Use <a href="/cs/notes/lxfnzfx9x4xdx3pxjcvt5lq">clone method</a> to perform deep cloning. You can use the same method for any <a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable</a> object.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">final</span> <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ImmutableClass</span> <span class="token punctuation">{</span>
+  <span class="token keyword">final</span> <span class="token keyword">private</span> <span class="token keyword">int</span> id<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">></span></span> m<span class="token punctuation">;</span>
+  <span class="token keyword">final</span> <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">;</span>
+
+  <span class="token keyword">public</span> <span class="token class-name">ImmutableClass</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">,</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">></span></span> m<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>arr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">String</span> key <span class="token operator">:</span> m<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>m<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> m<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> id<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getMapValue</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>m<span class="token punctuation">.</span><span class="token function">getOrDefault</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">getArr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="benefits">Benefits<a aria-hidden="true" class="anchor-heading icon-link" href="#benefits"></a></h2>
+<p>The main benefits of immutability come in case of multi-threaded applications, functional programming and high-security systems.</p>
+<ul>
+<li>Thead safety</li>
+<li>Predictable behavior</li>
+<li>Enhanced security: ensures that sensitive data cannot be modified after its created preventing unintended or malicious change.</li>
+<li>Caching: 
+<ul>
+<li>Immutable objects can be safely shared across different parts of program.</li>
+<li>Hashcodes for hash-based structures can be precomputed and cached - since they won't change</li>
+</ul>
+</li>
+<li>Works well with <a href="/cs/notes/wpdf282ghgnjvgkwws15iye">Functional Programming</a>
+<ul>
+<li>Immutability is one of the principles of functional programming</li>
+<li>Immutable objects ensure that functions don't modify anything outside their scope</li>
+</ul>
+</li>
+</ul>
+<h2 id="use-cases">Use cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://arc.net/l/quote/zfjjlivr">How To Create an Immutable Class in Java</a></li>
+<li><a href="https://www.journaldev.com/1432/java-immutable-class-builder">Java Immutable Class - Builder Pattern</a> <em>dead</em>
+<ul>
+<li><a href="https://web.archive.org/web/20220704144259/https://www.journaldev.com/1432/java-immutable-class-builder">Archive Link</a></li>
+</ul>
+</li>
+<li><a href="https://stackoverflow.com/questions/3769607/why-do-we-need-immutable-class">Why do we need immutable class?</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/5mqyhqbl70k784qyd7mrkav">Thread Safety (cs)</a></li>
+<li><a href="/cs/notes/vqbisdumti23oeq2xk6oml5">String (cs)</a></li>
+<li><a href="/cs/notes/rhm2ueynmzepd2gxd9tj0sx">Wrapper Classes (cs)</a></li>
+</ul>

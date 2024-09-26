@@ -1,0 +1,75 @@
+<h1 id="multithreading">Multithreading<a aria-hidden="true" class="anchor-heading icon-link" href="#multithreading"></a></h1>
+<p>Components involved in <a href="/cs/notes/2yvl1jdxsuy6584xzcm4759">Multithreading</a> in Java:</p>
+<ul>
+<li>Threads</li>
+<li>Thread Scheduler</li>
+<li>Thead Pool</li>
+<li>Executor Service</li>
+</ul>
+<h2 id="threads">Threads<a aria-hidden="true" class="anchor-heading icon-link" href="#threads"></a></h2>
+<ul>
+<li>One Java thread corresponds to one CPU thread.</li>
+</ul>
+<h3 id="life-cycle">Life Cycle<a aria-hidden="true" class="anchor-heading icon-link" href="#life-cycle"></a></h3>
+<div class="mermaid">
+  stateDiagram
+    state Thread{
+        Runnable 
+        Running 
+        Terminated
+    }
+    state BlockedCode{
+        NonRunnable 
+    }
+
+    [*] --> Runnable
+    Runnable --> Running: start()
+    Running --> Terminated
+
+    Running --> NonRunnable: sleep, block on I/O, wait for lock, suspend, wait
+    NonRunnable --> Runnable: sleep done, I/O complete, lock available, resume, notify, notifyAll
+        
+</div>
+<h2 id="thread-scheduler">Thread Scheduler<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-scheduler"></a></h2>
+<p>Task executes for a predefined slice of time and then re-enters pool of ready tasks.</p>
+<p>Next task decided based on priority and other factors.</p>
+<p>Uses <a href="/cs/notes/s0ti7wyyxprb9hwd2x80nv5">Pre Emptive Scheduling</a> and <a href="/cs/notes/auea1u426q9q291f1tl6kui">Time Slicing</a></p>
+<h3 id="thread-pool">Thread Pool<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-pool"></a></h3>
+<p>If you use <a href="/cs/notes/9tn4qoat4ksb1kha3p77zhe">ExecutorService</a> to initialize a thread pool.</p>
+<p><img src="/cs/assets/images/2024-09-26.png" alt="Thread Pool"></p>
+<ul>
+<li>Threads initialized will pick up tasks from the queue of tasks given to the executor service</li>
+<li>Since multiple threads are accessing this queue simultaneously, executor service uses a <a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43#concurrent-collections">BlockingQueue</a>.</li>
+</ul>
+<h4 id="ideal-pool-size">Ideal Pool Size<a aria-hidden="true" class="anchor-heading icon-link" href="#ideal-pool-size"></a></h4>
+<ul>
+<li>
+<p><strong>CPU Intensive tasks</strong>: Tasks which block the CPU cores. For example, intensive hashing or cryptographic algorithms. In such cases, if you have even thousands of tasks, the number of threads running at a time will be equal to the number of cores on your CPU. So if you have too many threads, CPU will simply keep rotating between all these tasks and won't be able to actually complete any of these quick. </p>
+<p>  In such cases, <strong>Ideal Pool Size = CPU Core count</strong></p>
+<p>  Use <a href="/cs/notes/mxbdf8srsgf09fejmjuvrvs">Runtime</a> to get the core count and initialize executor service with that.</p>
+<p>  Other consideration: How many other applications (or executors/threads are running on the same CPU)
+</p>
+</li>
+<li>
+<p><strong>I/O Intensive tasks</strong>: Tasks which don't really need the CPU, like input/output from user, or calls to a remote service. In such cases, even if you create few threads, CPU will keep waiting for a response to come back, staying idle. </p>
+</li>
+</ul>
+<p>Ideal pool size will be higher in such cases.</p>
+<p>Exact number will depend on the rate of task submissions and average task wait time. Too many threads will increase memory consumption too.</p>
+<h4 id="types-of-pools">Types of Pools<a aria-hidden="true" class="anchor-heading icon-link" href="#types-of-pools"></a></h4>
+<ul>
+<li>FixedThreadPool</li>
+<li>CachedThreadPool</li>
+<li>ScheduledThreadPool</li>
+<li>SingleThreadedExecutor</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLhfHPmPYPPRk6yMrcbfafFGSbE2EPK_A6">Java Concurrency - Defog Tech - YouTube Playlist</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/b17hq2sylq3mv2kmoh8dzuk">Deadlocks</a></li>
+<li><a href="/cs/notes/3uaj7ngwih7npv8vlfs7k6d">Thread Safety</a></li>
+</ol>

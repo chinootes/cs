@@ -1,0 +1,16 @@
+<h1 id="literal-type">Literal Type<a aria-hidden="true" class="anchor-heading icon-link" href="#literal-type"></a></h1>
+<p>A literal type is a value, enforced as a type.</p>
+<p>That means, a variable of literal type can only have value of the <a href="/cs/notes/8nki2c37f0299758ree1kij">Literal</a> and nothing else.</p>
+<p>You can say it is a subtype of a primitive data type. While primitive data types allow a range of values, literal narrows it down to specific predifined value (values in some cases).</p>
+<p>For example:</p>
+<pre class="language-ts"><code class="language-ts"><span class="token keyword">let</span> iamlit<span class="token operator">:</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span> <span class="token comment">//"Hello" is literal type</span>
+
+<span class="token class-name">iamlit</span> <span class="token operator">=</span> <span class="token string">"Hello"</span><span class="token punctuation">;</span> <span class="token comment">//OK</span>
+iamlit <span class="token operator">=</span> <span class="token string">"Bounjor"</span> <span class="token comment">//Error</span>
+</code></pre>
+<p>Here <code>iamlit</code> can only have value of the literal.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/r1t0gj9h9qzcsp1bd3v5ksj">Enum (Enumerated Types) (cs)</a></li>
+</ul>

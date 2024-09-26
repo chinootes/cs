@@ -1,0 +1,35 @@
+<h1 id="executorservice">ExecutorService<a aria-hidden="true" class="anchor-heading icon-link" href="#executorservice"></a></h1>
+<p><code>ExecutorService</code> is an interface which allows us to execute tasks on thread asynchronously</p>
+<h2 id="instantiation-using-executors-factory-class">Instantiation using <code>Executors</code> Factory class<a aria-hidden="true" class="anchor-heading icon-link" href="#instantiation-using-executors-factory-class"></a></h2>
+<p>Instance can be retrieved from <code>Executors</code> factory class using different factory methods based on the number and types of threads needed. </p>
+<h3 id="for-single-thread">For single thread<a aria-hidden="true" class="anchor-heading icon-link" href="#for-single-thread"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token class-name">ExecutorService</span> es <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+</code></pre>
+<h3 id="for-thread-pool">For thread pool<a aria-hidden="true" class="anchor-heading icon-link" href="#for-thread-pool"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token class-name">ExecutorService</span> es <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+<h3 id="for-scheduled-thread-pool">For scheduled thread pool<a aria-hidden="true" class="anchor-heading icon-link" href="#for-scheduled-thread-pool"></a></h3>
+<p>In scheduled thread pool, we can schedule tasks of the threads.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">ExecutorService</span> es <span class="token operator">=</span> <span class="token class-name">Executors</span><span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+</code></pre>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<h3 id="executing-threads">Executing Threads<a aria-hidden="true" class="anchor-heading icon-link" href="#executing-threads"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token comment">//We can use the following methods</span>
+<span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span>
+<span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> task<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token function">submit</span><span class="token punctuation">(</span><span class="token class-name">Callable</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> task<span class="token punctuation">)</span>
+<span class="token function">invokeAny</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span><span class="token punctuation">></span></span> tasks<span class="token punctuation">)</span>
+<span class="token function">invokeAll</span><span class="token punctuation">(</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">Callable</span><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span><span class="token punctuation">></span></span> tasks<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="shutting-down">Shutting down<a aria-hidden="true" class="anchor-heading icon-link" href="#shutting-down"></a></h3>
+<p>We can use the following methods after we're done. If we don't, the threads will keep running and JVM won't shut down.</p>
+<ul>
+<li><code>shutdown()</code> method</li>
+<li><code>shutdownNow()</code> method</li>
+<li><code>awaitTermination()</code> method</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/jik03wh5g5jxxfz2aklbmub">Multithreading (cs)</a></li>
+<li><a href="/cs/notes/2yvl1jdxsuy6584xzcm4759">Multithreading (cs)</a></li>
+</ul>

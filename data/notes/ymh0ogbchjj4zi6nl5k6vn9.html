@@ -1,0 +1,23 @@
+<h1 id="system-environment">System Environment<a aria-hidden="true" class="anchor-heading icon-link" href="#system-environment"></a></h1>
+<p>This environment is a system-dependent mapping from names to values which is passed from parent to child processes. Primarily the set of variables that define or control certain aspects of process execution.</p>
+<h2 id="system-properties">System Properties<a aria-hidden="true" class="anchor-heading icon-link" href="#system-properties"></a></h2>
+<p>Java maintains a set of system properties for its operations. Each java system property is a key-value (String-String) pair.</p>
+<h3 id="system-properties-vs-environment-variables">System Properties vs Environment Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#system-properties-vs-environment-variables"></a></h3>
+<p>System properties and environment variables are both conceptually mappings between names and values. Both mechanisms can be used to pass user-defined information to a Java process. Environment variables have a more global effect, because they are visible to all descendants of the process which defines them, not just the immediate Java subprocess. They can have subtly different semantics, such as case insensitivity, on different operating systems. For these reasons, environment variables are more likely to have unintended side effects. It is best to use system properties where possible. Environment variables should be used when a global effect is desired, or when an external system interface requires an environment variable (such as PATH).</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://sqa.stackexchange.com/questions/5328/what-is-system-environment">What is System Environment - Stack Exchange</a></li>
+<li><a href="https://stackoverflow.com/questions/28244332/java-process-what-is-the-environment">Java Process: What is the Environment?</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#getenv--:~:text=The%20environment%20is%20a%20system%2Ddependent%20mapping%20from%20names%20to%20values%20which%20is%20passed%20from%20parent%20to%20child%20processes.">getenv - Oracle Docs</a></li>
+<li><a href="https://www.ibm.com/docs/en/aix/7.1?topic=administration-system-environment#:~:text=2022%2D02%2D07-,The%20system%20environment%20is%20primarily%20the%20set%20of%20variables%20that%20define%20or%20control%20certain%20aspects%20of%20process%20execution.,-They%20are%20set">System Environment - IBM</a></li>
+</ul>
+<ul>
+<li><a href="https://stackoverflow.com/questions/14026558/when-to-use-environment-variables-vs-system-properties">When to use environment variables vs. system properties? - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/7054972/java-system-properties-and-environment-variables">Java system properties and environment variables</a></li>
+<li><a href="https://www.baeldung.com/java-system-get-property-vs-system-getenv">Java System.getProperty vs System.getenv</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/yxv2rq5avd4keujvcsf8u6n">System (cs)</a></li>
+</ul>

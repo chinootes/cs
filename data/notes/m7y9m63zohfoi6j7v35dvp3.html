@@ -1,0 +1,116 @@
+<h1 id="shadowinghiding">Shadowing/Hiding<a aria-hidden="true" class="anchor-heading icon-link" href="#shadowinghiding"></a></h1>
+<ul>
+<li>
+<p><strong>Overriding</strong> => In case of non-static methods</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in A"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Hiding</strong> => In case of all other members (instance members, static members, static methods)</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token function">meth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">B</span> <span class="token keyword">extends</span> <span class="token class-name">A</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token keyword">int</span> b<span class="token punctuation">;</span>
+<span class="token keyword">static</span> <span class="token function">meth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//class B now has both properties.</span>
+<span class="token comment">//'a' from its own class</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="major-difference-between-method-overriding-and-hiding">Major Difference between Method <a href="/cs/notes/bqrul0cyjmdv0plhgeg8exa">Overriding</a> and Hiding<a aria-hidden="true" class="anchor-heading icon-link" href="#major-difference-between-method-overriding-and-hiding"></a></h2>
+<p>This</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token keyword">extends</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>is not the same as this</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token keyword">extends</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Both the codes compile and run fine.</p>
+<p>But the second one isn't an example of one static method <em>z</em> another static method. Its an example of a static method <strong>hiding</strong> another static method.</p>
+<p>What's the difference?</p>
+<h3 id="runtime-polymorphism---when-you-override-you-get-it-when-you-hide-you-dont"><a href="/cs/notes/cycr9ljbnb0i5tsmcw73ops">Runtime Polymorphism</a> - When you override, you get it. When you hide, you don't.<a aria-hidden="true" class="anchor-heading icon-link" href="#runtime-polymorphism---when-you-override-you-get-it-when-you-hide-you-dont"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">classMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"classMethod() in Foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">instanceMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"instanceMethod() in Foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token keyword">extends</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">classMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"classMethod() in Bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+ 
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">instanceMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"instanceMethod() in Bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Foo</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">instanceMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">classMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//*Accessing static method using object</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Output -</p>
+<pre class="language-java"><code class="language-java"><span class="token function">instanceMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> in <span class="token class-name">Bar</span>
+<span class="token function">classMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> in <span class="token class-name">Foo</span>
+</code></pre>
+<p>We are using the same instance to access both the methods. But since one is overriding and the other is hiding, we see different behaviours.</p>
+<ul>
+<li>
+<p>In case of instance method-</p>
+<p>  At runtime, JVM uses the instance 'f' to determine which method to run.</p>
+<p>  JVM sees at runtime, that 'f' is actually an instance of Bar, so it calls the method in Bar rather than the one in Foo.</p>
+</li>
+<li>
+<p>In case of class (static) method-</p>
+<p>  Since, its a static method, JVM doesn't expect or need any instance to invoke that method. Even if you provide it with an instance like we did here, it will simply ignore it. It will just see the declaration of that instance, determine the declared type of it to determine which method to call. All of this, at compile-time.</p>
+<p>  It doesn't matter when at runtime, its decided that f is actually an instance of Bar. That's what we mean when we say a static method does not have run-time polymorphism.</p>
+<p>  Because of this difference in behaviour in static and instance methods, we use different terms - "overriding" for instance methods and "hiding" for class methods.</p>
+<p>  And when we say, you can't override a static method, it means you can write the code that looks like a static method being overridden, but it won't behave like an overridden method.</p>
+</li>
+</ul>
+<p><em>Notice that <a href="/cs/notes/7azetbc1vf0zr2w38es3xj8">Accessing Static Members using Objects</a> is possible</em></p>
+<p><a href="/cs/notes/7jxqzwkqk645anv4qhlfei0">Why compiler sometimes talks about overriding static methods?</a></p>

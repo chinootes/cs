@@ -1,0 +1,21 @@
+<h1 id="stack">Stack<a aria-hidden="true" class="anchor-heading icon-link" href="#stack"></a></h1>
+<p><code>Stack</code> class from <a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43">Collection Framework</a> class can be used.</p>
+<h2 id="creating">Creating<a aria-hidden="true" class="anchor-heading icon-link" href="#creating"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">Integer</span><span class="token punctuation">></span></span> stack <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Stack</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="pushing">Pushing<a aria-hidden="true" class="anchor-heading icon-link" href="#pushing"></a></h2>
+<pre class="language-java"><code class="language-java">stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="popping">Popping<a aria-hidden="true" class="anchor-heading icon-link" href="#popping"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Integer</span> i <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="peeking">Peeking<a aria-hidden="true" class="anchor-heading icon-link" href="#peeking"></a></h2>
+<p>Returns last element without removing.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Integer</span> i <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="searching">Searching<a aria-hidden="true" class="anchor-heading icon-link" href="#searching"></a></h2>
+<p>Returns position of the element. </p>
+<p>Position starts from 1(not 0) and is counted from the topmost(last) element.</p>
+<p>Returns -1 if element is not found.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Integer</span> pos <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>

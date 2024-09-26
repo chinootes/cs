@@ -1,0 +1,13 @@
+<h1 id="lambda">Lambda<a aria-hidden="true" class="anchor-heading icon-link" href="#lambda"></a></h1>
+<p>In Java <a href="/cs/notes/fa4rownvgtxunljkh46ls19">Lambda</a>s are defined as below:</p>
+<pre class="language-java"><code class="language-java"><span class="token punctuation">(</span>parameters<span class="token punctuation">)</span> <span class="token operator">-></span> expression<span class="token punctuation">;</span>
+</code></pre>
+<p>Brackets for parameters are optional if there is only one parameter and its type is inferred.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">String</span><span class="token punctuation">></span></span> list <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"c"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">-></span> <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/va87cklvt4f8fl4jm6s1xs8">Java 8 (cs)</a></li>
+</ul>

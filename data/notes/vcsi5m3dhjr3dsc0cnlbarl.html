@@ -1,0 +1,25 @@
+<h1 id="constructor-injection">Constructor Injection<a aria-hidden="true" class="anchor-heading icon-link" href="#constructor-injection"></a></h1>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> … <span class="token keyword">DEFINITION</span> … <span class="token punctuation">.</span>
+  <span class="token keyword">PUBLIC</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+   <span class="token keyword">METHODS</span> constructor 
+     <span class="token keyword">IMPORTING</span> i_cash_provider <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_cash_provider <span class="token keyword">OPTIONAL</span><span class="token punctuation">.</span>
+ <span class="token keyword">PRIVATE</span> <span class="token keyword">SECTION</span><span class="token punctuation">.</span>
+   <span class="token keyword">DATA</span> m_cash_provider <span class="token keyword">TYPE</span> <span class="token keyword">REF</span> <span class="token keyword">TO</span> if_cash_provider<span class="token punctuation">.</span>
+ …
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CLASS</span> … <span class="token keyword">IMPLEMENTATION</span><span class="token punctuation">.</span>
+  <span class="token keyword">METHOD</span> constructor<span class="token punctuation">.</span>
+    m_cash_provider <span class="token operator">=</span> <span class="token keyword">COND</span> #<span class="token punctuation">(</span> <span class="token keyword">WHEN</span> i_cash_provider <span class="token keyword">IS</span> <span class="token keyword">BOUND</span>
+               <span class="token keyword">THEN</span> i_cash_provider
+               <span class="token keyword">ELSE</span> <span class="token keyword">NEW</span> cl_cash_provider<span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+  <span class="token keyword">ENDMETHOD</span><span class="token punctuation">.</span>
+ …
+<span class="token keyword">ENDCLASS</span><span class="token punctuation">.</span>
+</code></pre>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/bq69a0tblzodq3mekjz89j9">Dependency Injection (cs)</a></li>
+<li><a href="/cs/notes/tag4ci15orv7zzfhpppsh1t">Dependency Injection (cs)</a></li>
+</ul>

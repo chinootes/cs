@@ -1,0 +1,107 @@
+<h1 id="object">Object<a aria-hidden="true" class="anchor-heading icon-link" href="#object"></a></h1>
+<p>God class in Java - every class inherits this class implicitly</p>
+<ul>
+<li>Why?
+<ul>
+<li>By having the Object as the super class of all Java classes, without knowing the type we can pass around objects using the Object declaration.</li>
+<li>Before generics was introduced, imagine the state of heterogeneous Java collections. A collection class like ArrayList allows to store any type of classes. It was made possible only by Object class hierarchy.</li>
+<li>The other reason would be to bring a common blueprint for all classes and have some list of functions same among them — methods like <a href="https://javapapers.com/core-java/hashcode-and-equals-methods-override/">hashCode()</a>, clone(), toString() and methods for threading which is defined in Object class.</li>
+</ul>
+</li>
+</ul>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<p>All method are public, final and void unless mentioned otherwise.</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Access and Return Type</th><th>Method</th><th>Parameters</th><th>Function</th></tr></thead><tbody><tr><td>Object</td><td><strong>getClass()</strong></td><td></td><td>returns class object</td></tr><tr><td>int (not final)</td><td><strong>hashCode()</strong></td><td></td><td>returns hashcode number of the object</td></tr><tr><td>boolean (not final)</td><td><strong>equals()</strong></td><td>Object</td><td>compares the provided object with the current object</td></tr><tr><td>protected Object (not final)</td><td><strong>clone()</strong></td><td></td><td>creates and returns exact copy of object (throws CloneNotSupportedException)</td></tr><tr><td>String (not final)</td><td><strong>toString()</strong></td><td></td><td>returns String representation of the object</td></tr><tr><td></td><td><strong>notify()</strong></td><td></td><td>wakes up single thread</td></tr><tr><td></td><td><strong>notifyAll()</strong></td><td></td><td>wakes up all threads</td></tr><tr><td></td><td><strong>wait()</strong></td><td>long timeout</td><td>wait for specified milliseconds (throws InterruptedException)</td></tr><tr><td></td><td><strong>wait()</strong></td><td>long timeout, int nanos</td><td>Same as above. Only increases precision.</td></tr><tr><td></td><td><strong>wait()</strong></td><td></td><td>Waits until notify() or notifyAll() is invoked by another thread</td></tr><tr><td>protected</td><td><strong>finalize()</strong></td><td></td><td>Invoked by garbage collector before object is being garbage collected (throws Throwable)</td></tr></tbody></table></div>
+<h3 id="contract-of-hashcode-and-equals-method">Contract of hashcode() and equals() method<a aria-hidden="true" class="anchor-heading icon-link" href="#contract-of-hashcode-and-equals-method"></a></h3>
+<blockquote>
+<p>Equal objects must have equal hashcodes.</p>
+</blockquote>
+<p>💡 If two objects have same hashcode, they may or may not be equal.</p>
+<p>Always override hashCode when you override equals. Failure to do so will prevent your class from functioning properly in conjunction with all hash-based collections i.e. HashMap, HashSet etc</p>
+<p>It's a common source of bugs.</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://javapapers.com/core-java/hashcode-and-equals-methods-override/">hashCode And equals Methods Override - javapapers</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods (cs)</a></li>
+<li><a href="/cs/notes/mg03s0pff7h5ot8rl438gdr">Thread (cs)</a></li>
+<li><a href="/cs/notes/lxfnzfx9x4xdx3pxjcvt5lq">Object Cloning in Java (cs)</a></li>
+</ul>

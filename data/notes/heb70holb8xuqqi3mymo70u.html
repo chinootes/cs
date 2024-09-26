@@ -1,0 +1,32 @@
+<h1 id="stack-frame">Stack Frame<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-frame"></a></h1>
+<h1 id="aka-activation-record">aka Activation Record<a aria-hidden="true" class="anchor-heading icon-link" href="#aka-activation-record"></a></h1>
+<p>Stack frame is created for function calls. A new one is created each time a function is called.</p>
+<h2 id="components">Components<a aria-hidden="true" class="anchor-heading icon-link" href="#components"></a></h2>
+<h3 id="function-return-address">Function Return Address<a aria-hidden="true" class="anchor-heading icon-link" href="#function-return-address"></a></h3>
+<p>The return address (memory address) of the instruction to execute after the function call completes.</p>
+<p>Pushed onto the stack first.</p>
+<h3 id="function-arguments">Function Arguments<a aria-hidden="true" class="anchor-heading icon-link" href="#function-arguments"></a></h3>
+<p>Space for function arguments (parameters) passed to the method.
+Followed by any local variables.</p>
+<h3 id="local-variables">Local Variables<a aria-hidden="true" class="anchor-heading icon-link" href="#local-variables"></a></h3>
+<p>Variables declared within the method.
+Allocated space for these variables.</p>
+<h3 id="frame-pointer-optional">Frame Pointer (Optional)<a aria-hidden="true" class="anchor-heading icon-link" href="#frame-pointer-optional"></a></h3>
+<p>Some architectures use a frame pointer (FP) to point to the start of the stack frame.</p>
+<p>Helps access local variables and function arguments efficiently.</p>
+<p>Not always present (depends on the calling convention).</p>
+<h2 id="lifecycle">Lifecycle<a aria-hidden="true" class="anchor-heading icon-link" href="#lifecycle"></a></h2>
+<h3 id="function-call">Function Call<a aria-hidden="true" class="anchor-heading icon-link" href="#function-call"></a></h3>
+<p>When a method is called, a new stack frame is pushed onto the call stack.</p>
+<p>The return address, arguments, and local variables are set up.</p>
+<h3 id="function-execution">Function Execution<a aria-hidden="true" class="anchor-heading icon-link" href="#function-execution"></a></h3>
+<p>The method executes, accessing its local variables and performing computations.</p>
+<h3 id="function-return">Function Return<a aria-hidden="true" class="anchor-heading icon-link" href="#function-return"></a></h3>
+<p>When the method completes, its stack frame is popped from the stack.</p>
+<p>The return address is used to continue execution from where the method was called.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/k83mi3ehud8dj1dey48p9iv">Memory (cs)</a></li>
+<li><a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space (cs)</a></li>
+</ul>

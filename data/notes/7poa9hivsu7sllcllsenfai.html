@@ -1,0 +1,13 @@
+<h1 id="numeric-promotion-in-inter-type-operations">Numeric Promotion in Inter-type operations<a aria-hidden="true" class="anchor-heading icon-link" href="#numeric-promotion-in-inter-type-operations"></a></h1>
+<p>It is necessary both numeric operands are compatible in size in an operation. If not, they're converted.</p>
+<p>Here's how that happens (Rules)</p>
+<ul>
+<li>
+<p>If one operand is double, float or long</p>
+<p>  the other promoted to double, float or long respectively</p>
+</li>
+<li>
+<p>Else</p>
+<p>  both are considered int</p>
+</li>
+</ul>

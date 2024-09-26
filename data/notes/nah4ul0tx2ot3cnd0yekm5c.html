@@ -1,0 +1,33 @@
+<h1 id="abstract-class">Abstract Class<a aria-hidden="true" class="anchor-heading icon-link" href="#abstract-class"></a></h1>
+<p><a href="/cs/notes/nh73n4i8cy6gvfnguasaich">Abstract Class</a>es are mostly used in one of two ways - </p>
+<ul>
+<li><a href="/cs/notes/4it54b4d0ycxe3j8tsw70xh">Abstract Class for Providing Flexible Behavior for Related Classes</a>: If classes you extend have many common methods and fields, we tend.</li>
+<li><a href="/cs/notes/kgw6j4x72k95k8mt9pzdjoq">Abstract Class as a Helper Class</a>: You want to share code among several closely related classes</li>
+</ul>
+<p>Both these ways are better off substituted and hence an <strong>abstract class should almost never be used</strong> since you should try to prefer <a href="/cs/notes/k4nl867fpm4pfydcj852798">Composition over Inheritance</a>.</p>
+<p>However, this is still a principle and <a href="/cs/notes/oz6nnmlcua382jj0uwaaa6m">a principle is just in principle</a>.</p>
+<p>Some other scenarios where Abstract class may be used:</p>
+<ul>
+<li>The classes you extend require methods with <strong>access modifiers</strong> other than public.</li>
+<li>You want to declare <strong>non-static or non-final fields</strong>. This allows you to define methods that can access and modify the state of the object to which they belong.</li>
+</ul>
+<p>You can still consider the above scenarios or use <a href="/cs/notes/kkzt3iloch20y1g3p3e7drc">Abstract Class as Stepping Stone</a>.</p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/20193091/recommendations-for-abstract-classes-vs-interfaces#:~:text=If%20you%20are%20designing%20small,component%2C%20use%20an%20abstract%20class.">Stack Overflow</a></p>
+<blockquote>
+<p>If we are designing small, concise bits of functionality, use interfaces. If we are designing large functional units, use an abstract class.</p>
+</blockquote>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/a/2947823/14318926">Nigel Thorne's answer to How to Unit Test Abstract Classes?</a></p>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/kkzt3iloch20y1g3p3e7drc">Abstract Class as Stepping Stone</a></li>
+<li><a href="/cs/notes/kgw6j4x72k95k8mt9pzdjoq">Abstract Class as a Helper Class</a></li>
+<li><a href="/cs/notes/4it54b4d0ycxe3j8tsw70xh">Abstract Class for Providing Flexible Behavior for Related Classes</a></li>
+</ol>

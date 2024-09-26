@@ -1,0 +1,39 @@
+<h1 id="rest">REST<a aria-hidden="true" class="anchor-heading icon-link" href="#rest"></a></h1>
+<p><strong>aka REpresentational State Transfer.</strong></p>
+<ul>
+<li>Set of <strong>architecture principles</strong> => implementation is up to developers</li>
+<li>built for web services and mobile applications => lightweight</li>
+<li>Request for data is usually sent over <a href="/cs/notes/s608kr39r85t6bsl1e0ig1z">HTTP</a>.</li>
+<li>Return message can be in a variety of formats:
+<ul>
+<li>HTML</li>
+<li>XML</li>
+<li>Plain Text</li>
+<li><a href="/cs/notes/aqsjg0mjtcso0v2x2ufqcq4">JSON</a></li>
+</ul>
+</li>
+</ul>
+<p>Application is said to be RESTful if it follows these 6 architecture guidelines:</p>
+<ol>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Client-Server (Private)</a> architecture composed of clients, servers and resources.</li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Stateless (Private)</a> client-server communication
+<ul>
+<li>No client content is stored in server between requests i.e. requests don't share any client information on server side.</li>
+<li>Information about the session's state is held with client</li>
+</ul>
+</li>
+<li>Cacheable data to eliminate the need for some client-server interactions.</li>
+<li>Uniform interface between components => information is transferred in a standardized way instead of being application-specific.  
+<blockquote>
+<p>Central feature that distinguishes the REST architectural style from other network-based styles. - Roy Fielding (originator of REST)</p>
+</blockquote>
+</li>
+<li>A layered system constraint => client-server interactions can be mediated by hierarchical layers.</li>
+<li><a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Code on demand (Private)</a>: Allowing servers to extend the functionality of a client by transferring executable Code.
+=> Also reduces visibility => <strong>Optional</strong>.</li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/hwuuss57w4hy7yl2w392pwb">Spring MVC (cs)</a></li>
+</ul>

@@ -1,0 +1,31 @@
+<h1 id="upcasting">Upcasting<a aria-hidden="true" class="anchor-heading icon-link" href="#upcasting"></a></h1>
+<p>Casting from subclass to superclass</p>
+<h2 id="syntax">Syntax<a aria-hidden="true" class="anchor-heading icon-link" href="#syntax"></a></h2>
+<ul>
+<li>
+<p>Generally, <a href="/cs/notes/t2gbxkwlzfl6ow9gkcn9vaf">Implicit Casting</a>. Why?</p>
+<p>=> Compiler knows that <em>Cat</em> is an <em>Animal.</em> <a href="/cs/notes/qrstlbi0nj33325jeyjbnqt">Liskov Substitution Principle</a></p>
+</li>
+</ul>
+<h2 id="what-upcasting-gives-us">What upcasting gives us?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-upcasting-gives-us"></a></h2>
+<ul>
+<li>
+<p><a href="/cs/notes/c6vub6odp16dipszf5grj13">Polymorphism</a></p>
+<p>  Instead of using different methods for a common functionality in each of the sub classes, we can have a common method in the superclass for that functionality and all subclass objects will be casted implicitly.</p>
+<p>  Example - a feed(Animal animal) function to which we can pass objects of Cat and Dog classes → feed(cat); feed(dog);</p>
+</li>
+<li>
+<p><a href="/cs/notes/bqrul0cyjmdv0plhgeg8exa">Overriding</a></p>
+<p>  When an object is upcasted, it still can call overridden methods from its original class.</p>
+<p>  For example, if Animal class has an eat() method and subclasses Cat and Dog override it.</p>
+<p>  eat(animal) will call the methods from either the class Cat or Dog, whichever it was before upcasting.</p>
+<p>  <a href="/cs/notes/cycr9ljbnb0i5tsmcw73ops">Runtime Polymorphism</a> is a result of Upcasting.</p>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/t2gbxkwlzfl6ow9gkcn9vaf">Implicit Casting (cs)</a></li>
+<li><a href="/cs/notes/l6kravc26pl7ixjyg5o3nlk">Arrays (cs)</a></li>
+<li><a href="/cs/notes/ollv9jqhq9ai9508dpxinvg">Object Type Conversion (cs)</a></li>
+</ul>

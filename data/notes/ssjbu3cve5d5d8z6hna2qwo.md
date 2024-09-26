@@ -1,0 +1,2 @@
+
+In cases where there is no ambiguity in the entity being referred to, we can simply use [[dev.lingo.identifiers]]s. Such identifiers are called unqualified since there is no need for a [[dev.lingo.identifiers.qualifier]].

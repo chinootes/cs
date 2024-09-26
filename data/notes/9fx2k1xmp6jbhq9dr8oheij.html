@@ -1,0 +1,31 @@
+<h1 id="passing-arguments">Passing Arguments<a aria-hidden="true" class="anchor-heading icon-link" href="#passing-arguments"></a></h1>
+<h2 id="how-are-arguments-passed-in-java">How are arguments passed in Java?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-are-arguments-passed-in-java"></a></h2>
+<ul>
+<li>
+<p>Why is Java always 'pass by value'?</p>
+<p>  Whenever a method is invoked in Java, it is allotted its own stack space. Regardless of the original variable type, each time a method is invoked, a copy for each argument is created in the stack memory and the copy version is passed to the method. Thus, always <strong>pass by value.</strong>
+</p>
+</li>
+<li>
+<p>Passing Primitive Arguments</p>
+<p>  Consider two variables, x and y , of primitive types and thus stored inside the stack memory. when calling a function, two copies are created inside the stack memory (let's say w and z) and are then passed to the method. hence, the original variables are not being sent to the method and any modification inside the method flow is affecting only the copies.</p>
+<p>  <img src="/cs/assets/images/2024-04-21-22-31-37.png" alt="Primitive args">
+</p>
+</li>
+<li>
+<p>Passing <a href="/cs/notes/rhm2ueynmzepd2gxd9tj0sx">Wrapper Classes</a>/<a href="/cs/notes/vqbisdumti23oeq2xk6oml5">String</a> Arguments</p>
+<p>  Wrappers are stored inside the heap memory with a corresponding reference inside the stack memory. When calling a function, copy for each reference is created inside the stack memory, and the copies are passed to the method. Any change to the reference inside the method is actually changing the reference of the copies and not the original references.</p>
+<p>  If you change the value of wrapper objects inside the method like this: x += 2, the change is not reflected outside the method, since wrapper objects are immutable. they create a new instance each time their state is modified. String objects work similarly to wrappers, so the above rules apply also on strings.</p>
+<p>  <img src="/cs/assets/images/2024-04-21-22-29-04.png" alt="Wrapper/string args"></p>
+</li>
+<li>
+<p>Passing <a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43">Collection</a>/<a href="/cs/notes/g0n2qy0stbfaw0ufqztcmji">Object</a> Arguments</p>
+<p>  When defining any collection or object in java, a reference is created inside the stack that points to multiple objects inside the heap memory. when calling a function, a copy of the reference is created and passed to the method. the actual object data is referenced by two references, and any change done by one reference is reflected in the other.</p>
+<p>  <img src="/cs/assets/images/2024-04-21-22-29-43.png" alt="Collection/object args"></p>
+</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods' lifecycle in memory (cs)</a></li>
+</ul>

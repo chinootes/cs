@@ -1,0 +1,27 @@
+<h1 id="thread-safety">Thread Safety<a aria-hidden="true" class="anchor-heading icon-link" href="#thread-safety"></a></h1>
+<ol>
+<li>Stateless Implementation
+<ul>
+<li>Source of error in most cases (multithreaded apps)
+<ul>
+<li>Incorrectly sharing state between several threads</li>
+<li>Don't make your methods rely on external state, nor maintain any state at all</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Immutable Implementation
+<ul>
+<li>Need to share states between threads → make them immutable</li>
+<li><a href="/cs/notes/c5elrg6xfbs9jqfrh4kqo2e">Immutable Class</a> = Thread safe</li>
+</ul>
+</li>
+<li><a href="/cs/notes/3fnxobrsrcrbd4j3v6fz4wz">Synchronization</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/3uaj7ngwih7npv8vlfs7k6d">Thread Safety (cs)</a></li>
+<li><a href="/cs/notes/amz8fg5miovqzorc23auu2c">Stack Space (cs)</a></li>
+<li><a href="/cs/notes/piezcvnrjdg6yilm1cdyt9h">Stack Space (cs)</a></li>
+</ul>

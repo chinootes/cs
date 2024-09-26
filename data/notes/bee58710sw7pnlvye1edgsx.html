@@ -1,0 +1,15 @@
+<h1 id="qualified-this-construct">Qualified this construct<a aria-hidden="true" class="anchor-heading icon-link" href="#qualified-this-construct"></a></h1>
+<p><a href="/cs/notes/r0tnw2ttqhro4ugm2u68c0z">Member Inner Class</a> have an implicit reference to an instance of the enclosing (outer) class. <strong>Qualified This</strong> refers to this instance.</p>
+<p>If the outer class is A and inner class is B, you can refer to this instance of A from B as <code>A.this</code>.</p>
+<p>Since we are using a <a href="/cs/notes/ko5vkc0lm91smqedbykoxka">Qualifier</a> along with <code>this</code> <a href="/cs/notes/azr712uwple6pv4sgkmrhyb">Object Context Qualifiers in Java</a>, to form a fully <a href="/cs/notes/8hphkwqqnfopu38snpi2qv6">Qualified Identifier</a>, it is called "Qualified" <code>this</code>.</p>
+<h2 id="reference">Reference<a aria-hidden="true" class="anchor-heading icon-link" href="#reference"></a></h2>
+<p><a href="https://stackoverflow.com/questions/11276994/what-does-qualified-this-construct-mean-in-java">What does "qualified this" construct mean in java?</a></p>
+<blockquote>
+<p>In Effective Java inside the item "Item 22: Favor static member classes over nonstatic" Josh Bloch says:    </p>
+<p>Each instance of a nonstatic member class is implicitly associated with an enclosing instance of its containing class. Within instance methods of a nonstatic member class, you can invoke methods on the enclosing instance or obtain a reference to the enclosing instance using the qualified this construct.</p>
+</blockquote>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/gos7shmfukhobg64yy9murs">Object Context Qualifiers (cs)</a></li>
+</ul>

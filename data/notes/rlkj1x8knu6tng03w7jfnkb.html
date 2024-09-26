@@ -1,0 +1,83 @@
+<h1 id="sql">SQL<a aria-hidden="true" class="anchor-heading icon-link" href="#sql"></a></h1>
+<p>SQL contains sub-languages within it for different purposes.</p>
+<h2 id="data-definition-language-ddl">Data Definition Language (DDL)<a aria-hidden="true" class="anchor-heading icon-link" href="#data-definition-language-ddl"></a></h2>
+<ul>
+<li><code>CREATE</code>: Creates a new table or database.</li>
+<li><code>ALTER</code>: Modifies an existing table or database.</li>
+<li><code>DROP</code>: Deletes an existing table or database.</li>
+<li><code>TRUNCATE</code>: Removes all records from a table, including all spaces allocated for the records.</li>
+</ul>
+<h2 id="data-manipulation-language-dml">Data Manipulation Language (DML)<a aria-hidden="true" class="anchor-heading icon-link" href="#data-manipulation-language-dml"></a></h2>
+<ul>
+<li><code>INSERT</code>: Inserts new data into a database.</li>
+<li><code>UPDATE</code>: Modifies existing data in a database.</li>
+<li><code>DELETE</code>: Removes data from a database.</li>
+</ul>
+<h2 id="data-control-language-dcl">Data Control Language (DCL)<a aria-hidden="true" class="anchor-heading icon-link" href="#data-control-language-dcl"></a></h2>
+<ul>
+<li><code>GRANT</code>: Gives a privilege to user.</li>
+<li><code>REVOKE</code>: Takes back privileges granted from user.</li>
+</ul>
+<h2 id="transaction-control-language-tcl">Transaction Control Language (TCL)<a aria-hidden="true" class="anchor-heading icon-link" href="#transaction-control-language-tcl"></a></h2>
+<ul>
+<li><code>COMMIT</code>: Saves all the transactions to the database.</li>
+<li><code>ROLLBACK</code>: Restores the database to the last committed state.</li>
+<li><code>SAVEPOINT</code>: Sets a savepoint within a transaction.</li>
+<li><code>SET TRANSACTION</code>: Places a name on a transaction.</li>
+</ul>
+<h2 id="data-query-language-dql">Data Query Language (DQL)<a aria-hidden="true" class="anchor-heading icon-link" href="#data-query-language-dql"></a></h2>
+<h3 id="select"><code>SELECT</code><a aria-hidden="true" class="anchor-heading icon-link" href="#select"></a></h3>
+<ul>
+<li>Retrieves data from a database.</li>
+<li>Root clause of DQL</li>
+</ul>
+<h4 id="clauses">Clauses<a aria-hidden="true" class="anchor-heading icon-link" href="#clauses"></a></h4>
+<ul>
+<li><code>WHERE</code>: Filters results based on a condition.</li>
+<li><code>GROUP BY</code>: Groups rows that have the same values in specified columns into summary rows.</li>
+<li><code>HAVING</code>: Filters groups based on a condition.</li>
+<li><code>ORDER BY</code>: Sorts the result set in ascending or descending order.</li>
+</ul>
+<h5 id="limit"><code>LIMIT</code><a aria-hidden="true" class="anchor-heading icon-link" href="#limit"></a></h5>
+<p>Restricts the number of rows returned. Often used in pagination.</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> table_name <span class="token keyword">LIMIT</span> number<span class="token punctuation">;</span>
+</code></pre>
+<h5 id="offset"><code>OFFSET</code><a aria-hidden="true" class="anchor-heading icon-link" href="#offset"></a></h5>
+<p>Skips the specified number of rows before starting to return rows from a query</p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> table_name <span class="token keyword">LIMIT</span> number <span class="token keyword">OFFSET</span> <span class="token keyword">start</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Usually used with <code>LIMIT</code>.</p>
+<p>For example: Query to select 3rd largest salary. <a class="color-tag" style="--tag-color: #54ac68;" href="/cs/notes/lhy7fri8qkovbdholalflcv">#interview-question</a></p>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> salary
+<span class="token keyword">FROM</span> employees
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> salary <span class="token keyword">DESC</span>
+<span class="token keyword">LIMIT</span> <span class="token number">1</span> <span class="token keyword">OFFSET</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre>
+<h4 id="aggregate-functions">Aggregate Functions<a aria-hidden="true" class="anchor-heading icon-link" href="#aggregate-functions"></a></h4>
+<ul>
+<li><code>COUNT</code>: Returns the number of rows.</li>
+<li><code>SUM</code>: Returns the sum of a numeric column.</li>
+<li><code>AVG</code>: Returns the average value of a numeric column.</li>
+<li><code>MIN</code>: Returns the smallest value of the selected column.</li>
+<li><code>MAX</code>: Returns the largest value of the selected column.</li>
+<li></li>
+</ul>
+<h4 id="scalar-functions">Scalar Functions<a aria-hidden="true" class="anchor-heading icon-link" href="#scalar-functions"></a></h4>
+<ul>
+<li><code>UCASE()</code> (or <code>UPPER()</code>): Converts a field to uppercase.</li>
+<li><code>LCASE()</code> (or <code>LOWER()</code>): Converts a field to lowercase.</li>
+<li><code>MID()</code> (or <code>SUBSTRING()</code>): Extracts characters from a text field.</li>
+<li><code>LEN()</code> (or <code>LENGTH()</code>): Returns the length of a text field.</li>
+<li><code>ROUND()</code>: Rounds a numeric field to the number of decimals specified.</li>
+<li><code>NOW()</code>: Returns the current system date and time.</li>
+<li><code>FORMAT()</code>: Formats how a field is to be displayed.</li>
+</ul>
+<h4 id="join-commands">Join Commands<a aria-hidden="true" class="anchor-heading icon-link" href="#join-commands"></a></h4>
+<ul>
+<li><code>INNER JOIN</code>: Returns records that have matching values in both tables.</li>
+<li><code>LEFT JOIN</code> (or <code>LEFT OUTER JOIN</code>): Returns all records from the left table, and the matched records from the right table.</li>
+<li><code>RIGHT JOIN</code> (or <code>RIGHT OUTER JOIN</code>): Returns all records from the right table, and the matched records from the left table.</li>
+<li><code>FULL JOIN</code> (or <code>FULL OUTER JOIN</code>): Returns all records when there is a match in either left or right table.</li>
+<li><code>CROSS JOIN</code>: Returns all records where each row from the first table is combined with each row from the second table.
+SELF JOIN: A regular join, but the table is joined with itself.</li>
+</ul>

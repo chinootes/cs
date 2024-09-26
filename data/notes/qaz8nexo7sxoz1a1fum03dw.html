@@ -1,0 +1,30 @@
+<h1 id="transaction">Transaction<a aria-hidden="true" class="anchor-heading icon-link" href="#transaction"></a></h1>
+<p>Set of instruction which performs some logical work grouped into a single execution unit. If any task fails, the whole transaction fails. Therefore, a transaction is either successful or failure. There is no in between.</p>
+<p>Both transaction and process are sets of instructions but a process is meaningful even if some of it is completed. Meanwhile, a transaction is a <a href="/cs/notes/agm31jfpf7u95trbbk82clt">Process</a> which has no meaning if half of it is completed. It is either completed or failed.</p>
+<p>Hence, process is never rolled back completely, but transaction is rolled back completely if it fails.</p>
+<h2 id="transactions-are-performed-on-buffer">Transactions are performed on buffer<a aria-hidden="true" class="anchor-heading icon-link" href="#transactions-are-performed-on-buffer"></a></h2>
+<p>All operations in a transaction are performed on a buffer which is a copy of the database or record. So even if a transaction fails any stage, the buffer is removed and the database remains unaffected. If it is successful the data will be copied.</p>
+<h2 id="transaction-states">Transaction States<a aria-hidden="true" class="anchor-heading icon-link" href="#transaction-states"></a></h2>
+<ul>
+<li><strong>Active</strong>: Transaction is going on</li>
+<li><strong>Partially committed</strong>: After R/W operations</li>
+<li><strong>Failure</strong>: Can go to this state from Active or from partially committed.</li>
+<li><strong>Aborted</strong>: The step after failure</li>
+<li><strong>Committed</strong>: The step after partially committed if storing permanently is successful - no rollback from here.</li>
+<li><strong>Terminated</strong>: Transaction ended.</li>
+</ul>
+<h2 id="result-of-concurrent-transactions">Result of Concurrent Transactions<a aria-hidden="true" class="anchor-heading icon-link" href="#result-of-concurrent-transactions"></a></h2>
+<ul>
+<li>Waiting time 👇🏽</li>
+<li>Response time 👆🏽</li>
+<li>Resource Utilization 👆🏽</li>
+<li>Efficiency 👆🏽</li>
+</ul>
+<h2 id="dirty-read">Dirty Read<a aria-hidden="true" class="anchor-heading icon-link" href="#dirty-read"></a></h2>
+<p>When a transaction is allowed to read a row which is modified by another transaction but not yet commited, dirty read occurs.</p>
+<p>Dirty read can result in wrong values in database if the first transaction's commit fails.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/1b96vabw8ua1z2fozxubnem">ACID</a></li>
+</ol>

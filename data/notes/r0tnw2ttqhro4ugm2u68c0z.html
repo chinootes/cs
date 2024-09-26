@@ -1,0 +1,25 @@
+<h1 id="member-inner-class">Member Inner Class<a aria-hidden="true" class="anchor-heading icon-link" href="#member-inner-class"></a></h1>
+<p>If class B is inside class A => B is a member and an <a href="/cs/notes/rbwa494d95g4cvpx7sxvxcu">Inner Class</a></p>
+<pre class="language-java"><code class="language-java">
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+<span class="token class-name">A</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">A</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">A<span class="token punctuation">.</span>B</span> obj1 <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">B</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">//If j is member of class B</span>
+obj1<span class="token punctuation">.</span>j<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="class-files-generated-in-this-case"><code>.class</code> files generated in this case:<a aria-hidden="true" class="anchor-heading icon-link" href="#class-files-generated-in-this-case"></a></h2>
+<p><code>A.class</code>
+<code>A$B.class</code></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/bee58710sw7pnlvye1edgsx">Qualified this construct</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/bee58710sw7pnlvye1edgsx">Qualified this construct (cs)</a></li>
+</ul>

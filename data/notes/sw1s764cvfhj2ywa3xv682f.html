@@ -1,0 +1,54 @@
+<h1 id="dynamic-binding">Dynamic Binding<a aria-hidden="true" class="anchor-heading icon-link" href="#dynamic-binding"></a></h1>
+<p>When the type of object is determined at runtime.</p>
+<p>Happens when object of child is assigned to reference of parent.</p>
+<p>Example:</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Human</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//Student IS-A Human</span>
+</code></pre>
+<pre class="language-java"><code class="language-java"><span class="token function">foo</span><span class="token punctuation">(</span><span class="token class-name">Human</span> h<span class="token punctuation">)</span> <span class="token comment">//method definition</span>
+
+<span class="token comment">//method call</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token class-name">Student</span> s<span class="token punctuation">)</span>
+</code></pre>
+<p>Reference of Human type ————>       Object of Student type.</p>
+<p>(Reference Variable) ---------------->                                           (Object)</p>
+<h1 id="argument----human-h--new-student-is-not-dynamic-binding">Argument -- <code>Human h = new Student()</code> is not dynamic binding<a aria-hidden="true" class="anchor-heading icon-link" href="#argument----human-h--new-student-is-not-dynamic-binding"></a></h1>
+<p><a class="color-tag" style="--tag-color: #54ac68;" href="/cs/notes/lhy7fri8qkovbdholalflcv">#interview-question</a></p>
+<p>Someone could very easily make an argument that <code>Human h = new Student()</code> is not Dynamic Binding</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Human</span><span class="token punctuation">{</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Human</span><span class="token punctuation">{</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token function">xyz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">Human</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    h<span class="token punctuation">.</span><span class="token function">xyz</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//This line will give error. </span>
+    h<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="why-it-looks-like-its-not-runtime-polymorphism">Why it looks like its not runtime polymorphism<a aria-hidden="true" class="anchor-heading icon-link" href="#why-it-looks-like-its-not-runtime-polymorphism"></a></h2>
+<p>The line <code>h.xyz()</code> will immediately show an error.</p>
+<ul>
+<li><code>h.xyz()</code>  shows error</li>
+<li>⇒ Program doesn't know h is an object of class Student</li>
+<li>⇒ h is an object of Human type</li>
+<li>⇒ Its not runtime polymorphism</li>
+</ul>
+<h2 id="what-actually-happens">What actually happens<a aria-hidden="true" class="anchor-heading icon-link" href="#what-actually-happens"></a></h2>
+<p>Compiler doesn't know at compile time that 'h' is an object of Student type.</p>
+<ul>
+<li>Object type determined at runtime</li>
+<li>⇒ Compiler still thinks 'h' is an object of Human type</li>
+<li>⇒ COMPILE TIME Error.</li>
+</ul>
+<p>Even though we can't call Student-exclusive  methods from this reference without casting, the type of object or the version of method to be called is still determined at runtime. Which still makes it a case of dynamic binding and <a href="/cs/notes/cycr9ljbnb0i5tsmcw73ops">Runtime Polymorphism</a>. </p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/cycr9ljbnb0i5tsmcw73ops">Runtime Polymorphism (cs)</a></li>
+</ul>

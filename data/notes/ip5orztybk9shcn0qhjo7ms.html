@@ -1,0 +1,70 @@
+<h1 id="comparator">Comparator<a aria-hidden="true" class="anchor-heading icon-link" href="#comparator"></a></h1>
+<p>Allows to define custom ordering of objects. For example, while sorting.</p>
+<h2 id="definition">Definition<a aria-hidden="true" class="anchor-heading icon-link" href="#definition"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token annotation punctuation">@FunctionalInterface</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">T</span> o1<span class="token punctuation">,</span> <span class="token class-name">T</span> o2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="usage">Usage<a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a></h2>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">AgeComparator</span> <span class="token keyword">implements</span> <span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">Person</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span><span class="token class-name">Person</span> p1<span class="token punctuation">,</span> <span class="token class-name">Person</span> p2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> p1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> p2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComparatorExample</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">Person</span><span class="token punctuation">></span></span> people <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>people<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">AgeComparator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>people<span class="token punctuation">,</span> <span class="token punctuation">(</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">)</span> <span class="token operator">-></span> p1<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> p2<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="default-methods">Default methods<a aria-hidden="true" class="anchor-heading icon-link" href="#default-methods"></a></h3>
+<p>In addition to the abstract method <code>compare</code>, it also provides a bunch of utility methods to easily define a Comparator.</p>
+<p>For example,</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">Person</span><span class="token punctuation">></span></span> sortedByAge <span class="token operator">=</span> people<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                                 <span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">comparing</span><span class="token punctuation">(</span><span class="token class-name">Person</span><span class="token operator">::</span><span class="token function">getAge</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                                 <span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre>
+<p>Here's a list of all such methods:</p>
+<ul>
+<li><strong>static comparing(<a href="/cs/notes/gfq63atn6koxm8w8u1nb38b">Function</a> keyExtractor)</strong>: Like the example above</li>
+<li><strong>static comparing(<a href="/cs/notes/gfq63atn6koxm8w8u1nb38b">Function</a>, Comparator)</strong>: Like the example above but with Comparator for the given key.</li>
+</ul>
+<p>Similar methods but for specific types:</p>
+<ul>
+<li>static comparingDouble</li>
+<li>static comparingInt</li>
+<li>static comparingLong</li>
+</ul>
+<p>Lexicographic order sorting (to be used after the above methods):</p>
+<ul>
+<li>thenComparing</li>
+<li>thenComparingDouble</li>
+<li>thenComparingInt</li>
+<li>thenComparingLong</li>
+</ul>
+<p>Methods for null friendly Comparator</p>
+<ul>
+<li>nullsFirst(Comparator)</li>
+<li>nullsLast(Comparator)</li>
+</ul>
+<p>To modify ordering or comparator: </p>
+<ul>
+<li><strong>static naturalOrder</strong>: returns Comparator which compares <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a> objects in natural order</li>
+<li>static reverseOrder()</li>
+<li>reversed()</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43">Collection Framework (cs)</a></li>
+<li><a href="/cs/notes/baxu095ehryiz9aqa17tpvt">Streams (cs)</a></li>
+</ul>

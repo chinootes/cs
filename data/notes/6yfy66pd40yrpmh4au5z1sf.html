@@ -1,0 +1,32 @@
+<h1 id="variance">Variance<a aria-hidden="true" class="anchor-heading icon-link" href="#variance"></a></h1>
+<p>Variance defines how the type relations of complex types will vary or hold in their components( entities and components in programming languages like enumerables (enums), functions, arrays, lists etc).</p>
+<p>We know how <a href="/cs/notes/xfut1n2v6d1ivozx0wxbb4l">Substitutability</a> works in case of objects. This kind of replacement can also be done with the components of these types. This is called variance.</p>
+<ul>
+<li>When objects are replaced — substitutability</li>
+<li>When components are replaced — variance</li>
+</ul>
+<p>For example, a type Cat and Animal, where Animal is parent (or whatever) of Cat. Variance defines how the subtypes of Cat and subtypes of Animal will either hold or deviate from this relation.</p>
+<p>The relation is:</p>
+<ul>
+<li><strong>variant</strong> if the relation is somehow carried on to the components or children, either holding the relation or reversing the relation.
+<ul>
+<li><strong>covariant</strong> if it preserves the ordering of types.</li>
+<li><strong>contravariant</strong> if it reverses this order. </li>
+<li><strong>bivariant</strong> if both of the above apply</li>
+</ul>
+</li>
+<li><strong>invariant</strong> or <strong>nonvariant</strong> if the relation is not carried on to the components or children.</li>
+</ul>
+<h2 id="thoughts-on-deciding-variance">Thoughts on deciding variance<a aria-hidden="true" class="anchor-heading icon-link" href="#thoughts-on-deciding-variance"></a></h2>
+<p>While designing any type system, variance is considered by the designer. </p>
+<ul>
+<li>Contravariance is usually considered unintuitive by programmers. This can lead to complex typing rules.</li>
+<li>If the type system is variant, the type system is considered to be well-typed.</li>
+<li>Sometimes the designer will choose to keep it invariant to keep the type system simple. But this could voilate type-safety.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/4gybc2jwtoeox3ki500srhd">Covariant Return Type (cs)</a></li>
+<li><a href="/cs/notes/v0qiwwnyak1v608xe3u7dm9">Exception declaration with Method overriding (cs)</a></li>
+</ul>

@@ -1,0 +1,43 @@
+<h1 id="http">HTTP<a aria-hidden="true" class="anchor-heading icon-link" href="#http"></a></h1>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<ul>
+<li><code>GET</code> (Read): Used to retrieve data.</li>
+<li><code>POST</code> (Create): To send data for some processing</li>
+<li><code>PATCH</code> (Update/modify): To modify a record with only the updated part. </li>
+<li><code>PUT</code> (Update/replace): To create or update.</li>
+<li><code>DELETE</code></li>
+<li><code>HEAD</code>: Like GET but just to get response header (for metadata)</li>
+<li><code>CONNECT</code>: Starts two-way communications with the requested resource. It can be used to open a TCP/IP tunnel.</li>
+<li><code>OPTIONS</code>: To check what HTTP methods are supported by the target system</li>
+<li><code>TRACE</code>: The TRACE method requests that the target resource transfers the received request in the response body. That way a client can see what (if any) changes or additions have been made by intermediaries.</li>
+</ul>
+<h3 id="mandatory-methods">Mandatory Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#mandatory-methods"></a></h3>
+<p>All general-purpose web servers are required to implement at least the <code>GET</code> and <code>HEAD</code> methods, and all other methods are considered optional by the specification.</p>
+<h2 id="response-codes">Response Codes<a aria-hidden="true" class="anchor-heading icon-link" href="#response-codes"></a></h2>
+<ol>
+<li>Informational responses (<code>100</code>–<code>199</code>)</li>
+<li>Successful responses (<code>200</code>–<code>299</code>)</li>
+<li>Redirects (<code>300</code>–<code>399</code>)</li>
+<li>Client errors (<code>400</code>–<code>499</code>)</li>
+<li>Server errors (<code>500</code>–<code>599</code>)</li>
+</ol>
+<h3 id="common-response-codes">Common Response codes<a aria-hidden="true" class="anchor-heading icon-link" href="#common-response-codes"></a></h3>
+<ul>
+<li>200 OK</li>
+<li>400 Bad Request</li>
+<li>401 Unauthorized</li>
+<li>403 Forbidden</li>
+<li>404 Not found</li>
+<li>405 Method Not allowed</li>
+<li>408 Request Timeout</li>
+<li>500 Internal Server error</li>
+<li>502 Bad gateway</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://stackoverflow.com/questions/11697943/when-should-one-use-connect-and-get-http-methods-at-http-proxy-server">When should one use CONNECT and GET HTTP methods at HTTP Proxy Server? - StackOverflow</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/sr1lucramst86wvaqwssout">REST (cs)</a></li>
+<li><a href="/cs/notes/hwuuss57w4hy7yl2w392pwb">Spring MVC (cs)</a></li>
+</ul>

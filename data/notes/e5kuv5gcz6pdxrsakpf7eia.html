@@ -1,0 +1,42 @@
+<h1 id="distributed-systems">Distributed Systems<a aria-hidden="true" class="anchor-heading icon-link" href="#distributed-systems"></a></h1>
+<h2 id="what">What?<a aria-hidden="true" class="anchor-heading icon-link" href="#what"></a></h2>
+<blockquote>
+<p>"A system in which the failure of a computer you didn't even know existed can render your own computer unusable" - Leslie Lamport </p>
+</blockquote>
+<ul>
+<li>Multiple computers/machines typically communicating over a network</li>
+<li>Can involve all elements of usual <a href="/cs/notes/t246wcci6dy9lnof7l1os4l">Executions</a>, but since a network and different environments are getting involved - things get tricky.</li>
+</ul>
+<h2 id="why">Why?<a aria-hidden="true" class="anchor-heading icon-link" href="#why"></a></h2>
+<p>Some applications are inherently distributed. Example, sending message from your phone to your friend's phone - no two ways about it.</p>
+<p>But other reasons why you may choose to have distributed systems could be:</p>
+<ul>
+<li>Better reliability: Even if one node fails, system as a whole keeps functioning</li>
+<li>Better performance: Get data from nearby node, rather than one halfway around the world</li>
+<li>To solve bigger problems: Huge amounts of data - can't fit on one machine</li>
+<li>Different applications/services talking to each other: Your app might need to talk to other applications or services over network. </li>
+</ul>
+<h2 id="why-not">Why NOT?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-not"></a></h2>
+<ul>
+<li>Communications can fail -- and we might not even know it.</li>
+<li>Malicious players</li>
+<li>Processes themselves may crash - other systems might not be aware of it.</li>
+<li>All these failures may happen nondeterministically.</li>
+</ul>
+<h2 id="why-study">Why study?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-study"></a></h2>
+<p>The main challenge of having distributed systems is to keep them <strong>fault tolerant</strong> -- whole system should work despite failures of some parts.</p>
+<p><strong>TIP</strong> If it can be done on one computer -> keep it that way </p>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=UEAMfLPZZhE&#x26;list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB">Distributed Systems Lecture Series - Dr. Martin Kleppmann</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/q968ftbzw8dimvs36krvdlb">Communication</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/qfush2bg2fz8pmna6ytu9vl">API (cs)</a></li>
+</ul>

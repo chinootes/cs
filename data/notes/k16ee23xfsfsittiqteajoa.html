@@ -1,0 +1,65 @@
+<h1 id="iterators">Iterators<a aria-hidden="true" class="anchor-heading icon-link" href="#iterators"></a></h1>
+<p>Collection framework provides iterator interfaces like <code>Enumeration</code>, <code>Iterator</code> and <code>ListIterator</code> to iterate over the elements within a collection. </p>
+<p><code>Enumeration</code> is a legacy interface. While <code>ListIterator</code> is a child of <code>Iterator</code> specifically for lists.</p>
+<h2 id="use-cases-and-trade-offs">Use cases and Trade Offs<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases-and-trade-offs"></a></h2>
+<ul>
+<li><code>Enumeration</code> can only be used for <a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43#legacy-collections">legacy collections</a> like <code>Vector</code> and <code>Hashtable</code>. Also, it supports only <strong>read operations</strong>.</li>
+<li><code>Iterator</code> is the most commonly used since it can be used for any Collection. It can be used to remove but not for replacing or adding new object.</li>
+<li>Both <code>Enumeration</code> and <code>Iterator</code> are only forward direction cursor</li>
+<li><code>ListIterator</code> is the most powerful cursor which is bidirectional and has methods to remove, replace and add new objects. But it can only be used for <code>List</code> collections.</li>
+</ul>
+<h2 id="initialization">Initialization<a aria-hidden="true" class="anchor-heading icon-link" href="#initialization"></a></h2>
+<pre class="language-java"><code class="language-java"> <span class="token class-name">Enumeration</span> e <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">elements</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//v is a vector</span>
+ <span class="token class-name">Iterator</span> itr <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//c is any collection object</span>
+ <span class="token class-name">ListIterator</span> litr <span class="token operator">=</span> l<span class="token punctuation">.</span><span class="token function">listIterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//l is any List object</span>
+</code></pre>
+<p>But all the iterators mentioned above are interfaces.</p>
+<p>How can we create objects for interfaces then? ⇒ <strong>We don't</strong>.</p>
+<p>These methods being used to initialize the iterators have a class within them which implements the corresponding interface. The object of this class is then returned. </p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//i is an object of a iterator</span>
+</code></pre>
+<p>Output:</p>
+<pre class="language-java"><code class="language-java">vector$<span class="token number">1</span>              <span class="token comment">// if c is an Enumeration Object</span>
+vector$<span class="token class-name">Itr</span>            <span class="token comment">// if c is an Iterator Object</span>
+vector$<span class="token class-name">ListItr</span>        <span class="token comment">// if c is a List Iterator Object</span>
+</code></pre>
+<p><code>vector$</code> means inner class of vector ( or whichever Collection class we're getting the object for)</p>
+<p>1 means it is an anonymous inner class</p>
+<p><code>Itr</code> and <code>ListItr</code> are names of <a href="/cs/notes/rbwa494d95g4cvpx7sxvxcu">Inner Class</a>es implementing Iterator and ListIterator respectively.</p>
+<h2 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h2>
+<h3 id="enumeration">Enumeration<a aria-hidden="true" class="anchor-heading icon-link" href="#enumeration"></a></h3>
+<ul>
+<li><code>public boolean hasMoreElements()</code></li>
+<li><code>public Object nextElement()</code></li>
+</ul>
+<h3 id="iterator">Iterator<a aria-hidden="true" class="anchor-heading icon-link" href="#iterator"></a></h3>
+<ul>
+<li><code>public boolean hasNext()</code></li>
+<li><code>public Object next()</code></li>
+<li><code>public void remove()</code></li>
+</ul>
+<h3 id="list-iterator">List Iterator<a aria-hidden="true" class="anchor-heading icon-link" href="#list-iterator"></a></h3>
+<p>Forward</p>
+<ul>
+<li><code>public boolean hasNext()</code></li>
+<li><code>public Object next()</code></li>
+<li><code>public int nextIndex()</code></li>
+</ul>
+<p>Extra capabilities</p>
+<ul>
+<li><code>public void remove()</code></li>
+<li><code>public void set(Object new)</code> → replace</li>
+<li><code>public void add(Object new)</code></li>
+</ul>
+<p>Backward</p>
+<ul>
+<li><code>public boolean hasPrevious()</code></li>
+<li><code>public Object previous()</code></li>
+<li><code>public int previousIndex()</code></li>
+</ul>
+<p>The <code>set()</code> method of <code>ListIterator</code> interface is used to replace the last element which is returned by the <code>next()</code> or <code>previous()</code> along with the given element. The call can be added only if neither <code>remove()</code> nor <code>add(E)</code> method have been called.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/dkdtvct3q6f8lggmoqrqf43">Collection Framework (cs)</a></li>
+</ul>

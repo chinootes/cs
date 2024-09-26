@@ -1,0 +1,40 @@
+<h1 id="multithreading">Multithreading<a aria-hidden="true" class="anchor-heading icon-link" href="#multithreading"></a></h1>
+<h3 id="creating-a-thread">Creating a thread<a aria-hidden="true" class="anchor-heading icon-link" href="#creating-a-thread"></a></h3>
+<p>Two ways-</p>
+<ol>
+<li>extend <a href="/cs/notes/mg03s0pff7h5ot8rl438gdr">Thread</a> class</li>
+<li>implement <a href="/cs/notes/hp20nwapkvz478u3jq2ok1a">Runnable</a> interface</li>
+</ol>
+<p>Implement the <code>run()</code> method -> this is the code which will get executed when the thread runs.</p>
+<h3 id="executing-threads">Executing Threads<a aria-hidden="true" class="anchor-heading icon-link" href="#executing-threads"></a></h3>
+<ul>
+<li>
+<p>Call <code>start()</code> method</p>
+<p>  The part after start method call is executed immediately. If you want to execute some part of the code after the thread execution, use <code>join()</code> method.</p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Thread</span> thread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApnaThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    thread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//this part gets executed immediately after start() is called - while the thread is running</span>
+
+    thread<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//this part gets executed after the thread execution is completed.</span>
+</code></pre>
+</li>
+<li>
+<p>Use <a href="/cs/notes/9tn4qoat4ksb1kha3p77zhe">ExecutorService</a></p>
+</li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/9tn4qoat4ksb1kha3p77zhe">ExecutorService</a></li>
+<li><a href="/cs/notes/hp20nwapkvz478u3jq2ok1a">Runnable</a></li>
+<li><a href="/cs/notes/mg03s0pff7h5ot8rl438gdr">Thread</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/jik03wh5g5jxxfz2aklbmub">Multithreading (cs)</a></li>
+</ul>

@@ -1,0 +1,17 @@
+<h1 id="dont-dig-too-deep-in-chain-calls">Don't dig too deep in chain calls<a aria-hidden="true" class="anchor-heading icon-link" href="#dont-dig-too-deep-in-chain-calls"></a></h1>
+<blockquote>
+<p>Chain calls ko dil pe na lein.</p>
+</blockquote>
+<p>Avoid digging to deep into collaborators while creating chain calls as it can risk exposing internals and cause other issues.</p>
+<pre class="language-cpp"><code class="language-cpp"><span class="token operator">*</span>the dog should bark
+dog<span class="token operator">-></span><span class="token function">getHead</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token operator">-></span><span class="token function">getMouth</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token operator">-></span> <span class="token function">getTongue</span><span class="token punctuation">(</span> <span class="token punctuation">)</span> <span class="token operator">-></span><span class="token function">bark</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>
+<p>👆🏽Tight Coupling and dependencies</p>
+<ul>
+<li>Hard to change/extend</li>
+<li>No reuse of parts possible</li>
+<li>Hard to test</li>
+</ul>
+<p>Solution</p>
+<pre class="language-cpp"><code class="language-cpp">dog<span class="token operator">-></span><span class="token function">bark</span><span class="token punctuation">(</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>
+</code></pre>

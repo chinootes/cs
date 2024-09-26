@@ -1,0 +1,11 @@
+<h1 id="object-cloning-in-java">Object Cloning in Java<a aria-hidden="true" class="anchor-heading icon-link" href="#object-cloning-in-java"></a></h1>
+<p>The usual <a href="/cs/notes/3y962961axl79uijuaseom8">Object Cloning</a> ways work just as well in Java. However, clone() method is much easier and can be used to overcome the limitations of those methods.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">A</span> obj1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">)</span> obj<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>clone</code> is a member function of <a href="/cs/notes/g0n2qy0stbfaw0ufqztcmji">Object</a> which throws an exception when used. Why?</p>
+<p>Cloning a class is <a class="color-tag" style="--tag-color: #419c03;" href="/cs/notes/pjx7u5gpwn38wpf3pvna8sj">not allowed by default</a> for security reasons. But if the class itself allows you i.e. the class implements <a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable</a>, then you can use <code>clone()</code> method.</p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/c5elrg6xfbs9jqfrh4kqo2e">Immutable Class (cs)</a></li>
+</ul>

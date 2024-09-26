@@ -1,0 +1,31 @@
+<h1 id="react-component">React Component<a aria-hidden="true" class="anchor-heading icon-link" href="#react-component"></a></h1>
+<p><a class="color-tag" style="--tag-color: #54ac68;" href="/cs/notes/lhy7fri8qkovbdholalflcv">#interview-question</a></p>
+<p>Building blocks of React application. Independent, reusable pieces.</p>
+<h3 id="functional-components">Functional Components<a aria-hidden="true" class="anchor-heading icon-link" href="#functional-components"></a></h3>
+<p>Functions that take props as argument and return React elements.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function"><span class="token maybe-class-name">Greeting</span></span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token operator">&#x3C;</span>h1<span class="token operator">></span><span class="token maybe-class-name">Hello</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>props<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">}</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Functional components can hold state via React Hooks.</p>
+<h3 id="class-components">Class Components<a aria-hidden="true" class="anchor-heading icon-link" href="#class-components"></a></h3>
+<p>ES6 Classes that extend from <code>React.Component</code> and must have a <code>render</code> method.</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Greeting</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> <span class="token operator">&#x3C;</span>h1<span class="token operator">></span><span class="token maybe-class-name">Hello</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">props</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">}</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>h1<span class="token operator">></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Class components can hold state.</p>
+<h3 id="higher-order-components">Higher-Order Components<a aria-hidden="true" class="anchor-heading icon-link" href="#higher-order-components"></a></h3>
+<p>React HOCs are like <a href="/cs/notes/ek79473mqku5qiyhxyskbpx">Higher Order Function</a>s. They take in a component, modify or add state or behavior to it, and return a new component.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/ccr65hw7c908e1ko6zcmhic">React Component Lifecycle</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/ccr65hw7c908e1ko6zcmhic">React Component Lifecycle (cs)</a></li>
+</ul>

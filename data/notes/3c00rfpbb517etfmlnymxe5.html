@@ -1,0 +1,29 @@
+<h1 id="request-response">Request-Response<a aria-hidden="true" class="anchor-heading icon-link" href="#request-response"></a></h1>
+<p>It is a <a href="/cs/notes/a7crvbexqg9euwget6u990s">Messaging Pattern</a>.</p>
+<h2 id="model">Model<a aria-hidden="true" class="anchor-heading icon-link" href="#model"></a></h2>
+<ul>
+<li>Client sends a request</li>
+<li>Server parses the request: Where does a request begin and end?</li>
+<li>Server processes the request: Example, Deserializing JSON and then processing.</li>
+<li>Server sends a response</li>
+<li>Client parses the response and consume</li>
+</ul>
+<h2 id="anatomy">Anatomy<a aria-hidden="true" class="anchor-heading icon-link" href="#anatomy"></a></h2>
+<ul>
+<li>Client and server need to define and agree upon the request/response structure.</li>
+<li>Request/response has a boundary</li>
+<li>Defined by protocol and message format.</li>
+</ul>
+<h2 id="where-is-it-used">Where is it used?<a aria-hidden="true" class="anchor-heading icon-link" href="#where-is-it-used"></a></h2>
+<ul>
+<li>Web, HTTP, DNS, SSH.</li>
+<li>Remote Procedure Call (RPC)</li>
+<li>SQL and database protocols</li>
+<li>APIs (REST/SOAP/GraphQL)</li>
+</ul>
+<h2 id="where-it-doesnt-work-well">Where it doesn't work well?<a aria-hidden="true" class="anchor-heading icon-link" href="#where-it-doesnt-work-well"></a></h2>
+<ul>
+<li>Notification Service</li>
+<li>Chat Applications</li>
+<li>Very Long requests - What if client disconnects?</li>
+</ul>

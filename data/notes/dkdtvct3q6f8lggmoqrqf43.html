@@ -1,0 +1,564 @@
+<h1 id="collection-framework">Collection Framework<a aria-hidden="true" class="anchor-heading icon-link" href="#collection-framework"></a></h1>
+<p>Java Collection Framework defines several classes and interfaces to represent group of individual objects as single entity, i.e. <a href="/cs/notes/5rqq4ui5cu6wak3k7p7ebb8">Data Structures</a>.  </p>
+<p>Although, referred to as a framework, it functions more like a library with a collection of classes and interfaces.</p>
+<h2 id="collection-hierarchy">Collection Hierarchy<a aria-hidden="true" class="anchor-heading icon-link" href="#collection-hierarchy"></a></h2>
+<div class="mermaid">
+      classDiagram
+        class Collection
+        &#x3C;&#x3C;interface>> Collection
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class List
+        &#x3C;&#x3C;interface>> List
+
+            class ArrayList
+            class LinkedList
+            class Vector
+                class Stack
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class Queue
+        &#x3C;&#x3C;interface>> Queue        
+
+            class PriorityQueue
+            class BlockingQueue
+                class PriorityBlockingQueue
+                class LinkedBlockingQueue
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class Set
+        &#x3C;&#x3C;interface>> Set
+            
+            class HashSet
+                class LinkedHashSet
+            class SortedSet 
+            &#x3C;&#x3C;interface>> SortedSet
+                class NavigableSet
+                &#x3C;&#x3C;inteface>> NavigableSet
+                class TreeSet
+            
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Collection &#x3C;|-- List
+            List &#x3C;|-- ArrayList
+            List &#x3C;|-- LinkedList
+            List &#x3C;|-- Vector
+                Vector &#x3C;|-- Stack
+
+        Collection &#x3C;|-- Queue
+            Queue &#x3C;|-- LinkedList
+            Queue &#x3C;|-- PriorityQueue
+            Queue &#x3C;|-- BlockingQueue
+                BlockingQueue &#x3C;|-- PriorityBlockingQueue
+                BlockingQueue &#x3C;|-- LinkedBlockingQueue
+
+        Collection &#x3C;|-- Set
+            Set &#x3C;|-- HashSet
+                HashSet &#x3C;|-- LinkedHashSet
+            Set &#x3C;|-- SortedSet
+                SortedSet &#x3C;|-- NavigableSet
+                    NavigableSet &#x3C;|-- TreeSet
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+</div>
+<div class="mermaid">
+     classDiagram
+        class Map
+        &#x3C;&#x3C;interface>> Map
+            class HashMap
+            class Hashtable
+                class Properties
+            class IdentityHashMap
+            class SortedMap
+            &#x3C;&#x3C;interface>> SortedMap
+                class NavigableMap
+                &#x3C;&#x3C;interface>> NavigableMap
+                    class TreeMap
+                class WeakHashMap
+            class Dictionary
+            &#x3C;&#x3C;abstract>> Dictionary
+
+        Map &#x3C;|-- HashMap
+        Map &#x3C;|-- Hashtable
+        Dictionary &#x3C;|-- Hashtable
+                    Hashtable &#x3C;|-- Properties
+        Map &#x3C;|-- IdentityHashMap
+        Map &#x3C;|-- SortedMap
+            SortedMap &#x3C;|-- NavigableMap                                        
+                NavigableMap &#x3C;|-- TreeMap
+            SortedMap &#x3C;|-- WeakHashMap
+</div>
+<h3 id="interfaces">Interfaces<a aria-hidden="true" class="anchor-heading icon-link" href="#interfaces"></a></h3>
+<h4 id="collection">Collection<a aria-hidden="true" class="anchor-heading icon-link" href="#collection"></a></h4>
+<ul>
+<li>Said to be root interface of collection framework (not really though)</li>
+<li>No class implements Collection interface directly</li>
+</ul>
+<h4 id="dequeue">Dequeue<a aria-hidden="true" class="anchor-heading icon-link" href="#dequeue"></a></h4>
+<ul>
+<li>
+<p>Double-ended Queue.</p>
+</li>
+<li>
+<p>Like a doubly linked list.</p>
+</li>
+<li>
+<p>Any collection which implements these can be used to implement Stack and Queue.</p>
+<p>  Some specific methods for this purpose</p>
+<ul>
+<li>
+<p><code>void addFirst(Object O)</code></p>
+</li>
+<li>
+<p><code>void addLast(Object O)</code></p>
+</li>
+<li>
+<p><code>Object getFirst()</code></p>
+</li>
+<li>
+<p><code>Object getLast()</code></p>
+</li>
+<li>
+<p><code>Object removeFirst()</code></p>
+</li>
+<li>
+<p><code>Object removeLast()</code></p>
+<p>Usually <code>LinkedList</code> is used for this.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="classes">Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a></h3>
+<ul>
+<li>Every Collection class is based on some standard data structure.</li>
+<li>Important ones are listed below along with some use-cases</li>
+</ul>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Collection Class</th><th><strong>Data Structure</strong></th><th><strong>Suitable for</strong></th><th><strong>NOT suited for</strong></th><th><strong>Thread Safe</strong></th></tr></thead><tbody><tr><td><strong>ArrayList</strong></td><td>Resizable Array</td><td>Frequent Retrieval</td><td>Frequent Insertion/deleting from mid</td><td>No</td></tr><tr><td><strong>LinkedList</strong></td><td>Doubly Linked List</td><td>Implementing stack and queue,  Insertion/deleting from mid</td><td>Frequent retrieval</td><td>No</td></tr><tr><td><strong>Vector</strong></td><td>Resizable Array</td><td>Frequent Retrieval</td><td>Frequent Insertion/deleting from mid</td><td></td></tr><tr><td><strong>Stack</strong></td><td>Stack</td><td>LIFO</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>HashSet</strong></td><td>Hashtable</td><td>Search Operations</td><td></td><td>No</td></tr><tr><td><strong>LinkedHashSet</strong></td><td>Hashtable + Linked List</td><td>Cache-based Applications</td><td></td><td>No</td></tr><tr><td><strong>TreeSet</strong></td><td>Balanced Tree</td><td>Cache-based Applications</td><td></td><td>No</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>HashMap</strong></td><td></td><td></td><td></td><td>No</td></tr><tr><td><strong>Hashtable</strong></td><td></td><td></td><td></td><td>Yes</td></tr><tr><td><strong>TreeMap</strong></td><td></td><td></td><td></td><td>No</td></tr></tbody></table></div>
+<h3 id="groups-of-collections-with-similar-behaviorimplementations">Groups of collections with similar behavior/implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#groups-of-collections-with-similar-behaviorimplementations"></a></h3>
+<p>Certain groups of collection adhere to a common implementation strategy. Apart from these implementations, these group may also share some of the [[##Behavior]]s.</p>
+<h4 id="all-collections">All Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#all-collections"></a></h4>
+<p>Collections are meant to be used for transferring data => All Collection Classes implement: </p>
+<ul>
+<li><strong><a href="/cs/notes/mbwwjk3x17fjagziw7d0ky6">Serializable</a></strong>: To transfer object from one place to another</li>
+<li><strong><a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable</a></strong>: When sent from one place to another, the receiver makes a copy of it and operates on it</li>
+<li>Constructors:</li>
+</ul>
+<h4 id="legacy-collections">Legacy Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#legacy-collections"></a></h4>
+<p><code>Vector</code>, <code>Stack</code> and <code>Hashtable</code></p>
+<ul>
+<li>Some legacy collections have additional "legacy" methods along with the other methods which they have inherited. These names may sound a bit boomer or longer, since they are legacy.</li>
+</ul>
+<p>For example, ˇaddElements(Object O)<code>in Vector and</code>enumeration()` in all legacy classes.</p>
+<p>It is recommended to use the modern methods and the legacy methods are only kept for backward compatibility.</p>
+<h4 id="sorted-navigable-tree">Sorted, Navigable, Tree<a aria-hidden="true" class="anchor-heading icon-link" href="#sorted-navigable-tree"></a></h4>
+<p><code>TreeSet</code> and <code>TreeMap</code></p>
+<h5 id="sorted">Sorted<a aria-hidden="true" class="anchor-heading icon-link" href="#sorted"></a></h5>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Methods</th><th>Returns</th></tr></thead><tbody><tr><td><code>first()</code></td><td>first element</td></tr><tr><td><code>last()</code></td><td>last element</td></tr><tr><td><code>headSet(a)</code></td><td>elements less than <em>a</em></td></tr><tr><td><code>tailSet(a)</code></td><td>elements greater than or equal to <em>a</em></td></tr><tr><td><code>subSet(a,b)</code></td><td>elements between <em>a</em> and <em>b</em> including <em>a</em></td></tr><tr><td><code>comparator()</code></td><td>Comparator object which defines underlying sorting technique</td></tr><tr><td></td><td>(If we're using default natural sorting order, then it simply returns null)</td></tr></tbody></table></div>
+<p>Sorted collections use <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a> or <a href="/cs/notes/ip5orztybk9shcn0qhjo7ms">Comparator</a> to determine the natural ordering of the objects. If the class doesn't implement <code>Comparable</code> and no <code>Comparator</code> is passed, adding elements to the collection will result in a <a href="/cs/notes/7971y77slw0gxorm77kb96k">NullPointerException</a>.</p>
+<p>Same methods are also applicable for Map.</p>
+<h4 id="navigable">Navigable<a aria-hidden="true" class="anchor-heading icon-link" href="#navigable"></a></h4>
+<p>Defines several methods for navigation.</p>
+<h4 id="hash-based-collections">Hash-based collections<a aria-hidden="true" class="anchor-heading icon-link" href="#hash-based-collections"></a></h4>
+<p><code>HashMap</code>, <code>HashSet</code>, <code>Hashtable</code> ...</p>
+<ul>
+<li><code>HashSet</code> is a wrapper on top of <code>HashMap</code> which stores its values in the <code>key</code>s (so as to avoid duplicates) and stores some vague value for the <code>value</code> part. </li>
+</ul>
+<h5 id="internal-implementation">Internal Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#internal-implementation"></a></h5>
+<p>Implementation of hash, the structure and rehashing is similar in all hash-based collections.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">HashMap</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span>
+<span class="token punctuation">{</span>
+<span class="token class-name">Entry</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">//Inner class</span>
+<span class="token class-name">Entry</span> next<span class="token punctuation">;</span> <span class="token comment">//reference to another entry to store entries like linked lists</span>
+
+<span class="token keyword">int</span> hash<span class="token punctuation">;</span> <span class="token comment">//Hashvalue of key to avoid calculating everytime its  needed</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Initially, it is stored as an array of initial capacity (0-15 if initial cap is 16).</li>
+<li>Once the array is filled more than 75% (load factor - 0.75), the table size doubles to 32. The hashtable is rehashed (Internal data structures are rebuit)</li>
+<li>Java 8 improvement: When the number of nodes in a HashMap reaches the TREEIFY_THRESHOLD (constant), the nodes are converted to TreeNode. Basically, from linked list to a balanced tree. This improves the worst case performance from O(n) to O(log n). After the HashMap becomes small due to removal or resizing, TreeNodes are converted back to nodes. Since, HashSet also uses HashMap - it also benefits from this.</li>
+<li><strong>HashMap Bucket Resizing Overhead: You should create HashMap with initial capacity close to your expected volume. If its too small, and the load is in millions, whenever the bucket will reach its load factor it will resize and rehash → which is a very costly operation. Also, make sure to use full capacity else a lot of memory of unused blocks will go wasted</strong>.</li>
+</ul>
+<h4 id="linked-list-based">Linked list based<a aria-hidden="true" class="anchor-heading icon-link" href="#linked-list-based"></a></h4>
+<ul>
+<li>References not stored contiguously → no shift operations required while adding/removing elements</li>
+</ul>
+<h4 id="concurrent-collections">Concurrent Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#concurrent-collections"></a></h4>
+<ul>
+<li>BlockingQueue</li>
+</ul>
+<h4 id="enum">Enum<a aria-hidden="true" class="anchor-heading icon-link" href="#enum"></a></h4>
+<h4 id="fixed-size-collections">Fixed size collections<a aria-hidden="true" class="anchor-heading icon-link" href="#fixed-size-collections"></a></h4>
+<p><code>ArrayBlockingQueue</code> , <code>LinkedBlockingQueue</code></p>
+<h2 id="behavior">Behavior<a aria-hidden="true" class="anchor-heading icon-link" href="#behavior"></a></h2>
+<p>💡 Collection classes only deviate from behaviors of their parent when it stops them from implementing their intended behavior.</p>
+<h3 id="allowed-elements">Allowed elements<a aria-hidden="true" class="anchor-heading icon-link" href="#allowed-elements"></a></h3>
+<ul>
+<li>
+<p>All collections <strong>allow heterogeneous objects</strong> (except <code>TreeSet</code> and <code>TreeMap</code>).
+<code>TreeSet</code> and <code>TreeMap</code> store elements in a particular sorted order by comparing them. Comparing null values throws <code>NullPointerException</code> which is why they don't allow it.</p>
+</li>
+<li>
+<p>Duplicate and null values</p>
+<ul>
+<li>
+<p>Adding duplicates in collections which don't allow it doesn't generally throw any exception. Usually the <code>add()</code> or <code>addAll()</code> method will just return <code>false</code> in such cases.</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Duplicates</th><th>null insertion</th></tr></thead><tbody><tr><td><code>List</code></td><td>Allowed</td><td>allowed</td></tr><tr><td><code>Set</code></td><td>NOT Allowed</td><td>allowed</td></tr><tr><td><code>Queue</code></td><td>Allowed</td><td>allowed</td></tr><tr><td><code>Map</code></td><td>Allowed for values</td><td>allowed</td></tr></tbody></table></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>List</code> is the most straighforward implementation. Similar to an array of a linked list, it allows duplicates and keeps the ordering as you insert it. No acrobatics. It also allows null values.</p>
+</li>
+<li>
+<p><code>Set</code> as the name suggests, is like mathematical sets. By definition, mathematical sets can't have duplicates. But there can be "null" or empty sets. So it allows null values.</p>
+</li>
+<li>
+<p><code>Queue</code>s in general allow duplicates. It generally doesn't allow null elements either but if allowed - it should be avoided</p>
+<p> From Javadoc:</p>
+<blockquote>
+<p>Queue implementations generally do not allow insertion of null elements, although some implementations, such as LinkedList, do not prohibit insertion of null. Even in the implementations that permit it, null should not be inserted into a Queue, as null is also used as a special return value by the poll method to indicate that the queue contains no elements.</p>
+</blockquote>
+</li>
+<li>
+<p>null values are treated as any other values in collections which allow it. For example, <code>Set</code>s allow null values but they don't allow duplicates, so even if you add <code>null</code> twice, it will be treated as one. Similarly, <code>Map</code>s only allow one <code>null</code> value in key and multiple <code>null</code> value as values.</p>
+</li>
+</ul>
+<h3 id="capacity">Capacity<a aria-hidden="true" class="anchor-heading icon-link" href="#capacity"></a></h3>
+<ul>
+<li><strong>Default Initial Capacity</strong>: The initial capacity assigned to a Collection class object by default, if not specified while initializing the object. </li>
+<li><strong>Fill Ratio/Load Factor</strong>: The percentage or ratio of capacity which when reached will result in increasing of the capacity. </li>
+<li><strong>Resizing Strategy</strong>: How much the capacity will be increased upon reaching threshold.</li>
+</ul>
+<p>For example, if the initial default capacity is 10 and fill ratio is 0.7 - the capacity will increase once 7 places are filled.</p>
+<h4 id="common-patterns">Common patterns<a aria-hidden="true" class="anchor-heading icon-link" href="#common-patterns"></a></h4>
+<p>Although there is no universal pattern for these properties, but some common patterns are observed due to the design decisions.</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Default Initial Capacity</th><th>Load factor</th><th>Resizing Strategy</th></tr></thead><tbody><tr><td>Array-based collections</td><td>10</td><td>1+</td><td>Triggered when array is full  1.5x + 1 in ArrayList, 2x in Vector</td></tr><tr><td>Hash-based collections</td><td>16</td><td>0.75</td><td>2x</td></tr><tr><td>Fixed-capacity collections</td><td>Explicit</td><td>NA</td><td>NA</td></tr></tbody></table></div>
+<ul>
+<li>Initial capacity for hash-based collections is and should be chosen as a reasonable balance between space efficiency and performance.</li>
+<li>Array-based collections usually have slightly lower default capacities to avoid unessecary memory allocation. New array is created with the new capacity once array is full. Keepign initial capacity also prevents too many elements to be copied while resizing.</li>
+<li>Some collections which are based on dynamic data structures, like <code>LinkedList</code> and <strong>Tree-based collections</strong>, and have default initial capacity as 0. Elements are added as they come.</li>
+<li><code>Vector</code> also allows to pass an incrementalCapacity by which the capacity will be increased if it is full (instead of doing 2x).</li>
+</ul>
+<h3 id="ordering-of-elements">Ordering of elements<a aria-hidden="true" class="anchor-heading icon-link" href="#ordering-of-elements"></a></h3>
+<p>In general:</p>
+<ul>
+<li><code>List</code> collections maintain insertion order.</li>
+<li><code>Queue</code> FIFO</li>
+<li><code>Set</code>: Ordering usually doesn't matter in mathematical sets, so the interface leaves ordering upto its implementations.</li>
+</ul>
+<p>But ordering of elements is based more on the behavior/data structure the collection class intends to implement:</p>
+<ul>
+<li><strong>Linked collections</strong> (Linked*): Maintain insertion order.</li>
+<li><strong>Hash-based collections</strong> (Hash*): Elements stored in order of hash codes.</li>
+<li><strong>Sorted Collections</strong> (Tree<em> and Sorted</em>): Elements sorted based on natural order or provided <code>Comparator</code>  </li>
+<li><strong>Priority-based Collections</strong>: Ordered according to priority</li>
+<li><strong>Stack</strong>: Even though it implements list, it orders elements in LIFO.</li>
+</ul>
+<h3 id="constructors">Constructors<a aria-hidden="true" class="anchor-heading icon-link" href="#constructors"></a></h3>
+<ul>
+<li>
+<p>Almost all Collection framework classes have the usual nullary constructor.</p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CollectionImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>  Exceptions: Fixed size collections and some concurrent collections</p>
+</li>
+<li>
+<p>Most mainstream <code>Collection</code> implementations provide an overloaded constructor that accepts object of any <code>Collection</code> implementation. </p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CollectionImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>someOtherCollection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>  Exceptions:</p>
+<ul>
+<li>Legacy collections</li>
+<li>Tree/Sorted collections: because how will it decide the sorting of ths usual collections.</li>
+<li>Concurrent collections: 
+<ul>
+<li>Initializing concurrent collection with non-concurrent collection might cause thread-safety issues</li>
+<li>Some concurrent collection might require more information for initializing</li>
+</ul>
+</li>
+<li>Fixed-size collections: Taking in collection which exceed the fixed size might cause issue</li>
+</ul>
+</li>
+<li>
+<p>All <code>Map</code> implementations provide an overloaded constructor which accepts object of <code>Map</code> (including legacy, sorted and concurrent ones).</p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>someOtherMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<p>Some other collections offer additional overloaded constructors:</p>
+<ul>
+<li><strong>Array-based</strong> collections and <strong>Fixed size</strong> collections:
+<pre class="language-java"><code class="language-java">    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> al2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Hash-based collections</strong>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Hash___</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hash___</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Hash___</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hash___</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">,</span> <span class="token keyword">float</span> loadFactor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Tree/sorted</strong> collections
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Tree___</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">K</span><span class="token punctuation">></span></span> comparator<span class="token punctuation">)</span>
+    <span class="token class-name">Tree___</span><span class="token punctuation">(</span><span class="token class-name">Sorted___</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> m<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><code>Vector</code>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Vector</span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">,</span> <span class="token keyword">int</span> incrementalCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="utilities">Utilities<a aria-hidden="true" class="anchor-heading icon-link" href="#utilities"></a></h2>
+<h3 id="iterating-over-collections">Iterating over collections<a aria-hidden="true" class="anchor-heading icon-link" href="#iterating-over-collections"></a></h3>
+<p>Although there are multiple iterators offered by the framework. The most common usage is as below:</p>
+<pre class="language-java"><code class="language-java">  <span class="token class-name">Iterator</span> i <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    i<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>For more details about different types of iterators. See <a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators</a></p>
+<h3 id="collections-class"><code>Collections</code> Class<a aria-hidden="true" class="anchor-heading icon-link" href="#collections-class"></a></h3>
+<p>Utility class (<code>java.util.package</code>) which defines several methods for collection objects.
+Most of these methods are static.</p>
+<h4 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h4>
+<h5 id="static-sort-and-static-sortcomparator-c"><code>static sort()</code> and <code>static sort(Comparator c)</code><a aria-hidden="true" class="anchor-heading icon-link" href="#static-sort-and-static-sortcomparator-c"></a></h5>
+<p>Sorts the collection objects (if <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a>) either based on their natural ordering, or based on the <a href="/cs/notes/ip5orztybk9shcn0qhjo7ms">Comparator</a> if passed.</p>
+<p>⚠️ If the class doens't implement <code>Comparable</code> and <code>sort</code> is called without a <code>Comparator</code>, it will throw a <a href="/cs/notes/9o86nbg2dro9c4zutzu7c9c">ClassCastException</a>.</p>
+<h2 id="important-distinctions">Important Distinctions<a aria-hidden="true" class="anchor-heading icon-link" href="#important-distinctions"></a></h2>
+<h3 id="array-vs-arraylist">Array vs ArrayList<a aria-hidden="true" class="anchor-heading icon-link" href="#array-vs-arraylist"></a></h3>
+<p>The main difference lies in the dynamic and resizeable nature of <code>ArrayList</code>. You don't even have to specify an initial size in <code>ArrayList</code></p>
+<h3 id="common-distinction-between-legacy-collections-and-their-modern-counterparts">Common distinction between legacy collections and their modern counterparts<a aria-hidden="true" class="anchor-heading icon-link" href="#common-distinction-between-legacy-collections-and-their-modern-counterparts"></a></h3>
+<p><strong>ArrayList vs Vectors / HashMap vs Hashtable</strong></p>
+<p>Legacy collections are thread-safe. Their modern counterparts aren't.</p>
+<p><code>Vector</code>(and even <code>Stack</code>)/Hashtable is thread-safe (most methods are synchronised)
+<code>ArrayList</code>/<code>HashMap</code> is not.</p>
+<p>💡 If something is thread-safe, it will inevitably have a lower performance in comparison to a corresponding non-synchronised something.</p>
+<h3 id="size-vs-capacity"><code>size()</code> vs <code>capacity()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#size-vs-capacity"></a></h3>
+<ul>
+<li>size = number of objects currently</li>
+<li>capacity = number of objects which can be accommodated</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html#:~:text=Not%2C%20strictly%20speaking%2C%20a%20part%20of%20the%20collections,and%20relies%20on%20some%20of%20the%20same%20infrastructure.">Collections Framework Overview - Java - Oracle Documentation</a></li>
+<li><a href="https://andbin.dev/java/why-some-collections-cannot-be-heterogeneous">Why some collections can't allow heterogenous objects?</a></li>
+<li><a href="https://stackoverflow.com/questions/28147076/understanding-queue-insertion">Understand Queue Insertion - Stack Overflow</a></li>
+</ul>
+<h3 id="hashmaps">Hashmaps<a aria-hidden="true" class="anchor-heading icon-link" href="#hashmaps"></a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=c3RVW3KGIIE">How HashMap works in Java? With Animation!! whats new in java8 tutorial</a></li>
+<li><a href="https://dzone.com/articles/java8-hashmap-implementation-and-performance">Java 8 HashMap Implementation and Performance - DZone Java</a></li>
+<li><a href="https://www.developer.com/design/java-hashed-collections/">Java Hashed Collections</a></li>
+<li><a href="https://stackoverflow.com/questions/36313817/what-are-the-differences-between-hashtable-and-hashmap-not-specific-to-java">What are the differences between hashtable and hashmap? (Not specific to Java)</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a></li>
+<li><a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/jik03wh5g5jxxfz2aklbmub">Multithreading (cs)</a></li>
+<li><a href="/cs/notes/lubjpq6xfglfx03cmfbdfoc">Stack (cs)</a></li>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods (cs)</a></li>
+<li><a href="/cs/notes/un60lp44o0qon2nddvolalf">Collectors (cs)</a></li>
+<li><a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators (cs)</a></li>
+</ul>

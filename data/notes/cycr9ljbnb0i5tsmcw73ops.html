@@ -1,0 +1,26 @@
+<h1 id="runtime-polymorphism">Runtime Polymorphism<a aria-hidden="true" class="anchor-heading icon-link" href="#runtime-polymorphism"></a></h1>
+<p>Method <a href="/cs/notes/bqrul0cyjmdv0plhgeg8exa">Overriding</a> + <a href="/cs/notes/sw1s764cvfhj2ywa3xv682f">Dynamic Binding</a> = <strong>Runtime Polymorphism</strong></p>
+<p>aka <strong>Dynamic Method Dispatch</strong>.</p>
+<ul>
+<li>Method Overriding - Which Method to call depends on object type</li>
+<li>++</li>
+<li>Dynamic Binding - Object type determined at runtime</li>
+<li>=> Which method to call - decided at runtime</li>
+<li>-> Runtime Polymorphism</li>
+</ul>
+<h2 id="object-being-referred-to-determines-the-version-of-method-to-be-called">Object being referred to determines the version of method to be called<a aria-hidden="true" class="anchor-heading icon-link" href="#object-being-referred-to-determines-the-version-of-method-to-be-called"></a></h2>
+<p>The object being referred to (not the reference variable) determines the version of method to be called.</p>
+<p>So in this example, if Student has a method overriding a method in Human. Student's method will be called because even though h is an object of Human, it is referring to an object of Student.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Human</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+h<span class="token punctuation">.</span><span class="token function">overriddenMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<p><a href="https://www.geeksforgeeks.org/dynamic-method-dispatch-runtime-polymorphism-java/">GFG - Dynamic Method Dispatch or Runtime Polymmorphism in Java</a></p>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/iqd6dnpsrdzue4l614zf7go">Open Recursion (cs)</a></li>
+<li><a href="/cs/notes/m7y9m63zohfoi6j7v35dvp3">Shadowing/Hiding (cs)</a></li>
+<li><a href="/cs/notes/0wsnptopg4m3w3wp2qtjngv">Upcasting (cs)</a></li>
+<li><a href="/cs/notes/sw1s764cvfhj2ywa3xv682f">Dynamic Binding (cs)</a></li>
+</ul>

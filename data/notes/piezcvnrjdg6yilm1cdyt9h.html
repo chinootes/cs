@@ -1,0 +1,45 @@
+<h1 id="stack-space">Stack Space<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-space"></a></h1>
+<blockquote>
+<p>Har thread ka ek stack. Har method ka ek stack frame.</p>
+</blockquote>
+<ul>
+<li>Used for <a href="/cs/notes/y0d9qba71drg24u6h6pd3t0">Static Memory Allocation</a>.</li>
+<li>Used for local variables, function call frames, static thangs, with short lifespan.</li>
+<li>Limited size, more predictable.</li>
+<li>Automatically managed by OS</li>
+<li>Has <a href="/cs/notes/5mqyhqbl70k784qyd7mrkav">Thread Safety</a> - Each thread has its own stack.</li>
+<li>Stack grows downward to lower addresses.</li>
+</ul>
+<h2 id="stack-allocation">Stack allocation<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-allocation"></a></h2>
+<p>This is controlled by the OS. One stack is allocated to the program for each running thread.</p>
+<h3 id="stack-size-estimation">Stack Size Estimation<a aria-hidden="true" class="anchor-heading icon-link" href="#stack-size-estimation"></a></h3>
+<ul>
+<li>The OS allocates a stack for each system-level thread when the thread is created.</li>
+<li>The size of the stack is typically determined by the OS and compiler settings.</li>
+<li>For instance, on many systems, the default stack size might be around 1 MB to 2 MB.</li>
+<li>This default size is generally sufficient for most routine operations and function calls.</li>
+</ul>
+<h3 id="dynamic-allocation-and-swapping">Dynamic Allocation and Swapping<a aria-hidden="true" class="anchor-heading icon-link" href="#dynamic-allocation-and-swapping"></a></h3>
+<ul>
+<li>Some systems can automatically grow the stack if there’s room in the virtual address space.</li>
+</ul>
+<h3 id="customization">Customization<a aria-hidden="true" class="anchor-heading icon-link" href="#customization"></a></h3>
+<p>While the OS provides a default stack size, some applications or languages allow customization. Developers can adjust the stack size based on their specific requirements.</p>
+<p>Be careful of <a href="/cs/notes/48ezf1ffhdkn2lb6crnk71z">Stack Overflow</a> though.</p>
+<h2 id="why-choose-stack-for-this-purpose">Why choose <a href="/cs/notes/v7k23euf8lafg51wcyolut2">Stack</a> for this purpose?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-choose-stack-for-this-purpose"></a></h2>
+<p>The design decision by OS Gods to choose this data structure to represent this memory space comes from the below reasoning.</p>
+<p>Each function call creates a new <a href="/cs/notes/heb70holb8xuqqi3mymo70u">Stack Frame</a> on the stack, containing local variables, return addresses, and other bookkeeping information.</p>
+<p>The LIFO (last in, first out) structure of the stack ensures that function calls are properly nested and managed.</p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/heb70holb8xuqqi3mymo70u">Stack Frame</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/x7nmks70ns14mh5k96w9aov">Memory Management (cs)</a></li>
+<li><a href="/cs/notes/48ezf1ffhdkn2lb6crnk71z">Stack Overflow (cs)</a></li>
+<li><a href="/cs/notes/k83mi3ehud8dj1dey48p9iv">Memory (cs)</a></li>
+<li><a href="/cs/notes/rcyl8thq38qrnmhzb4oheq6">Heap Space (cs)</a></li>
+</ul>

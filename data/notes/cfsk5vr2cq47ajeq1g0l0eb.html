@@ -1,0 +1,96 @@
+<h1 id="singleton">Singleton<a aria-hidden="true" class="anchor-heading icon-link" href="#singleton"></a></h1>
+<p><a href="/cs/notes/pakdzkludowl4h6pf8xuiap">Creational Design Pattern</a> in which only one instance of a class is allowed.</p>
+<h2 id="what-is-a-singleton-class">What is a <strong>Singleton class?</strong><a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-a-singleton-class"></a></h2>
+<p>Only one instance is allowed</p>
+<h2 id="how-to-implement-it">How to implement it?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-implement-it"></a></h2>
+<p>To only allow one instance for your class:</p>
+<ol>
+<li>Create a static object of a class within the class</li>
+<li>Make default constructor private</li>
+<li>Create a static method which returns an instance of your class</li>
+</ol>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Abc</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Now, the only way an instance of this class can be obtained is through this method and since the method is static, it will return the same static instance which was the member of your class.</p>
+<h2 id="why-is-this-implementation-eager">Why is this implementation eager?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-is-this-implementation-eager"></a></h2>
+<p>This instance of the class will be created as soon as the class is loaded in the memory. It will be global and will be there in the memory even if its not used.</p>
+<h2 id="how-to-make-it-lazy">How to make it lazy?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-make-it-lazy"></a></h2>
+<p>Instead of creating, if you just declare the object in the class and create it inside the function, it will become lazy. But this will mean that every time your function is called, it will return a new object. Hence, the class won't be singleton anymore.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Abc</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> obj<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new object eveytime the function is called</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>To prevent this, put the initialisation of object into an if condition which checks whether the object is null or not. → This will only create the object, the first time the function is called. Else it will return the old object.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Abc</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> obj<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>obj <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new object created only for the first time</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Although this won't work if simultaneous calls are made to the method from multiple threads.</p>
+<h2 id="how-to-make-it-thread-safe">How to make it thread safe?<a aria-hidden="true" class="anchor-heading icon-link" href="#how-to-make-it-thread-safe"></a></h2>
+<p>You can make your method <em>synchronized</em> to resolve this issue. But this will slow down your app.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Abc</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> obj<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> <span class="token class-name">Abc</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>obj <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// new object created only for the first time</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>To solve this, you can perform a double checked locking. That is, don't put synchronize on the function but inside the function. Check if the object is null - twice. Once inside a synchronized block and once outside.</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Abc</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> obj<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> i<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Abc</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>obj <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">synchronized</span><span class="token punctuation">(</span><span class="token class-name">Abc</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>obj<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> 
+                    obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Abc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="what-is-the-best-way-to-implement-a-singleton-class">What is the best way to implement a Singleton class?<a aria-hidden="true" class="anchor-heading icon-link" href="#what-is-the-best-way-to-implement-a-singleton-class"></a></h2>
+<pre class="language-sql"><code class="language-sql"><span class="token keyword">enum</span> Abc {
+    INSTANCE<span class="token punctuation">;</span>
+}
+</code></pre>
+<h2 id="why-is-singleton-patternclass-used">Why is Singleton pattern/class used?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-is-singleton-patternclass-used"></a></h2>
+<p>It is used to provide global point of access to an object. So it can be used in logging, caches, thread pools, configuration settings, device driver objects. Basically, wherever there is a possibility of multiple clients or users accessing and initializing a new object and we don't want that - Singleton design is used.</p>
+<h2 id="why-not-create-a-static-class-for-such-requirements">Why not create a static class for such requirements?<a aria-hidden="true" class="anchor-heading icon-link" href="#why-not-create-a-static-class-for-such-requirements"></a></h2>
+<ul>
+<li>Singleton can implement interfaces and extend classes</li>
+<li>Static class will have only static members</li>
+<li>Can be lazily loaded. Static will be initialized when first loaded.</li>
+<li>Stored in heap, static stored in stack</li>
+<li>Clonable</li>
+<li>Can use OO feature of polymorphism</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/cvg20laazosxudo0dz0nm8d">Factory (cs)</a></li>
+</ul>

@@ -1,0 +1,2 @@
+
+Similar to [[arch.modelling.roles.dao]] in that, it provides abstracts database access. But it is more focused on domain-specific operations instead of simple CRUD or DB operations. Thus, it will usually have more business-centric methods.

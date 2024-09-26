@@ -1,0 +1,67 @@
+<h1 id="generics">Generics<a aria-hidden="true" class="anchor-heading icon-link" href="#generics"></a></h1>
+<ul>
+<li>Generics are <strong>parameterized types</strong> in Java.</li>
+<li>This allows types like Integer, String or user-defined types to be a parameter to methods, classes or interfaces.</li>
+</ul>
+<h2 id="types">Types<a aria-hidden="true" class="anchor-heading icon-link" href="#types"></a></h2>
+<ul>
+<li>Generic classes</li>
+<li>Generic methods</li>
+<li>Generic interfaces</li>
+</ul>
+<h2 id="defining">Defining<a aria-hidden="true" class="anchor-heading icon-link" href="#defining"></a></h2>
+<h3 id="naming-convention">Naming convention<a aria-hidden="true" class="anchor-heading icon-link" href="#naming-convention"></a></h3>
+<ul>
+<li>T – Type</li>
+<li>E – Element</li>
+<li>K – Key</li>
+<li>N – Number</li>
+<li>V – Value</li>
+</ul>
+<h3 id="classes">Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span>
+    <span class="token class-name">T</span> obj<span class="token punctuation">;</span>
+    <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token class-name">T</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>obj <span class="token operator">=</span> obj<span class="token punctuation">;</span> <span class="token punctuation">}</span> 
+    <span class="token keyword">public</span> <span class="token class-name">T</span> <span class="token function">useT</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>obj<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Multiple types</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">,</span> <span class="token class-name">U</span><span class="token punctuation">></span></span><span class="token punctuation">{</span>
+    <span class="token class-name">T</span> obj1<span class="token punctuation">;</span>  
+    <span class="token class-name">U</span> obj2<span class="token punctuation">;</span>   
+
+    <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token class-name">T</span> obj1<span class="token punctuation">,</span> <span class="token class-name">U</span> obj2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>obj1 <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>obj2 <span class="token operator">=</span> obj2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h3>
+<pre class="language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> <span class="token keyword">void</span> <span class="token function">genericMethod</span><span class="token punctuation">(</span><span class="token class-name">T</span> element<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+<span class="token comment">//        element...</span>
+    <span class="token punctuation">}</span>
+ 
+</code></pre>
+<h2 id="usage">Usage<a aria-hidden="true" class="anchor-heading icon-link" href="#usage"></a></h2>
+<ul>
+<li>Generics work only with reference types
+<pre class="language-java"><code class="language-java"><span class="token class-name">Test</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token keyword">int</span><span class="token punctuation">></span></span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token keyword">int</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//compile time error</span>
+</code></pre>
+</li>
+<li>They work with primitive arrays since those are also references.
+<pre class="language-java"><code class="language-java"><span class="token class-name">ArrayList</span><span class="token operator">&#x3C;</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">></span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>Generic types maintain type safety. Different types behave differently. For example, you can't assign a generic initialized with <code>Integer</code> to a generic initialized with <code>String</code>.</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/generics-in-java/">Generics in Java - GFG</a></li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/lx58207ls3auw10jnxmdcmj">Predicate (cs)</a></li>
+</ul>

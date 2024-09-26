@@ -1,0 +1,102 @@
+<h1 id="wrapper-classes">Wrapper Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#wrapper-classes"></a></h1>
+<ul>
+<li>There is a wrapper class for every primitive data type in Java. For example, there’s <code>Integer</code> for <code>int</code>, <code>Character</code> for <code>char</code>, <code>Float</code> for <code>float</code>, <code>Double</code> for <code>double</code> and so on. That is, the class names are same as the data types’ name (Except char and int) apart from the fact that the class names begin with uppercase letters, which is a convention in Java.</li>
+<li>We can create objects of these wrapper classes instead of variables of primitive data types.
+<ul>
+<li><code>Boolean</code></li>
+<li><code>Byte</code></li>
+<li><code>Short</code></li>
+<li><code>Integer</code></li>
+<li><code>Long</code></li>
+<li><code>Float</code></li>
+<li><code>Double</code></li>
+</ul>
+</li>
+<li>Wrapper classes contains one variable (data member) of their respective primitive data type. They also contain certain functions to manipulate these values.</li>
+<li>Why?
+<ul>
+<li>Java — primitive data types ⇒ Not objects ⇒ Wrapper classes</li>
+<li>Also, to make methods available to operate on primitive data types.</li>
+</ul>
+</li>
+<li>All wrapper classes are <a href="/cs/notes/c5elrg6xfbs9jqfrh4kqo2e">Immutable Class</a>es</li>
+<li>All wrapper classes implement <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a>.</li>
+</ul>
+<h2 id="useful-methods">Useful Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#useful-methods"></a></h2>
+<h3 id="valueof">valueOf()<a aria-hidden="true" class="anchor-heading icon-link" href="#valueof"></a></h3>
+<ul>
+<li>
+<p>Static Method</p>
+</li>
+<li>
+<p>Returns object reference of corresponding wrapper class.</p>
+</li>
+<li>
+<p><strong>Syntax</strong></p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">WrapperClass</span> reference_variable <span class="token operator">=</span> <span class="token class-name">WrapperClass</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>“<span class="token class-name">Number</span> in string format”<span class="token punctuation">,</span> base<span class="token operator">-</span>decimal by <span class="token keyword">default</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Integer</span> i1<span class="token operator">=</span><span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>“<span class="token number">123</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Integer</span> i2<span class="token operator">=</span><span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>“<span class="token number">101011</span>”<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Double</span> d1<span class="token operator">=</span><span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>“<span class="token number">3.14</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="parsexxx">parseXxx()<a aria-hidden="true" class="anchor-heading icon-link" href="#parsexxx"></a></h2>
+<ul>
+<li>
+<p>Static Method</p>
+</li>
+<li>
+<p>Xxx can be replaced with any primitive data type</p>
+</li>
+<li>
+<p>Similar to valueOf() but returns reference to xxx type rather than a wrapper class object.</p>
+</li>
+<li>
+<p>Syntax</p>
+<pre class="language-java"><code class="language-java">xxx<span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">.</span>*<span class="token operator">*</span>varname <span class="token operator">=</span> <span class="token class-name">WrapperClass</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">.</span>*<span class="token operator">*</span><span class="token function">parseXxx</span><span class="token punctuation">(</span>“<span class="token class-name">Number</span> in string format”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p>Example</p>
+<pre class="language-java"><code class="language-java"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>“<span class="token number">123</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">double</span> b<span class="token operator">=</span><span class="token class-name">Double</span><span class="token punctuation">.</span><span class="token function">parseDouble</span><span class="token punctuation">(</span>“<span class="token number">13.45</span>”<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="xxxvalue">xxxValue()<a aria-hidden="true" class="anchor-heading icon-link" href="#xxxvalue"></a></h2>
+<ul>
+<li>
+<p>Instance method</p>
+</li>
+<li>
+<p>Xxx can be replaced with any primitive data type</p>
+</li>
+<li>
+<p>Returns corresponding primitive data type.</p>
+</li>
+<li>
+<p>Used to convert from/get the value of a wrapper class object to a primitive data type.</p>
+</li>
+<li>
+<p><strong>Syntax</strong></p>
+<pre class="language-java"><code class="language-java">xxx varname<span class="token operator">=</span>objectname<span class="token punctuation">.</span><span class="token function">xxxValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Example</strong></p>
+<pre class="language-java"><code class="language-java"><span class="token comment">//i1 contains a reference of object of Integer class.</span>
+<span class="token keyword">int</span> c <span class="token operator">=</span> i1<span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="methods-for-string-conversion">Methods for <a href="/cs/notes/8c00omb6sa7uu9w3lhmxbgj">String Conversion</a><a aria-hidden="true" class="anchor-heading icon-link" href="#methods-for-string-conversion"></a></h3>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods (cs)</a></li>
+<li><a href="/cs/notes/8c00omb6sa7uu9w3lhmxbgj">String Conversion (cs)</a></li>
+</ul>

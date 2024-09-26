@@ -1,0 +1,564 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="icon" href="/cs/favicon.ico"/><title>Collection Framework</title><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="description" content="Personal Knowledge Space"/><meta property="og:title" content="Collection Framework"/><meta property="og:description" content="Personal Knowledge Space"/><meta property="og:url" content="https://chinootes.github.io/cs/notes/dkdtvct3q6f8lggmoqrqf43/"/><meta property="og:type" content="article"/><meta property="article:published_time" content="4/20/2024"/><meta property="article:modified_time" content="9/26/2024"/><link rel="canonical" href="https://chinootes.github.io/cs/notes/dkdtvct3q6f8lggmoqrqf43/"/><meta name="next-head-count" content="14"/><link rel="preload" href="/cs/_next/static/css/896e35ac335ee88a.css" as="style"/><link rel="stylesheet" href="/cs/_next/static/css/896e35ac335ee88a.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/cs/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/cs/_next/static/chunks/webpack-114d62680617a3fa.js" defer=""></script><script src="/cs/_next/static/chunks/framework-28c999baf2863c3d.js" defer=""></script><script src="/cs/_next/static/chunks/main-909e1e4186772aeb.js" defer=""></script><script src="/cs/_next/static/chunks/pages/_app-13bb43f56c9a0d26.js" defer=""></script><script src="/cs/_next/static/chunks/935-4dee79e80b8641c6.js" defer=""></script><script src="/cs/_next/static/chunks/6-50972def09142ee2.js" defer=""></script><script src="/cs/_next/static/chunks/pages/notes/%5Bid%5D-78d472fa3b924116.js" defer=""></script><script src="/cs/_next/static/OQElCxbN_7VOTny6p9vJQ/_buildManifest.js" defer=""></script><script src="/cs/_next/static/OQElCxbN_7VOTny6p9vJQ/_ssgManifest.js" defer=""></script></head><body><div id="__next" data-reactroot=""><section class="ant-layout" style="width:100%;min-height:100%"><header class="ant-layout-header" style="position:fixed;isolation:isolate;z-index:1;width:100%;border-bottom:1px solid #d4dadf;height:64px;padding:0 24px 0 2px"><div class="ant-row ant-row-center" style="max-width:992px;justify-content:space-between;margin:0 auto"><div style="display:flex" class="ant-col ant-col-xs-20 ant-col-sm-4"></div><div class="ant-col gutter-row ant-col-xs-0 ant-col-sm-20 ant-col-md-20 ant-col-lg-19"><div class="ant-select ant-select-lg ant-select-auto-complete ant-select-single ant-select-allow-clear ant-select-show-search" style="width:100%"><div class="ant-select-selector"><span class="ant-select-selection-search"><input type="search" autoComplete="off" class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox" aria-owns="undefined_list" aria-autocomplete="list" aria-controls="undefined_list" aria-activedescendant="undefined_list_0" value=""/></span><span class="ant-select-selection-placeholder">For full text search please use the &#x27;?&#x27; prefix. e.g. ? Onboarding</span></div></div></div><div style="display:none;align-items:center;justify-content:center" class="ant-col ant-col-xs-4 ant-col-sm-4 ant-col-md-0 ant-col-lg-0"><span role="img" aria-label="menu" style="font-size:24px" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div></div></header><section class="ant-layout" style="margin-top:64px;display:flex;flex-direction:row"><div class="site-layout-sidebar" style="flex:0 0 auto;width:calc(max((100% - 992px) / 2, 0px) + 200px);min-width:200px;padding-left:calc((100% - 992px) / 2)"><aside class="ant-layout-sider ant-layout-sider-dark" style="position:fixed;overflow:auto;height:calc(100vh - 64px);background-color:transparent;flex:0 0 200px;max-width:200px;min-width:200px;width:200px"><div class="ant-layout-sider-children"></div></aside></div><main class="ant-layout-content side-layout-main" style="max-width:1200px;min-width:0;display:block"><div style="padding:0 24px"><div class="main-content" role="main"><div class="ant-row"><div class="ant-col ant-col-24"><div class="ant-row" style="margin-left:-10px;margin-right:-10px"><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-24 ant-col-md-18"><div><h1 id="collection-framework">Collection Framework<a aria-hidden="true" class="anchor-heading icon-link" href="#collection-framework"></a></h1>
+<p>Java Collection Framework defines several classes and interfaces to represent group of individual objects as single entity, i.e. <a href="/cs/notes/5rqq4ui5cu6wak3k7p7ebb8">Data Structures</a>.  </p>
+<p>Although, referred to as a framework, it functions more like a library with a collection of classes and interfaces.</p>
+<h2 id="collection-hierarchy">Collection Hierarchy<a aria-hidden="true" class="anchor-heading icon-link" href="#collection-hierarchy"></a></h2>
+<div class="mermaid">
+      classDiagram
+        class Collection
+        &#x3C;&#x3C;interface>> Collection
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class List
+        &#x3C;&#x3C;interface>> List
+
+            class ArrayList
+            class LinkedList
+            class Vector
+                class Stack
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class Queue
+        &#x3C;&#x3C;interface>> Queue        
+
+            class PriorityQueue
+            class BlockingQueue
+                class PriorityBlockingQueue
+                class LinkedBlockingQueue
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        class Set
+        &#x3C;&#x3C;interface>> Set
+            
+            class HashSet
+                class LinkedHashSet
+            class SortedSet 
+            &#x3C;&#x3C;interface>> SortedSet
+                class NavigableSet
+                &#x3C;&#x3C;inteface>> NavigableSet
+                class TreeSet
+            
+
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Collection &#x3C;|-- List
+            List &#x3C;|-- ArrayList
+            List &#x3C;|-- LinkedList
+            List &#x3C;|-- Vector
+                Vector &#x3C;|-- Stack
+
+        Collection &#x3C;|-- Queue
+            Queue &#x3C;|-- LinkedList
+            Queue &#x3C;|-- PriorityQueue
+            Queue &#x3C;|-- BlockingQueue
+                BlockingQueue &#x3C;|-- PriorityBlockingQueue
+                BlockingQueue &#x3C;|-- LinkedBlockingQueue
+
+        Collection &#x3C;|-- Set
+            Set &#x3C;|-- HashSet
+                HashSet &#x3C;|-- LinkedHashSet
+            Set &#x3C;|-- SortedSet
+                SortedSet &#x3C;|-- NavigableSet
+                    NavigableSet &#x3C;|-- TreeSet
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+</div>
+<div class="mermaid">
+     classDiagram
+        class Map
+        &#x3C;&#x3C;interface>> Map
+            class HashMap
+            class Hashtable
+                class Properties
+            class IdentityHashMap
+            class SortedMap
+            &#x3C;&#x3C;interface>> SortedMap
+                class NavigableMap
+                &#x3C;&#x3C;interface>> NavigableMap
+                    class TreeMap
+                class WeakHashMap
+            class Dictionary
+            &#x3C;&#x3C;abstract>> Dictionary
+
+        Map &#x3C;|-- HashMap
+        Map &#x3C;|-- Hashtable
+        Dictionary &#x3C;|-- Hashtable
+                    Hashtable &#x3C;|-- Properties
+        Map &#x3C;|-- IdentityHashMap
+        Map &#x3C;|-- SortedMap
+            SortedMap &#x3C;|-- NavigableMap                                        
+                NavigableMap &#x3C;|-- TreeMap
+            SortedMap &#x3C;|-- WeakHashMap
+</div>
+<h3 id="interfaces">Interfaces<a aria-hidden="true" class="anchor-heading icon-link" href="#interfaces"></a></h3>
+<h4 id="collection">Collection<a aria-hidden="true" class="anchor-heading icon-link" href="#collection"></a></h4>
+<ul>
+<li>Said to be root interface of collection framework (not really though)</li>
+<li>No class implements Collection interface directly</li>
+</ul>
+<h4 id="dequeue">Dequeue<a aria-hidden="true" class="anchor-heading icon-link" href="#dequeue"></a></h4>
+<ul>
+<li>
+<p>Double-ended Queue.</p>
+</li>
+<li>
+<p>Like a doubly linked list.</p>
+</li>
+<li>
+<p>Any collection which implements these can be used to implement Stack and Queue.</p>
+<p>  Some specific methods for this purpose</p>
+<ul>
+<li>
+<p><code>void addFirst(Object O)</code></p>
+</li>
+<li>
+<p><code>void addLast(Object O)</code></p>
+</li>
+<li>
+<p><code>Object getFirst()</code></p>
+</li>
+<li>
+<p><code>Object getLast()</code></p>
+</li>
+<li>
+<p><code>Object removeFirst()</code></p>
+</li>
+<li>
+<p><code>Object removeLast()</code></p>
+<p>Usually <code>LinkedList</code> is used for this.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="classes">Classes<a aria-hidden="true" class="anchor-heading icon-link" href="#classes"></a></h3>
+<ul>
+<li>Every Collection class is based on some standard data structure.</li>
+<li>Important ones are listed below along with some use-cases</li>
+</ul>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Collection Class</th><th><strong>Data Structure</strong></th><th><strong>Suitable for</strong></th><th><strong>NOT suited for</strong></th><th><strong>Thread Safe</strong></th></tr></thead><tbody><tr><td><strong>ArrayList</strong></td><td>Resizable Array</td><td>Frequent Retrieval</td><td>Frequent Insertion/deleting from mid</td><td>No</td></tr><tr><td><strong>LinkedList</strong></td><td>Doubly Linked List</td><td>Implementing stack and queue,  Insertion/deleting from mid</td><td>Frequent retrieval</td><td>No</td></tr><tr><td><strong>Vector</strong></td><td>Resizable Array</td><td>Frequent Retrieval</td><td>Frequent Insertion/deleting from mid</td><td></td></tr><tr><td><strong>Stack</strong></td><td>Stack</td><td>LIFO</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>HashSet</strong></td><td>Hashtable</td><td>Search Operations</td><td></td><td>No</td></tr><tr><td><strong>LinkedHashSet</strong></td><td>Hashtable + Linked List</td><td>Cache-based Applications</td><td></td><td>No</td></tr><tr><td><strong>TreeSet</strong></td><td>Balanced Tree</td><td>Cache-based Applications</td><td></td><td>No</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>HashMap</strong></td><td></td><td></td><td></td><td>No</td></tr><tr><td><strong>Hashtable</strong></td><td></td><td></td><td></td><td>Yes</td></tr><tr><td><strong>TreeMap</strong></td><td></td><td></td><td></td><td>No</td></tr></tbody></table></div>
+<h3 id="groups-of-collections-with-similar-behaviorimplementations">Groups of collections with similar behavior/implementations<a aria-hidden="true" class="anchor-heading icon-link" href="#groups-of-collections-with-similar-behaviorimplementations"></a></h3>
+<p>Certain groups of collection adhere to a common implementation strategy. Apart from these implementations, these group may also share some of the [[##Behavior]]s.</p>
+<h4 id="all-collections">All Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#all-collections"></a></h4>
+<p>Collections are meant to be used for transferring data => All Collection Classes implement: </p>
+<ul>
+<li><strong><a href="/cs/notes/mbwwjk3x17fjagziw7d0ky6">Serializable</a></strong>: To transfer object from one place to another</li>
+<li><strong><a href="/cs/notes/6fe2bcmqj3rdsd3wd82k3lp">Cloneable</a></strong>: When sent from one place to another, the receiver makes a copy of it and operates on it</li>
+<li>Constructors:</li>
+</ul>
+<h4 id="legacy-collections">Legacy Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#legacy-collections"></a></h4>
+<p><code>Vector</code>, <code>Stack</code> and <code>Hashtable</code></p>
+<ul>
+<li>Some legacy collections have additional "legacy" methods along with the other methods which they have inherited. These names may sound a bit boomer or longer, since they are legacy.</li>
+</ul>
+<p>For example, ˇaddElements(Object O)<code>in Vector and</code>enumeration()` in all legacy classes.</p>
+<p>It is recommended to use the modern methods and the legacy methods are only kept for backward compatibility.</p>
+<h4 id="sorted-navigable-tree">Sorted, Navigable, Tree<a aria-hidden="true" class="anchor-heading icon-link" href="#sorted-navigable-tree"></a></h4>
+<p><code>TreeSet</code> and <code>TreeMap</code></p>
+<h5 id="sorted">Sorted<a aria-hidden="true" class="anchor-heading icon-link" href="#sorted"></a></h5>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Methods</th><th>Returns</th></tr></thead><tbody><tr><td><code>first()</code></td><td>first element</td></tr><tr><td><code>last()</code></td><td>last element</td></tr><tr><td><code>headSet(a)</code></td><td>elements less than <em>a</em></td></tr><tr><td><code>tailSet(a)</code></td><td>elements greater than or equal to <em>a</em></td></tr><tr><td><code>subSet(a,b)</code></td><td>elements between <em>a</em> and <em>b</em> including <em>a</em></td></tr><tr><td><code>comparator()</code></td><td>Comparator object which defines underlying sorting technique</td></tr><tr><td></td><td>(If we're using default natural sorting order, then it simply returns null)</td></tr></tbody></table></div>
+<p>Sorted collections use <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a> or <a href="/cs/notes/ip5orztybk9shcn0qhjo7ms">Comparator</a> to determine the natural ordering of the objects. If the class doesn't implement <code>Comparable</code> and no <code>Comparator</code> is passed, adding elements to the collection will result in a <a href="/cs/notes/7971y77slw0gxorm77kb96k">NullPointerException</a>.</p>
+<p>Same methods are also applicable for Map.</p>
+<h4 id="navigable">Navigable<a aria-hidden="true" class="anchor-heading icon-link" href="#navigable"></a></h4>
+<p>Defines several methods for navigation.</p>
+<h4 id="hash-based-collections">Hash-based collections<a aria-hidden="true" class="anchor-heading icon-link" href="#hash-based-collections"></a></h4>
+<p><code>HashMap</code>, <code>HashSet</code>, <code>Hashtable</code> ...</p>
+<ul>
+<li><code>HashSet</code> is a wrapper on top of <code>HashMap</code> which stores its values in the <code>key</code>s (so as to avoid duplicates) and stores some vague value for the <code>value</code> part. </li>
+</ul>
+<h5 id="internal-implementation">Internal Implementation<a aria-hidden="true" class="anchor-heading icon-link" href="#internal-implementation"></a></h5>
+<p>Implementation of hash, the structure and rehashing is similar in all hash-based collections.</p>
+<pre class="language-java"><code class="language-java"><span class="token class-name">HashMap</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span>
+<span class="token punctuation">{</span>
+<span class="token class-name">Entry</span> <span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">//Inner class</span>
+<span class="token class-name">Entry</span> next<span class="token punctuation">;</span> <span class="token comment">//reference to another entry to store entries like linked lists</span>
+
+<span class="token keyword">int</span> hash<span class="token punctuation">;</span> <span class="token comment">//Hashvalue of key to avoid calculating everytime its  needed</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Initially, it is stored as an array of initial capacity (0-15 if initial cap is 16).</li>
+<li>Once the array is filled more than 75% (load factor - 0.75), the table size doubles to 32. The hashtable is rehashed (Internal data structures are rebuit)</li>
+<li>Java 8 improvement: When the number of nodes in a HashMap reaches the TREEIFY_THRESHOLD (constant), the nodes are converted to TreeNode. Basically, from linked list to a balanced tree. This improves the worst case performance from O(n) to O(log n). After the HashMap becomes small due to removal or resizing, TreeNodes are converted back to nodes. Since, HashSet also uses HashMap - it also benefits from this.</li>
+<li><strong>HashMap Bucket Resizing Overhead: You should create HashMap with initial capacity close to your expected volume. If its too small, and the load is in millions, whenever the bucket will reach its load factor it will resize and rehash → which is a very costly operation. Also, make sure to use full capacity else a lot of memory of unused blocks will go wasted</strong>.</li>
+</ul>
+<h4 id="linked-list-based">Linked list based<a aria-hidden="true" class="anchor-heading icon-link" href="#linked-list-based"></a></h4>
+<ul>
+<li>References not stored contiguously → no shift operations required while adding/removing elements</li>
+</ul>
+<h4 id="concurrent-collections">Concurrent Collections<a aria-hidden="true" class="anchor-heading icon-link" href="#concurrent-collections"></a></h4>
+<ul>
+<li>BlockingQueue</li>
+</ul>
+<h4 id="enum">Enum<a aria-hidden="true" class="anchor-heading icon-link" href="#enum"></a></h4>
+<h4 id="fixed-size-collections">Fixed size collections<a aria-hidden="true" class="anchor-heading icon-link" href="#fixed-size-collections"></a></h4>
+<p><code>ArrayBlockingQueue</code> , <code>LinkedBlockingQueue</code></p>
+<h2 id="behavior">Behavior<a aria-hidden="true" class="anchor-heading icon-link" href="#behavior"></a></h2>
+<p>💡 Collection classes only deviate from behaviors of their parent when it stops them from implementing their intended behavior.</p>
+<h3 id="allowed-elements">Allowed elements<a aria-hidden="true" class="anchor-heading icon-link" href="#allowed-elements"></a></h3>
+<ul>
+<li>
+<p>All collections <strong>allow heterogeneous objects</strong> (except <code>TreeSet</code> and <code>TreeMap</code>).
+<code>TreeSet</code> and <code>TreeMap</code> store elements in a particular sorted order by comparing them. Comparing null values throws <code>NullPointerException</code> which is why they don't allow it.</p>
+</li>
+<li>
+<p>Duplicate and null values</p>
+<ul>
+<li>
+<p>Adding duplicates in collections which don't allow it doesn't generally throw any exception. Usually the <code>add()</code> or <code>addAll()</code> method will just return <code>false</code> in such cases.</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Duplicates</th><th>null insertion</th></tr></thead><tbody><tr><td><code>List</code></td><td>Allowed</td><td>allowed</td></tr><tr><td><code>Set</code></td><td>NOT Allowed</td><td>allowed</td></tr><tr><td><code>Queue</code></td><td>Allowed</td><td>allowed</td></tr><tr><td><code>Map</code></td><td>Allowed for values</td><td>allowed</td></tr></tbody></table></div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p><code>List</code> is the most straighforward implementation. Similar to an array of a linked list, it allows duplicates and keeps the ordering as you insert it. No acrobatics. It also allows null values.</p>
+</li>
+<li>
+<p><code>Set</code> as the name suggests, is like mathematical sets. By definition, mathematical sets can't have duplicates. But there can be "null" or empty sets. So it allows null values.</p>
+</li>
+<li>
+<p><code>Queue</code>s in general allow duplicates. It generally doesn't allow null elements either but if allowed - it should be avoided</p>
+<p> From Javadoc:</p>
+<blockquote>
+<p>Queue implementations generally do not allow insertion of null elements, although some implementations, such as LinkedList, do not prohibit insertion of null. Even in the implementations that permit it, null should not be inserted into a Queue, as null is also used as a special return value by the poll method to indicate that the queue contains no elements.</p>
+</blockquote>
+</li>
+<li>
+<p>null values are treated as any other values in collections which allow it. For example, <code>Set</code>s allow null values but they don't allow duplicates, so even if you add <code>null</code> twice, it will be treated as one. Similarly, <code>Map</code>s only allow one <code>null</code> value in key and multiple <code>null</code> value as values.</p>
+</li>
+</ul>
+<h3 id="capacity">Capacity<a aria-hidden="true" class="anchor-heading icon-link" href="#capacity"></a></h3>
+<ul>
+<li><strong>Default Initial Capacity</strong>: The initial capacity assigned to a Collection class object by default, if not specified while initializing the object. </li>
+<li><strong>Fill Ratio/Load Factor</strong>: The percentage or ratio of capacity which when reached will result in increasing of the capacity. </li>
+<li><strong>Resizing Strategy</strong>: How much the capacity will be increased upon reaching threshold.</li>
+</ul>
+<p>For example, if the initial default capacity is 10 and fill ratio is 0.7 - the capacity will increase once 7 places are filled.</p>
+<h4 id="common-patterns">Common patterns<a aria-hidden="true" class="anchor-heading icon-link" href="#common-patterns"></a></h4>
+<p>Although there is no universal pattern for these properties, but some common patterns are observed due to the design decisions.</p>
+<div class="table-responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Default Initial Capacity</th><th>Load factor</th><th>Resizing Strategy</th></tr></thead><tbody><tr><td>Array-based collections</td><td>10</td><td>1+</td><td>Triggered when array is full  1.5x + 1 in ArrayList, 2x in Vector</td></tr><tr><td>Hash-based collections</td><td>16</td><td>0.75</td><td>2x</td></tr><tr><td>Fixed-capacity collections</td><td>Explicit</td><td>NA</td><td>NA</td></tr></tbody></table></div>
+<ul>
+<li>Initial capacity for hash-based collections is and should be chosen as a reasonable balance between space efficiency and performance.</li>
+<li>Array-based collections usually have slightly lower default capacities to avoid unessecary memory allocation. New array is created with the new capacity once array is full. Keepign initial capacity also prevents too many elements to be copied while resizing.</li>
+<li>Some collections which are based on dynamic data structures, like <code>LinkedList</code> and <strong>Tree-based collections</strong>, and have default initial capacity as 0. Elements are added as they come.</li>
+<li><code>Vector</code> also allows to pass an incrementalCapacity by which the capacity will be increased if it is full (instead of doing 2x).</li>
+</ul>
+<h3 id="ordering-of-elements">Ordering of elements<a aria-hidden="true" class="anchor-heading icon-link" href="#ordering-of-elements"></a></h3>
+<p>In general:</p>
+<ul>
+<li><code>List</code> collections maintain insertion order.</li>
+<li><code>Queue</code> FIFO</li>
+<li><code>Set</code>: Ordering usually doesn't matter in mathematical sets, so the interface leaves ordering upto its implementations.</li>
+</ul>
+<p>But ordering of elements is based more on the behavior/data structure the collection class intends to implement:</p>
+<ul>
+<li><strong>Linked collections</strong> (Linked*): Maintain insertion order.</li>
+<li><strong>Hash-based collections</strong> (Hash*): Elements stored in order of hash codes.</li>
+<li><strong>Sorted Collections</strong> (Tree<em> and Sorted</em>): Elements sorted based on natural order or provided <code>Comparator</code>  </li>
+<li><strong>Priority-based Collections</strong>: Ordered according to priority</li>
+<li><strong>Stack</strong>: Even though it implements list, it orders elements in LIFO.</li>
+</ul>
+<h3 id="constructors">Constructors<a aria-hidden="true" class="anchor-heading icon-link" href="#constructors"></a></h3>
+<ul>
+<li>
+<p>Almost all Collection framework classes have the usual nullary constructor.</p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CollectionImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>  Exceptions: Fixed size collections and some concurrent collections</p>
+</li>
+<li>
+<p>Most mainstream <code>Collection</code> implementations provide an overloaded constructor that accepts object of any <code>Collection</code> implementation. </p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CollectionImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>someOtherCollection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>  Exceptions:</p>
+<ul>
+<li>Legacy collections</li>
+<li>Tree/Sorted collections: because how will it decide the sorting of ths usual collections.</li>
+<li>Concurrent collections: 
+<ul>
+<li>Initializing concurrent collection with non-concurrent collection might cause thread-safety issues</li>
+<li>Some concurrent collection might require more information for initializing</li>
+</ul>
+</li>
+<li>Fixed-size collections: Taking in collection which exceed the fixed size might cause issue</li>
+</ul>
+</li>
+<li>
+<p>All <code>Map</code> implementations provide an overloaded constructor which accepts object of <code>Map</code> (including legacy, sorted and concurrent ones).</p>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span> m <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapImplementation</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">K</span><span class="token punctuation">,</span><span class="token class-name">V</span><span class="token punctuation">></span></span><span class="token punctuation">(</span>someOtherMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<p>Some other collections offer additional overloaded constructors:</p>
+<ul>
+<li><strong>Array-based</strong> collections and <strong>Fixed size</strong> collections:
+<pre class="language-java"><code class="language-java">    <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span> al2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token class-name">T</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Hash-based collections</strong>
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Hash___</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hash___</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Hash___</span> h <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Hash___</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">,</span> <span class="token keyword">float</span> loadFactor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><strong>Tree/sorted</strong> collections
+<pre class="language-java"><code class="language-java">    <span class="token class-name">Tree___</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">super</span> <span class="token class-name">K</span><span class="token punctuation">></span></span> comparator<span class="token punctuation">)</span>
+    <span class="token class-name">Tree___</span><span class="token punctuation">(</span><span class="token class-name">Sorted___</span><span class="token generics"><span class="token punctuation">&#x3C;</span><span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">K</span><span class="token punctuation">,</span> <span class="token operator">?</span> <span class="token keyword">extends</span> <span class="token class-name">V</span><span class="token punctuation">></span></span> m<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li><code>Vector</code>
+<pre class="language-java"><code class="language-java"><span class="token class-name">Vector</span> v <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector</span><span class="token punctuation">(</span><span class="token keyword">int</span> initialCapacity<span class="token punctuation">,</span> <span class="token keyword">int</span> incrementalCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+</ul>
+<h2 id="utilities">Utilities<a aria-hidden="true" class="anchor-heading icon-link" href="#utilities"></a></h2>
+<h3 id="iterating-over-collections">Iterating over collections<a aria-hidden="true" class="anchor-heading icon-link" href="#iterating-over-collections"></a></h3>
+<p>Although there are multiple iterators offered by the framework. The most common usage is as below:</p>
+<pre class="language-java"><code class="language-java">  <span class="token class-name">Iterator</span> i <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    i<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+</code></pre>
+<p>For more details about different types of iterators. See <a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators</a></p>
+<h3 id="collections-class"><code>Collections</code> Class<a aria-hidden="true" class="anchor-heading icon-link" href="#collections-class"></a></h3>
+<p>Utility class (<code>java.util.package</code>) which defines several methods for collection objects.
+Most of these methods are static.</p>
+<h4 id="methods">Methods<a aria-hidden="true" class="anchor-heading icon-link" href="#methods"></a></h4>
+<h5 id="static-sort-and-static-sortcomparator-c"><code>static sort()</code> and <code>static sort(Comparator c)</code><a aria-hidden="true" class="anchor-heading icon-link" href="#static-sort-and-static-sortcomparator-c"></a></h5>
+<p>Sorts the collection objects (if <a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a>) either based on their natural ordering, or based on the <a href="/cs/notes/ip5orztybk9shcn0qhjo7ms">Comparator</a> if passed.</p>
+<p>⚠️ If the class doens't implement <code>Comparable</code> and <code>sort</code> is called without a <code>Comparator</code>, it will throw a <a href="/cs/notes/9o86nbg2dro9c4zutzu7c9c">ClassCastException</a>.</p>
+<h2 id="important-distinctions">Important Distinctions<a aria-hidden="true" class="anchor-heading icon-link" href="#important-distinctions"></a></h2>
+<h3 id="array-vs-arraylist">Array vs ArrayList<a aria-hidden="true" class="anchor-heading icon-link" href="#array-vs-arraylist"></a></h3>
+<p>The main difference lies in the dynamic and resizeable nature of <code>ArrayList</code>. You don't even have to specify an initial size in <code>ArrayList</code></p>
+<h3 id="common-distinction-between-legacy-collections-and-their-modern-counterparts">Common distinction between legacy collections and their modern counterparts<a aria-hidden="true" class="anchor-heading icon-link" href="#common-distinction-between-legacy-collections-and-their-modern-counterparts"></a></h3>
+<p><strong>ArrayList vs Vectors / HashMap vs Hashtable</strong></p>
+<p>Legacy collections are thread-safe. Their modern counterparts aren't.</p>
+<p><code>Vector</code>(and even <code>Stack</code>)/Hashtable is thread-safe (most methods are synchronised)
+<code>ArrayList</code>/<code>HashMap</code> is not.</p>
+<p>💡 If something is thread-safe, it will inevitably have a lower performance in comparison to a corresponding non-synchronised something.</p>
+<h3 id="size-vs-capacity"><code>size()</code> vs <code>capacity()</code><a aria-hidden="true" class="anchor-heading icon-link" href="#size-vs-capacity"></a></h3>
+<ul>
+<li>size = number of objects currently</li>
+<li>capacity = number of objects which can be accommodated</li>
+</ul>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html#:~:text=Not%2C%20strictly%20speaking%2C%20a%20part%20of%20the%20collections,and%20relies%20on%20some%20of%20the%20same%20infrastructure.">Collections Framework Overview - Java - Oracle Documentation</a></li>
+<li><a href="https://andbin.dev/java/why-some-collections-cannot-be-heterogeneous">Why some collections can't allow heterogenous objects?</a></li>
+<li><a href="https://stackoverflow.com/questions/28147076/understanding-queue-insertion">Understand Queue Insertion - Stack Overflow</a></li>
+</ul>
+<h3 id="hashmaps">Hashmaps<a aria-hidden="true" class="anchor-heading icon-link" href="#hashmaps"></a></h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=c3RVW3KGIIE">How HashMap works in Java? With Animation!! whats new in java8 tutorial</a></li>
+<li><a href="https://dzone.com/articles/java8-hashmap-implementation-and-performance">Java 8 HashMap Implementation and Performance - DZone Java</a></li>
+<li><a href="https://www.developer.com/design/java-hashed-collections/">Java Hashed Collections</a></li>
+<li><a href="https://stackoverflow.com/questions/36313817/what-are-the-differences-between-hashtable-and-hashmap-not-specific-to-java">What are the differences between hashtable and hashmap? (Not specific to Java)</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/viq09c2pqto5wyy49rlg1o5">Comparable</a></li>
+<li><a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/jik03wh5g5jxxfz2aklbmub">Multithreading (cs)</a></li>
+<li><a href="/cs/notes/lubjpq6xfglfx03cmfbdfoc">Stack (cs)</a></li>
+<li><a href="/cs/notes/s6akrhxt1lut8w1ua5n50ci">Methods (cs)</a></li>
+<li><a href="/cs/notes/un60lp44o0qon2nddvolalf">Collectors (cs)</a></li>
+<li><a href="/cs/notes/k16ee23xfsfsittiqteajoa">Iterators (cs)</a></li>
+</ul></div></div><div style="padding-left:10px;padding-right:10px" class="ant-col ant-col-xs-0 ant-col-md-6"><div><div class=""><div class="ant-anchor-wrapper dendron-toc" style="max-height:calc(100vh - 64px);z-index:1"><div class="ant-anchor"><div class="ant-anchor-ink"><span class="ant-anchor-ink-ball"></span></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#collection-hierarchy" title="Collection Hierarchy">Collection Hierarchy</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#interfaces" title="Interfaces">Interfaces</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#collection" title="Collection">Collection</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#dequeue" title="Dequeue">Dequeue</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#classes" title="Classes">Classes</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#groups-of-collections-with-similar-behaviorimplementations" title="Groups of collections with similar behavior/implementations">Groups of collections with similar behavior/implementations</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#all-collections" title="All Collections">All Collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#legacy-collections" title="Legacy Collections">Legacy Collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#sorted-navigable-tree" title="Sorted, Navigable, Tree">Sorted, Navigable, Tree</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#sorted" title="Sorted">Sorted</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#navigable" title="Navigable">Navigable</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#hash-based-collections" title="Hash-based collections">Hash-based collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#internal-implementation" title="Internal Implementation">Internal Implementation</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#linked-list-based" title="Linked list based">Linked list based</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#concurrent-collections" title="Concurrent Collections">Concurrent Collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#enum" title="Enum">Enum</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#fixed-size-collections" title="Fixed size collections">Fixed size collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#behavior" title="Behavior">Behavior</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#allowed-elements" title="Allowed elements">Allowed elements</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#capacity" title="Capacity">Capacity</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#common-patterns" title="Common patterns">Common patterns</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#ordering-of-elements" title="Ordering of elements">Ordering of elements</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#constructors" title="Constructors">Constructors</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#utilities" title="Utilities">Utilities</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#iterating-over-collections" title="Iterating over collections">Iterating over collections</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#collections-class" title="Collections Class">Collections Class</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#methods" title="Methods">Methods</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#static-sort-and-static-sortcomparator-c" title="static sort() and static sort(Comparator c)">static sort() and static sort(Comparator c)</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#important-distinctions" title="Important Distinctions">Important Distinctions</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#array-vs-arraylist" title="Array vs ArrayList">Array vs ArrayList</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#common-distinction-between-legacy-collections-and-their-modern-counterparts" title="Common distinction between legacy collections and their modern counterparts">Common distinction between legacy collections and their modern counterparts</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#size-vs-capacity" title="size() vs capacity()">size() vs capacity()</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#references" title="References">References</a></div><div class="ant-anchor-link"><a class="ant-anchor-link-title" href="#hashmaps" title="Hashmaps">Hashmaps</a></div></div></div></div></div></div></div></div></div></div></div><div class="ant-divider ant-divider-horizontal" role="separator"></div><footer class="ant-layout-footer" style="padding:0 24px 24px"></footer></main></section></section></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"note":{"id":"dkdtvct3q6f8lggmoqrqf43","title":"Collection Framework","desc":"","updated":1727374954029,"created":1713633121566,"custom":{},"fname":"lang.java.lib.collection","type":"note","vault":{"fsPath":".","selfContained":true,"name":"cs"},"contentHash":"c4558fe3765bfe78b6a831c4d9bdeef7","links":[{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"data.structure","position":{"start":{"line":2,"column":130,"offset":130},"end":{"line":2,"column":148,"offset":148},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"data.structure"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.interfaces.marker.serializable","position":{"start":{"line":152,"column":5,"offset":6413},"end":{"line":152,"column":53,"offset":6461},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.interfaces.marker.serializable"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.interfaces.marker.cloneable","position":{"start":{"line":153,"column":5,"offset":6514},"end":{"line":153,"column":50,"offset":6559},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.interfaces.marker.cloneable"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.collection.comparable","position":{"start":{"line":184,"column":24,"offset":7668},"end":{"line":184,"column":63,"offset":7707},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.collection.comparable"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.interfaces.func.comparator","position":{"start":{"line":184,"column":67,"offset":7711},"end":{"line":184,"column":111,"offset":7755},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.interfaces.func.comparator"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"dev.issues.exception.types.unchecked.null pointer","alias":"NullPointerException","position":{"start":{"line":184,"column":288,"offset":7932},"end":{"line":184,"column":362,"offset":8006},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"dev.issues.exception.types.unchecked.null pointer"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.collection.iterators","position":{"start":{"line":362,"column":58,"offset":16996},"end":{"line":362,"column":96,"offset":17034},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.collection.iterators"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.collection.comparable","position":{"start":{"line":375,"column":34,"offset":17290},"end":{"line":375,"column":73,"offset":17329},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.collection.comparable"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"lang.java.lib.interfaces.func.comparator","position":{"start":{"line":375,"column":131,"offset":17387},"end":{"line":375,"column":175,"offset":17431},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"lang.java.lib.interfaces.func.comparator"}},{"type":"wiki","from":{"fname":"lang.java.lib.collection","id":"dkdtvct3q6f8lggmoqrqf43","vaultName":"cs"},"value":"dev.issues.exception.types.unchecked.class cast exception","alias":"ClassCastException","position":{"start":{"line":377,"column":109,"offset":17552},"end":{"line":377,"column":189,"offset":17632},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"dev.issues.exception.types.unchecked.class cast exception"}},{"from":{"fname":"lang.java.concurrency.multithreading","id":"jik03wh5g5jxxfz2aklbmub","vaultName":"cs"},"type":"backlink","position":{"start":{"line":50,"column":91,"offset":1221},"end":{"line":50,"column":156,"offset":1286},"indent":[]},"value":"lang.java.lib.collection"},{"from":{"fname":"lang.java.ds.stack","id":"lubjpq6xfglfx03cmfbdfoc","vaultName":"cs"},"type":"backlink","position":{"start":{"line":2,"column":20,"offset":20},"end":{"line":2,"column":48,"offset":48},"indent":[]},"value":"lang.java.lib.collection"},{"from":{"fname":"lang.java.jre.memory.methods","id":"s6akrhxt1lut8w1ua5n50ci","vaultName":"cs"},"type":"backlink","position":{"start":{"line":29,"column":11,"offset":1974},"end":{"line":29,"column":50,"offset":2013},"indent":[]},"value":"lang.java.lib.collection"},{"from":{"fname":"lang.java.lib.classes.collectors","id":"un60lp44o0qon2nddvolalf","vaultName":"cs"},"type":"backlink","position":{"start":{"line":2,"column":99,"offset":99},"end":{"line":2,"column":138,"offset":138},"indent":[]},"value":"lang.java.lib.collection"},{"from":{"fname":"lang.java.lib.collection.iterators","id":"k16ee23xfsfsittiqteajoa","vaultName":"cs"},"type":"backlink","position":{"start":{"line":8,"column":38,"offset":327},"end":{"line":8,"column":104,"offset":393},"indent":[]},"value":"lang.java.lib.collection"}],"anchors":{"collection-hierarchy":{"type":"header","text":"Collection Hierarchy","value":"collection-hierarchy","line":12,"column":0,"depth":2},"interfaces":{"type":"header","text":"Interfaces","value":"interfaces","line":105,"column":0,"depth":3},"collection":{"type":"header","text":"Collection","value":"collection","line":107,"column":0,"depth":4},"dequeue":{"type":"header","text":"Dequeue","value":"dequeue","line":112,"column":0,"depth":4},"classes":{"type":"header","text":"Classes","value":"classes","line":128,"column":0,"depth":3},"groups-of-collections-with-similar-behaviorimplementations":{"type":"header","text":"Groups of collections with similar behavior/implementations","value":"groups-of-collections-with-similar-behaviorimplementations","line":150,"column":0,"depth":3},"all-collections":{"type":"header","text":"All Collections","value":"all-collections","line":154,"column":0,"depth":4},"legacy-collections":{"type":"header","text":"Legacy Collections","value":"legacy-collections","line":163,"column":0,"depth":4},"sorted-navigable-tree":{"type":"header","text":"Sorted, Navigable, Tree","value":"sorted-navigable-tree","line":174,"column":0,"depth":4},"sorted":{"type":"header","text":"Sorted","value":"sorted","line":178,"column":0,"depth":5},"navigable":{"type":"header","text":"Navigable","value":"navigable","line":194,"column":0,"depth":4},"hash-based-collections":{"type":"header","text":"Hash-based collections","value":"hash-based-collections","line":199,"column":0,"depth":4},"internal-implementation":{"type":"header","text":"Internal Implementation","value":"internal-implementation","line":205,"column":0,"depth":5},"linked-list-based":{"type":"header","text":"Linked list based","value":"linked-list-based","line":224,"column":0,"depth":4},"concurrent-collections":{"type":"header","text":"Concurrent Collections","value":"concurrent-collections","line":229,"column":0,"depth":4},"enum":{"type":"header","text":"Enum","value":"enum","line":233,"column":0,"depth":4},"fixed-size-collections":{"type":"header","text":"Fixed size collections","value":"fixed-size-collections","line":235,"column":0,"depth":4},"behavior":{"type":"header","text":"Behavior","value":"behavior","line":241,"column":0,"depth":2},"allowed-elements":{"type":"header","text":"Allowed elements","value":"allowed-elements","line":245,"column":0,"depth":3},"capacity":{"type":"header","text":"Capacity","value":"capacity","line":269,"column":0,"depth":3},"common-patterns":{"type":"header","text":"Common patterns","value":"common-patterns","line":278,"column":0,"depth":4},"ordering-of-elements":{"type":"header","text":"Ordering of elements","value":"ordering-of-elements","line":293,"column":0,"depth":3},"constructors":{"type":"header","text":"Constructors","value":"constructors","line":309,"column":0,"depth":3},"utilities":{"type":"header","text":"Utilities","value":"utilities","line":355,"column":0,"depth":2},"iterating-over-collections":{"type":"header","text":"Iterating over collections","value":"iterating-over-collections","line":357,"column":0,"depth":3},"collections-class":{"type":"header","text":"Collections Class","value":"collections-class","line":372,"column":0,"depth":3},"methods":{"type":"header","text":"Methods","value":"methods","line":377,"column":0,"depth":4},"static-sort-and-static-sortcomparator-c":{"type":"header","text":"static sort() and static sort(Comparator c)","value":"static-sort-and-static-sortcomparator-c","line":379,"column":0,"depth":5},"important-distinctions":{"type":"header","text":"Important Distinctions","value":"important-distinctions","line":386,"column":0,"depth":2},"array-vs-arraylist":{"type":"header","text":"Array vs ArrayList","value":"array-vs-arraylist","line":388,"column":0,"depth":3},"common-distinction-between-legacy-collections-and-their-modern-counterparts":{"type":"header","text":"Common distinction between legacy collections and their modern counterparts","value":"common-distinction-between-legacy-collections-and-their-modern-counterparts","line":392,"column":0,"depth":3},"size-vs-capacity":{"type":"header","text":"size() vs capacity()","value":"size-vs-capacity","line":403,"column":0,"depth":3},"references":{"type":"header","text":"References","value":"references","line":410,"column":0,"depth":2},"hashmaps":{"type":"header","text":"Hashmaps","value":"hashmaps","line":416,"column":0,"depth":3}},"children":["viq09c2pqto5wyy49rlg1o5","k16ee23xfsfsittiqteajoa"],"parent":"2iaiw6abjhpczxzzr1tsqep","data":{}},"body":"\u003ch1 id=\"collection-framework\"\u003eCollection Framework\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#collection-framework\"\u003e\u003c/a\u003e\u003c/h1\u003e\n\u003cp\u003eJava Collection Framework defines several classes and interfaces to represent group of individual objects as single entity, i.e. \u003ca href=\"/cs/notes/5rqq4ui5cu6wak3k7p7ebb8\"\u003eData Structures\u003c/a\u003e.  \u003c/p\u003e\n\u003cp\u003eAlthough, referred to as a framework, it functions more like a library with a collection of classes and interfaces.\u003c/p\u003e\n\u003ch2 id=\"collection-hierarchy\"\u003eCollection Hierarchy\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#collection-hierarchy\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cdiv class=\"mermaid\"\u003e\n      classDiagram\n        class Collection\n        \u0026#x3C;\u0026#x3C;interface\u003e\u003e Collection\n\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        class List\n        \u0026#x3C;\u0026#x3C;interface\u003e\u003e List\n\n            class ArrayList\n            class LinkedList\n            class Vector\n                class Stack\n\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        class Queue\n        \u0026#x3C;\u0026#x3C;interface\u003e\u003e Queue        \n\n            class PriorityQueue\n            class BlockingQueue\n                class PriorityBlockingQueue\n                class LinkedBlockingQueue\n\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        class Set\n        \u0026#x3C;\u0026#x3C;interface\u003e\u003e Set\n            \n            class HashSet\n                class LinkedHashSet\n            class SortedSet \n            \u0026#x3C;\u0026#x3C;interface\u003e\u003e SortedSet\n                class NavigableSet\n                \u0026#x3C;\u0026#x3C;inteface\u003e\u003e NavigableSet\n                class TreeSet\n            \n\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        Collection \u0026#x3C;|-- List\n            List \u0026#x3C;|-- ArrayList\n            List \u0026#x3C;|-- LinkedList\n            List \u0026#x3C;|-- Vector\n                Vector \u0026#x3C;|-- Stack\n\n        Collection \u0026#x3C;|-- Queue\n            Queue \u0026#x3C;|-- LinkedList\n            Queue \u0026#x3C;|-- PriorityQueue\n            Queue \u0026#x3C;|-- BlockingQueue\n                BlockingQueue \u0026#x3C;|-- PriorityBlockingQueue\n                BlockingQueue \u0026#x3C;|-- LinkedBlockingQueue\n\n        Collection \u0026#x3C;|-- Set\n            Set \u0026#x3C;|-- HashSet\n                HashSet \u0026#x3C;|-- LinkedHashSet\n            Set \u0026#x3C;|-- SortedSet\n                SortedSet \u0026#x3C;|-- NavigableSet\n                    NavigableSet \u0026#x3C;|-- TreeSet\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\u003c/div\u003e\n\u003cdiv class=\"mermaid\"\u003e\n     classDiagram\n        class Map\n        \u0026#x3C;\u0026#x3C;interface\u003e\u003e Map\n            class HashMap\n            class Hashtable\n                class Properties\n            class IdentityHashMap\n            class SortedMap\n            \u0026#x3C;\u0026#x3C;interface\u003e\u003e SortedMap\n                class NavigableMap\n                \u0026#x3C;\u0026#x3C;interface\u003e\u003e NavigableMap\n                    class TreeMap\n                class WeakHashMap\n            class Dictionary\n            \u0026#x3C;\u0026#x3C;abstract\u003e\u003e Dictionary\n\n        Map \u0026#x3C;|-- HashMap\n        Map \u0026#x3C;|-- Hashtable\n        Dictionary \u0026#x3C;|-- Hashtable\n                    Hashtable \u0026#x3C;|-- Properties\n        Map \u0026#x3C;|-- IdentityHashMap\n        Map \u0026#x3C;|-- SortedMap\n            SortedMap \u0026#x3C;|-- NavigableMap                                        \n                NavigableMap \u0026#x3C;|-- TreeMap\n            SortedMap \u0026#x3C;|-- WeakHashMap\n\u003c/div\u003e\n\u003ch3 id=\"interfaces\"\u003eInterfaces\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#interfaces\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003ch4 id=\"collection\"\u003eCollection\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#collection\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eSaid to be root interface of collection framework (not really though)\u003c/li\u003e\n\u003cli\u003eNo class implements Collection interface directly\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"dequeue\"\u003eDequeue\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#dequeue\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eDouble-ended Queue.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eLike a doubly linked list.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAny collection which implements these can be used to implement Stack and Queue.\u003c/p\u003e\n\u003cp\u003e  Some specific methods for this purpose\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003evoid addFirst(Object O)\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003evoid addLast(Object O)\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eObject getFirst()\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eObject getLast()\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eObject removeFirst()\u003c/code\u003e\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eObject removeLast()\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003eUsually \u003ccode\u003eLinkedList\u003c/code\u003e is used for this.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"classes\"\u003eClasses\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#classes\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eEvery Collection class is based on some standard data structure.\u003c/li\u003e\n\u003cli\u003eImportant ones are listed below along with some use-cases\u003c/li\u003e\n\u003c/ul\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eCollection Class\u003c/th\u003e\u003cth\u003e\u003cstrong\u003eData Structure\u003c/strong\u003e\u003c/th\u003e\u003cth\u003e\u003cstrong\u003eSuitable for\u003c/strong\u003e\u003c/th\u003e\u003cth\u003e\u003cstrong\u003eNOT suited for\u003c/strong\u003e\u003c/th\u003e\u003cth\u003e\u003cstrong\u003eThread Safe\u003c/strong\u003e\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eArrayList\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eResizable Array\u003c/td\u003e\u003ctd\u003eFrequent Retrieval\u003c/td\u003e\u003ctd\u003eFrequent Insertion/deleting from mid\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eLinkedList\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eDoubly Linked List\u003c/td\u003e\u003ctd\u003eImplementing stack and queue,  Insertion/deleting from mid\u003c/td\u003e\u003ctd\u003eFrequent retrieval\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eVector\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eResizable Array\u003c/td\u003e\u003ctd\u003eFrequent Retrieval\u003c/td\u003e\u003ctd\u003eFrequent Insertion/deleting from mid\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eStack\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eStack\u003c/td\u003e\u003ctd\u003eLIFO\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eHashSet\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eHashtable\u003c/td\u003e\u003ctd\u003eSearch Operations\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eLinkedHashSet\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eHashtable + Linked List\u003c/td\u003e\u003ctd\u003eCache-based Applications\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eTreeSet\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003eBalanced Tree\u003c/td\u003e\u003ctd\u003eCache-based Applications\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eHashMap\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eHashtable\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eYes\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003cstrong\u003eTreeMap\u003c/strong\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eNo\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003ch3 id=\"groups-of-collections-with-similar-behaviorimplementations\"\u003eGroups of collections with similar behavior/implementations\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#groups-of-collections-with-similar-behaviorimplementations\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eCertain groups of collection adhere to a common implementation strategy. Apart from these implementations, these group may also share some of the [[##Behavior]]s.\u003c/p\u003e\n\u003ch4 id=\"all-collections\"\u003eAll Collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#all-collections\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eCollections are meant to be used for transferring data =\u003e All Collection Classes implement: \u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ca href=\"/cs/notes/mbwwjk3x17fjagziw7d0ky6\"\u003eSerializable\u003c/a\u003e\u003c/strong\u003e: To transfer object from one place to another\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ca href=\"/cs/notes/6fe2bcmqj3rdsd3wd82k3lp\"\u003eCloneable\u003c/a\u003e\u003c/strong\u003e: When sent from one place to another, the receiver makes a copy of it and operates on it\u003c/li\u003e\n\u003cli\u003eConstructors:\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"legacy-collections\"\u003eLegacy Collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#legacy-collections\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003eVector\u003c/code\u003e, \u003ccode\u003eStack\u003c/code\u003e and \u003ccode\u003eHashtable\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eSome legacy collections have additional \"legacy\" methods along with the other methods which they have inherited. These names may sound a bit boomer or longer, since they are legacy.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eFor example, ˇaddElements(Object O)\u003ccode\u003ein Vector and\u003c/code\u003eenumeration()` in all legacy classes.\u003c/p\u003e\n\u003cp\u003eIt is recommended to use the modern methods and the legacy methods are only kept for backward compatibility.\u003c/p\u003e\n\u003ch4 id=\"sorted-navigable-tree\"\u003eSorted, Navigable, Tree\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#sorted-navigable-tree\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003eTreeSet\u003c/code\u003e and \u003ccode\u003eTreeMap\u003c/code\u003e\u003c/p\u003e\n\u003ch5 id=\"sorted\"\u003eSorted\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#sorted\"\u003e\u003c/a\u003e\u003c/h5\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eMethods\u003c/th\u003e\u003cth\u003eReturns\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003efirst()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003efirst element\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003elast()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003elast element\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eheadSet(a)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eelements less than \u003cem\u003ea\u003c/em\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003etailSet(a)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eelements greater than or equal to \u003cem\u003ea\u003c/em\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003esubSet(a,b)\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eelements between \u003cem\u003ea\u003c/em\u003e and \u003cem\u003eb\u003c/em\u003e including \u003cem\u003ea\u003c/em\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003ecomparator()\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eComparator object which defines underlying sorting technique\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003e(If we're using default natural sorting order, then it simply returns null)\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003cp\u003eSorted collections use \u003ca href=\"/cs/notes/viq09c2pqto5wyy49rlg1o5\"\u003eComparable\u003c/a\u003e or \u003ca href=\"/cs/notes/ip5orztybk9shcn0qhjo7ms\"\u003eComparator\u003c/a\u003e to determine the natural ordering of the objects. If the class doesn't implement \u003ccode\u003eComparable\u003c/code\u003e and no \u003ccode\u003eComparator\u003c/code\u003e is passed, adding elements to the collection will result in a \u003ca href=\"/cs/notes/7971y77slw0gxorm77kb96k\"\u003eNullPointerException\u003c/a\u003e.\u003c/p\u003e\n\u003cp\u003eSame methods are also applicable for Map.\u003c/p\u003e\n\u003ch4 id=\"navigable\"\u003eNavigable\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#navigable\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eDefines several methods for navigation.\u003c/p\u003e\n\u003ch4 id=\"hash-based-collections\"\u003eHash-based collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#hash-based-collections\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003eHashMap\u003c/code\u003e, \u003ccode\u003eHashSet\u003c/code\u003e, \u003ccode\u003eHashtable\u003c/code\u003e ...\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eHashSet\u003c/code\u003e is a wrapper on top of \u003ccode\u003eHashMap\u003c/code\u003e which stores its values in the \u003ccode\u003ekey\u003c/code\u003es (so as to avoid duplicates) and stores some vague value for the \u003ccode\u003evalue\u003c/code\u003e part. \u003c/li\u003e\n\u003c/ul\u003e\n\u003ch5 id=\"internal-implementation\"\u003eInternal Implementation\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#internal-implementation\"\u003e\u003c/a\u003e\u003c/h5\u003e\n\u003cp\u003eImplementation of hash, the structure and rehashing is similar in all hash-based collections.\u003c/p\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e\u003cspan class=\"token class-name\"\u003eHashMap\u003c/span\u003e \u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e \u003cspan class=\"token keyword\"\u003eimplements\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eMap\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n\u003cspan class=\"token class-name\"\u003eEntry\u003c/span\u003e \u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e \u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e \u003cspan class=\"token comment\"\u003e//Inner class\u003c/span\u003e\n\u003cspan class=\"token class-name\"\u003eEntry\u003c/span\u003e next\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e \u003cspan class=\"token comment\"\u003e//reference to another entry to store entries like linked lists\u003c/span\u003e\n\n\u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e hash\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e \u003cspan class=\"token comment\"\u003e//Hashvalue of key to avoid calculating everytime its  needed\u003c/span\u003e\n\u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cul\u003e\n\u003cli\u003eInitially, it is stored as an array of initial capacity (0-15 if initial cap is 16).\u003c/li\u003e\n\u003cli\u003eOnce the array is filled more than 75% (load factor - 0.75), the table size doubles to 32. The hashtable is rehashed (Internal data structures are rebuit)\u003c/li\u003e\n\u003cli\u003eJava 8 improvement: When the number of nodes in a HashMap reaches the TREEIFY_THRESHOLD (constant), the nodes are converted to TreeNode. Basically, from linked list to a balanced tree. This improves the worst case performance from O(n) to O(log n). After the HashMap becomes small due to removal or resizing, TreeNodes are converted back to nodes. Since, HashSet also uses HashMap - it also benefits from this.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eHashMap Bucket Resizing Overhead: You should create HashMap with initial capacity close to your expected volume. If its too small, and the load is in millions, whenever the bucket will reach its load factor it will resize and rehash → which is a very costly operation. Also, make sure to use full capacity else a lot of memory of unused blocks will go wasted\u003c/strong\u003e.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"linked-list-based\"\u003eLinked list based\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#linked-list-based\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eReferences not stored contiguously → no shift operations required while adding/removing elements\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"concurrent-collections\"\u003eConcurrent Collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#concurrent-collections\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003eBlockingQueue\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"enum\"\u003eEnum\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#enum\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003ch4 id=\"fixed-size-collections\"\u003eFixed size collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#fixed-size-collections\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e\u003ccode\u003eArrayBlockingQueue\u003c/code\u003e , \u003ccode\u003eLinkedBlockingQueue\u003c/code\u003e\u003c/p\u003e\n\u003ch2 id=\"behavior\"\u003eBehavior\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#behavior\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e💡 Collection classes only deviate from behaviors of their parent when it stops them from implementing their intended behavior.\u003c/p\u003e\n\u003ch3 id=\"allowed-elements\"\u003eAllowed elements\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#allowed-elements\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eAll collections \u003cstrong\u003eallow heterogeneous objects\u003c/strong\u003e (except \u003ccode\u003eTreeSet\u003c/code\u003e and \u003ccode\u003eTreeMap\u003c/code\u003e).\n\u003ccode\u003eTreeSet\u003c/code\u003e and \u003ccode\u003eTreeMap\u003c/code\u003e store elements in a particular sorted order by comparing them. Comparing null values throws \u003ccode\u003eNullPointerException\u003c/code\u003e which is why they don't allow it.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eDuplicate and null values\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eAdding duplicates in collections which don't allow it doesn't generally throw any exception. Usually the \u003ccode\u003eadd()\u003c/code\u003e or \u003ccode\u003eaddAll()\u003c/code\u003e method will just return \u003ccode\u003efalse\u003c/code\u003e in such cases.\u003c/p\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e\u003c/th\u003e\u003cth\u003eDuplicates\u003c/th\u003e\u003cth\u003enull insertion\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eList\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eAllowed\u003c/td\u003e\u003ctd\u003eallowed\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eSet\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eNOT Allowed\u003c/td\u003e\u003ctd\u003eallowed\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eQueue\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eAllowed\u003c/td\u003e\u003ctd\u003eallowed\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003ccode\u003eMap\u003c/code\u003e\u003c/td\u003e\u003ctd\u003eAllowed for values\u003c/td\u003e\u003ctd\u003eallowed\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eList\u003c/code\u003e is the most straighforward implementation. Similar to an array of a linked list, it allows duplicates and keeps the ordering as you insert it. No acrobatics. It also allows null values.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eSet\u003c/code\u003e as the name suggests, is like mathematical sets. By definition, mathematical sets can't have duplicates. But there can be \"null\" or empty sets. So it allows null values.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003ccode\u003eQueue\u003c/code\u003es in general allow duplicates. It generally doesn't allow null elements either but if allowed - it should be avoided\u003c/p\u003e\n\u003cp\u003e From Javadoc:\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eQueue implementations generally do not allow insertion of null elements, although some implementations, such as LinkedList, do not prohibit insertion of null. Even in the implementations that permit it, null should not be inserted into a Queue, as null is also used as a special return value by the poll method to indicate that the queue contains no elements.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003enull values are treated as any other values in collections which allow it. For example, \u003ccode\u003eSet\u003c/code\u003es allow null values but they don't allow duplicates, so even if you add \u003ccode\u003enull\u003c/code\u003e twice, it will be treated as one. Similarly, \u003ccode\u003eMap\u003c/code\u003es only allow one \u003ccode\u003enull\u003c/code\u003e value in key and multiple \u003ccode\u003enull\u003c/code\u003e value as values.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"capacity\"\u003eCapacity\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#capacity\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eDefault Initial Capacity\u003c/strong\u003e: The initial capacity assigned to a Collection class object by default, if not specified while initializing the object. \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eFill Ratio/Load Factor\u003c/strong\u003e: The percentage or ratio of capacity which when reached will result in increasing of the capacity. \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eResizing Strategy\u003c/strong\u003e: How much the capacity will be increased upon reaching threshold.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eFor example, if the initial default capacity is 10 and fill ratio is 0.7 - the capacity will increase once 7 places are filled.\u003c/p\u003e\n\u003ch4 id=\"common-patterns\"\u003eCommon patterns\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#common-patterns\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eAlthough there is no universal pattern for these properties, but some common patterns are observed due to the design decisions.\u003c/p\u003e\n\u003cdiv class=\"table-responsive\"\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\u003ctable\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003e\u003c/th\u003e\u003cth\u003eDefault Initial Capacity\u003c/th\u003e\u003cth\u003eLoad factor\u003c/th\u003e\u003cth\u003eResizing Strategy\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eArray-based collections\u003c/td\u003e\u003ctd\u003e10\u003c/td\u003e\u003ctd\u003e1+\u003c/td\u003e\u003ctd\u003eTriggered when array is full  1.5x + 1 in ArrayList, 2x in Vector\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eHash-based collections\u003c/td\u003e\u003ctd\u003e16\u003c/td\u003e\u003ctd\u003e0.75\u003c/td\u003e\u003ctd\u003e2x\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eFixed-capacity collections\u003c/td\u003e\u003ctd\u003eExplicit\u003c/td\u003e\u003ctd\u003eNA\u003c/td\u003e\u003ctd\u003eNA\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e\n\u003cul\u003e\n\u003cli\u003eInitial capacity for hash-based collections is and should be chosen as a reasonable balance between space efficiency and performance.\u003c/li\u003e\n\u003cli\u003eArray-based collections usually have slightly lower default capacities to avoid unessecary memory allocation. New array is created with the new capacity once array is full. Keepign initial capacity also prevents too many elements to be copied while resizing.\u003c/li\u003e\n\u003cli\u003eSome collections which are based on dynamic data structures, like \u003ccode\u003eLinkedList\u003c/code\u003e and \u003cstrong\u003eTree-based collections\u003c/strong\u003e, and have default initial capacity as 0. Elements are added as they come.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eVector\u003c/code\u003e also allows to pass an incrementalCapacity by which the capacity will be increased if it is full (instead of doing 2x).\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"ordering-of-elements\"\u003eOrdering of elements\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#ordering-of-elements\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eIn general:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ccode\u003eList\u003c/code\u003e collections maintain insertion order.\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eQueue\u003c/code\u003e FIFO\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eSet\u003c/code\u003e: Ordering usually doesn't matter in mathematical sets, so the interface leaves ordering upto its implementations.\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eBut ordering of elements is based more on the behavior/data structure the collection class intends to implement:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eLinked collections\u003c/strong\u003e (Linked*): Maintain insertion order.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eHash-based collections\u003c/strong\u003e (Hash*): Elements stored in order of hash codes.\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eSorted Collections\u003c/strong\u003e (Tree\u003cem\u003e and Sorted\u003c/em\u003e): Elements sorted based on natural order or provided \u003ccode\u003eComparator\u003c/code\u003e  \u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003ePriority-based Collections\u003c/strong\u003e: Ordered according to priority\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eStack\u003c/strong\u003e: Even though it implements list, it orders elements in LIFO.\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"constructors\"\u003eConstructors\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#constructors\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eAlmost all Collection framework classes have the usual nullary constructor.\u003c/p\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eCollection\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e c \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eCollectionImplementation\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e  Exceptions: Fixed size collections and some concurrent collections\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eMost mainstream \u003ccode\u003eCollection\u003c/code\u003e implementations provide an overloaded constructor that accepts object of any \u003ccode\u003eCollection\u003c/code\u003e implementation. \u003c/p\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eCollection\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e c \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eCollectionImplementation\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003esomeOtherCollection\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003e  Exceptions:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eLegacy collections\u003c/li\u003e\n\u003cli\u003eTree/Sorted collections: because how will it decide the sorting of ths usual collections.\u003c/li\u003e\n\u003cli\u003eConcurrent collections: \n\u003cul\u003e\n\u003cli\u003eInitializing concurrent collection with non-concurrent collection might cause thread-safety issues\u003c/li\u003e\n\u003cli\u003eSome concurrent collection might require more information for initializing\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003eFixed-size collections: Taking in collection which exceed the fixed size might cause issue\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAll \u003ccode\u003eMap\u003c/code\u003e implementations provide an overloaded constructor which accepts object of \u003ccode\u003eMap\u003c/code\u003e (including legacy, sorted and concurrent ones).\u003c/p\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eMap\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e m \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eMapImplementation\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003esomeOtherMap\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003eSome other collections offer additional overloaded constructors:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eArray-based\u003c/strong\u003e collections and \u003cstrong\u003eFixed size\u003c/strong\u003e collections:\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eArrayList\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e al2 \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eArrayList\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eT\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e initialCapacity\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eHash-based collections\u003c/strong\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eHash___\u003c/span\u003e h \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eHash___\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e initialCapacity\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n    \u003cspan class=\"token class-name\"\u003eHash___\u003c/span\u003e h \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eHash___\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e initialCapacity\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e \u003cspan class=\"token keyword\"\u003efloat\u003c/span\u003e loadFactor\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eTree/sorted\u003c/strong\u003e collections\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e    \u003cspan class=\"token class-name\"\u003eTree___\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eComparator\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token operator\"\u003e?\u003c/span\u003e \u003cspan class=\"token keyword\"\u003esuper\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e comparator\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\n    \u003cspan class=\"token class-name\"\u003eTree___\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token class-name\"\u003eSorted___\u003c/span\u003e\u003cspan class=\"token generics\"\u003e\u003cspan class=\"token punctuation\"\u003e\u0026#x3C;\u003c/span\u003e\u003cspan class=\"token operator\"\u003e?\u003c/span\u003e \u003cspan class=\"token keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eK\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e \u003cspan class=\"token operator\"\u003e?\u003c/span\u003e \u003cspan class=\"token keyword\"\u003eextends\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eV\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e\u003e\u003c/span\u003e\u003c/span\u003e m\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003eVector\u003c/code\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e\u003cspan class=\"token class-name\"\u003eVector\u003c/span\u003e v \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e \u003cspan class=\"token keyword\"\u003enew\u003c/span\u003e \u003cspan class=\"token class-name\"\u003eVector\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e initialCapacity\u003cspan class=\"token punctuation\"\u003e,\u003c/span\u003e \u003cspan class=\"token keyword\"\u003eint\u003c/span\u003e incrementalCapacity\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"utilities\"\u003eUtilities\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#utilities\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"iterating-over-collections\"\u003eIterating over collections\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#iterating-over-collections\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eAlthough there are multiple iterators offered by the framework. The most common usage is as below:\u003c/p\u003e\n\u003cpre class=\"language-java\"\u003e\u003ccode class=\"language-java\"\u003e  \u003cspan class=\"token class-name\"\u003eIterator\u003c/span\u003e i \u003cspan class=\"token operator\"\u003e=\u003c/span\u003e c\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token function\"\u003eiterator\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n  \u003cspan class=\"token keyword\"\u003ewhile\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003ei\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token function\"\u003ehasNext\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e{\u003c/span\u003e\n    i\u003cspan class=\"token punctuation\"\u003e.\u003c/span\u003e\u003cspan class=\"token function\"\u003enext\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e(\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e)\u003c/span\u003e\u003cspan class=\"token punctuation\"\u003e;\u003c/span\u003e\n  \u003cspan class=\"token punctuation\"\u003e}\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eFor more details about different types of iterators. See \u003ca href=\"/cs/notes/k16ee23xfsfsittiqteajoa\"\u003eIterators\u003c/a\u003e\u003c/p\u003e\n\u003ch3 id=\"collections-class\"\u003e\u003ccode\u003eCollections\u003c/code\u003e Class\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#collections-class\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eUtility class (\u003ccode\u003ejava.util.package\u003c/code\u003e) which defines several methods for collection objects.\nMost of these methods are static.\u003c/p\u003e\n\u003ch4 id=\"methods\"\u003eMethods\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#methods\"\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003ch5 id=\"static-sort-and-static-sortcomparator-c\"\u003e\u003ccode\u003estatic sort()\u003c/code\u003e and \u003ccode\u003estatic sort(Comparator c)\u003c/code\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#static-sort-and-static-sortcomparator-c\"\u003e\u003c/a\u003e\u003c/h5\u003e\n\u003cp\u003eSorts the collection objects (if \u003ca href=\"/cs/notes/viq09c2pqto5wyy49rlg1o5\"\u003eComparable\u003c/a\u003e) either based on their natural ordering, or based on the \u003ca href=\"/cs/notes/ip5orztybk9shcn0qhjo7ms\"\u003eComparator\u003c/a\u003e if passed.\u003c/p\u003e\n\u003cp\u003e⚠️ If the class doens't implement \u003ccode\u003eComparable\u003c/code\u003e and \u003ccode\u003esort\u003c/code\u003e is called without a \u003ccode\u003eComparator\u003c/code\u003e, it will throw a \u003ca href=\"/cs/notes/9o86nbg2dro9c4zutzu7c9c\"\u003eClassCastException\u003c/a\u003e.\u003c/p\u003e\n\u003ch2 id=\"important-distinctions\"\u003eImportant Distinctions\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#important-distinctions\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"array-vs-arraylist\"\u003eArray vs ArrayList\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#array-vs-arraylist\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003eThe main difference lies in the dynamic and resizeable nature of \u003ccode\u003eArrayList\u003c/code\u003e. You don't even have to specify an initial size in \u003ccode\u003eArrayList\u003c/code\u003e\u003c/p\u003e\n\u003ch3 id=\"common-distinction-between-legacy-collections-and-their-modern-counterparts\"\u003eCommon distinction between legacy collections and their modern counterparts\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#common-distinction-between-legacy-collections-and-their-modern-counterparts\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003eArrayList vs Vectors / HashMap vs Hashtable\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eLegacy collections are thread-safe. Their modern counterparts aren't.\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003eVector\u003c/code\u003e(and even \u003ccode\u003eStack\u003c/code\u003e)/Hashtable is thread-safe (most methods are synchronised)\n\u003ccode\u003eArrayList\u003c/code\u003e/\u003ccode\u003eHashMap\u003c/code\u003e is not.\u003c/p\u003e\n\u003cp\u003e💡 If something is thread-safe, it will inevitably have a lower performance in comparison to a corresponding non-synchronised something.\u003c/p\u003e\n\u003ch3 id=\"size-vs-capacity\"\u003e\u003ccode\u003esize()\u003c/code\u003e vs \u003ccode\u003ecapacity()\u003c/code\u003e\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#size-vs-capacity\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003esize = number of objects currently\u003c/li\u003e\n\u003cli\u003ecapacity = number of objects which can be accommodated\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2 id=\"references\"\u003eReferences\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#references\"\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://docs.oracle.com/javase/8/docs/technotes/guides/collections/overview.html#:~:text=Not%2C%20strictly%20speaking%2C%20a%20part%20of%20the%20collections,and%20relies%20on%20some%20of%20the%20same%20infrastructure.\"\u003eCollections Framework Overview - Java - Oracle Documentation\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://andbin.dev/java/why-some-collections-cannot-be-heterogeneous\"\u003eWhy some collections can't allow heterogenous objects?\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/questions/28147076/understanding-queue-insertion\"\u003eUnderstand Queue Insertion - Stack Overflow\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"hashmaps\"\u003eHashmaps\u003ca aria-hidden=\"true\" class=\"anchor-heading icon-link\" href=\"#hashmaps\"\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://www.youtube.com/watch?v=c3RVW3KGIIE\"\u003eHow HashMap works in Java? With Animation!! whats new in java8 tutorial\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://dzone.com/articles/java8-hashmap-implementation-and-performance\"\u003eJava 8 HashMap Implementation and Performance - DZone Java\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://www.developer.com/design/java-hashed-collections/\"\u003eJava Hashed Collections\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://stackoverflow.com/questions/36313817/what-are-the-differences-between-hashtable-and-hashmap-not-specific-to-java\"\u003eWhat are the differences between hashtable and hashmap? (Not specific to Java)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003cstrong\u003eChildren\u003c/strong\u003e\n\u003col\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/viq09c2pqto5wyy49rlg1o5\"\u003eComparable\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/k16ee23xfsfsittiqteajoa\"\u003eIterators\u003c/a\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003chr\u003e\n\u003cstrong\u003eBacklinks\u003c/strong\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/jik03wh5g5jxxfz2aklbmub\"\u003eMultithreading (cs)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/lubjpq6xfglfx03cmfbdfoc\"\u003eStack (cs)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/s6akrhxt1lut8w1ua5n50ci\"\u003eMethods (cs)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/un60lp44o0qon2nddvolalf\"\u003eCollectors (cs)\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"/cs/notes/k16ee23xfsfsittiqteajoa\"\u003eIterators (cs)\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e","noteIndex":{"id":"7ncn3al6mmutkhgoesulce9","title":"Computer Science","desc":"","updated":1715103618849,"created":1713296516553,"custom":{"nav_order":0,"permalink":"/"},"fname":"root","type":"note","vault":{"fsPath":".","selfContained":true,"name":"cs"},"contentHash":"36faf26c6be438d4aed355d72b55a110","links":[{"type":"wiki","from":{"fname":"root","id":"7ncn3al6mmutkhgoesulce9","vaultName":"cs"},"value":"arch","position":{"start":{"line":6,"column":3,"offset":105},"end":{"line":6,"column":11,"offset":113},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"arch"}},{"type":"wiki","from":{"fname":"root","id":"7ncn3al6mmutkhgoesulce9","vaultName":"cs"},"value":"paradigm","position":{"start":{"line":11,"column":3,"offset":159},"end":{"line":11,"column":15,"offset":171},"indent":[]},"xvault":false,"sameFile":false,"to":{"fname":"paradigm"}}],"anchors":{"references":{"type":"header","text":"References","value":"references","line":23,"column":0,"depth":2}},"children":["0xgibr34qhbv1edksyoxakk","e5kuv5gcz6pdxrsakpf7eia","t246wcci6dy9lnof7l1os4l","71sipcgr0pdqyxnmntvx28w","5omh1zinw87le0eyms8g5mk","91er1wb2f5wmbdb5axx5r3r","9z7xt251y1nm9dy2exatukr","u712e7r8bk97hpg9h9j3m4f","xpf86eilma499o4ul566fk8","a1g6tjx0p6bp25v75262gp9","3pr5jo5c742vop6gnoe7c3k","stxoouqpk2rivotuvhjx4yz","g8tiwuotfnbfrbctwyfg8rc","jk63inaclv0ps5i7mktzmm2","5m1yclhdqeshe5szt0masfk","abgag3m7m74vmofvzyyt2fm"],"parent":null,"data":{},"body":"\n\nThese notes are arranged into the below topics:\n\n- AI (Sorry this is on the top, list is alphabetic)\n- [[arch]]\n- Data\n- Execution\n- Languages\n- Semantics\n- [[paradigm]]\n- Philosophy\n- Dev\n- Tools\n- Type Theory\n\n## References\n\n- Hierarchy inpiration - [Map of Computer Science](https://www.flickr.com/photos/95869671@N08/36231833334/in/photostream/lightbox/)"},"collectionChildren":null,"customHeadContent":null,"config":{"version":5,"dev":{"enablePreviewV2":true,"enableSelfContainedVaults":true},"commands":{"lookup":{"note":{"selectionMode":"extract","confirmVaultOnCreate":true,"vaultSelectionModeOnCreate":"smart","leaveTrace":false,"bubbleUpCreateNew":true,"fuzzThreshold":0.2}},"randomNote":{},"insertNoteLink":{"aliasMode":"none","enableMultiSelect":false},"insertNoteIndex":{"enableMarker":false},"copyNoteLink":{"aliasMode":"title"},"templateHierarchy":"template"},"workspace":{"vaults":[{"fsPath":"dependencies/github.com/chinootes/math","remote":{"type":"git","url":"git@github.com:chinootes/math.git"},"selfContained":true,"name":"math"},{"fsPath":".","selfContained":true,"name":"cs"}],"journal":{"dailyDomain":"daily","name":"journal","dateFormat":"y.MM.dd","addBehavior":"childOfDomain"},"scratch":{"name":"scratch","dateFormat":"y.MM.dd.HHmmss","addBehavior":"asOwnDomain"},"task":{"name":"task","dateFormat":"y.MM.dd","addBehavior":"asOwnDomain","statusSymbols":{"":" ","wip":"w","done":"x","assigned":"a","moved":"m","blocked":"b","delegated":"l","dropped":"d","pending":"y"},"taskCompleteStatus":["done","x"],"prioritySymbols":{"H":"high","M":"medium","L":"low"},"todoIntegration":false,"createTaskSelectionType":"selection2link"},"graph":{"zoomSpeed":1,"createStub":false},"enableAutoCreateOnDefinition":false,"enableXVaultWikiLink":false,"enableRemoteVaultInit":true,"enableUserTags":true,"enableHashTags":true,"workspaceVaultSyncMode":"noCommit","enableAutoFoldFrontmatter":false,"enableEditorDecorations":true,"maxPreviewsCached":10,"maxNoteLength":204800,"enableFullHierarchyNoteTitle":false,"enablePersistentHistory":false},"preview":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enablePrettyRefs":true,"enableKatex":true,"automaticallyShowPreview":false},"publishing":{"enableFMTitle":true,"enableNoteTitleForLink":true,"enablePrettyRefs":true,"enableKatex":true,"copyAssets":true,"siteHierarchies":["root"],"writeStubs":false,"siteRootDir":"docs","seo":{"title":"Dendron","description":"Personal Knowledge Space"},"github":{"enableEditLink":true,"editLinkText":"Edit this page on GitHub","editBranch":"main","editViewMode":"tree"},"enableSiteLastModified":true,"enableFrontmatterTags":true,"enableHashesForFMTags":false,"enableRandomlyColoredTags":true,"enableTaskNotes":true,"enablePrettyLinks":true,"searchMode":"search","siteUrl":"https://chinootes.github.io","assetsPrefix":"/cs","duplicateNoteBehavior":{"action":"useVault","payload":["math","cs"]},"siteFaviconPath":"favicon.ico","siteIndex":"root"}}},"__N_SSG":true},"page":"/notes/[id]","query":{"id":"dkdtvct3q6f8lggmoqrqf43"},"buildId":"OQElCxbN_7VOTny6p9vJQ","assetPrefix":"/cs","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,37 @@
+<h1 id="factory">Factory<a aria-hidden="true" class="anchor-heading icon-link" href="#factory"></a></h1>
+<h2 id="goal">Goal<a aria-hidden="true" class="anchor-heading icon-link" href="#goal"></a></h2>
+<ul>
+<li>Classes of more abstract levels shall not depend on classes on more detailed levels</li>
+<li>Classes shall only depend on abstractions, e.g. interfaces</li>
+</ul>
+<h2 id="solution">Solution<a aria-hidden="true" class="anchor-heading icon-link" href="#solution"></a></h2>
+<p>Move creation of objects to object factory class.</p>
+<h2 id="object-factory">Object Factory<a aria-hidden="true" class="anchor-heading icon-link" href="#object-factory"></a></h2>
+<ul>
+<li>The single responsibility of an object factory class is to create objects of other classes</li>
+<li>The factory decides if it provides the <a href="/cs/notes/cfsk5vr2cq47ajeq1g0l0eb">Singleton</a> or a new object every time</li>
+<li>To prevent unwanted side effects due to the direct creation of the managed classes,</li>
+</ul>
+<pre class="language-abap"><code class="language-abap"><span class="token keyword">CLASS</span> cl_managed <span class="token keyword">DEFINITION</span>
+    <span class="token keyword">PUBLIC</span>
+    <span class="token keyword">CREATE</span> <span class="token keyword">PRIVATE</span> <span class="token eol-comment comment">"Define the constructor of the factory-managed class as private</span>
+    <span class="token keyword">GLOBAL</span> <span class="token keyword">FRIENDS</span> cl_factory <span class="token eol-comment comment">"Declare the factory as a global friend of the factory-managed class</span>
+</code></pre>
+<h3 id="factory-using-friend-class">Factory using <a href="/cs/notes/kdtysqgxcjkxyidt9slcakk">Friend Class</a><a aria-hidden="true" class="anchor-heading icon-link" href="#factory-using-friend-class"></a></h3>
+<ul>
+<li>Many programming languages support friend classes</li>
+<li>Friend class has access to the class's private constructor and hence can contain the factory method.</li>
+</ul>
+<h2 id="testability-advantage">Testability advantage<a aria-hidden="true" class="anchor-heading icon-link" href="#testability-advantage"></a></h2>
+<p>Offers a single point of injection for <a title="Private" href="https://wiki.dendron.so/notes/hfyvYGJZQiUwQaaxQO27q.html" target="_blank" class="private">Test Double (Private)</a>s in unit tests and integration/system tests</p>
+<ul>
+<li>Create the Interface and multiple implementation of same interface.</li>
+<li>Factory method - used to hide the logic of object creation  - loose coupling and high cohesion</li>
+<li>Create another class and initialize the object in a method over there. Return the object.</li>
+</ul>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/wi0s2u0m4vpb5pkkb6y3pvp">Test Isolation (cs)</a></li>
+<li><a href="/cs/notes/zqjpyf49lrhapm2f89xi0w1">Do NOT create dependencies (cs)</a></li>
+</ul>

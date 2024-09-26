@@ -1,0 +1,27 @@
+<h1 id="static-method-cant-be-overridden">Static Method Can't be overridden<a aria-hidden="true" class="anchor-heading icon-link" href="#static-method-cant-be-overridden"></a></h1>
+<p>You can't override a <a href="/cs/notes/tz7zcxetfq1vhcgh95l1ote">Static Method</a>.</p>
+<pre class="language-java"><code class="language-java"><span class="token comment">//Can't do this -> Compile time error</span>
+<span class="token keyword">class</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Foo"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">class</span> <span class="token class-name">Bar</span> <span class="token keyword">extends</span> <span class="token class-name">Foo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"in Bar"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Then <a href="/cs/notes/7jxqzwkqk645anv4qhlfei0">Why compiler sometimes talks about overriding static methods?</a></p>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/7jxqzwkqk645anv4qhlfei0">Why compiler sometimes talks about overriding static methods?</a></li>
+</ol>
+<hr>
+<strong>Backlinks</strong>
+<ul>
+<li><a href="/cs/notes/7azetbc1vf0zr2w38es3xj8">Accessing Static Members using Objects (cs)</a></li>
+<li><a href="/cs/notes/tz7zcxetfq1vhcgh95l1ote">Static Method (cs)</a></li>
+</ul>

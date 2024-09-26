@@ -1,0 +1,29 @@
+<h1 id="two-pointer">Two Pointer<a aria-hidden="true" class="anchor-heading icon-link" href="#two-pointer"></a></h1>
+<p>Any algorithm involving use of two pointers/index variables to traverse over a data structure.</p>
+<p>You take two pointers and move them untill you find the expected result.</p>
+<p>There are many variants of this approach since the approach is only about taking two pointers. It only gets more concrete when we dig deeper.</p>
+<p>Categorizing on basis of how the pointers move:</p>
+<ol>
+<li>Running from both ends of an array</li>
+<li>Slow &#x26; Fast Pointers</li>
+<li>Running from beginning of 2 arrays / Merging 2 arrays</li>
+<li>Split &#x26; Merge of an array / Divide &#x26; Conquer</li>
+</ol>
+<h2 id="slow-and-fast-pointers">Slow and fast pointers<a aria-hidden="true" class="anchor-heading icon-link" href="#slow-and-fast-pointers"></a></h2>
+<p>Specific pattern of two pointer algorithms where one pointer moves faster than the other. </p>
+<p>The movement of fast could be n times that of the slow pointer, where n is any positive integer. Or the slow pointer could be started late from the first node. </p>
+<h3 id="use-cases">Use cases<a aria-hidden="true" class="anchor-heading icon-link" href="#use-cases"></a></h3>
+<ol>
+<li><strong>To detect cycle in a linked list</strong>: If there is a circular track and one car is moving faster than the other, the two cars are bound to cross at some point.</li>
+<li><strong>To find middle element of a list</strong>: When the fast pointer going at 2x of slow pointer reaches the end - slow pointer will be at the middle element of the list.</li>
+<li><strong>To find <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> element from the end in a list</strong>: Start the slow pointer once the fast pointer reaches the <span class="math math-inline"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>t</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{th}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">h</span></span></span></span></span></span></span></span></span></span></span></span></span> element and then move both at the same speed. By the time, the fast pointer reaches the end, slow pointer will be at nth element from the end.</li>
+</ol>
+<h2 id="references">References<a aria-hidden="true" class="anchor-heading icon-link" href="#references"></a></h2>
+<ul>
+<li><a href="https://leetcode.com/discuss/study-guide/1688903/Solved-all-two-pointers-problems-in-100-days">Solved all two pointers problems in 100 days - Leetcode discuss</a></li>
+</ul>
+<hr>
+<strong>Children</strong>
+<ol>
+<li><a href="/cs/notes/vv9d6n9c06tzg9aa9yqg6mx">Sliding Window</a></li>
+</ol>
