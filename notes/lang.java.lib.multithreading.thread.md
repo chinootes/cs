@@ -16,7 +16,7 @@ created: 1713121833210
 
 ## Methods
 
-- [[lang.java.lib.interfaces.runnable]].`run()`
+- [[lang.java.lib.multithreading.runnable]].`run()`
 - `start()`: Starts thread execution - [[lang.java.jre.jvm]] calls `run()`
 - `sleep(ms)`: Causes the thread to sleep for specified milliseconds.
 - `join()`: Waits for the thread to die.

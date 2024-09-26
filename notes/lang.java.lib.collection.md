@@ -2,7 +2,7 @@
 id: dkdtvct3q6f8lggmoqrqf43
 title: Collection Framework
 desc: ''
-updated: 1727010720806
+updated: 1727374954029
 created: 1713633121566
 ---
 
@@ -228,6 +228,8 @@ int hash; //Hashvalue of key to avoid calculating everytime its  needed
 
 
 #### Concurrent Collections
+
+- BlockingQueue
 
 #### Enum
 

@@ -2,7 +2,7 @@
 id: 9tn4qoat4ksb1kha3p77zhe
 title: ExecutorService
 desc: ''
-updated: 1726652034561
+updated: 1727374020289
 created: 1713125223294
 ---
 
@@ -10,7 +10,7 @@ created: 1713125223294
 `ExecutorService` is an interface which allows us to execute tasks on thread asynchronously
 
 
-## **Instantiation** using `Executors` Factory class
+## Instantiation using `Executors` Factory class
 
 Instance can be retrieved from `Executors` factory class using different factory methods based on the number and types of threads needed. 
 
@@ -49,7 +49,7 @@ invokeAll(Collection<? extends Callable<T>> tasks);
 
 We can use the following methods after we're done. If we don't, the threads will keep running and JVM won't shut down.
 
-- shutdown() method
-- shutdownNow() method
-- awaitTermination() method
+- `shutdown()` method
+- `shutdownNow()` method
+- `awaitTermination()` method
 
